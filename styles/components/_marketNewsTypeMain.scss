@@ -1,0 +1,24 @@
+.marketNewsTypeMain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  width: 345px;
+  //   height: 388px;
+  height: fit-content;
+  background-color: red;
+
+  .imageContainer {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s all;
+    border-radius: 6px;
+    background-color: aquamarine;
+  }
+  .imageContainer:hover{
+    transform: scale(1.1);
+  }
+}
