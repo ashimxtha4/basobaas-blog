@@ -14,6 +14,7 @@
   );
   border-radius: 6px;
   align-self: stretch;
+  transition: 0.4s all;
 
   .cardContent {
     display: flex;
@@ -105,8 +106,11 @@
     }
   }
 }
+.homeBlogTypeMain:hover {
+  transform: scale(0.9);
+}
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .homeBlogTypeMain {
     width: 637.5px;
     height: 500px;

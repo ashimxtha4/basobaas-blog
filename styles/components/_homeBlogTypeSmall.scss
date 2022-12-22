@@ -14,6 +14,7 @@
   );
   border-radius: 6px;
   align-self: stretch;
+  transition: 0.4s all;
 
   .cardContent {
     display: flex;
@@ -104,6 +105,9 @@
       }
     }
   }
+}
+.homeBlogTypeSmall:hover {
+  transform: scale(0.9);
 }
 
 @media only screen and (min-width: 768px) {

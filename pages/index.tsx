@@ -3,6 +3,7 @@ import Image from "next/image";
 import HomeBlogTypeMain from "../components/ui/HomeBlogTypeMain";
 import HomeBlogTypeSmall from "../components/ui/HomeBlogTypeSmall";
 import MarketNewsTypeMain from "../components/ui/MarketNewsTypeMain";
+import MarketNewsTypeSecondary from "../components/ui/MarketNewsTypeSecondary";
 import BlogNavbar from "../layouts/BlogNavbar";
 import styles from "../styles/Home.module.css";
 
@@ -18,7 +19,8 @@ export default function Home() {
       <BlogNavbar />
       <HomeBlogTypeSmall />
       <HomeBlogTypeMain />
-      <MarketNewsTypeMain/>
+      <MarketNewsTypeMain />
+      <MarketNewsTypeSecondary />
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>

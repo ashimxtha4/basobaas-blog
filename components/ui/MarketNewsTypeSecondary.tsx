@@ -1,13 +1,18 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 import { Icon } from "@iconify/react";
 
-const MarketNewsTypeMain = () => {
+const MarketNewsTypeSecondary = () => {
   return (
     <>
-      <div className="marketNewsTypeMain">
+      <div className="marketNewsTypeSecondary">
         <div className="imageContainer">
-          <Image src="" alt="Blog Picture" width={345} height={180} />
+          <Image
+            src=""
+            alt="Picture of the author"
+            width={260}
+            height={133.33}
+          />
         </div>
         <div className="blogContents">
           <div className="blogCategoryTitle">
@@ -21,13 +26,6 @@ const MarketNewsTypeMain = () => {
               {/* ENTER BLOG TITLE HERE */}
               The most expensive area of Nepal with most expensive house with
               The most lavish lifestyle money can buy
-            </p>
-          </div>
-          <div className="blogBody">
-            <p>
-              A house is a single-unit residential building. It may range in
-              complexity from a rudimentary hut to a complex structure of wood,
-              masonry, concrete or other material, outfitted wit asdalkdlaskjdlk
             </p>
           </div>
           <div className="blogBy">
@@ -52,4 +50,4 @@ const MarketNewsTypeMain = () => {
   );
 };
 
-export default MarketNewsTypeMain;
+export default MarketNewsTypeSecondary;
