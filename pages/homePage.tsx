@@ -1,6 +1,7 @@
 import MainLayout from "../layouts/mainLayout"
 import BlogNavbar from "../layouts/BlogNavbar"
 import HomeBlogTypeSmall from "../components/ui/HomeBlogTypeSmall"
+import HomeBlogTypeMain from "../components/ui/HomeBlogTypeMain"
 
 
 const HomePage = () => {
@@ -25,7 +26,7 @@ const HomePage = () => {
 
                     <div className="contentBody">
                         <div className="blogPreviewDiv">
-                            <div className="bigComponent"></div>
+                            <div className="bigComponent"><HomeBlogTypeMain/></div>
                             <div className="smallComponentDiv">
                                 <div className="smallComponent"><HomeBlogTypeSmall/></div>
                                 <div className="smallComponent"><HomeBlogTypeSmall/></div>
@@ -44,12 +45,14 @@ const HomePage = () => {
                                 <span className="viewAllButton">View All</span>
                             </div>
                             <div className="marketNewsContentDiv">
-                                <div className="marketBigComponent"></div>
-                                <div className="marketSmallComponentDIv">
+                                <div className="marketBigComponent">
+
+                                </div>
+                                <div className="marketSmallComponentDiv">
                                     <div className="marketSmallComponent"></div>
                                     <div className="marketSmallComponent"></div>
                                     <div className="marketSmallComponent"></div>
-                                    <div className="marketSmallComponent"></div>
+                                    {/* <div className="marketSmallComponent"></div> */}
                                 </div>
                             </div>
                         </div>
@@ -57,7 +60,7 @@ const HomePage = () => {
                         <div className="adDiv"></div>
 
                         <div className="propertyListDiv">
-
+                            
                         </div>
 
                     </div>
