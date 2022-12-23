@@ -1,40 +1,42 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
-const HomeBlogTypeSmall = () => {
-  return (
-    <>
-      <div className="homeBlogTypeSmall" style={{ backgroundImage: "url('')" }}>
-        <div className="cardContent">
-          <div className="blogCategoryTag">
-            <p>{/* ENTER BLOG CATEGORY NAME HERE */}TRAVEL</p>
-          </div>
-          <div className="blogTitle">
-            <p>
-              {/* ENTER BLOG TITLE NAME HERE */}The most expensive area of Nepal
-              with most expensiasdlkajsdkljasldkjkljaljd...
-            </p>
-          </div>
-          <div className="blogBy">
-            <span className="author">
-              {/* ENTER BLOG BY NAME HERE */}Rajan Adhikari
-            </span>
-            <span className="separator">
-              <Icon
-                icon="ci:dot-05-xl"
-                width="15"
-                height="15"
-                color="#FFFFFF"
-              />
-            </span>
-            <span className="posted">
-              {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}2 weeks ago
-            </span>
+const HomeBlogTypeSmall = ({ blog = {} }: any) => {
+  console.log(blog);
+  if (Object.keys(blog).length > 0)
+    return (
+      <>
+        <div
+          className="homeBlogTypeSmall"
+          style={{ backgroundImage: "{images}" }}
+        >
+          <div className="cardContent">
+            <div className="blogCategoryTag">
+              <p>{blog.category?.name}</p>
+            </div>
+            <div className="blogTitle">
+              <p>{blog.title}</p>
+            </div>
+            <div className="blogBy">
+              <div className="author">{blog.author?.fullName}</div>
+              <div className="separator">
+                <Icon
+                  icon="ci:dot-05-xl"
+                  width="15"
+                  height="15"
+                  color="#FFFFFF"
+                />
+              </div>
+              <div className="posted">
+                {/* {createdAt} */}
+                HI
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  else return null;
 };
 
 export default HomeBlogTypeSmall;

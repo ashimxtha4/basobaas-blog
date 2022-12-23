@@ -1,17 +1,16 @@
-
-
 const MainLayout = () => {
   return (
     <>
       <div className="alignmentContainer">
-        <div className="navBlend">
-        </div>
+        <div className="navBlend"></div>
 
         <div className="contentDiv">
           <div className="aboveNavDiv">
             <div className="newsDiv">
               <div className="newsHeader">News & Insights</div>
-              <div className="newsTexts">We provide you the complete new about real estate.</div>
+              <div className="newsTexts">
+                We provide you the complete new about real estate.
+              </div>
               <div className="firstAdDiv"></div>
             </div>
             <div className="navDiv"></div>
@@ -27,9 +26,7 @@ const MainLayout = () => {
                 </div>
               </div>
 
-              <div className="adDiv">
-
-              </div>
+              <div className="adDiv"></div>
 
               <div className="marketNewsDiv">
                 <div className="titleDiv">
@@ -38,7 +35,7 @@ const MainLayout = () => {
                 </div>
                 <div className="marketNewsContentDiv">
                   <div className="marketBigComponent"></div>
-                  <div className="marketSmallComponentDIv">
+                  <div className="marketSmallComponentDiv">
                     <div className="marketSmallComponent"></div>
                     <div className="marketSmallComponent"></div>
                     <div className="marketSmallComponent"></div>
@@ -49,20 +46,15 @@ const MainLayout = () => {
 
               <div className="adDiv"></div>
 
-              <div className="propertyListDiv">
-
-              </div>
-
+              <div className="propertyListDiv"></div>
             </div>
 
-            <div className="contentFooter">
-
-            </div>
+            <div className="contentFooter"></div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;

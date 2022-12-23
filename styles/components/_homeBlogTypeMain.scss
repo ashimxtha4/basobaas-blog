@@ -15,6 +15,9 @@
   border-radius: 6px;
   align-self: stretch;
   transition: 0.4s all;
+  position: relative;
+
+  
 
   .cardContent {
     display: flex;
@@ -97,6 +100,8 @@
         font-size: 14px;
         line-height: 140%;
         color: #ffffff;
+        max-width: fit-content;
+        margin-bottom: 0;
       }
 
       .separator {
