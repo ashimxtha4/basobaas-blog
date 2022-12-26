@@ -1,15 +1,28 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import { useState } from "react";
+import { imageUrlCheck } from "../../utilities/helper";
 
 const HomeBlogTypeSmall = ({ blog = {} }: any) => {
-  console.log(blog);
+  const blogPostedDate = blog.createdAt;
+
+  // const [blogPostedDate, setBlogPostedDate] = useState("")
+  // setBlogPostedDate(blog[0].createdAt)
+  //   console.log("postedOn",blogPostedDate);
   if (Object.keys(blog).length > 0)
     return (
       <>
         <div
           className="homeBlogTypeSmall"
-          style={{ backgroundImage: "{images}" }}
+          // style={{ backgroundImage: `url(${blog.images[0]})` }}
         >
+          <div className="thumbnail">
+            <img
+              src={imageUrlCheck(blog.images[0] as string)}
+              className="blogCardBackground"
+              alt="Basobaas Nepal"
+            />
+          </div>
           <div className="cardContent">
             <div className="blogCategoryTag">
               <p>{blog.category?.name}</p>
@@ -29,7 +42,8 @@ const HomeBlogTypeSmall = ({ blog = {} }: any) => {
               </div>
               <div className="posted">
                 {/* {createdAt} */}
-                HI
+                {/* {blogPostedDate} */}
+                hi
               </div>
             </div>
           </div>

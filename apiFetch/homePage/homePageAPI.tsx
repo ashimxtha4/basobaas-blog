@@ -2,9 +2,12 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import { BASE_URL } from "../../baseConstants";
 // GET HOMEPAGE BANNER BLOGS
 
-export const getAll= (path:String) =>{
-    return axios
-    .get(`${BASE_URL}${path}` as string, { method: "GET" })
+const api = axios.create({
+  baseURL: BASE_URL,
+});
+export const getAll = (path: String) => {
+  return api
+    .get(`${path}` as string)
     .then((res: AxiosResponse) => res.data)
     .catch((err: AxiosError) => {
       console.log(err);
@@ -13,4 +16,4 @@ export const getAll= (path:String) =>{
         console.log("Axios Error");
       }
     });
-}
+};

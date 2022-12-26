@@ -1,55 +1,65 @@
 import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
+import { imageUrlCheck } from "../../utilities/helper";
+import { NodeFlags } from "typescript";
+import { BLOCKED_PAGES } from "next/dist/shared/lib/constants";
 
-const MarketNewsTypeMain = () => {
-  return (
-    <>
-      <div className="marketNewsTypeMain">
-        <div className="imageContainer">
-          <Image src="" alt="Blog Picture" width={345} height={180} />
-        </div>
-        <div className="blogContents">
-          <div className="blogCategoryTitle">
-            <p>
-              {/* ENTER BLOG CATEGORY TITLE HERE */}
-              Title
-            </p>
-          </div>
-          <div className="blogHeader">
-            <p>
-              {/* ENTER BLOG TITLE HERE */}
-              The most expensive area of Nepal with most expensive house with
-              The most lavish lifestyle money can buy
-            </p>
-          </div>
-          <div className="blogBody">
-            <p>
-              A house is a single-unit residential building. It may range in
-              complexity from a rudimentary hut to a complex structure of wood,
-              masonry, concrete or other material, outfitted wit asdalkdlaskjdlk
-            </p>
-          </div>
-          <div className="blogBy">
-            <span className="author">
-              {/* ENTER BLOG BY NAME HERE */}Rajan Adhikari
-            </span>
-            <span className="separator">
-              <Icon
-                icon="ci:dot-05-xl"
-                width="15"
-                height="15"
-                color="#969696"
+const MarketNewsTypeMain = ({ blog = {} }: any) => {
+  console.log(blog);
+
+  if (Object.keys(blog).length > 0)
+    return (
+      <>
+        <div className="marketNewsTypeMain">
+          <div className="imageContainer">
+            {blog.images?.length ? (
+              <Image
+                src={imageUrlCheck(blog?.images[0])}
+                alt="Blog Picture"
+                width={345}
+                height={180}
               />
-            </span>
-            <span className="posted">
-              {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}2 weeks ago
-            </span>
+            ) : null}
+          </div>
+          <div className="blogContents">
+            <div className="blogCategoryTitle">
+              <p>
+                {/* ENTER BLOG CATEGORY TITLE HERE */}
+                {blog.category?.name}
+              </p>
+            </div>
+            <div className="blogHeader">
+              <p>
+                {/* ENTER BLOG TITLE HERE */}
+                {blog.title}
+              </p>
+            </div>
+            <div className="blogBody">
+              <p>{blog.content}</p>
+            </div>
+            <div className="blogBy">
+              <span className="author">
+                {/* ENTER BLOG BY NAME HERE */}
+                {blog.author?.fullName}
+              </span>
+              <span className="separator">
+                <Icon
+                  icon="ci:dot-05-xl"
+                  width="15"
+                  height="15"
+                  color="#969696"
+                />
+              </span>
+              <span className="posted">
+                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}2 weeks ago
+              </span>
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  else return null;
 };
 
 export default MarketNewsTypeMain;

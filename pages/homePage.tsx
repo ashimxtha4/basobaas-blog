@@ -1,50 +1,103 @@
 import MainLayout from "../layouts/mainLayout";
 import BlogNavbar from "../layouts/BlogNavbar";
 import HomeBlogTypeSmall from "../components/ui/HomeBlogTypeSmall";
-import { getAll } from "../apiFetch/homePage/homePageAPI";
-import { useEffect, useState, useRef } from "react";
 import HomeBlogTypeMain from "../components/ui/HomeBlogTypeMain";
+import { useEffect, useState, useRef } from "react";
+import { getAll } from "../apiFetch/homePage/homePageAPI";
+import MarketNewsTypeMain from "../components/ui/MarketNewsTypeMain";
+import { Console } from "console";
+import { access } from "fs";
+import MarketNewsTypeSecondary from "../components/ui/MarketNewsTypeSecondary";
 
 const HomePage = () => {
   const [data, setData] = useState({
-    // blogs: [],
     categories: [],
-    catBlogs: [],
+    blogsByCategory: [],
+    blogsWithSameCategory: [],
   });
 
-  const getCategories = async () => {
+  //GET ALL CATEGORIES TO GET CATEGORY ID AND MAP EACH CATEGORY TO GET BLOG
+  const getAllCategories = async () => {
     try {
       const { blogCategories } = await getAll("/blogCategory");
       if (blogCategories)
         setData((prev) => ({ ...prev, categories: blogCategories }));
-    } catch (error) {}
-  };
-
-  const getBlogByCategory = async (id: String) => {
-    try {
-      const { blogs } = await getAll(`/blogs?category=${id}&limit=1`);
-      setData((prev) => ({ ...prev,catBlogs:[...prev.catBlogs, blogs[0]] }));
     } catch (error) {
       console.log(error);
     }
   };
 
+  //GET SPECIFIC BLOG BY CONDITION CATEROGY NAME AND DISPLAYED JUST ONCE
+  const getBlogByCategory = async (id: String) => {
+    try {
+      const { blogs } = await getAll(`/blogs?category=${id}&limit=1`);
+      if (blogs) {
+        setData((prev) => ({
+          ...prev,
+          blogsByCategory: [...prev.blogsByCategory, blogs[0]],
+        }));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getBlogsUnderOneCategory = async (id: string) => {
+    try {
+      const SameCategoryBlogs = await getAll(`/blogs?category=${id}`);
+      if (SameCategoryBlogs) {
+        let blogGroupByName = SameCategoryBlogs.blogs.reduce(
+          (acc: any, c: any) => {
+            acc[c?.category?.name] = [...(acc[c?.category?.name] || []), c];
+            return acc;
+          },
+          {} as any
+        );
+        setData((prev) => ({
+          ...prev,
+          blogsWithSameCategory: [
+            ...prev.blogsWithSameCategory,
+            blogGroupByName,
+          ],
+        }));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //TO HANDEL FIRST RENDER
   const firstRender = useRef(true);
   useEffect(() => {
     if (firstRender.current) {
       firstRender.current = false;
-      // getBlogs();
-      getCategories();
+      getAllCategories();
     }
 
+    //TO RENDER LIMITED BLOGS BY CATEGORY
     if (data.categories?.length > 0) {
-      data.categories.map((category: any,index:number) => {
-        if(index<4)
-          getBlogByCategory(category._id);
+      //MAPPING
+      data.categories.map((category: any, index: number) => {
+        if (index > 0 && index <= 5) getBlogByCategory(category._id);
+      });
+    }
+
+    //TO RENDER LIMITED BLOGS WITH SAME CATEGORY
+    if (data.categories?.length > 0) {
+      //MAPPING
+      data.categories.map((category: any, index: number) => {
+        if (index > 0 && index <= 5) getBlogsUnderOneCategory(category._id);
       });
     }
   }, [data.categories.length]);
+  // console.log("fahsdfjkasdh", blogGroupByName)
 
+  console.log("fahsdfjkasdh");
+
+  const getMarketNewsBlogs = data?.blogsWithSameCategory.find(
+    (item) => item["कानून र निति"]
+  );
+  console.log("MarketNews");
   return (
     <>
       <div className="alignmentContainer">
@@ -68,17 +121,17 @@ const HomePage = () => {
           <div className="contentBody">
             <div className="blogPreviewDiv">
               <div className="bigComponent">
-                <HomeBlogTypeMain blog={data.catBlogs[0]}/>
+                <HomeBlogTypeMain blog={data.blogsByCategory[0]} />
               </div>
               <div className="smallComponentDiv">
-                {
-                  data.catBlogs.map((catBlog,index)=>{
-                    if(index>0 && index<5)
-                     return <div className="smallComponent">
-                      <HomeBlogTypeSmall blog={data.catBlogs[index]}/>
-                    </div>
-                  })
-                }
+                {data.blogsByCategory.map((categorySpecificBlog, index) => {
+                  if (index > 0 && index < 5)
+                    return (
+                      <div className="smallComponent" key={index}>
+                        <HomeBlogTypeSmall blog={data.blogsByCategory[index]} />
+                      </div>
+                    );
+                })}
               </div>
             </div>
 
@@ -90,12 +143,23 @@ const HomePage = () => {
                 <span className="viewAllButton">View All</span>
               </div>
               <div className="marketNewsContentDiv">
-                <div className="marketBigComponent"></div>
-                <div className="marketSmallComponentDIv">
-                  <div className="marketSmallComponent"></div>
-                  <div className="marketSmallComponent"></div>
-                  <div className="marketSmallComponent"></div>
-                  <div className="marketSmallComponent"></div>
+                <div className="marketBigComponent">
+                  <MarketNewsTypeMain
+                    blog={
+                      Object.values(getMarketNewsBlogs ?? {}).flatMap(
+                        (i) => i
+                      )[0]
+                    }
+                  />
+                </div>
+                <div className="marketSmallComponentDiv">
+                  {Object.values(getMarketNewsBlogs ?? {})
+                    .flatMap((i) => i)
+                    .map((i, index) => (
+                      <div key={index}>
+                        <MarketNewsTypeMain blog={i} />
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
