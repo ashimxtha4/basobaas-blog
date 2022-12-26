@@ -1,262 +1,262 @@
 .alignmentContainer {
-    height: 100%;
+  height: 100%;
+  width: 100%;
+  background-color: aliceblue;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .navBlend {
     width: 100%;
-    background-color: aliceblue;
-    color: #333333;
+    position: sticky;
+    height: 53px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .contentDiv {
+    height: fit-content;
+    width: 375px;
+    border: solid 1px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // padding-top: 8px;
+    background: #ffffff;
+    position: relative;
 
-    .navBlend {
-        width: 100%;
-        position: sticky;
-        height: 53px;
-        background: #FFFFFF;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    .aboveNavDiv {
+      position: relative;
+      height: 98px;
+      border: solid 1px blue;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 4px;
+      padding: 8px 15px 18px 15px;
+      // padding-top: 8px;
+      // padding-bottom: 18px;
+
+      .newsHeader {
+        width: 90px;
+        height: 48px;
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #333333;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      .newsTexts {
+        width: 345px;
+        height: 20px;
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #969696;
+        flex: none;
+        align-self: stretch;
+        flex-grow: 0;
+      }
+
+      .firstAdDiv {
+        display: none;
+      }
     }
 
-    .contentDiv {
+    .secNavDiv {
+      height: fit-content;
+      width: 100%;
+      position: sticky;
+      border: solid 1px;
+    }
+
+    .contentBody {
+      height: fit-content;
+      padding: 16px 0px 40px 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .blogPreviewDiv {
+        border: solid 1px blue;
+        position: relative;
         height: fit-content;
-        width: 375px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 10px;
+        overflow-x: scroll;
+        overflow-y: scroll;
+
+        .blogPreviewDiv::-webkit-scrollbar-track {
+          /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          display: none;
+        }
+
+        .blogPreviewDiv::-webkit-scrollbar-thumb {
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          background: rgba(36, 42, 54, 0.158);
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .blogPreviewDiv::-webkit-scrollbar-thumb:window-inactive {
+          display: none;
+          background: rgba(255, 0, 0, 0.4);
+        }
+
+        .bigComponent {
+          height: fit-content;
+          width: fit-content;
+          border: solid 1px;
+        }
+
+        .smallComponentDiv {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          height: 250px;
+          width: fit-content;
+
+          .smallComponent {
+            height: 250px;
+            width: fit-content;
+            border: solid 1px;
+          }
+        }
+      }
+    }
+
+    .adDiv {
+      display: none;
+    }
+
+    .marketNewsDiv {
+      border: solid 1px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 8px;
+      position: relative;
+      width: 100%;
+      height: fit-content;
+      padding-right: 15px;
+
+      .titleDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
+        gap: 16px;
+        width: 345px;
+        height: 28px;
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
         border: solid 1px;
+
+        .title {
+          width: 114px;
+          height: 28px;
+          font-family: "Product Sans", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 140%;
+          color: #333333;
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+        }
+
+        .viewAllButton {
+          width: fit-content;
+          height: 22px;
+          font-family: "Product Sans", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          color: #333333;
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+        }
+      }
+
+      .marketNewsContentDiv {
         display: flex;
         flex-direction: column;
-        // padding-top: 8px;
-        background: #FFFFFF;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+        width: 345px;
+        height: fit-content;
+        flex: none;
+        align-self: stretch;
+        flex-grow: 0;
+        border: solid 1px;
+      }
+
+      .marketBigComponent {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 16px;
+        width: 345px;
+        height: 388px;
+        flex: none;
+        align-self: stretch;
+        flex-grow: 0;
+        border: solid 1px;
+      }
 
-        .aboveNavDiv {
-            position: relative;
-            height: 98px;
-            border: solid 1px blue;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            gap: 4px;
-            padding: 8px 15px 18px 15px;
-            // padding-top: 8px;
-            // padding-bottom: 18px;
+      .marketSmallComponentDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 24px;
+        width: 345px;
+        height: fit-content;
+        flex: none;
+        align-self: stretch;
+        flex-grow: 0;
+        border: solid 1px;
 
-            .newsHeader {
-                width: 90px;
-                height: 48px;
-                font-family: 'Product Sans', sans-serif;
-                font-style: normal;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 24px;
-                color: #333333;
-                flex: none;
-                order: 0;
-                flex-grow: 0;
-                padding: 0px;
-                margin: 0px;
-            }
-
-            .newsTexts {
-                width: 345px;
-                height: 20px;
-                font-family: 'Product Sans', sans-serif;
-                font-style: normal;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 140%;
-                color: #969696;
-                flex: none;
-                align-self: stretch;
-                flex-grow: 0;
-            }
-
-            .firstAdDiv {
-                display: none;
-            }
+        .marketSmallComponent {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          padding: 0px;
+          gap: 16px;
+          width: 345px;
+          height: 90px;
+          flex: none;
+          align-self: stretch;
+          flex-grow: 0;
+          border: solid 1px;
         }
-
-        .secNavDiv {
-            height: fit-content;
-            width: 100%;
-            position: sticky;
-            border: solid 1px;
-        }
-
-        .contentBody {
-            height: fit-content;
-            padding: 16px 0px 40px 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-
-            .blogPreviewDiv {
-                border: solid 1px blue;
-                position: relative;
-                height: fit-content;
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                gap: 10px;
-                overflow-x: scroll;
-                overflow-y: scroll;
-
-                .blogPreviewDiv::-webkit-scrollbar-track {
-                    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
-                    -webkit-border-radius: 10px;
-                    border-radius: 10px;
-                    display: none;
-                }
-
-                .blogPreviewDiv::-webkit-scrollbar-thumb {
-                    -webkit-border-radius: 10px;
-                    border-radius: 10px;
-                    background: rgba(36, 42, 54, 0.158);
-                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-                }
-
-                .blogPreviewDiv::-webkit-scrollbar-thumb:window-inactive {
-                    display: none;
-                    background: rgba(255, 0, 0, 0.4);
-                }
-
-                .bigComponent {
-                    height: fit-content;
-                    width: fit-content;
-                    border: solid 1px;
-                }
-
-                .smallComponentDiv {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 10px;
-                    height: 250px;
-                    width: fit-content;
-
-                    .smallComponent {
-                        height: 250px;
-                        width: fit-content;
-                        border: solid 1px;
-                    }
-                }
-            }
-        }
-
-        .adDiv {
-            display: none;
-        }
-
-        .marketNewsDiv {
-            border: solid 1px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 0px;
-            gap: 8px;
-            position: relative;
-            width: 100%;
-            height: fit-content;
-            padding-right: 15px;
-
-            .titleDiv {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0px;
-                gap: 16px;
-                width: 345px;
-                height: 28px;
-                flex: none;
-                order: 0;
-                align-self: stretch;
-                flex-grow: 0;
-                border: solid 1px;
-
-                .title {
-                    width: 114px;
-                    height: 28px;
-                    font-family: 'Product Sans', sans-serif;
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 20px;
-                    line-height: 140%;
-                    color: #333333;
-                    flex: none;
-                    order: 0;
-                    flex-grow: 0;
-                }
-
-                .viewAllButton {
-                    width: fit-content;
-                    height: 22px;
-                    font-family: 'Product Sans', sans-serif;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 140%;
-                    color: #333333;
-                    flex: none;
-                    order: 1;
-                    flex-grow: 0;
-                }
-            }
-
-            .marketNewsContentDiv {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0px;
-                gap: 24px;
-                width: 345px;
-                height: fit-content;
-                flex: none;
-                align-self: stretch;
-                flex-grow: 0;
-                border: solid 1px;
-            }
-
-            .marketBigComponent {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0px;
-                gap: 16px;
-                width: 345px;
-                height: 388px;
-                flex: none;
-                align-self: stretch;
-                flex-grow: 0;
-                border: solid 1px;
-            }
-
-            .marketSmallComponentDiv {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0px;
-                gap: 24px;
-                width: 345px;
-                height: fit-content;
-                flex: none;
-                align-self: stretch;
-                flex-grow: 0;
-                border: solid 1px;
-
-                .marketSmallComponent {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: flex-start;
-                    padding: 0px;
-                    gap: 16px;
-                    width: 345px;
-                    height: 90px;
-                    flex: none;
-                    align-self: stretch;
-                    flex-grow: 0;
-                    border: solid 1px;
-                }
-            }
-        }
+      }
     }
+  }
 }
