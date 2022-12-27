@@ -211,7 +211,7 @@
         flex: none;
         align-self: stretch;
         flex-grow: 0;
-        border: solid 1px;
+        // border: solid 1px;
       }
 
       .marketBigComponent {
@@ -240,7 +240,7 @@
         flex: none;
         align-self: stretch;
         flex-grow: 0;
-        border: solid 1px;
+        // border: solid 1px green;
 
         .marketSmallComponent {
           display: flex;
@@ -249,12 +249,80 @@
           align-items: flex-start;
           padding: 0px;
           gap: 16px;
-          width: 345px;
+          width: 100%;
           height: 90px;
           flex: none;
           align-self: stretch;
           flex-grow: 0;
-          border: solid 1px;
+          // border: solid 1px blue;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .alignmentContainer {
+    .navBlend {
+    }
+
+    .contentDiv {
+      .aboveNavDiv {
+        .newsHeader {
+        }
+
+        .newsTexts {
+        }
+
+        .firstAdDiv {
+        }
+      }
+
+      .secNavDiv {
+      }
+
+      .contentBody {
+        .blogPreviewDiv {
+          .blogPreviewDiv::-webkit-scrollbar-track {
+          }
+
+          .blogPreviewDiv::-webkit-scrollbar-thumb {
+          }
+
+          .blogPreviewDiv::-webkit-scrollbar-thumb:window-inactive {
+          }
+
+          .bigComponent {
+          }
+
+          .smallComponentDiv {
+            .smallComponent {
+            }
+          }
+        }
+      }
+
+      .adDiv {
+      }
+
+      .marketNewsDiv {
+        .titleDiv {
+          .title {
+          }
+
+          .viewAllButton {
+          }
+        }
+
+        .marketNewsContentDiv {
+        }
+
+        .marketBigComponent {
+        }
+
+        .marketSmallComponentDiv {
+          .marketSmallComponent {
+          }
         }
       }
     }
