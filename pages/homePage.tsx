@@ -90,14 +90,10 @@ const HomePage = () => {
       });
     }
   }, [data.categories.length]);
-  // console.log("fahsdfjkasdh", blogGroupByName)
-
-  console.log("fahsdfjkasdh");
 
   const getMarketNewsBlogs = data?.blogsWithSameCategory.find(
     (item) => item["कानून र निति"]
   );
-  console.log("MarketNews");
   return (
     <>
       <div className="alignmentContainer">
