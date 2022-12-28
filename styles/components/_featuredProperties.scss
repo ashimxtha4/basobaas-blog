@@ -1,0 +1,193 @@
+.featuredProperties {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  .imageContainer {
+    position: relative;
+    width: 120px;
+    height: 102px;
+    background: #d9d9d9;
+    border-radius: 6px;
+  }
+
+  .contentContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 7px;
+    width: 228px;
+    height: 102px;
+
+    .propertyTitle {
+      position: relative;
+      width: 100%;
+      p {
+        position: relative;
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 140%;
+        color: #2c2c2c;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+    .propertyAddress {
+      position: relative;
+      width: 100%;
+      p {
+        position: relative;
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        color: #707580;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+    .propertyOverview {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-width: 100%;
+      width: fit-content;
+      overflow: scroll;
+
+      .overviewDatas {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+        height: min-content;
+
+        .iconContainer {
+          position: relative;
+          width: fit-content;
+          height: fit-content;
+          margin: 0px;
+          padding: 0px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          .overviewIcons {
+            margin: 0px;
+            padding: 0px;
+            gap: 0px;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+          }
+        }
+
+        .overViewTags {
+          position: relative;
+          font-family: "Product Sans", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 2px;
+          line-height: 140%;
+          color: #707580;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          flex-grow: 1;
+          margin: 0px;
+          padding: 2px 0px 0px 1px;
+          width: auto;
+          word-spacing: 2px;
+        }
+      }
+    }
+
+    .propertyPrice {
+      display: flex;
+      flex-direction: row;
+      gap: 3px;
+      width: 100%;
+      .price {
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        color: #0000ff;
+      }
+      .unit {
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        color: #0000ff;
+        word-spacing: -3px;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .imageContainer {
+      height: 105px;
+    }
+
+    .contentContainer {
+      height: 105px;
+
+      .propertyTitle {
+        p {
+        }
+      }
+      .propertyAddress {
+        p {
+          font-size: 14px;
+        }
+      }
+      .propertyOverview {
+        .overviewDatas {
+          .iconContainer {
+            .overviewIcons {
+            }
+          }
+
+          .overViewTags {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .propertyPrice {
+        .price {
+        }
+        .unit {
+        }
+      }
+    }
+  }
+}

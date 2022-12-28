@@ -1,5 +1,5 @@
 import type {NextPage} from 'next'
-import BlogBodyRightSidebar from '../components/ui/BlogBodyRightSidebar'
+import BlogBodyRightSidebar from '../layouts/BlogBodyRightSidebar'
 
 const test: NextPage = () => {
   return (

@@ -157,7 +157,7 @@ const HomePage = () => {
                     .flatMap((i) => i)
                     .map((i, index) => (
                       <div key={index}>
-                        <MarketNewsTypeMain blog={i} />
+                        <MarketNewsTypeSecondary blog={i} />
                       </div>
                     ))}
                 </div>

@@ -1,5 +1,6 @@
 import React from "react";
-import RelatedBlogs from "../RelatedBlogs";
+import RelatedBlogs from "../components/RelatedBlogs";
+import FeaturedProperties from "../components/ui/FeaturedProperties";
 
 const BlogBodyRightSidebar = () => {
   return (
@@ -21,7 +22,7 @@ const BlogBodyRightSidebar = () => {
             <button>View All</button>
           </div>
           <div className="featuredSectionContainer">
-            <RelatedBlogs />
+            <FeaturedProperties />
           </div>
         </div>
       </div>
