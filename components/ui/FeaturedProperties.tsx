@@ -1,19 +1,44 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import { Priceformatter } from "../../utilities/helper";
+import { IMG_URL } from "../../baseConstants";
 
-const FeaturedProperties = () => {
+const FeaturedProperties = ({
+  property,
+}: {
+  property: {
+    propertyImages:string [
+    ];
+    pricing: {
+      title: string;
+      label: string;
+      price: string | number;
+    };
+    location: {
+      streetName: string;
+      locality: string;
+    };
+    overview: {
+      bathRoom: string | number;
+      bedRoom: string | number;
+    };
+  };
+}) => {
+  console.log("propertyFrom", property);
   return (
     <>
       <div className="featuredProperties">
         <div className="imageContainer">
-          <img src="" />
+          <img className="image" src={IMG_URL+ property.propertyImages[0]} />
         </div>
         <div className="contentContainer">
           <div className="propertyTitle">
-            <p>Title</p>
+            <p>{property.pricing.title}</p>
           </div>
           <div className="propertyAddress">
-            <p>Karyabinayak, Lalitpur</p>
+            <p>
+              {property.location?.streetName}, {property.location?.locality}
+            </p>
           </div>
           <div className="propertyOverview">
             <div className="overviewDatas">
@@ -24,7 +49,7 @@ const FeaturedProperties = () => {
                   className="overviewIcons"
                 />
               </span>
-              <span className="overViewTags">2</span>
+              <span className="overViewTags">{property.overview?.bedRoom}</span>
               <span className="overViewTags">Beds</span>
             </div>
             <div className="overviewDatas">
@@ -35,7 +60,9 @@ const FeaturedProperties = () => {
                   className="overviewIcons"
                 />
               </span>
-              <span className="overViewTags">1</span>
+              <span className="overViewTags">
+                {property.overview?.bathRoom}
+              </span>
               <span className="overViewTags">Bath</span>
             </div>
             <div className="overviewDatas">
@@ -51,8 +78,10 @@ const FeaturedProperties = () => {
             </div>
           </div>
           <div className="propertyPrice">
-            <span className="price">NPR.</span>
-            <span className="unit">/ Onwards</span>
+            <span className="price">
+              NPR. {Priceformatter(property.pricing?.price)}
+            </span>
+            <span className="unit">/ {property.pricing?.label}</span>
           </div>
         </div>
       </div>

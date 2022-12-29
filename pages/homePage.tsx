@@ -42,6 +42,7 @@ const HomePage = () => {
     }
   };
 
+  //GET SPECIFIC CATEGORY UNDER ONE CATEGORY
   const getBlogsUnderOneCategory = async (id: string) => {
     try {
       const SameCategoryBlogs = await getAll(`/blogs?category=${id}`);
