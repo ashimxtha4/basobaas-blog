@@ -1,6 +1,31 @@
 import { Icon } from "@iconify/react";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { getAll } from "../apiFetch/homePage/homePageAPI";
+import { useRef } from "react";
 
 const BlogNavbar = () => {
+  const [category, setCategory] = useState([]);
+
+  const firstRender = useRef(true);
+
+  const getAllCategories = async () => {
+    try {
+      const { blogCategories } = await getAll("/blogCategory?limit=1");
+      if (blogCategories) setCategory(blogCategories.slice(0, 4));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      getAllCategories();
+    }
+  }, []);
+  console.log(category, "cat");
+
   return (
     <>
       <nav className="navbar navbar-expand blogNavbar">
@@ -8,60 +33,22 @@ const BlogNavbar = () => {
           <div className="navbarTop">
             <ul className="navbar-nav d-flex flex-row">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home Page
-                </a>
+                <Link className="nav-link active" href={"/"}>
+                  होम पेज
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Market News
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Lifestyle
-                </a>
-              </li>
-              <li className="nav-item dropdown moreDropDown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <span>
-                    More
-                    <Icon
-                      icon="ri:arrow-drop-down-line"
-                      width="18"
-                      height="18"
-                    />
-                  </span>
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Home Loan
+              {category?.map((item: any, index) => {
+                return (
+                  <li className="nav-item expandedNavItems" key={index}>
+                    <a
+                      className="nav-link"
+                      href={`/${item.name.replaceAll(" ", "")}/${item._id}`}
+                    >
+                      {item.name}
                     </a>
                   </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Law & Policies
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Our Thoughts
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item expandedNavItems">
-                <a className="nav-link" href="#">
-                  Home Loan
-                </a>
-              </li>
+                );
+              })}
               <li className="nav-item expandedNavItems">
                 <a className="nav-link" href="#">
                   Life & Policies

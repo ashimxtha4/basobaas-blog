@@ -8,9 +8,14 @@ import MarketNewsTypeMain from "../components/ui/MarketNewsTypeMain";
 import { Console } from "console";
 import { access } from "fs";
 import MarketNewsTypeSecondary from "../components/ui/MarketNewsTypeSecondary";
+import categoryBlogs from "./categoryBlogs";
 
 const HomePage = () => {
-  const [data, setData] = useState({
+  const [data, setData] = useState<{
+    categories: any[];
+    blogsByCategory: any[];
+    blogsWithSameCategory: any[];
+  }>({
     categories: [],
     blogsByCategory: [],
     blogsWithSameCategory: [],
