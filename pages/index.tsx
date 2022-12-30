@@ -32,7 +32,7 @@ const HomePage = () => {
     try {
       const { blogs } = await getAll(`/blogs?category=${id}&limit=1`);
       if (blogs) {
-        setData((prev:any) => ({
+        setData((prev: any) => ({
           ...prev,
           blogsByCategory: [...prev.blogsByCategory, blogs[0]],
         }));
@@ -53,7 +53,7 @@ const HomePage = () => {
           },
           {} as any
         );
-        setData((prev:any) => ({
+        setData((prev: any) => ({
           ...prev,
           blogsWithSameCategory: [
             ...prev.blogsWithSameCategory,
@@ -118,7 +118,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="firstAdDiv"></div>
+              <div className="firstAdDiv">{screen.width}</div>
 
             </div>
 
@@ -127,16 +127,16 @@ const HomePage = () => {
             </div>
 
             <div className="contentBody">
-               
+
               <div className="blogPreviewDiv">
                 <div className="bigComponent">
                   <HomeBlogTypeMain blog={data.blogsByCategory[0]} />
                 </div>
                 <div className="smallComponentDiv">
-                <div className="smallComponent"></div>
-                <div className="smallComponent"></div>
-                <div className="smallComponent"></div>
-                <div className="smallComponent"></div>
+                  <div className="smallComponent"></div>
+                  <div className="smallComponent"></div>
+                  <div className="smallComponent"></div>
+                  <div className="smallComponent"></div>
 
                   {/* {data.blogsByCategory.map((categorySpecificBlog, index) => {
                     if (index > 0 && index < 5)
@@ -149,7 +149,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="adDiv">ashim</div>
+              <div className="adDiv"></div>
 
               <div className="marketNewsDiv">
                 <div className="titleDiv">
@@ -167,9 +167,9 @@ const HomePage = () => {
                     />
                   </div>
                   <div className="marketSmallComponentDiv">
-                  <div className="marketSmallComponent" ></div>
-                  <div className="marketSmallComponent" ></div>
-                  <div className="marketSmallComponent" ></div>
+                    <div className="marketSmallComponent" ></div>
+                    <div className="marketSmallComponent" ></div>
+                    <div className="marketSmallComponent" ></div>
 
                     {/* {Object.values(getMarketNewsBlogs ?? {})
                       .flatMap((i) => i)
@@ -190,7 +190,7 @@ const HomePage = () => {
                   <span className="propertyListViewAllButton">View All</span>
                 </div>
                 <div className="propertCardDiv">
-                  <div className="propertyCard"></div>   
+                  <div className="propertyCard"></div>
                   <div className="propertyCard"></div>
                   <div className="propertyCard"></div>
                   <div className="propertyCard"></div>
@@ -251,31 +251,49 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="lawPolicyDiv">
-                <div className="lawPolicyTitleDiv">
-                  <label className="lawPolicyTitle">Law & Policy</label>
-                  <span className="lawPolicyViewAllButton">View All</span>
+              <div className="flexTwo">
+                <div className="lawPolicyDiv">
+                  <div className="lawPolicyTitleDiv">
+                    <label className="lawPolicyTitle">Law & Policy</label>
+                    <span className="lawPolicyViewAllButton">View All</span>
+                  </div>
+                  <div className="lawPolicyCardDiv">
+                    <div className="lawPolicyCard"> </div>
+                    <div className="lawPolicyCard"> </div>
+                    <div className="lawPolicyCard"> </div>
+                    <div className="lawPolicyCard"> </div>
+                  </div>
                 </div>
-                <div className="lawPolicyCardDiv">
-                  <div className="lawPolicyCard"> </div>
-                  <div className="lawPolicyCard"> </div>
-                  <div className="lawPolicyCard"> </div>
-                  <div className="lawPolicyCard"> </div>
+
+                <div className="lawPolicy2Div" >
+                  <div className="lawPolicy2TitleDiv">
+                    <label className="lawPolicy2Title">Property Video</label>
+                    <span className="lawPolicy2ViewAllButton">View All</span>
+                  </div>
+                  <div className="lawPolicy2CardDiv">
+                    <div className="lawPolicy2Card"></div>
+                    <div className="lawPolicy2Card"></div>
+                    <div className="lawPolicy2Card"></div>
+                  </div>
                 </div>
+
               </div>
 
+
+
               <div className="flexThree">
-                <div className="flexThreeChildDiv">
-                  <div className="flexThreeChildTitleDiv">
-                    <label className="flexThreeChildTitle">Property Video</label>
-                    <span className="flexThreeChildViewAllButton">View All</span>
+                <div className="flexThreeChild1Div">
+                  <div className="flexThreeChild1TitleDiv">
+                    <label className="flexThreeChild1Title">Property Video</label>
+                    <span className="flexThreeChild1ViewAllButton">View All</span>
                   </div>
-                  <div className="flexThreeChildCardDiv">
-                    <div className="flexThreeChildCard"></div>
-                    <div className="flexThreeChildCard"></div>
-                    <div className="flexThreeChildCard"></div>
+                  <div className="flexThreeChild1CardDiv">
+                    <div className="flexThreeChild1Card"></div>
+                    <div className="flexThreeChild1Card"></div>
+                    <div className="flexThreeChild1Card"></div>
                   </div>
                 </div>
+
 
                 <div className="flexThreeChildDiv">
                   <div className="flexThreeChildTitleDiv">
