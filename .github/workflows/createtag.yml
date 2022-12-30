@@ -1,0 +1,30 @@
+## It is used to deploy the NEXT JS application to staging environment
+name: Auto tagging the builds in the environment
+on:
+  pull_request:
+    branches:
+      - staging
+      - production
+    types:  [closed]
+  workflow_dispatch:
+jobs:
+  create-git-tag:
+    name: create-git-tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Accessing the branch name for the github branch
+        run: |
+          branch_name=${GITHUB_REF##*/} 
+          echo $branch_name
+      - name: Printing the branch name for the github branch
+        run: |
+          git config --global user.email "devops_bot@asterdi o.com"
+          git config --global user.name "Asterdio DevOps"
+          git tag -a ${GITHUB_REF##*/}_$(date +%m.%d) -m "${GITHUB_REF##*/}  $(date +%m.%d)"
+      
+      - name: Pushing the tags
+        run: |
+          git push origin --tags
