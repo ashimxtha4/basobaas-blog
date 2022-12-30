@@ -1,11 +1,11 @@
-.homeBlogTypeMain {
+.lifeStyle {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
-  width: 250px;
-  height: 250px;
+  width: 410.67px;
+  height: 310px;
   background: linear-gradient(
     0.14deg,
     rgba(17, 16, 16, 0.7) 12.94%,
@@ -147,41 +147,13 @@
     }
   }
 }
-.homeBlogTypeMain:hover {
+.lifeStyle:hover {
   transform: scale(0.9);
 }
 
-@media only screen and (min-width: 1024px) {
-  .homeBlogTypeMain {
-    width: 637.5px;
-    height: 500px;
-
-    .thumbnail {
-      .blogCardBackground {
-      }
-    }
-
-    .cardContent {
-      .blogCategoryTag {
-        p {
-        }
-      }
-
-      .blogTitle {
-        p {
-          font-style: normal;
-          font-weight: 700;
-          font-size: 32px;
-        }
-      }
-      .blogBy {
-        .author,
-        .posted {
-        }
-
-        .separator {
-        }
-      }
-    }
+@media only screen and (min-width: 768px) {
+  .lifeStyle {
+    width: 316.25px;
+    height: 247.5px;
   }
 }

@@ -1,0 +1,95 @@
+.rightSidebar {
+  width: 375px;
+  height: fit-content;
+  margin: 0px;
+  padding: 32px 15px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+
+  .relatedSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0px;
+    padding: 0px;
+
+    .relatedSectionTitle {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      p {
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 140%;
+        color: #333333;
+        margin: 0px;
+        padding: 0px;
+      }
+      button {
+        background: transparent;
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #333333;
+        border: none;
+        margin: 0px;
+        padding: 0px;
+        outline: none;
+      }
+    }
+  }
+  .featuredSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0px;
+    padding: 0px;
+
+    .featuredSectionTitle {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      p {
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 140%;
+        color: #333333;
+        margin: 0px;
+        padding: 0px;
+      }
+      button {
+        background: transparent;
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #333333;
+        border: none;
+        margin: 0px;
+        padding: 0px;
+        outline: none;
+      }
+    }
+  }
+}

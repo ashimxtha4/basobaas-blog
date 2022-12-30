@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { imageUrlCheck } from "../../utilities/helper";
 
-const HomeBlogTypeMain = ({ blog = {} }: any) => {
+const LifeStyle = ({ blog = {} }: any) => {
   const blogPostedDate = blog.createdAt;
 
   // const [blogPostedDate, setBlogPostedDate] = useState("")
@@ -12,10 +12,12 @@ const HomeBlogTypeMain = ({ blog = {} }: any) => {
   if (Object.keys(blog).length > 0)
     return (
       <>
-        <div className="homeBlogTypeMain">
+        <div
+          className="homeBlogTypeSmall"
+          // style={{ backgroundImage: `url(${blog.images[0]})` }}
+        >
           <div className="thumbnail">
             <img
-              // src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9g1yXNKpomzJ1y2AKUS2dJbCDEne6SjH_2fA4GLVA-g&s"
               src={imageUrlCheck(blog.images[0] as string)}
               className="blogCardBackground"
               alt="Basobaas Nepal"
@@ -51,4 +53,4 @@ const HomeBlogTypeMain = ({ blog = {} }: any) => {
   else return null;
 };
 
-export default HomeBlogTypeMain;
+export default LifeStyle;
