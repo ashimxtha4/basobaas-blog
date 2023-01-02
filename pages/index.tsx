@@ -118,7 +118,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="firstAdDiv">{screen.width}</div>
+              <div className="firstAdDiv"></div>
 
             </div>
 
