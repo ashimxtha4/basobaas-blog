@@ -11,8 +11,8 @@ const BlogNavbar = () => {
 
   const getAllCategories = async () => {
     try {
-      const { blogCategories } = await getAll("/blogCategory?limit=1");
-      if (blogCategories) setCategory(blogCategories.slice(0, 4));
+      const { blogCategories } = await getAll("/blogCategory?limit=4");
+      if (blogCategories) setCategory(blogCategories);
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +24,6 @@ const BlogNavbar = () => {
       getAllCategories();
     }
   }, []);
-  console.log(category, "cat");
 
   return (
     <>
@@ -49,7 +48,7 @@ const BlogNavbar = () => {
                   </li>
                 );
               })}
-              <li className="nav-item expandedNavItems">
+              {/* <li className="nav-item expandedNavItems">
                 <a className="nav-link" href="#">
                   Life & Policies
                 </a>
@@ -58,7 +57,7 @@ const BlogNavbar = () => {
                 <a className="nav-link" href="#">
                   Our Thoughts
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="navbarBottom">

@@ -7,8 +7,7 @@ const FeaturedProperties = ({
   property,
 }: {
   property: {
-    propertyImages:string [
-    ];
+    propertyImages: string[];
     pricing: {
       title: string;
       label: string;
@@ -24,12 +23,11 @@ const FeaturedProperties = ({
     };
   };
 }) => {
-  console.log("propertyFrom", property);
   return (
     <>
       <div className="featuredProperties">
         <div className="imageContainer">
-          <img className="image" src={IMG_URL+ property.propertyImages[0]} />
+          <img className="image" src={IMG_URL + property.propertyImages[0]} />
         </div>
         <div className="contentContainer">
           <div className="propertyTitle">

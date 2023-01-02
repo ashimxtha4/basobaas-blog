@@ -1,9 +1,10 @@
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { getAll } from "../apiFetch/homePage/homePageAPI";
 import RelatedBlogs from "../components/RelatedBlogs";
 import FeaturedProperties from "../components/ui/FeaturedProperties";
 
-const BlogBodyRightSidebar = () => {
+const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
   const [property, setProperty] = useState([]);
 
   //GET PROPERTY BY CONDITION WHERE PROPERTY ARE FEATURED
@@ -26,24 +27,29 @@ const BlogBodyRightSidebar = () => {
       getSpecificProperties();
     }
   }, []);
-  console.log("Properties Are", property);
   return (
     <>
       <div className="rightSidebar">
-        <div className="adBody"></div>
         <div className="relatedSection">
           <div className="relatedSectionTitle">
             <p>Related</p>
             <button>View All</button>
           </div>
+
           <div className="relatedSectionContainer">
-            <RelatedBlogs />
+            {blog.map((item, index) => {
+              return <RelatedBlogs blog={item} key={index} />;
+            })}
           </div>
         </div>
         <div className="featuredSection">
           <div className="featuredSectionTitle">
             <p>Featured Properties</p>
-            <button>View All</button>
+            <button>
+              <Link href="https://basobaas.com/properties/all-properties">
+                View All
+              </Link>
+            </button>
           </div>
           {property.map((property, index) => {
             return (

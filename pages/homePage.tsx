@@ -10,7 +10,11 @@ import { access } from "fs";
 import MarketNewsTypeSecondary from "../components/ui/MarketNewsTypeSecondary";
 
 const HomePage = () => {
-  const [data, setData] = useState({
+  const [data, setData] = useState<{
+    categories: any[];
+    blogsByCategory: any[];
+    blogsWithSameCategory: any[];
+  }>({
     categories: [],
     blogsByCategory: [],
     blogsWithSameCategory: [],

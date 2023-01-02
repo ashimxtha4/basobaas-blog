@@ -11,6 +11,7 @@
     // padding: 24px 15px 32px 15px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     .leftBodySection {
       .leftHeaderSection {
@@ -111,10 +112,25 @@
           }
         }
       }
+
+      .componentMapSection {
+      }
+
+      .paginationSection {
+        .pageNumberArea {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+        }
+      }
     }
 
-    .rightSidebar {
-      width: 100%;
+    .rightBodySection {
+      .rightSidebar {
+        width: 100%;
+      }
     }
   }
 }
@@ -124,8 +140,8 @@
     .categoryBlogBody {
       flex-direction: row;
       justify-content: center;
-      align-items: center;
       gap: 40px;
+      align-items: flex-start;
 
       .leftBodySection {
         .leftHeaderSection {
@@ -159,6 +175,18 @@
               }
             }
           }
+        }
+
+        .componentMapSection {
+        }
+      }
+
+      .rightBodySection {
+        padding: 0px;
+        margin: 0px;
+
+        .rightSidebar {
+          padding-top: 0px;
         }
       }
     }

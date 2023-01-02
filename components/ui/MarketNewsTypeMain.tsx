@@ -6,7 +6,6 @@ import { NodeFlags } from "typescript";
 import { BLOCKED_PAGES } from "next/dist/shared/lib/constants";
 
 const MarketNewsTypeMain = ({ blog = {} }: any) => {
-  console.log(blog);
 
   if (Object.keys(blog).length > 0)
     return (

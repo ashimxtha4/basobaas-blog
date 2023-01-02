@@ -5,10 +5,7 @@ import HomeBlogTypeMain from "../components/ui/HomeBlogTypeMain";
 import { useEffect, useState, useRef } from "react";
 import { getAll } from "../apiFetch/homePage/homePageAPI";
 import MarketNewsTypeMain from "../components/ui/MarketNewsTypeMain";
-import { Console } from "console";
-import { access } from "fs";
 import MarketNewsTypeSecondary from "../components/ui/MarketNewsTypeSecondary";
-import categoryBlogs from "./categoryBlogs";
 
 const HomePage = () => {
   const [data, setData] = useState<{
@@ -95,14 +92,10 @@ const HomePage = () => {
       });
     }
   }, [data.categories.length]);
-  // console.log("fahsdfjkasdh", blogGroupByName)
-
-  console.log("fahsdfjkasdh");
 
   const getMarketNewsBlogs = data?.blogsWithSameCategory.find(
     (item) => item["कानून र निति"]
   );
-  console.log("MarketNews");
   return (
     <>
       <div className="alignmentContainer">

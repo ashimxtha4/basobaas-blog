@@ -1,6 +1,6 @@
 import React from "react";
 
-const RelatedBlogs = () => {
+const RelatedBlogs = ({ blog }: { blog: any }) => {
   return (
     <>
       <div className="relatedBlogs">
@@ -9,10 +9,10 @@ const RelatedBlogs = () => {
         </div>
         <div className="contentContainer">
           <div className="categoryTitle">
-            <p>Title</p>
+            <p>{blog.category?.name}</p>
           </div>
           <div className="blogHeader">
-            <p></p>
+            <p>{blog.title}</p>
           </div>
         </div>
       </div>
