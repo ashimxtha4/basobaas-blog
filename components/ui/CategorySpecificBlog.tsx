@@ -45,7 +45,6 @@ const CategorySpecificBlog = ({ blog }: { blog: any }) => {
       </div>
     </>
   );
-  //   else return null;
 };
 
 export default CategorySpecificBlog;

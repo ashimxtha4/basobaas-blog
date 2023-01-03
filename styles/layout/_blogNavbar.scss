@@ -13,6 +13,7 @@ select:focus {
 }
 
 .blogNavbar {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,8 +21,10 @@ select:focus {
   background: #001338;
   width: 100%;
   height: fit-content;
+  min-height: 72px;
   margin: 0px;
   padding: 0px;
+  border: none;
 
   .navbarContainer {
     display: flex;
@@ -35,6 +38,7 @@ select:focus {
     padding: 0px 15px;
     // min-width: 375px;
     width: 100%;
+    border: none;
 
     .navbarTop {
       width: 100%;
@@ -84,7 +88,7 @@ select:focus {
           }
         }
         .expandedNavItems {
-          display: none;
+          display: flex;
         }
       }
     }
@@ -166,13 +170,13 @@ select:focus {
     }
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1024px) {
     .navbarContainer {
       flex-direction: row;
     }
   }
 
-  @media only screen and (min-width: 1440px) {
+  @media only screen and (min-width: 1024px) {
     .moreDropDown {
       display: none;
     }
