@@ -37,7 +37,7 @@ const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
           </div>
 
           <div className="relatedSectionContainer">
-            {blog.map((item, index) => {
+            {blog?.map((item, index) => {
               return <RelatedBlogs blog={item} key={index} />;
             })}
           </div>
