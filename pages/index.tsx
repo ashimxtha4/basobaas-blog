@@ -22,7 +22,6 @@ export const getBlogByCategory = async (id: String, limit?: number) => {
     }
     return Promise.reject("blog not found");
   } catch (error) {
-    // console.log(error);
     return Promise.reject("SomeThing Went Wrong");
   }
 };
@@ -37,7 +36,6 @@ const HomePage = () => {
     blogsWithSameCategory: [],
   });
 
-  console.log("cat", data.categories[2]);
 
   //GET ALL CATEGORIES TO GET CATEGORY ID AND MAP EACH CATEGORY TO GET BLOG
   const getAllCategories = async () => {
@@ -145,7 +143,7 @@ const HomePage = () => {
             <div className="contentBody">
               <div className="blogPreviewDiv">
                 <div className="bigComponent">
-                  <HomeBlogTypeMain blog={data.blogsByCategory[0]} />
+                  <HomeBlogTypeMain blog={data.blogsByCategory[0]}/>
                 </div>
                 <div className="smallComponentDiv">
                   {data.blogsByCategory.map((categorySpecificBlog, index) => {

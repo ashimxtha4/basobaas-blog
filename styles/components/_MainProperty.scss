@@ -135,6 +135,7 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      align-items: center;
       gap: 3px;
       width: 100%;
       // display: none;
@@ -151,20 +152,43 @@
         max-width: 167px;
         height: fit-content;
       }
-      .contact {
+
+      .unit{
+        font-family: 'Product Sans', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        color: #0000FF;
+      }
+
+      .contactButtonContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 6px 15.5px;
+        width: 80px;
+        height: 32px;
+        border: 1px solid #2b2b2b;
+        border-radius: 6px;
         margin: 0px;
-        padding: 0px;
-        
-        .button {
-          width: 80px;
-          height: 32px;
-          font-family: "Product Sans";
+        // display: none;
+
+        .contactButton {
+          font-family: "Product Sans", sans-serif;
           font-style: normal;
           font-weight: 400;
           font-size: 14px;
           line-height: 140%;
           text-align: center;
           color: #2b2b2b;
+          border: none;
+          background: transparent;
+          margin: 0px;
+          padding: 0px;
         }
       }
     }

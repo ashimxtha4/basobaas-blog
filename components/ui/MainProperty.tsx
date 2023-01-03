@@ -69,11 +69,11 @@ const MainProperty = () => {
               {/* NPR. {Priceformatter(property.pricing?.price)} */}
               NPR. 3.50 Lakhs
             </span>
-            <span className="price">
+            <span className="unit">
               {/* / {property.pricing?.label} */}
             /Onwards
               </span>
-              <span className='contact'><button>Contact</button></span>
+              <span className='contactButtonContainer'><button className='contactButton'>Contact</button></span>
           </div>
         </div>
     </div>    
