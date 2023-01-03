@@ -8,6 +8,7 @@ import MarketNewsTypeMain from "../components/ui/MarketNewsTypeMain";
 import { Console } from "console";
 import { access } from "fs";
 import MarketNewsTypeSecondary from "../components/ui/MarketNewsTypeSecondary";
+import { arrayBuffer } from "stream/consumers";
 
 const HomePage = () => {
   const [data, setData] = useState<{
@@ -136,7 +137,9 @@ const HomePage = () => {
               </div>
             </div>
 
+
             <div className="adDiv"></div>
+
 
             <div className="marketNewsDiv">
               <div className="titleDiv">
@@ -157,7 +160,7 @@ const HomePage = () => {
                   {Object.values(getMarketNewsBlogs ?? {})
                     .flatMap((i) => i)
                     .map((i, index) => (
-                      <div key={index}>
+                      <div className="marketSmallComponent" key={index}>
                         <MarketNewsTypeMain blog={i} />
                       </div>
                     ))}
@@ -167,7 +170,16 @@ const HomePage = () => {
 
             <div className="adDiv"></div>
 
-            <div className="propertyListDiv"></div>
+            <div className="propertyListDiv">
+              <div className="propertyListTitleDiv">
+                <label className="propertyListTitle">Related Properties</label>
+                <span className="propertyListViewAllButton">View All</span>
+              </div>
+              <div className="propertCardDiv">
+                <div className="propertyCard"></div>
+              </div>
+            </div>
+
           </div>
 
           <div className="contentFooter"></div>

@@ -1,28 +1,45 @@
-import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getBlogByCategory } from "../../pages/index";
 import { Icon } from "@iconify/react";
 
-const MarketNewsTypeMain = ({ blog = {} }: any) => {
+const LawAndPolicy = ({ id }: { id: any }) => {
+  const [blog, setBlog] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  if (Object.keys(blog).length > 0)
+  useEffect(() => {
+    getBlogByCategory(id, 4)
+      .then((data) => setBlog(data))
+      .catch((err) => console.log("err", err))
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [id]);
+
+  if (loading) {
+    <h1>Loading...</h1>;
+  }
+
+  if (blog.length) {
     return (
       <>
-        <div className="marketNewsTypeMain">
+        <div className="lawPolicyTitleDiv">
+          <label className="lawPolicyTitle">Law & Policy</label>
+          <span className="lawPolicyViewAllButton">View All</span>
+        </div>
+        <div className="lawPolicyCardDiv">
           <div className="imageContainer">
-            {/* {blog.images?.length ? (
-              <Image
-                src={imageUrlCheck(blog?.images[0])}
-                alt="Blog Picture"
-                width={345}
-                height={180}
-              />
-            ) : null} */}
+            {/* <Image
+            src=""
+            alt="Picture of the author"
+            width={260}
+            height={133.33}
+          /> */}
           </div>
           <div className="blogContents">
             <div className="blogCategoryTitle">
               <p>
                 {/* ENTER BLOG CATEGORY TITLE HERE */}
-                {blog.category?.name}
+                {blog.category?.title}
               </p>
             </div>
             <div className="blogHeader">
@@ -30,9 +47,6 @@ const MarketNewsTypeMain = ({ blog = {} }: any) => {
                 {/* ENTER BLOG TITLE HERE */}
                 {blog.title}
               </p>
-            </div>
-            <div className="blogBody">
-              {/* <p dangerouslySetInnerHTML={blog.content}></p> */}
             </div>
             <div className="blogBy">
               <span className="author">
@@ -55,7 +69,9 @@ const MarketNewsTypeMain = ({ blog = {} }: any) => {
         </div>
       </>
     );
-  else return null;
+  }
+
+  return null;
 };
 
-export default MarketNewsTypeMain;
+export default LawAndPolicy;

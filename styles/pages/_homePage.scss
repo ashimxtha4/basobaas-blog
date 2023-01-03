@@ -1,330 +1,3050 @@
 .alignmentContainer {
+  min-height: 100vh;
   height: 100%;
+  padding-bottom: 55px;
   width: 100%;
-  background-color: aliceblue;
+  background-color: white;
   color: #333333;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: solid 1;
+  position: relative;
+  overflow: hidden;
 
   .navBlend {
-    width: 100%;
-    position: sticky;
+    width: 100vw;
+    position: fixed;
     height: 53px;
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    z-index: 3;
   }
 
-  .contentDiv {
-    height: fit-content;
-    width: 375px;
-    border: solid 1px;
+  .containerDiv {
+    position: relative;
     display: flex;
     flex-direction: column;
-    // padding-top: 8px;
-    background: #ffffff;
     position: relative;
+    top: 53px;
+    width: 100%;
+    align-items: center;
+    min-width: 100vw;
+    height: fit-content;
+    background-color: aquamarine;
 
-    .aboveNavDiv {
-      position: relative;
-      height: 98px;
-      border: solid 1px blue;
-      position: relative;
+    .secNavBlend {
+      height: 75.5px;
+      width: 100%;
+      background-color: #001338;
+      position: absolute;
+      top: 98px;
+    }
+
+    .footerBlend {
+      position: absolute;
+      width: 100%;
+      height: 1036px;
+      background: #4f4f4f;
+      bottom: 0px;
+    }
+
+    .contentDiv {
+      height: fit-content;
+      width: 375px;
+      // border: solid 1px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      gap: 4px;
-      padding: 8px 15px 18px 15px;
       // padding-top: 8px;
-      // padding-bottom: 18px;
-
-      .newsHeader {
-        width: 90px;
-        height: 48px;
-        font-family: "Product Sans", sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 24px;
-        color: #333333;
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-        padding: 0px;
-        margin: 0px;
-      }
-
-      .newsTexts {
-        width: 345px;
-        height: 20px;
-        font-family: "Product Sans", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 140%;
-        color: #969696;
-        flex: none;
-        align-self: stretch;
-        flex-grow: 0;
-      }
-
-      .firstAdDiv {
-        display: none;
-      }
-    }
-
-    .secNavDiv {
-      height: fit-content;
-      width: 100%;
-      position: sticky;
-      border: solid 1px;
-    }
-
-    .contentBody {
-      height: fit-content;
-      padding: 16px 0px 40px 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-
-      .blogPreviewDiv {
-        border: solid 1px blue;
-        position: relative;
-        height: fit-content;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 10px;
-        overflow-x: scroll;
-        overflow-y: scroll;
-
-        .blogPreviewDiv::-webkit-scrollbar-track {
-          /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
-          -webkit-border-radius: 10px;
-          border-radius: 10px;
-          display: none;
-        }
-
-        .blogPreviewDiv::-webkit-scrollbar-thumb {
-          -webkit-border-radius: 10px;
-          border-radius: 10px;
-          background: rgba(36, 42, 54, 0.158);
-          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .blogPreviewDiv::-webkit-scrollbar-thumb:window-inactive {
-          display: none;
-          background: rgba(255, 0, 0, 0.4);
-        }
-
-        .bigComponent {
-          height: fit-content;
-          width: fit-content;
-          border: solid 1px;
-        }
-
-        .smallComponentDiv {
-          display: flex;
-          flex-direction: row;
-          gap: 10px;
-          height: 250px;
-          width: fit-content;
-
-          .smallComponent {
-            height: 250px;
-            width: fit-content;
-            border: solid 1px;
-          }
-        }
-      }
-    }
-
-    .adDiv {
-      display: none;
-    }
-
-    .marketNewsDiv {
-      border: solid 1px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0px;
-      gap: 8px;
+      background-color: #ffffff;
       position: relative;
-      width: 100%;
-      height: fit-content;
-      padding-right: 15px;
 
-      .titleDiv {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0px;
-        gap: 16px;
-        width: 345px;
-        height: 28px;
-        flex: none;
-        order: 0;
-        align-self: stretch;
-        flex-grow: 0;
-        border: solid 1px;
-
-        .title {
-          width: 114px;
-          height: 28px;
-          font-family: "Product Sans", sans-serif;
-          font-style: normal;
-          font-weight: 700;
-          font-size: 20px;
-          line-height: 140%;
-          color: #333333;
-          flex: none;
-          order: 0;
-          flex-grow: 0;
-        }
-
-        .viewAllButton {
-          width: fit-content;
-          height: 22px;
-          font-family: "Product Sans", sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 140%;
-          color: #333333;
-          flex: none;
-          order: 1;
-          flex-grow: 0;
-        }
-      }
-
-      .marketNewsContentDiv {
+      .aboveNavDiv {
+        position: relative;
+        height: 98px;
+        // border: solid 1px blue;
+        position: relative;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 24px;
-        width: 345px;
+        justify-content: flex-start;
+        gap: 4px;
+        padding: 8px 15px 18px 15px;
+        // padding-top: 8px;
+        // padding-bottom: 18px;
+
+        .newsDiv {
+          .newsHeader {
+            width: 90px;
+            height: 48px;
+            font-family: "Product Sans", sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: #333333;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            padding: 0px;
+            margin: 0px;
+          }
+
+          .newsTexts {
+            width: 345px;
+            height: 20px;
+            font-family: "Product Sans", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: #969696;
+            flex: none;
+            align-self: stretch;
+            flex-grow: 0;
+          }
+        }
+
+        .firstAdDiv {
+          display: none;
+        }
+      }
+
+      .secNavDiv {
         height: fit-content;
-        flex: none;
-        align-self: stretch;
-        flex-grow: 0;
+        width: 100%;
+        position: sticky;
         // border: solid 1px;
       }
 
-      .marketBigComponent {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 16px;
-        width: 345px;
-        height: 388px;
-        flex: none;
-        align-self: stretch;
-        flex-grow: 0;
-        border: solid 1px;
-      }
-
-      .marketSmallComponentDiv {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 24px;
-        width: 345px;
+      .contentBody {
         height: fit-content;
-        flex: none;
-        align-self: stretch;
-        flex-grow: 0;
-        // border: solid 1px green;
+        padding: 16px 0px 40px 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
 
-        .marketSmallComponent {
+        .blogPreviewDiv {
+          border: solid 1px blue;
+          position: relative;
+          height: fit-content;
+          width: 100%;
           display: flex;
           flex-direction: row;
-          justify-content: center;
+          justify-content: flex-start;
+          gap: 10px;
+          overflow-x: scroll;
+          overflow-y: hidden;
+
+          .blogPreviewDiv::-webkit-scrollbar-track {
+            /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            display: none;
+          }
+
+          .blogPreviewDiv::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgba(36, 42, 54, 0.158);
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+          }
+
+          .blogPreviewDiv::-webkit-scrollbar-thumb:window-inactive {
+            display: none;
+            background: rgba(255, 0, 0, 0.4);
+          }
+
+          .bigComponent {
+            height: fit-content;
+            width: 250px !important;
+            min-width: none;
+            min-height: 100%;
+            border: solid 1px;
+          }
+
+          .smallComponentDiv {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            height: 250px;
+            width: fit-content;
+
+            .smallComponent {
+              height: 250px;
+              width: fit-content;
+              border: solid 1px;
+            }
+          }
+        }
+
+        .adDiv {
+          display: none;
+        }
+
+        .marketNewsDiv {
+          border: solid 2px brown;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0px;
+          gap: 8px;
+          position: relative;
+          width: 100%;
+          height: fit-content;
+          padding-right: 15px;
+
+          .titleDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            gap: 16px;
+            width: 345px;
+            height: 28px;
+            flex: none;
+            order: 0;
+            align-self: stretch;
+            flex-grow: 0;
+            border: solid 1px;
+
+            .title {
+              width: 114px;
+              height: 28px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 140%;
+              color: #333333;
+              flex: none;
+              order: 0;
+              flex-grow: 0;
+            }
+
+            .viewAllButton {
+              width: fit-content;
+              height: 22px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 140%;
+              color: #333333;
+              flex: none;
+              order: 1;
+              flex-grow: 0;
+            }
+          }
+
+          .marketNewsContentDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 24px;
+            width: 345px;
+            height: fit-content;
+            flex: none;
+            align-self: stretch;
+            flex-grow: 0;
+            // border: solid 1px;
+          }
+
+          .marketBigComponent {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 16px;
+            width: 345px;
+            height: fit-content;
+            flex: none;
+            align-self: stretch;
+            flex-grow: 0;
+            border: solid 1px;
+          }
+
+          .marketSmallComponentDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 24px;
+            width: 345px;
+            height: fit-content;
+            flex: none;
+            align-self: stretch;
+            flex-grow: 0;
+            border: solid 1px green;
+
+            .marketSmallComponent {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              // height: 90px;
+              // min-height: 20px;
+              height: fit-content;
+              flex: none;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px blue;
+            }
+          }
+        }
+
+        .propertyListDiv {
+          border: solid 1px;
+          display: flex;
+          flex-direction: column;
           align-items: flex-start;
           padding: 0px;
           gap: 16px;
           width: 100%;
-          height: 90px;
-          flex: none;
-          align-self: stretch;
-          flex-grow: 0;
+          min-height: 338px;
+          height: fit-content;
+          color: black;
+
+          .propertyListTitleDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            gap: 16px;
+            width: 100%;
+            height: 28px;
+            padding-right: 15px;
+            flex: none;
+            order: 0;
+            align-self: stretch;
+            flex-grow: 0;
+            border: solid 1px;
+
+            .propertyListTitle {
+              width: fit-content;
+              height: 28px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 140%;
+              color: #333333;
+              flex: none;
+              order: 0;
+              flex-grow: 0;
+            }
+
+            .propertyListViewAllButton {
+              width: fit-content;
+              height: 22px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 140%;
+              color: #333333;
+              flex: none;
+              order: 1;
+              flex-grow: 0;
+            }
+          }
+
+          .propertCardDiv {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 10px;
+            width: 100%;
+            min-height: 294px;
+            height: fit-content;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            flex: none;
+            align-self: stretch;
+            flex-grow: 0;
+            border: solid 1px brown;
+
+            .propertyCard {
+              box-sizing: border-box;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 8px 8px 16px;
+              gap: 8px;
+              isolation: isolate;
+              width: 280px;
+              min-height: 294px;
+              height: fit-content;
+              background: #ffffff;
+              border: 1px solid #d8d8d8;
+              border-radius: 6px;
+              flex: none;
+              order: 0;
+              flex-grow: 0;
+            }
+          }
+        }
+
+        .lifeStyleDiv {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0px;
+          gap: 8px;
+          position: relative;
+          width: 100%;
+          padding-right: 15px;
+          height: 286px;
+          border: solid 1px;
+
+          .lifeStyleTitleDiv {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            gap: 16px;
+            width: 100%;
+            height: 28px;
+            flex: none;
+            order: 0;
+            align-self: stretch;
+            flex-grow: 0;
+            border: solid 1px;
+
+            .lifeStyleTitle {
+              width: fit-content;
+              height: 28px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 140%;
+              color: #333333;
+              flex: none;
+              order: 0;
+              flex-grow: 0;
+            }
+
+            .lifeStyleViewAllButton {
+              width: fit-content;
+              height: 22px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 140%;
+              color: #333333;
+              flex: none;
+              order: 1;
+              flex-grow: 0;
+            }
+          }
+
+          .lifeStyleCardDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 8px;
+            width: 100%;
+            height: 286px;
+            border: solid 1px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+
+            .lifeStyleCard {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-items: center;
+              padding: 16px;
+              gap: 10px;
+              width: 250px;
+              height: 250px;
+              background: linear-gradient(
+                0.14deg,
+                rgba(17, 16, 16, 0.7) 12.94%,
+                rgba(0, 0, 0, 0) 67.86%
+              );
+              border-radius: 6px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+            }
+          }
+        }
+
+        .flexTwo {
+          position: relative;
+          height: fit-content;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          justify-content: center;
+          align-items: center;
+          border: solid 1px;
+
+          .homeLoanDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 8px;
+            padding-right: 15px;
+            position: relative;
+            width: 100%;
+            height: 354px;
+            border: solid 1px;
+
+            .homeLoanTitleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 28px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .homeLoanTitle {
+                width: fit-content;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+
+              .homeLoanViewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+              }
+            }
+
+            .homeLoanCardDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 24px;
+              width: 100%;
+              height: 318px;
+              flex: none;
+              order: 1;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .homeLoanCard {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 90px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+              }
+            }
+          }
+
+          .ourThoughtsDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 8px;
+            padding-right: 15px;
+            position: relative;
+            width: 100%;
+            height: 354px;
+            border: solid 1px;
+
+            .ourThoughtsTitleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 28px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .ourThoughtsTitle {
+                width: fit-content;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+
+              .ourThoughtsViewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+              }
+            }
+
+            .ourThoughtsCardDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 24px;
+              width: 100%;
+              height: 318px;
+              flex: none;
+              order: 1;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .ourThoughtsCard {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 90px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+              }
+            }
+          }
+        }
+
+        .flexTwo {
+          position: relative;
+          height: fit-content;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          justify-content: center;
+          align-items: center;
+          border: solid 1px;
+
+          .lawPolicyDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 8px;
+            padding-right: 15px;
+            position: relative;
+            width: 100%;
+            height: 354px;
+            border: solid 1px;
+
+            .lawPolicyTitleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 28px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .lawPolicyTitle {
+                width: fit-content;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+
+              .lawPolicyViewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+              }
+            }
+
+            .lawPolicyCardDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 24px;
+              width: 100%;
+              height: 318px;
+              flex: none;
+              order: 1;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .lawPolicyCard {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 90px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+              }
+            }
+          }
+
+          .lawPolicy2Div {
+            display: none;
+          }
+        }
+
+        .flexThree {
+          position: relative;
+          height: fit-content;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          justify-content: center;
+          align-items: center;
+          border: solid 1px;
+
+          .flexThreeChild1Div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 8px;
+            padding-right: 15px;
+            position: relative;
+            width: 100%;
+            height: 354px;
+            border: solid 1px;
+
+            .flexThreeChild1TitleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 28px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .flexThreeChild1Title {
+                width: fit-content;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+
+              .flexThreeChild1ViewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+              }
+            }
+
+            .flexThreeChild1CardDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 24px;
+              width: 100%;
+              height: 318px;
+              flex: none;
+              order: 1;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .flexThreeChild1Card {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 90px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+              }
+            }
+          }
+
+          .flexThreeChildDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 8px;
+            padding-right: 15px;
+            position: relative;
+            width: 100%;
+            height: 354px;
+            border: solid 1px;
+
+            .flexThreeChildTitleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 28px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .flexThreeChildTitle {
+                width: fit-content;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+
+              .flexThreeChildViewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+              }
+            }
+
+            .flexThreeChildCardDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 24px;
+              width: 100%;
+              height: 318px;
+              flex: none;
+              order: 1;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .flexThreeChildCard {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 90px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+              }
+            }
+          }
+        }
+      }
+
+      .contentFooter {
+        position: relative;
+        width: 100%;
+        height: 1036px;
+        background: #4f4f4f;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 670px) {
+  .alignmentContainer {
+    min-height: 100vh;
+    height: 100%;
+    padding-bottom: 55px;
+    width: 100%;
+    background-color: white;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1;
+    position: relative;
+    overflow: hidden;
+
+    .navBlend {
+      width: 100vw;
+      position: fixed;
+      height: 53px;
+      background: #ffffff;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+      z-index: 3;
+    }
+
+    .containerDiv {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      top: 53px;
+      width: 100%;
+      align-items: center;
+      min-width: 100vw;
+      height: fit-content;
+      background-color: aquamarine;
+
+      .secNavBlend {
+        height: 75.5px;
+        width: 100%;
+        background-color: #001338;
+        position: absolute;
+        top: 98px;
+      }
+
+      .footerBlend {
+        position: absolute;
+        width: 100%;
+        height: 1036px;
+        background: #4f4f4f;
+        bottom: 0px;
+      }
+
+      .contentDiv {
+        height: fit-content;
+        width: 100%;
+        max-width: 768px;
+        // border: solid 1px;
+        display: flex;
+        flex-direction: column;
+        // padding-top: 8px;
+        background-color: #ffffff;
+        position: relative;
+
+        .aboveNavDiv {
+          position: relative;
+          height: 98px;
           // border: solid 1px blue;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          gap: 4px;
+          padding: 8px 15px 18px 15px;
+          // padding-top: 8px;
+          // padding-bottom: 18px;
+
+          .newsDiv {
+            .newsHeader {
+              width: 90px;
+              height: 48px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 24px;
+              color: #333333;
+              flex: none;
+              order: 0;
+              flex-grow: 0;
+              padding: 0px;
+              margin: 0px;
+            }
+
+            .newsTexts {
+              width: 345px;
+              height: 20px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 140%;
+              color: #969696;
+              flex: none;
+              align-self: stretch;
+              flex-grow: 0;
+            }
+          }
+
+          .firstAdDiv {
+            display: none;
+          }
+        }
+
+        .secNavDiv {
+          height: fit-content;
+          width: 100%;
+          position: sticky;
+          // border: solid 1px;
+        }
+
+        .contentBody {
+          height: fit-content;
+          padding: 16px 18px 40px 18px;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+
+          .blogPreviewDiv {
+            border: solid 1px brown;
+            position: relative;
+            min-height: 500px;
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 5px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+
+            .bigComponent {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              // align-items: center;
+              height: fit-content;
+              width: fit-content;
+              min-width: 100%;
+              min-height: 500px;
+              border: solid 1px;
+              border: solid 1px green;
+            }
+
+            .smallComponentDiv {
+              display: flex;
+              flex-direction: row;
+              gap: 5px;
+              min-height: 247.5px;
+              height: 250px;
+              width: 100%;
+              // width: fit-content;
+
+              .smallComponent {
+                height: 250px;
+                width: 32.9%;
+                // max-width: ;
+                min-width: none;
+                border: solid 1px;
+                overflow: hidden;
+              }
+            }
+          }
+
+          .adDiv {
+            display: none;
+          }
+
+          .marketNewsDiv {
+            border: solid 2px brown;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 8px;
+            position: relative;
+            width: 100%;
+            height: fit-content;
+
+            .titleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 28px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .title {
+                width: 114px;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+
+              .viewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+              }
+            }
+
+            .marketNewsContentDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 2%;
+              width: 100%;
+              height: fit-content;
+              flex: none;
+              align-self: stretch;
+              flex-grow: 0;
+              // border: solid 1px;
+            }
+
+            .marketBigComponent {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 16px;
+              width: 49%;
+              height: fit-content;
+              min-height: 448px;
+              flex: none;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+            }
+
+            .marketSmallComponentDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 24px;
+              width: 49%;
+              min-height: 448px;
+              height: fit-content;
+              flex: none;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px green;
+
+              .marketSmallComponent {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                // height: 90px;
+                min-height: 133.33px;
+                height: fit-content;
+                flex: none;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px blue;
+              }
+            }
+          }
+
+          .propertyListDiv {
+            border: solid 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 16px;
+            width: 100%;
+            min-height: 338px;
+            height: fit-content;
+            color: black;
+
+            .propertyListTitleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 28px;
+              padding-right: 15px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .propertyListTitle {
+                width: fit-content;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+
+              .propertyListViewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+              }
+            }
+
+            .propertCardDiv {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 10px;
+              width: 100%;
+              min-height: 294px;
+              height: fit-content;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              flex: none;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px brown;
+
+              .propertyCard {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 8px 8px 16px;
+                gap: 8px;
+                isolation: isolate;
+                width: 280px;
+                min-height: 294px;
+                height: fit-content;
+                background: #ffffff;
+                border: 1px solid #d8d8d8;
+                border-radius: 6px;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+            }
+          }
+
+          .lifeStyleDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 8px;
+            position: relative;
+            width: 100%;
+            min-height: 286px;
+            height: fit-content;
+            border: solid 1px;
+
+            .lifeStyleTitleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 28px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .lifeStyleTitle {
+                width: fit-content;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+
+              .lifeStyleViewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+              }
+            }
+
+            .lifeStyleCardDiv {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 8px;
+              width: 100%;
+              min-height: 250px;
+              height: fit-content;
+              border: solid 1px;
+              overflow-x: hidden;
+              overflow-y: hidden;
+
+              .lifeStyleCard {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                padding: 16px;
+                gap: 10px;
+                width: 250px;
+                min-height: 250px;
+                height: fit-content;
+                background: linear-gradient(
+                  0.14deg,
+                  rgba(17, 16, 16, 0.7) 12.94%,
+                  rgba(0, 0, 0, 0) 67.86%
+                );
+                border-radius: 6px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+              }
+            }
+          }
+
+          .flexTwo {
+            position: relative;
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 2%;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px;
+
+            .homeLoanDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 8px;
+              position: relative;
+              width: 100%;
+              height: 354px;
+              border: solid 1px;
+
+              .homeLoanTitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 28px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .homeLoanTitle {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 20px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 0;
+                  flex-grow: 0;
+                }
+
+                .homeLoanViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 1;
+                  flex-grow: 0;
+                }
+              }
+
+              .homeLoanCardDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: 100%;
+                height: 318px;
+                flex: none;
+                order: 1;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .homeLoanCard {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: flex-start;
+                  padding: 0px;
+                  gap: 16px;
+                  width: 100%;
+                  height: 90px;
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
+            }
+
+            .ourThoughtsDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 8px;
+              position: relative;
+              width: 100%;
+              height: 354px;
+              border: solid 1px;
+
+              .ourThoughtsTitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 28px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .ourThoughtsTitle {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 20px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 0;
+                  flex-grow: 0;
+                }
+
+                .ourThoughtsViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 1;
+                  flex-grow: 0;
+                }
+              }
+
+              .ourThoughtsCardDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: 100%;
+                height: 318px;
+                flex: none;
+                order: 1;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .ourThoughtsCard {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: flex-start;
+                  padding: 0px;
+                  gap: 16px;
+                  width: 100%;
+                  height: 90px;
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
+            }
+          }
+
+          .flexTwo {
+            position: relative;
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 2%;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px;
+
+            .lawPolicyDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 8px;
+              position: relative;
+              width: 100%;
+              height: 354px;
+              border: solid 1px;
+
+              .lawPolicyTitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 28px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .lawPolicyTitle {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 20px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 0;
+                  flex-grow: 0;
+                }
+
+                .lawPolicyViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 1;
+                  flex-grow: 0;
+                }
+              }
+
+              .lawPolicyCardDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: 100%;
+                height: 318px;
+                flex: none;
+                order: 1;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+                overflow: hidden;
+
+                .lawPolicyCard {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: flex-start;
+                  padding: 0px;
+                  gap: 16px;
+                  width: 100%;
+                  height: 90px;
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
+            }
+
+            .lawPolicy2Div {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 8px;
+              position: relative;
+              width: 100%;
+              height: 354px;
+              border: solid 1px;
+
+              .lawPolicy2TitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 28px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .lawPolicy2Title {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 20px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 0;
+                  flex-grow: 0;
+                }
+
+                .lawPolicy2ViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 1;
+                  flex-grow: 0;
+                }
+              }
+
+              .lawPolicy2CardDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: 100%;
+                height: 318px;
+                flex: none;
+                order: 1;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .lawPolicy2Card {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: flex-start;
+                  padding: 0px;
+                  gap: 16px;
+                  width: 100%;
+                  height: 90px;
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
+            }
+          }
+
+          .flexThree {
+            position: relative;
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 2%;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px;
+
+            .flexThreeChild1Div {
+              display: none;
+            }
+
+            .flexThreeChildDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 8px;
+              position: relative;
+              width: 49%;
+              height: 354px;
+              border: solid 1px;
+
+              .flexThreeChildTitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 28px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .flexThreeChildTitle {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 20px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 0;
+                  flex-grow: 0;
+                }
+
+                .flexThreeChildViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 1;
+                  flex-grow: 0;
+                }
+              }
+
+              .flexThreeChildCardDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: 100%;
+                height: 318px;
+                flex: none;
+                order: 1;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .flexThreeChildCard {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: flex-start;
+                  padding: 0px;
+                  gap: 16px;
+                  width: 100%;
+                  height: 90px;
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
+            }
+          }
+        }
+
+        .contentFooter {
+          position: relative;
+          width: 100%;
+          height: 1036px;
+          background: #4f4f4f;
         }
       }
     }
   }
 }
 
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .alignmentContainer {
+    height: 100%;
+    // width: 100%;
+    padding: 0px;
+    padding-bottom: 69px;
+    width: 100%;
+    background: #ffffff;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // border: solid 5px yellow;
+    overflow: hidden;
+
     .navBlend {
+      width: 100%;
+      position: fixed;
+      top: 0px;
+      height: 67px;
+      background: #ffffff;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+      // border: solid blue 1px;
     }
 
-    .contentDiv {
-      .aboveNavDiv {
-        .newsHeader {
-        }
+    .containerDiv {
+      position: relative;
+      // border: solid 1px;
+      width: 100%;
+      // min-width: 100vw;
+      top: 67px;
+      // overflow-x:hidden;
 
-        .newsTexts {
-        }
-
-        .firstAdDiv {
-        }
+      .secNavBlend {
+        height: 72px;
+        width: 100%;
+        background-color: #001338;
+        position: absolute;
+        top: 126px;
       }
 
-      .secNavDiv {
+      .footerBlend {
+        position: absolute;
+        width: 100%;
+        height: 474px;
+        background: #4f4f4f;
+        bottom: 0px;
       }
 
-      .contentBody {
-        .blogPreviewDiv {
-          .blogPreviewDiv::-webkit-scrollbar-track {
+      .contentDiv {
+        height: fit-content;
+        width: 100%;
+        max-width: 1440px;
+        // border: solid 1px;
+        display: flex;
+        flex-direction: column;
+        // padding-top: 8px;
+        background-color: #ffffff;
+        position: relative;
+        box-shadow: none;
+
+        .aboveNavDiv {
+          position: relative;
+          height: 126px;
+          width: 100%;
+          // border: solid 1px blue;
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 48px;
+          padding: 0px 5.55% 0px 5.55%;
+          // padding-top: 8px;
+          // padding-bottom: 18px;
+
+          .newsDiv {
+            // border: solid 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 8px;
+            width: 367px;
+            height: 85px;
+            left: 80px;
+            top: 87.5px;
+
+            .newsHeader {
+              width: 90px;
+              height: 48px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 20px;
+              line-height: 24px;
+              color: #333333;
+              flex: none;
+              order: 0;
+              flex-grow: 0;
+              padding: 0px;
+              margin: 0px;
+            }
+
+            .newsTexts {
+              width: 345px;
+              height: 20px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 140%;
+              color: #969696;
+              flex: none;
+              align-self: stretch;
+              flex-grow: 0;
+            }
           }
 
-          .blogPreviewDiv::-webkit-scrollbar-thumb {
+          .firstAdDiv {
+            display: block;
+            border: solid 1px black;
+            width: 865px;
+            height: 94px;
+            left: 495px;
+            top: 83px;
+            background: #d9d9d9;
           }
 
-          .blogPreviewDiv::-webkit-scrollbar-thumb:window-inactive {
+          .secNavDiv {
+            height: fit-content;
+            width: 100%;
+            position: sticky;
+            // border: solid 1px;
+          }
+        }
+
+        .contentBody {
+          height: fit-content;
+          padding: 24px 5.55% 60px 5.55%;
+          display: flex;
+          flex-direction: column;
+          gap: 60px;
+          // border: solid yellow;
+
+          .blogPreviewDiv {
+            border: solid 1px blue;
+            position: relative;
+            height: 500px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 5px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+
+            .bigComponent {
+              height: fit-content;
+              width: fit-content;
+              min-width: calc(637.5 * 100% / 1280);
+              min-height: 100%;
+              border: solid 1px;
+            }
+
+            .smallComponentDiv {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              gap: calc(5 * 100% / 637.5);
+              height: 100%;
+              width: fit-content;
+              min-width: calc(637.5 * 100% / 1280);
+              min-height: 100%;
+              // border: solid 1px red;
+
+              .smallComponent {
+                height: 250px;
+                width: fit-content;
+                min-width: calc(316 * 100% / 637.5);
+                min-height: calc(637.5 * 100% / 1280);
+                // border: solid 1px;
+              }
+            }
           }
 
-          .bigComponent {
+          .adDiv {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100px;
+            background: #d9d9d9;
+            border: solid;
+            visibility: visible;
           }
 
-          .smallComponentDiv {
-            .smallComponent {
+          .marketNewsDiv {
+            border: solid 1px green;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 16px;
+            padding: 0px;
+            position: relative;
+            width: 100%;
+            min-height: 498px;
+            height: fit-content;
+
+            .titleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 34px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .title {
+                width: fit-content;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                flex-grow: 0;
+              }
+
+              .viewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                flex-grow: 0;
+              }
+            }
+
+            .marketNewsContentDiv {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              padding: 0px;
+              gap: calc(24 * 100% / 1277);
+              width: 100%;
+              height: fit-content;
+              min-height: 448px;
+              flex: none;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .marketBigComponent {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 16px;
+                width: calc(626.5 * 100% / 1277);
+                min-height: 100%;
+                height: 448px;
+                flex: none;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+              }
+
+              .marketSmallComponentDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: calc(626.5 * 100% / 1277);
+                min-height: 448px;
+                height: fit-content;
+                flex: none;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .marketSmallComponent {
+                  // display: flex;
+                  // flex-direction: column;
+                  // justify-content: center;
+                  // align-items: flex-start;
+                  padding: 0px;
+                  width: 100%;
+                  height: 133.33px;
+                  flex: none;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
+            }
+          }
+
+          .propertyListDiv {
+            border: solid 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 24px;
+            width: 100%;
+            min-height: 408px;
+            height: fit-content;
+            color: black;
+
+            .propertyListTitleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 34px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .propertyListTitle {
+                width: fit-content;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                flex-grow: 0;
+              }
+
+              .propertyListViewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+              }
+            }
+
+            .propertCardDiv {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              padding: 0px;
+              gap: calc(24 * 100% / 1277);
+              width: 100%;
+              min-height: 358px;
+              height: fit-content;
+              overflow-x: scroll;
+              overflow-y: hidden;
+              flex: none;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px brown;
+
+              .propertyCard {
+                box-sizing: border-box;
+                // display: flex;
+                // flex-direction: column;
+                // align-items: flex-start;
+                // padding: 8px 8px 16px;
+                isolation: isolate;
+                width: 302px;
+                min-height: 358px;
+                height: fit-content;
+                background: #ffffff;
+                border: 1px solid #d8d8d8;
+                border-radius: 6px;
+                flex: none;
+                flex-grow: 0;
+              }
+            }
+          }
+
+          .lifeStyleDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 16px;
+            position: relative;
+            width: 100%;
+            min-height: 360px;
+            height: fit-content;
+            border: solid 1px;
+
+            .lifeStyleTitleDiv {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0px;
+              gap: 16px;
+              width: 100%;
+              height: 34px;
+              flex: none;
+              order: 0;
+              align-self: stretch;
+              flex-grow: 0;
+              border: solid 1px;
+
+              .lifeStyleTitle {
+                width: fit-content;
+                height: 28px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+
+              .lifeStyleViewAllButton {
+                width: fit-content;
+                height: 22px;
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 140%;
+                color: #333333;
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+              }
+            }
+
+            .lifeStyleCardDiv {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              padding: 0px;
+              gap: calc(24 * 100% / 1277);
+              width: 100%;
+              height: fit-content;
+              min-height: 310px;
+              border: solid 1px;
+              overflow: hidden;
+
+              .lifeStyleCard {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                padding: 16px;
+                gap: 10px;
+                width: calc(410.67 * 100% / 1277);
+                height: fit-content;
+                min-height: 310px;
+                background: linear-gradient(
+                  0.14deg,
+                  rgba(17, 16, 16, 0.7) 12.94%,
+                  rgba(0, 0, 0, 0) 67.86%
+                );
+                border-radius: 6px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+              }
+            }
+          }
+
+          .flexTwo {
+            position: relative;
+            height: fit-content;
+            min-height: 420px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: calc(24 * 100% / 1277);
+            justify-content: center;
+            align-items: center;
+            border: solid 1px;
+
+            .homeLoanDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 16px;
+              position: relative;
+              width: 100%;
+              height: fit-content;
+              min-height: 420px;
+              border: solid 1px;
+
+              .homeLoanTitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 34px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .homeLoanTitle {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 24px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 0;
+                  flex-grow: 0;
+                }
+
+                .homeLoanViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  flex-grow: 0;
+                }
+              }
+
+              .homeLoanCardDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: 100%;
+                min-height: 370px;
+                height: fit-content;
+                flex: none;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .homeLoanCard {
+                  // display: flex;
+                  // flex-direction: row;
+                  // justify-content: center;
+                  // align-items: flex-start;
+                  // gap: 24px;
+                  padding: 0px;
+                  width: 100%;
+                  min-height: 107.33px;
+                  height: fit-content;
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
+            }
+
+            .ourThoughtsDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 16px;
+              position: relative;
+              width: 100%;
+              height: fit-content;
+              min-height: 420px;
+              border: solid 1px;
+
+              .ourThoughtsTitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 34px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .ourThoughtsTitle {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 24px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 0;
+                  flex-grow: 0;
+                }
+
+                .ourThoughtsViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  flex-grow: 0;
+                }
+              }
+
+              .ourThoughtsCardDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: 100%;
+                min-height: 370px;
+                height: fit-content;
+                flex: none;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .ourThoughtsCard {
+                  // display: flex;
+                  // flex-direction: row;
+                  // justify-content: center;
+                  // align-items: flex-start;
+                  // gap: 24px;
+                  padding: 0px;
+                  width: 100%;
+                  min-height: 107.33px;
+                  height: fit-content;
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
+            }
+          }
+
+          .flexTwo {
+            position: relative;
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 2%;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px;
+
+            .lawPolicyDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 16px;
+              position: relative;
+              width: 100%;
+              min-height: 354px;
+              height: fit-content;
+              border: solid 1px;
+
+              .lawPolicyTitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 34px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .lawPolicyTitle {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 24px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 0;
+                  flex-grow: 0;
+                }
+
+                .lawPolicyViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 1;
+                  flex-grow: 0;
+                }
+              }
+
+              .lawPolicyCardDiv {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0px;
+                gap: calc(24 * 100% / 1277);
+                width: 100%;
+                min-height: 304px;
+                height: fit-content;
+                flex: none;
+                order: 1;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .lawPolicyCard {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: flex-start;
+                  width: calc(302 * 100% / 1277);
+                  height: 304px;
+                  border-radius: 6px;
+                  border: solid 1px;
+                }
+              }
+            }
+
+            .lawPolicy2Div {
+              display: none;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 8px;
+              position: relative;
+              width: 100%;
+              height: 354px;
+              border: solid 1px;
+
+              .lawPolicy2TitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 28px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .lawPolicy2Title {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 20px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 0;
+                  flex-grow: 0;
+                }
+
+                .lawPolicy2ViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  order: 1;
+                  flex-grow: 0;
+                }
+              }
+
+              .lawPolicy2CardDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: 100%;
+                height: 318px;
+                flex: none;
+                order: 1;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .lawPolicy2Card {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: flex-start;
+                  padding: 0px;
+                  gap: 16px;
+                  width: 100%;
+                  height: 90px;
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
+            }
+          }
+
+          .flexThree {
+            position: relative;
+            min-height: 368px;
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: calc(24 * 100% / 1277);
+            justify-content: center;
+            align-items: center;
+            border: solid 1px;
+
+            .flexThreeChildDiv {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 16px;
+              position: relative;
+              width: 100%;
+              min-height: 368px;
+              height: fit-content;
+              border: solid 1px;
+
+              .flexThreeChildTitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 34px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .flexThreeChildTitle {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 24px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  flex-grow: 0;
+                }
+
+                .flexThreeChildViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  flex-grow: 0;
+                }
+              }
+
+              .flexThreeChildCardDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: 100%;
+                min-height: 318px;
+                height: fit-content;
+                flex: none;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .flexThreeChildCard {
+                  width: 100%;
+                  height: 90px;
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
+            }
+
+            .flexThreeChild1Div {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              gap: 16px;
+              position: relative;
+              width: 100%;
+              min-height: 368px;
+              height: fit-content;
+              border: solid 1px;
+
+              .flexThreeChild1TitleDiv {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+                width: 100%;
+                height: 34px;
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .flexThreeChild1Title {
+                  width: fit-content;
+                  height: 28px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 24px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  flex-grow: 0;
+                }
+
+                .flexThreeChild1ViewAllButton {
+                  width: fit-content;
+                  height: 22px;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #333333;
+                  flex: none;
+                  flex-grow: 0;
+                }
+              }
+
+              .flexThreeChild1CardDiv {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 24px;
+                width: 100%;
+                min-height: 318px;
+                height: fit-content;
+                flex: none;
+                align-self: stretch;
+                flex-grow: 0;
+                border: solid 1px;
+
+                .flexThreeChild1Card {
+                  width: 100%;
+                  height: 90px;
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 0;
+                  border: solid 1px;
+                }
+              }
             }
           }
         }
-      }
 
-      .adDiv {
-      }
-
-      .marketNewsDiv {
-        .titleDiv {
-          .title {
-          }
-
-          .viewAllButton {
-          }
-        }
-
-        .marketNewsContentDiv {
-        }
-
-        .marketBigComponent {
-        }
-
-        .marketSmallComponentDiv {
-          .marketSmallComponent {
-          }
+        .contentFooter {
+          position: relative;
+          width: 100%;
+          min-height: 474px;
+          height: fit-content;
+          background: #4f4f4f;
         }
       }
     }
   }
+}
+
+// ::-webkit-scrollbar-corner {
+//   background: rgba(0, 0, 0, 0.5);
+// }
+
+// .propertCardDiv {
+//   scrollbar-width: 10px;
+//   scrollbar-color: green red;
+// }
+
+/* Works on Chrome, Edge, and Safari */
+.propertCardDiv::-webkit-scrollbar {
+  // width: 12px;
+  height: 2px;
+}
+
+.propertCardDiv::-webkit-scrollbar-track {
+  display: none;
+}
+
+.propertCardDiv::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 10px;
+}
+
+.lifeStyleCardDiv::-webkit-scrollbar {
+  // width: 12px;
+  height: 2px;
+}
+
+.lifeStyleCardDiv::-webkit-scrollbar-track {
+  display: none;
+}
+
+.lifeStyleCardDiv::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 10px;
+}
+
+.blogPreviewDiv::-webkit-scrollbar {
+  // width: 12px;
+  height: 2px;
+}
+
+.blogPreviewDiv::-webkit-scrollbar-track {
+  display: none;
+}
+
+.blogPreviewDiv::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 10px;
 }

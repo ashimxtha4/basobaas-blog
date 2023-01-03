@@ -1,13 +1,11 @@
 import type {NextPage} from 'next'
-import BlogNavbar from '../layouts/BlogNavbar'
-import Footer from '../layouts/Footer'
+import MainProperty from '../components/ui/MainProperty'
 
 const test: NextPage = () => {
   return (
-    <div>
-      <BlogNavbar/>
-      <Footer/>
-    </div>
+    <>
+    <MainProperty/>
+    </>
   )
 }
 
