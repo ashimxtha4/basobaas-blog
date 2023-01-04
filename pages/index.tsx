@@ -184,10 +184,19 @@ const HomePage = () => {
                     {Object.values(getMarketNewsBlogs ?? {})
                       .flatMap((i) => i)
                       .map((i, index) => (
+                        <>
                         <div className="marketSmallComponent" key={index}>
-                          <MarketNewsTypeMain blog={i} />
+                          <MarketNewsTypeSecondary blog={i} />
                         </div>
+                        <div className="marketSmallComponent" key={index}>
+                        <MarketNewsTypeSecondary blog={i} />
+                      </div>
+                      <div className="marketSmallComponent" key={index}>
+                      <MarketNewsTypeSecondary blog={i} />
+                    </div>
+                    </>
                       ))}
+                      
                   </div>
                 </div>
               </div>
