@@ -32,11 +32,31 @@
             font-family: "Product Sans", sans-serif;
             font-style: normal;
             font-weight: 400;
-            font-size: 16px;
+            font-size: 12px;
             line-height: 140%;
             color: #4f4f4f;
             margin: 0px;
             padding: 0px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .catAndSubCat {
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              align-items: center;
+              gap: 11.5px;
+
+              .catSubCatNames {
+                font-family: "Product Sans";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 140%;
+                color: #4f4f4f;
+              }
+            }
           }
           .categoryTitle {
             font-family: "Product Sans", sans-serif;
@@ -114,6 +134,19 @@
       }
 
       .componentMapSection {
+        .blogDetails {
+          width: 345px;
+          height: fit-content;
+          font-family: "Product Sans", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 140%;
+          color: #333333;
+        }
+
+        .blogTitle {
+        }
       }
 
       .paginationSection {
