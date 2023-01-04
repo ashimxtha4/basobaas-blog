@@ -21,10 +21,11 @@ select:focus {
   background: #001338;
   width: 100%;
   height: fit-content;
-  min-height: 72px;
+  // min-height: 72px;
   margin: 0px;
-  padding: 0px;
+  padding: 0;
   border: none;
+  
 
   .navbarContainer {
     display: flex;
@@ -33,12 +34,9 @@ select:focus {
     gap: 16px;
     height: fit-content;
     border-radius: 0px;
-    justify-content: center;
-    padding-bottom: 6px;
-    padding: 0px 15px;
-    // min-width: 375px;
+    justify-content: space-between;
     width: 100%;
-    border: none;
+    
 
     .navbarTop {
       width: 100%;
@@ -105,6 +103,9 @@ select:focus {
         justify-content: space-between;
         position: relative;
         width: 100%;
+        
+
+
         .searchSection {
           width: 100%;
           position: relative;
@@ -140,6 +141,8 @@ select:focus {
           flex-direction: row;
           align-items: center;
           position: relative;
+          
+
 
           .languageSelect {
             font-family: "Product Sans", sans-serif;
@@ -164,21 +167,24 @@ select:focus {
           .selectArrow {
             position: absolute;
             right: 0;
+            color: white;
           }
         }
       }
     }
   }
 
-  @media only screen and (min-width: 1024px) {
-    .navbarContainer {
-      flex-direction: row;
-    }
-  }
+  // @media only screen and (min-width: 768px) {
+    
+  // }
 
   @media only screen and (min-width: 1024px) {
     .moreDropDown {
-      display: none;
+      display: none !important;
+    }
+
+    .navbarContainer {
+      flex-direction: row !important;
     }
 
     .expandedNavItems {
