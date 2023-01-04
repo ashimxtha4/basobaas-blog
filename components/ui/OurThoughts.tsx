@@ -14,8 +14,6 @@ const OurThoughts = ({ id }: { id: string }) => {
         setLoading(false);
       });
   }, [id]);
-  console.log("blogs", blog);
-
   if (loading) {
     <h1>Loading...</h1>;
   }
