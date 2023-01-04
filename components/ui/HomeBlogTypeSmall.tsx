@@ -5,10 +5,6 @@ import { imageUrlCheck } from "../../utilities/helper";
 
 const HomeBlogTypeSmall = ({ blog = {} }: any) => {
   const blogPostedDate = blog.createdAt;
-
-  // const [blogPostedDate, setBlogPostedDate] = useState("")
-  // setBlogPostedDate(blog[0].createdAt)
-  //   console.log("postedOn",blogPostedDate);
   if (Object.keys(blog).length > 0)
     return (
       <>

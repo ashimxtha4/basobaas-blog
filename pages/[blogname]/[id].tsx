@@ -64,7 +64,6 @@ export default function BlogPage() {
       });
     }
   }, [router.isReady, query.id]);
-  // console.log(blogs);
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
