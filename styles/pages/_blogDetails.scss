@@ -1,4 +1,4 @@
-.blogAlignmentContainer {
+.blogDetailsAlignmentContainer {
   min-height: 100vh;
   height: 100%;
   padding-bottom: 55px;
@@ -21,6 +21,7 @@
   }
 
   .blogContainerDiv {
+    position: relative;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -69,7 +70,7 @@
         }
       }
 
-      .bodyDetailsContainer {
+      .bodyContainer {
         width: 100%;
         margin: 0px;
         padding: 0px;
@@ -88,7 +89,7 @@
           align-items: center;
           gap: 32px;
 
-          .leftBodySection {
+          .blogDetailsLeftBodySection {
             display: flex;
             flex-direction: column;
             gap: 24px;
@@ -101,7 +102,7 @@
               align-items: flex-start;
               gap: 16px;
 
-              .categoryHeader {
+              .blogDetailsCategoryHeader {
                 display: flex;
                 width: fit-content;
                 flex-direction: column;
@@ -120,6 +121,23 @@
                   color: #4f4f4f;
                   margin: 0px;
                   padding: 0px;
+
+                  .catAndSubCat {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    gap: 11.5px;
+
+                    .catSubCatNames {
+                      font-family: "Product Sans";
+                      font-style: normal;
+                      font-weight: 400;
+                      font-size: 12px;
+                      line-height: 140%;
+                      color: #4f4f4f;
+                    }
+                  }
                 }
 
                 .categoryTitle {
@@ -135,24 +153,90 @@
                   padding: 0px;
                 }
               }
+
+              .blogDetailsTitle {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 10px;
+
+                .blogSubCategoryTitle {
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 140%;
+                  color: #0000ff;
+                }
+
+                .blogTitle {
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 20px;
+                  line-height: 140%;
+                  color: #333333;
+                }
+
+                .blogBy {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  justify-content: flex-start;
+                  gap: 8px;
+
+                  .author,
+                  .posted {
+                    font-family: "Product Sans", sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 140%;
+                    color: #333333;
+                  }
+
+                  .separator {
+                    display: flex;
+                    align-items: center;
+                  }
+                }
+              }
             }
 
-            .componentMapSection {
+            .blogDetailsComponentSection {
               height: fit-content;
               width: 100%;
               display: flex;
               flex-direction: column;
               gap: 22px;
-            }
 
-            .paginationSection {
-              .pageNumberArea {
+              .blogDetails {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: center;
-                align-items: center;
-                gap: 8px;
-                margin: 0px;
+                gap: 24px;
+
+                .blogDetailsThumbnail {
+                  max-width: 100%;
+                  height: 230px;
+                }
+
+                .blogDetailsFromBackend {
+                  p {
+                    font-family: "Product Sans", sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 140%;
+                    color: #4f4f4f;
+                    align-self: stretch;
+                  }
+                  figure {
+                    max-width: 100%;
+                    height: 230px;
+                  }
+                }
               }
             }
           }
@@ -192,7 +276,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .alignmentContainer {
+  .blogDetailsAlignmentContainer {
     height: 100%;
     padding: 0px;
     padding-bottom: 69px;
@@ -262,48 +346,38 @@
             align-items: flex-start;
             width: 100%;
 
-            .leftBodySection {
+            .blogDetailsLeftBodySection {
+              gap: 60px;
               width: calc(830 * 100% / 1280);
 
               .leftHeaderSection {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;
-                position: relative;
-
-                .categoryHeader {
+                gap: 24px;
+                .blogDetailsCategoryHeader {
                   .categoryInfo {
                   }
 
                   .categoryTitle {
                   }
                 }
+              }
 
-                .sortSection {
-                  position: absolute;
-                  top: 42px;
-                  right: 0px;
+              .blogDetailsComponentSection {
+                margin-top: -29px;
+                gap: 24px;
 
-                  .sortTitle {
+                .blogDetails {
+                  .blogDetailsThumbnail {
+                    height: 550px;
                   }
 
-                  .sortButton {
-                    .subCategorySelect {
-                      .option {
-                      }
+                  .blogDetailsFromBackend {
+                    p {
                     }
-
-                    .subCategorySelect:focus {
-                    }
-
-                    .selectArrow {
+                    figure {
+                      height: 376px;
                     }
                   }
                 }
-              }
-
-              .componentMapSection {
-                gap: 24px;
               }
             }
 

@@ -10,7 +10,7 @@ const HomeBlogTypeMain = ({ blog = {} }: any) => {
       <>
         <Link
           href={{
-            pathname: `blogDetails/${blog?._id}`,
+            pathname: `/blogDetails/${blog?._id}`,
           }}
         >
           <div className="homeBlogTypeMain">
