@@ -75,75 +75,106 @@ export default function BlogPage() {
 
   return (
     <>
-      <div>
-        <BlogNavbar />
-      </div>
-      <div className="bodyContainer">
-        <div className="categoryBlogBody">
-          {loading ? (
-            <div className="spinner-border" role="status">
-              <span className="visually-hidden">Loading...</span>
+      <div className="blogAlignmentContainer">
+        <div className="navBlend"></div>
+        <div className="containerDiv">
+          <div className="secNavBlend"></div>
+          <div className="footerBlend"></div>
+          <div className="contentDiv">
+            <div className="secNavDiv">
+              <BlogNavbar />
             </div>
-          ) : !blogs ? (
-            <h1>No Blogs Found</h1>
-          ) : (
-            <div className="leftBodySection">
-              <div className="leftHeaderSection">
-                <div className="categoryHeader">
-                  <div className="categoryInfo">
-                    <div className="catAndSubCat">
-                      <span className="catSubCatNames">{blog?.category?.name} </span>
-                      <span>
-                        <Icon
-                          icon="material-symbols:chevron-right"
-                          color="#969696"
-                          width="20"
-                          height="20"
-                          inline={true}
-                        />{" "}
-                      </span>
-                      <span>{blog?.subCategory?.name}</span>
-                    </div>
-                  </div>
-                  <p className="subCategoryTitle">{blog?.subCategory?.name}</p>
+            <div className="bodyDetailsContainer">
+              {loading ? (
+                <div
+                  className="spinner-border"
+                  role="status"
+                  style={{ position: "absolute", left: "50%" }}
+                >
+                  <span className="visually-hidden">Loading...</span>
                 </div>
-              </div>
-              <div className="componentMapSection">
-                {/* <p dangerouslySetInnerHTML={{__html:blog.content}}></p> */}
-                <div className="blogDetails">
-                  <div className="blogDetailsTitleSection">
-                    <div className="blogTitle">{blog?.title}</div>
-                    <div className="blogBy">
-                      <div className="author">{blog.author?.fullName}</div>
-                      <div className="separator">
-                        <Icon
-                          icon="ci:dot-05-xl"
-                          width="15"
-                          height="15"
-                          color="#333333"
-                        />
+              ) : !blogs.length ? (
+                <h1>No Blogs Found</h1>
+              ) : (
+                <div className="categoryBlogBody">
+                  {loading ? (
+                    <div className="spinner-border" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </div>
+                  ) : !blogs ? (
+                    <h1>No Blogs Found</h1>
+                  ) : (
+                    <div className="leftBodySection">
+                      <div className="leftHeaderSection">
+                        <div className="categoryHeader">
+                          <div className="categoryInfo">
+                            <div className="catAndSubCat">
+                              <span className="catSubCatNames">
+                                {blog?.category?.name}{" "}
+                              </span>
+                              <span>
+                                <Icon
+                                  icon="material-symbols:chevron-right"
+                                  color="#969696"
+                                  width="20"
+                                  height="20"
+                                  inline={true}
+                                />{" "}
+                              </span>
+                              <span>{blog?.subCategory?.name}</span>
+                            </div>
+                          </div>
+                          <p className="subCategoryTitle">
+                            {blog?.subCategory?.name}
+                          </p>
+                        </div>
                       </div>
-                      <div className="posted">
-                        {/* {createdAt} */}
-                        {/* {blogPostedDate} */}
-                        hi
+                      <div className="componentMapSection">
+                        {/* <p dangerouslySetInnerHTML={{__html:blog.content}}></p> */}
+                        <div className="blogDetails">
+                          <div className="blogDetailsTitleSection">
+                            <div className="blogTitle">{blog?.title}</div>
+                            <div className="blogBy">
+                              <div className="author">
+                                {blog.author?.fullName}
+                              </div>
+                              <div className="separator">
+                                <Icon
+                                  icon="ci:dot-05-xl"
+                                  width="15"
+                                  height="15"
+                                  color="#333333"
+                                />
+                              </div>
+                              <div className="posted">
+                                {/* {createdAt} */}
+                                {/* {blogPostedDate} */}
+                                hi
+                              </div>
+                            </div>
+                            <div className="blogDetailsBodySection">
+                              <div
+                                className="blogFromBackend"
+                                dangerouslySetInnerHTML={{
+                                  __html: blog?.content,
+                                }}
+                              ></div>
+                            </div>
+                          </div>
+                          <div></div>
+                        </div>
                       </div>
                     </div>
-                    <div className="blogDetailsBodySection">
-                      <p
-                        dangerouslySetInnerHTML={{ __html: blog?.content }}
-                      ></p>
-                    </div>
+                  )}
+                  {/* -------------------RIGHT SIDEBAR---------------------- */}
+                  <div className="rightBodySection">
+                    <div className="blogAdDiv"></div>
+                    <BlogBodyRightSidebar blog={blogs} />
                   </div>
-                  <div></div>
                 </div>
-              </div>
+              )}
             </div>
-          )}
-
-          {/* -------------------RIGHT SIDEBAR---------------------- */}
-          <div className="rightBodySection">
-            <BlogBodyRightSidebar blog={blogs} />
+            <div className="footer"></div>
           </div>
         </div>
       </div>
