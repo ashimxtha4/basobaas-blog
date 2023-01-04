@@ -73,8 +73,6 @@ export default function BlogPage() {
     }
   }, [blog]);
 
-  console.log("hajhsajkd", blog);
-
   return (
     <>
       <div>
