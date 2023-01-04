@@ -6,10 +6,11 @@
   flex-direction: row;
   align-items: flex-start;
   padding: 0px;
-  gap: 12px;
+  gap: calc(12*100%/410);
 
   .imageContainer {
-    width: 120px;
+    width: calc(120*100%/410);
+    // min-width: 100px;
     height: 102px;
     border-radius: 3px;
 
@@ -26,8 +27,8 @@
     align-items: flex-start;
     padding: 0px;
     gap: 7px;
-    min-width: 228px;
-    width: fit-content;
+    min-width: 215px;
+    width: calc(274*100%/410);
     height: 102px;
 
     .propertyTitle {
