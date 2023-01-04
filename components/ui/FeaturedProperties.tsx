@@ -27,7 +27,10 @@ const FeaturedProperties = ({
     <>
       <div className="featuredProperties">
         <div className="imageContainer">
-          <img className="image" src={IMG_URL + property.propertyImages[0]} />
+          <img
+            className="image"
+            src={`${IMG_URL as string}` + `${property.propertyImages[0]}`}
+          />
         </div>
         <div className="contentContainer">
           <div className="propertyTitle">

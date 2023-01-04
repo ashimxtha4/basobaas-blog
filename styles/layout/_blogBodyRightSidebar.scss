@@ -40,18 +40,29 @@
         // width: 30px;
         // border: solid 1px;
       }
-      button {
-        background: transparent;
-        font-family: "Product Sans", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 140%;
-        color: #333333;
-        border: none;
-        margin: 0px;
-        padding: 0px;
-        outline: none;
+
+      .relatedBlogsView {
+        button {
+          background: transparent;
+          font-family: "Product Sans", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+          color: #333333;
+          border: none;
+          margin: 0px;
+          padding: 0px;
+          outline: none;
+        }
+      }
+
+      .relatedBlogsView:hover {
+        transform: none;
+
+        button {
+          color: #0b58ca;
+        }
       }
     }
     .relatedSectionContainer {

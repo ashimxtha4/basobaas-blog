@@ -36,7 +36,6 @@ const HomePage = () => {
     blogsWithSameCategory: [],
   });
 
-
   //GET ALL CATEGORIES TO GET CATEGORY ID AND MAP EACH CATEGORY TO GET BLOG
   const getAllCategories = async () => {
     try {
@@ -143,7 +142,7 @@ const HomePage = () => {
             <div className="contentBody">
               <div className="blogPreviewDiv">
                 <div className="bigComponent">
-                  <HomeBlogTypeMain blog={data.blogsByCategory[0]}/>
+                  <HomeBlogTypeMain blog={data.blogsByCategory[0]} />
                 </div>
                 <div className="smallComponentDiv">
                   {data.blogsByCategory.map((categorySpecificBlog, index) => {
@@ -185,18 +184,17 @@ const HomePage = () => {
                       .flatMap((i) => i)
                       .map((i, index) => (
                         <>
-                        <div className="marketSmallComponent" key={index}>
-                          <MarketNewsTypeSecondary blog={i} />
-                        </div>
-                        <div className="marketSmallComponent" key={index}>
-                        <MarketNewsTypeSecondary blog={i} />
-                      </div>
-                      <div className="marketSmallComponent" key={index}>
-                      <MarketNewsTypeSecondary blog={i} />
-                    </div>
-                    </>
+                          <div className="marketSmallComponent" key={index}>
+                            <MarketNewsTypeSecondary blog={i} />
+                          </div>
+                          <div className="marketSmallComponent" key={index}>
+                            <MarketNewsTypeSecondary blog={i} />
+                          </div>
+                          <div className="marketSmallComponent" key={index}>
+                            <MarketNewsTypeSecondary blog={i} />
+                          </div>
+                        </>
                       ))}
-                      
                   </div>
                 </div>
               </div>

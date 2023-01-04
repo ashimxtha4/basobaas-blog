@@ -4,7 +4,7 @@ import { getAll } from "../apiFetch/homePage/homePageAPI";
 import RelatedBlogs from "../components/RelatedBlogs";
 import FeaturedProperties from "../components/ui/FeaturedProperties";
 
-const BlogBodyRightSidebar = ({ blog}: { blog: any[]}) => {
+const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
   const [property, setProperty] = useState([]);
 
   //GET PROPERTY BY CONDITION WHERE PROPERTY ARE FEATURED
@@ -34,7 +34,16 @@ const BlogBodyRightSidebar = ({ blog}: { blog: any[]}) => {
         <div className="relatedSection">
           <div className="relatedSectionTitle">
             <p>Related</p>
-            <button>View All</button>
+            <Link
+              className="relatedBlogsView"
+              href={{
+                pathname: `/${blog[0]?.category?.name.replaceAll(" ", "")}/${
+                  blog[0]?.category?._id
+                }`,
+              }}
+            >
+              <button>View All</button>
+            </Link>
           </div>
 
           <div className="relatedSectionContainer">
