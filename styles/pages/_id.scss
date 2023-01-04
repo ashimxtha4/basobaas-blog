@@ -1,194 +1,391 @@
-.bodyContainer {
+.alignmentContainer {
+  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 55px;
   width: 100%;
-  margin: 0px;
-  padding: 0px;
+  background-color: ghostwhite;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-  padding: 0px 15px;
+  overflow: hidden;
 
-  .categoryBlogBody {
-    width: 100%;
-    height: fit-content;
-    // padding: 24px 15px 32px 15px;
+  .navBlend {
+    width: 100vw;
+    position: fixed;
+    height: 53px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    z-index: 3;
+  }
+
+  .containerDiv {
+    position: relative;
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 53px;
+    width: 100%;
     align-items: center;
+    min-width: 100vw;
+    height: fit-content;
+    background-color: #D9D9D9;
 
-    .leftBodySection {
-      .leftHeaderSection {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 16px;
+    .secNavBlend {
+      height: 75px;
+      width: 100%;
+      background-color: #001338;
+      position: absolute;
+      top: 0px;
+    }
 
-        .categoryHeader {
+    .footerBlend {
+      position: absolute;
+      width: 100%;
+      height: 1015px;
+      background: #4f4f4f;
+      bottom: 0px;
+    }
+
+    .contentDiv {
+      height: fit-content;
+      width: 375px;
+      display: flex;
+      flex-direction: column;
+      background-color: #ffffff;
+      position: relative;
+
+      .secNavDiv {
+        height: fit-content;
+        width: 100%;
+        position: sticky;
+      }
+
+      .bodyContainer {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+        padding: 24px 15px 32px 15px;
+
+        .categoryBlogBody {
+          width: 100%;
+          height: fit-content;
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          justify-content: center;
-          gap: 8px;
-
-          .categoryInfo {
-            font-family: "Product Sans", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 140%;
-            color: #4f4f4f;
-            margin: 0px;
-            padding: 0px;
-          }
-          .categoryTitle {
-            font-family: "Product Sans", sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 140%;
-            color: #0000ff;
-            margin: 0px;
-            padding: 0px;
-          }
-        }
-
-        .sortSection {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-evenly;
           align-items: center;
-          padding-right: 20px;
-          width: fit-content;
-          height: fit-content;
-          margin: 0px;
-          padding: 0px;
+          gap: 32px;
 
-          .sortTitle {
-            font-family: "Product Sans", sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 140%;
-            color: #4f4f4f;
-          }
-          .sortButton {
+          .leftBodySection {
             display: flex;
-            position: relative;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #4f4f4f;
-            width: 137px;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
 
-            .subCategorySelect {
-              font-family: "Product Sans", sans-serif;
-              font-style: normal;
-              font-weight: 400;
-              font-size: 16px;
-              line-height: 140%;
-              text-align: center;
-              color: #4f4f4f;
-              height: 22px;
-              width: 100%;
-              appearance: none;
-              border: none;
-              background-color: transparent;
-              z-index: 2;
+            .leftHeaderSection {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+              gap: 16px;
 
-              .option {
-                width: 137px;
-                text-align: center;
+              .categoryHeader {
+                display: flex;
+                width: fit-content;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 8px;
+
+                .categoryInfo {
+                  height: fit-content;
+                  width: fit-content;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #4f4f4f;
+                  margin: 0px;
+                  padding: 0px;
+                }
+
+                .categoryTitle {
+                  height: fit-content;
+                  width: fit-content;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 24px;
+                  line-height: 140%;
+                  color: #0000ff;
+                  margin: 0px;
+                  padding: 0px;
+                }
+              }
+
+              .sortSection {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                gap: 4px;
+                align-items: center;
+                padding-right: 20px;
+                width: fit-content;
+                height: fit-content;
+                margin: 0px;
+                padding: 0px;
+
+                .sortTitle {
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 700;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #4f4f4f;
+                  word-spacing: 3px;
+                }
+
+                .sortButton {
+                  display: flex;
+                  position: relative;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+                  text-align: center;
+                  color: #4f4f4f;
+                  width: fit-content;
+
+                  .subCategorySelect {
+                    font-family: "Product Sans", sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 140%;
+                    text-align: center;
+                    color: #4f4f4f;
+                    height: 22px;
+                    width: 100%;
+                    appearance: none;
+                    border: none;
+                    background-color: transparent;
+                    z-index: 2;
+
+                    .option {
+                      width: 137px;
+                      text-align: center;
+                    }
+                  }
+
+                  .subCategorySelect:focus {
+                    outline: none;
+                  }
+
+                  .selectArrow {
+                    position: absolute;
+                    right: 0;
+                    z-index: -1;
+                  }
+                }
               }
             }
 
-            .subCategorySelect:focus {
-              outline: none;
+            .componentMapSection {
+              height: fit-content;
+              width: 100%;
             }
 
-            .selectArrow {
-              position: absolute;
-              right: 0;
-              z-index: -1;
+            .paginationSection {
+              .pageNumberArea {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+                margin: 0px;
+              }
+            }
+          }
+
+          .rightBodySection {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+
+            .blogAdDiv {
+              position: relative;
+              width: 100%;
+              height: 223px;
+              background-color: #D9D9D9;
+              z-index: 0;
+            }
+
+            .rightSidebar {
+              padding: 0px;
+              width: 100%;
             }
           }
         }
       }
 
-      .componentMapSection {
-      }
-
-      .paginationSection {
-        .pageNumberArea {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          gap: 8px;
-        }
-      }
-    }
-
-    .rightBodySection {
-      .rightSidebar {
+      .footer {
         width: 100%;
+        min-height: none;
+        height: 1015px;
+        background: #4F4F4F;
       }
     }
   }
 }
 
-@media screen and (min-width: 1440px) {
-  .bodyContainer {
-    .categoryBlogBody {
-      flex-direction: row;
-      justify-content: center;
-      gap: 40px;
-      align-items: flex-start;
 
-      .leftBodySection {
-        .leftHeaderSection {
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: flex-start;
-          position: relative;
-          .categoryHeader {
-            .categoryInfo {
-            }
-            .categoryTitle {
-            }
-          }
 
-          .sortSection {
-            position: absolute;
-            top: 42px;
-            right: 0px;
-            .sortTitle {
-            }
-            .sortButton {
-              .subCategorySelect {
-                .option {
+
+@media screen and (min-width: 1024px) {
+
+  .alignmentContainer {
+    height: 100%;
+    padding: 0px;
+    padding-bottom: 69px;
+    width: 100%;
+    background: #ffffff;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+
+    .navBlend {
+      width: 100%;
+      position: fixed;
+      top: 0px;
+      height: 67px;
+      background: #ffffff;
+    }
+
+    .containerDiv {
+      position: relative;
+      width: 100%;
+      top: 67px;
+
+      .secNavBlend {
+        height: 72px;
+        width: 100%;
+        background-color: #001338;
+        position: absolute;
+        top: 0px;
+      }
+
+      .footerBlend {
+        position: absolute;
+        width: 100%;
+        height: 474px;
+        background: #4f4f4f;
+        bottom: 0px;
+      }
+
+      .contentDiv {
+        height: fit-content;
+        width: 100%;
+        max-width: 1440px;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        position: relative;
+        box-shadow: none;
+
+        .secNavDiv {
+          height: fit-content;
+          width: 100%;
+          position: sticky;
+        }
+
+        .bodyContainer {
+          padding: 24px 5.5% 40px 5.5%;
+          width: 100%;
+
+          .categoryBlogBody {
+            flex-direction: row;
+            justify-content: center;
+            gap: calc(40*100%/1280);
+            align-items: flex-start;
+            width: 100%;
+
+            .leftBodySection {
+              width: calc(830*100%/1280);
+
+              .leftHeaderSection {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                position: relative;
+
+                .categoryHeader {
+                  .categoryInfo {}
+
+                  .categoryTitle {}
+                }
+
+                .sortSection {
+                  position: absolute;
+                  top: 42px;
+                  right: 0px;
+
+                  .sortTitle {}
+
+                  .sortButton {
+                    .subCategorySelect {
+                      .option {}
+                    }
+
+                    .subCategorySelect:focus {}
+
+                    .selectArrow {}
+                  }
                 }
               }
 
-              .subCategorySelect:focus {
+              .componentMapSection {}
+            }
+
+            .rightBodySection {
+              gap: 41px;
+              padding: 0px;
+              margin: 0px;
+              width: calc(410*100%/1280);
+              height: fit-content;
+              overflow: hidden;
+
+              .blogAdDiv {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 279px;
+                background-color: #D9D9D9;
+                z-index: 0;
               }
 
-              .selectArrow {
+              .rightSidebar {
+                width: 100%;
+                padding: 0px;
               }
             }
           }
         }
 
-        .componentMapSection {
-        }
-      }
-
-      .rightBodySection {
-        padding: 0px;
-        margin: 0px;
-
-        .rightSidebar {
-          padding-top: 0px;
+        .footer {
+          width: 100%;
+          min-height: 474px;
+          height: fit-content;
+          background: #4F4F4F;
         }
       }
     }
   }
+
+
 }
