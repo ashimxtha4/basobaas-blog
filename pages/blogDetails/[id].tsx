@@ -34,13 +34,13 @@ export default function BlogPage() {
     function prepareUrlQuery(query: object) {
       var queryString = "?";
       Object.keys(query).forEach((key: string, index: number) => {
-         @ts-ignore
+        //  @ts-ignore
         if (query[key]) {
           if (index > 0) {
-             @ts-ignore
+            //  @ts-ignore
             queryString += "&" + key + "=" + query[key];
           }
-           @ts-ignore
+          //  @ts-ignore
           queryString += key + "=" + query[key];
         }
       });
