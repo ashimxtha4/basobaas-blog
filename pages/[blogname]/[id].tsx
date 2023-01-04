@@ -86,17 +86,20 @@ export default function BlogPage() {
     <>
       <div className="alignmentContainer">
         <div className="navBlend"></div>
-        <div className="containerDiv">
-          <div className="secNavBlend"></div>
+        <div className="blogContainerDiv">
+          <div className="blogSecNavBlend"></div>
           <div className="footerBlend"></div>
           <div className="contentDiv">
             <div className="secNavDiv">
               <BlogNavbar />
             </div>
             <div className="bodyContainer">
-
               {loading ? (
-                <div className="spinner-border" role="status" style={{ position: "absolute", left: "50%" }}>
+                <div
+                  className="spinner-border"
+                  role="status"
+                  style={{ position: "absolute", left: "50%" }}
+                >
                   <span className="visually-hidden">Loading...</span>
                 </div>
               ) : !blogs.length ? (
@@ -107,7 +110,9 @@ export default function BlogPage() {
                     <div className="leftHeaderSection">
                       <div className="categoryHeader">
                         <p className="categoryInfo">Category</p>
-                        <p className="categoryTitle">{blogs[0]?.category?.name}</p>
+                        <p className="categoryTitle">
+                          {blogs[0]?.category?.name}
+                        </p>
                       </div>
                       <div className="sortSection">
                         <span className="sortTitle">Sort By :</span>
@@ -119,7 +124,7 @@ export default function BlogPage() {
                             }}
                             defaultValue={blogs[0]?.subCategory?._id}
                             className="subCategorySelect"
-                          // aria-label=".form-select-sm example"
+                            // aria-label=".form-select-sm example"
                           >
                             {blogs?.map((i, k) => {
                               return (
@@ -150,7 +155,11 @@ export default function BlogPage() {
                       {blogs.length >= limit ? (
                         <ul className="pagination pageNumberArea">
                           <li className="page-item pageIndex">
-                            <a className="page-link" href="#" aria-label="Previous">
+                            <a
+                              className="page-link"
+                              href="#"
+                              aria-label="Previous"
+                            >
                               <span aria-hidden="true">&laquo;</span>
                             </a>
                           </li>
@@ -191,7 +200,6 @@ export default function BlogPage() {
           </div>
         </div>
       </div>
-
     </>
   );
 }

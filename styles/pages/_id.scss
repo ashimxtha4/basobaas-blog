@@ -20,7 +20,7 @@
     z-index: 3;
   }
 
-  .containerDiv {
+  .blogContainerDiv {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -32,8 +32,8 @@
     height: fit-content;
     background-color: #D9D9D9;
 
-    .secNavBlend {
-      height: 75px;
+    .blogSecNavBlend {
+      height: 105.5px;
       width: 100%;
       background-color: #001338;
       position: absolute;
@@ -50,16 +50,25 @@
 
     .contentDiv {
       height: fit-content;
-      width: 375px;
+      width: 100%;
+      min-width: 345px;
+      max-width: 890px;
       display: flex;
       flex-direction: column;
       background-color: #ffffff;
       position: relative;
 
+
       .secNavDiv {
         height: fit-content;
         width: 100%;
         position: sticky;
+        padding: 12px 15px 18px 15px;
+        background-color: #001338;
+
+        @media screen and (min-width: 768px) {
+          padding: 12px 30px 18px 30px;
+        }
       }
 
       .bodyContainer {
@@ -68,6 +77,11 @@
         padding: 0px;
         position: relative;
         padding: 24px 15px 32px 15px;
+
+        @media screen and (min-width: 768px) {
+          padding: 24px 30px 32px 30px;
+
+        }
 
         .categoryBlogBody {
           width: 100%;
@@ -194,6 +208,9 @@
             .componentMapSection {
               height: fit-content;
               width: 100%;
+              display: flex;
+              flex-direction: column;
+              gap: 22px;
             }
 
             .paginationSection {
@@ -244,7 +261,6 @@
 
 
 
-
 @media screen and (min-width: 1024px) {
 
   .alignmentContainer {
@@ -267,13 +283,13 @@
       background: #ffffff;
     }
 
-    .containerDiv {
+    .blogContainerDiv {
       position: relative;
       width: 100%;
       top: 67px;
 
-      .secNavBlend {
-        height: 72px;
+      .blogSecNavBlend {
+        height: 71px;
         width: 100%;
         background-color: #001338;
         position: absolute;
@@ -302,11 +318,14 @@
           height: fit-content;
           width: 100%;
           position: sticky;
+          padding: 12px 5.5% 18px 5.5%;
+
         }
 
         .bodyContainer {
           padding: 24px 5.5% 40px 5.5%;
           width: 100%;
+          border: solid 1px;
 
           .categoryBlogBody {
             flex-direction: row;
@@ -349,7 +368,9 @@
                 }
               }
 
-              .componentMapSection {}
+              .componentMapSection {
+                gap: 24px;
+              }
             }
 
             .rightBodySection {
@@ -388,14 +409,4 @@
   }
 
 
-}
-
-.blogDetailsBodySection{
-  // display: none !important;
-
-  figure{
-    // display: none !important;
-    width: 830px !important;
-height: 550px !important;
-  }
 }

@@ -34,13 +34,13 @@ export default function BlogPage() {
     function prepareUrlQuery(query: object) {
       var queryString = "?";
       Object.keys(query).forEach((key: string, index: number) => {
-        //@ts-ignore
+         @ts-ignore
         if (query[key]) {
           if (index > 0) {
-            //@ts-ignore
+             @ts-ignore
             queryString += "&" + key + "=" + query[key];
           }
-          //@ts-ignore
+           @ts-ignore
           queryString += key + "=" + query[key];
         }
       });
@@ -75,62 +75,55 @@ export default function BlogPage() {
 
   return (
     <>
-      <div className="blogAlignmentContainer">
-        <div className="navBlend"></div>
-        <div className="containerDiv">
-          <div className="secNavBlend"></div>
-          <div className="footerBlend"></div>
-          <div className="contentDiv">
-            <div className="secNavDiv">
-              <BlogNavbar />
-            </div>
-            <div className="bodyDetailsContainer">
-              {loading ? (
-                <div
-                  className="spinner-border"
-                  role="status"
-                  style={{ position: "absolute", left: "50%" }}
-                >
-                  <span className="visually-hidden">Loading...</span>
-                </div>
-              ) : !blogs.length ? (
-                <h1>No Blogs Found</h1>
-              ) : (
-                <div className="categoryBlogBody">
-                  {loading ? (
-                    <div className="spinner-border" role="status">
-                      <span className="visually-hidden">Loading...</span>
-                    </div>
-                  ) : !blogs ? (
-                    <h1>No Blogs Found</h1>
-                  ) : (
-                    <div className="leftBodySection">
-                      <div className="leftHeaderSection">
-                        <div className="categoryHeader">
-                          <div className="categoryInfo">
-                            <div className="catAndSubCat">
-                              <span className="catSubCatNames">
-                                {blog?.category?.name}{" "}
-                              </span>
-                              <span>
-                                <Icon
-                                  icon="material-symbols:chevron-right"
-                                  color="#969696"
-                                  width="20"
-                                  height="20"
-                                  inline={true}
-                                />{" "}
-                              </span>
-                              <span>{blog?.subCategory?.name}</span>
+    <div className="alignmentContainer">
+      <div className="navBlend"></div>
+      <div className="blogContainerDiv">
+        <div className="blogSecNavBlend"></div>
+        <div className="footerBlend"></div>
+        <div className="contentDiv">
+          <div className="secNavDiv">
+            <BlogNavbar />
+          </div>
+          <div className="bodyContainer">
+            {loading ? (
+              <div
+                className="spinner-border"
+                role="status"
+                style={{ position: "absolute", left: "50%" }}
+              >
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            ) : !blogs.length ? (
+              <h1>No Blogs Found</h1>
+            ) : (
+              <div className="categoryBlogBody">
+                <div className="leftBodySection">
+                        <div className="leftHeaderSection">
+                          <div className="categoryHeader">
+                            <div className="categoryInfo">
+                              <div className="catAndSubCat">
+                                <span className="catSubCatNames">
+                                  {blog?.category?.name}{" "}
+                                </span>
+                                <span>
+                                  <Icon
+                                    icon="material-symbols:chevron-right"
+                                    color="#969696"
+                                    width="20"
+                                    height="20"
+                                    inline={true}
+                                  />{" "}
+                                </span>
+                                <span>{blog?.subCategory?.name}</span>
+                              </div>
                             </div>
+                            <p className="subCategoryTitle">
+                              {blog?.subCategory?.name}
+                            </p>
                           </div>
-                          <p className="subCategoryTitle">
-                            {blog?.subCategory?.name}
-                          </p>
                         </div>
-                      </div>
-                      <div className="componentMapSection">
-                        {/* <p dangerouslySetInnerHTML={{__html:blog.content}}></p> */}
+                        <div className="componentMapSection">
+                          {/* <p dangerouslySetInnerHTML={{__html:blog.content}}></p> */}
                         <div className="blogDetails">
                           <div className="blogDetailsTitleSection">
                             <div className="blogTitle">{blog?.title}</div>
@@ -165,19 +158,18 @@ export default function BlogPage() {
                         </div>
                       </div>
                     </div>
-                  )}
-                  {/* -------------------RIGHT SIDEBAR---------------------- */}
-                  <div className="rightBodySection">
-                    <div className="blogAdDiv"></div>
-                    <BlogBodyRightSidebar blog={blogs} />
-                  </div>
+                {/* -------------------RIGHT SIDEBAR---------------------- */}
+                <div className="rightBodySection">
+                  <div className="blogAdDiv"></div>
+                  <BlogBodyRightSidebar blog={blogs} />
                 </div>
-              )}
-            </div>
-            <div className="footer"></div>
+              </div>
+            )}
           </div>
+          <div className="footer"></div>
         </div>
       </div>
-    </>
+    </div>
+  </>
   );
 }
