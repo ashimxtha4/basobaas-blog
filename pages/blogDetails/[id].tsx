@@ -3,6 +3,7 @@ import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
 import BlogNavbar from "../../layouts/BlogNavbar";
 import { useState, useEffect } from "react";
 import { Router, useRouter } from "next/router";
+import { Icon } from "@iconify/react";
 
 export default function BlogPage() {
   const [blogs, setBlogs] = useState<any[]>([]);
@@ -72,7 +73,7 @@ export default function BlogPage() {
     }
   }, [blog]);
 
-  console.log("hajhsajkd", blog)
+  console.log("hajhsajkd", blog);
 
   return (
     <>
@@ -91,12 +92,53 @@ export default function BlogPage() {
             <div className="leftBodySection">
               <div className="leftHeaderSection">
                 <div className="categoryHeader">
-                  <p className="categoryInfo">Category</p>
-                  <p className="categoryTitle">{blog?.category?.name}</p>
+                  <div className="categoryInfo">
+                    <div className="catAndSubCat">
+                      <span className="catSubCatNames">{blog?.category?.name} </span>
+                      <span>
+                        <Icon
+                          icon="material-symbols:chevron-right"
+                          color="#969696"
+                          width="20"
+                          height="20"
+                          inline={true}
+                        />{" "}
+                      </span>
+                      <span>{blog?.subCategory?.name}</span>
+                    </div>
+                  </div>
+                  <p className="subCategoryTitle">{blog?.subCategory?.name}</p>
                 </div>
               </div>
               <div className="componentMapSection">
-                <p dangerouslySetInnerHTML={{__html:blog.content}}></p>
+                {/* <p dangerouslySetInnerHTML={{__html:blog.content}}></p> */}
+                <div className="blogDetails">
+                  <div className="blogDetailsTitleSection">
+                    <div className="blogTitle">{blog?.title}</div>
+                    <div className="blogBy">
+                      <div className="author">{blog.author?.fullName}</div>
+                      <div className="separator">
+                        <Icon
+                          icon="ci:dot-05-xl"
+                          width="15"
+                          height="15"
+                          color="#333333"
+                        />
+                      </div>
+                      <div className="posted">
+                        {/* {createdAt} */}
+                        {/* {blogPostedDate} */}
+                        hi
+                      </div>
+                    </div>
+                    <div className="blogDetailsBodySection">
+                      <p
+                        dangerouslySetInnerHTML={{ __html: blog?.content }}
+                      ></p>
+                    </div>
+                  </div>
+                  <div></div>
+                </div>
               </div>
             </div>
           )}
