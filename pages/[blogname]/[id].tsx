@@ -147,7 +147,7 @@ export default function BlogPage() {
                       aria-label="Page navigation example"
                       className="paginationSection"
                     >
-                      {blogs.length > limit ? (
+                      {blogs.length >= limit ? (
                         <ul className="pagination pageNumberArea">
                           <li className="page-item pageIndex">
                             <a className="page-link" href="#" aria-label="Previous">
