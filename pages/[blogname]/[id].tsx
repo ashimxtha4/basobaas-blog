@@ -84,102 +84,114 @@ export default function BlogPage() {
 
   return (
     <>
-      <div>
-        <BlogNavbar />
-      </div>
-      <div className="bodyContainer">
-        <div className="categoryBlogBody">
-          {loading ? (
-            <div className="spinner-border" role="status">
-              <span className="visually-hidden">Loading...</span>
+      <div className="alignmentContainer">
+        <div className="navBlend"></div>
+        <div className="containerDiv">
+          <div className="secNavBlend"></div>
+          <div className="footerBlend"></div>
+          <div className="contentDiv">
+            <div className="secNavDiv">
+              <BlogNavbar />
             </div>
-          ) : !blogs.length ? (
-            <h1>No Blogs Found</h1>
-          ) : (
-            <div className="leftBodySection">
-              <div className="leftHeaderSection">
-                <div className="categoryHeader">
-                  <p className="categoryInfo">Category</p>
-                  <p className="categoryTitle">{blogs[0]?.category?.name}</p>
+            <div className="bodyContainer">
+
+              {loading ? (
+                <div className="spinner-border" role="status" style={{ position: "absolute", left: "50%" }}>
+                  <span className="visually-hidden">Loading...</span>
                 </div>
-                <div className="sortSection">
-                  <span className="sortTitle">Sort By:</span>
-                  <span className="sortButton">
-                    <select
-                      name="sort"
-                      onChange={(e) => {
-                        handleChange(e);
-                      }}
-                      defaultValue={blogs[0]?.subCategory?._id}
-                      className="subCategorySelect"
-                      // aria-label=".form-select-sm example"
-                    >
-                      {blogs?.map((i, k) => {
-                        return (
-                          <option value={i.subCategory?._id} key={k}>
-                            {i.subCategory?.name}
-                          </option>
-                        );
-                      })}
-                    </select>
-                    <Icon
-                      className="selectArrow"
-                      icon="ri:arrow-drop-down-line"
-                      width="30"
-                      height="30"
-                    />
-                  </span>
-                </div>
-              </div>
-              <div className="componentMapSection">
-                {blogs.map((i, index) => {
-                  return <CategorySpecificBlog key={index} blog={i} />;
-                })}
-              </div>
-              <nav
-                aria-label="Page navigation example"
-                className="paginationSection"
-              >
-                {blogs.length > limit ? (
-                  <ul className="pagination pageNumberArea">
-                    <li className="page-item pageIndex">
-                      <a className="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                      </a>
-                    </li>
-                    {pageNumber.map((item, index) => {
-                      return (
-                        <li className="page-item pageIndex" key={index}>
-                          <button
-                            className="page-link"
-                            value={item}
-                            onClick={(e) => {
-                              handleClick(e);
+              ) : !blogs.length ? (
+                <h1>No Blogs Found</h1>
+              ) : (
+                <div className="categoryBlogBody">
+                  <div className="leftBodySection">
+                    <div className="leftHeaderSection">
+                      <div className="categoryHeader">
+                        <p className="categoryInfo">Category</p>
+                        <p className="categoryTitle">{blogs[0]?.category?.name}</p>
+                      </div>
+                      <div className="sortSection">
+                        <span className="sortTitle">Sort By :</span>
+                        <span className="sortButton">
+                          <select
+                            name="sort"
+                            onChange={(e) => {
+                              handleChange(e);
                             }}
+                            defaultValue={blogs[0]?.subCategory?._id}
+                            className="subCategorySelect"
+                          // aria-label=".form-select-sm example"
                           >
-                            {item}
-                          </button>
-                        </li>
-                      );
-                    })}
+                            {blogs?.map((i, k) => {
+                              return (
+                                <option value={i.subCategory?._id} key={k}>
+                                  {i.subCategory?.name}
+                                </option>
+                              );
+                            })}
+                          </select>
+                          <Icon
+                            className="selectArrow"
+                            icon="ri:arrow-drop-down-line"
+                            width="30"
+                            height="30"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                    <div className="componentMapSection">
+                      {blogs.map((i, index) => {
+                        return <CategorySpecificBlog key={index} blog={i} />;
+                      })}
+                    </div>
+                    <nav
+                      aria-label="Page navigation example"
+                      className="paginationSection"
+                    >
+                      {blogs.length > limit ? (
+                        <ul className="pagination pageNumberArea">
+                          <li className="page-item pageIndex">
+                            <a className="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          {pageNumber.map((item, index) => {
+                            return (
+                              <li className="page-item pageIndex" key={index}>
+                                <button
+                                  className="page-link"
+                                  value={item}
+                                  onClick={(e) => {
+                                    handleClick(e);
+                                  }}
+                                >
+                                  {item}
+                                </button>
+                              </li>
+                            );
+                          })}
 
-                    <li className="page-item pageIndex">
-                      <a className="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                      </a>
-                    </li>
-                  </ul>
-                ) : null}
-              </nav>
+                          <li className="page-item pageIndex">
+                            <a className="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      ) : null}
+                    </nav>
+                  </div>
+                  {/* -------------------RIGHT SIDEBAR---------------------- */}
+                  <div className="rightBodySection">
+                    <div className="blogAdDiv"></div>
+                    <BlogBodyRightSidebar blog={blogs} />
+                  </div>
+                </div>
+              )}
             </div>
-          )}
-
-          {/* -------------------RIGHT SIDEBAR---------------------- */}
-          <div className="rightBodySection">
-            <BlogBodyRightSidebar blog={blogs} />
+            <div className="footer"></div>
           </div>
         </div>
       </div>
+
     </>
   );
 }
