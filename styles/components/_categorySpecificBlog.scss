@@ -4,8 +4,7 @@
   align-items: flex-start;
   padding: 0px;
   gap: 16px;
-  width: 345px;
-  //   height: 388px;
+  width: 100%;
   height: fit-content;
   transition: 0.4s all;
 
@@ -112,13 +111,13 @@
   }
 }
 
-.categorySpecificBlog:hover {
-  transform: scale(0.9);
-}
+// .categorySpecificBlog:hover {
+//   transform: scale(0.9);
+// }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   .categorySpecificBlog {
-    width: 830px;
+    // width: 100%;
 
     .imageContainer {
       height: 422px;

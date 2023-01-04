@@ -26,7 +26,8 @@
     align-items: flex-start;
     padding: 0px;
     gap: 7px;
-    width: 228px;
+    min-width: 228px;
+    width: fit-content;
     height: 102px;
 
     .propertyTitle {
@@ -47,6 +48,7 @@
     .propertyAddress {
       position: relative;
       width: 100%;
+      
       p {
         position: relative;
         font-family: "Product Sans", sans-serif;
@@ -65,12 +67,12 @@
       position: relative;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       gap: 8px;
       min-width: 100%;
       width: fit-content;
-      overflow: scroll;
+      overflow: hidden;
 
       .overviewDatas {
         position: relative;

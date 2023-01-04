@@ -86,8 +86,8 @@ export default function BlogPage() {
     <>
       <div className="alignmentContainer">
         <div className="navBlend"></div>
-        <div className="containerDiv">
-          <div className="secNavBlend"></div>
+        <div className="blogContainerDiv">
+          <div className="blogSecNavBlend"></div>
           <div className="footerBlend"></div>
           <div className="contentDiv">
             <div className="secNavDiv">
@@ -147,7 +147,7 @@ export default function BlogPage() {
                       aria-label="Page navigation example"
                       className="paginationSection"
                     >
-                      {blogs.length > limit ? (
+                      {blogs.length >= limit ? (
                         <ul className="pagination pageNumberArea">
                           <li className="page-item pageIndex">
                             <a className="page-link" href="#" aria-label="Previous">
