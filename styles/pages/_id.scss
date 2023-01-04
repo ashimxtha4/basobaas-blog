@@ -30,7 +30,7 @@
     align-items: center;
     min-width: 100vw;
     height: fit-content;
-    background-color: #d9d9d9;
+    background-color: #D9D9D9;
 
     .secNavBlend {
       height: 75px;
@@ -220,7 +220,7 @@
               position: relative;
               width: 100%;
               height: 223px;
-              background-color: #d9d9d9;
+              background-color: #D9D9D9;
               z-index: 0;
             }
 
@@ -236,13 +236,17 @@
         width: 100%;
         min-height: none;
         height: 1015px;
-        background: #4f4f4f;
+        background: #4F4F4F;
       }
     }
   }
 }
 
+
+
+
 @media screen and (min-width: 1024px) {
+
   .alignmentContainer {
     height: 100%;
     padding: 0px;
@@ -307,12 +311,12 @@
           .categoryBlogBody {
             flex-direction: row;
             justify-content: center;
-            gap: calc(40 * 100% / 1280);
+            gap: calc(40*100%/1280);
             align-items: flex-start;
             width: 100%;
 
             .leftBodySection {
-              width: calc(830 * 100% / 1280);
+              width: calc(830*100%/1280);
 
               .leftHeaderSection {
                 flex-direction: row;
@@ -321,11 +325,9 @@
                 position: relative;
 
                 .categoryHeader {
-                  .categoryInfo {
-                  }
+                  .categoryInfo {}
 
-                  .categoryTitle {
-                  }
+                  .categoryTitle {}
                 }
 
                 .sortSection {
@@ -333,33 +335,28 @@
                   top: 42px;
                   right: 0px;
 
-                  .sortTitle {
-                  }
+                  .sortTitle {}
 
                   .sortButton {
                     .subCategorySelect {
-                      .option {
-                      }
+                      .option {}
                     }
 
-                    .subCategorySelect:focus {
-                    }
+                    .subCategorySelect:focus {}
 
-                    .selectArrow {
-                    }
+                    .selectArrow {}
                   }
                 }
               }
 
-              .componentMapSection {
-              }
+              .componentMapSection {}
             }
 
             .rightBodySection {
               gap: 41px;
               padding: 0px;
               margin: 0px;
-              width: calc(410 * 100% / 1280);
+              width: calc(410*100%/1280);
               height: fit-content;
               overflow: hidden;
 
@@ -368,7 +365,7 @@
                 position: relative;
                 width: 100%;
                 height: 279px;
-                background-color: #d9d9d9;
+                background-color: #D9D9D9;
                 z-index: 0;
               }
 
@@ -384,9 +381,11 @@
           width: 100%;
           min-height: 474px;
           height: fit-content;
-          background: #4f4f4f;
+          background: #4F4F4F;
         }
       }
     }
   }
+
+
 }

@@ -15,8 +15,6 @@ const LawAndPolicy = ({ id }: { id: any }) => {
       });
   }, [id]);
 
-  console.log("hehe", blog);
-
   if (loading) {
     <h1>Loading...</h1>;
   }
