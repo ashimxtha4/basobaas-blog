@@ -5,20 +5,20 @@ import { Icon } from "@iconify/react";
 const MainProperty = () => {
   return (
     <>
-    <div className="card">
-    <div className="imageContainer">
+      <div className="card">
+        <div className="imageContainer">
           {/* <img className="image" src={IMG_URL + property.propertyImages[0]} /> */}
         </div>
         <div className="contentContainer">
           <div className="propertyTitle">
             <p>
-                {/* {property.pricing.title} */}
-                ola
-                </p>
+              {/* {property.pricing.title} */}
+              ola
+            </p>
           </div>
           <div className="propertyAddress">
             <p>
-            <Icon icon="ph:map-pin-bold" color="#707580" width="18" height="18" inline={true} style={{marginRight:"8px"}}/>
+              <Icon icon="ph:map-pin-bold" color="#707580" width="18" height="18" inline={true} style={{ marginRight: "8px" }} />
               {/* {property.location?.streetName}, {property.location?.locality} */}
               ola2
             </p>
@@ -35,7 +35,7 @@ const MainProperty = () => {
               <span className="overViewTags">
                 {/* {property.overview?.bedRoom} */}
                 23
-                </span>
+              </span>
               <span className="overViewTags">Beds</span>
             </div>
             <div className="overviewDatas">
@@ -65,19 +65,22 @@ const MainProperty = () => {
             </div>
           </div>
           <div className="propertyPrice">
-            <span className="price">
-              {/* NPR. {Priceformatter(property.pricing?.price)} */}
-              NPR. 3.50 Lakhs
-            </span>
-            <span className="unit">
-              {/* / {property.pricing?.label} */}
-            /Onwards
+            <div className='priceDiv'>
+              <span className="price">
+                {/* NPR. {Priceformatter(property.pricing?.price)} */}
+                NPR. 3.50 Lakhs
               </span>
-              <span className='contactButtonContainer'><button className='contactButton'>Contact</button></span>
+              <span className="unit">
+                {/* / {property.pricing?.label} */}
+                /Onwards
+              </span>
+            </div>
+
+            <button className='contactButtonContainer'>Contact</button>
           </div>
         </div>
-    </div>    
-</>
+      </div>
+    </>
   )
 }
 

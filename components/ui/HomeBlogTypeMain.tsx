@@ -3,17 +3,20 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { imageUrlCheck } from "../../utilities/helper";
 import Link from "next/link";
+import {useRouter} from "next/router";
 
 const HomeBlogTypeMain = ({ blog = {} }: any) => {
+  const router= useRouter()
   if (Object.keys(blog).length > 0)
     return (
       <>
-        <Link
+        {/* <Link
+          style={{display:"inlineBlock"}}
           href={{
             pathname: `/blogDetails/${blog?._id}`,
           }}
-        >
-          <div className="homeBlogTypeMain">
+        > */}
+          <div className="homeBlogTypeMain" onClick={()=>router.push(`blogDetails/${blog?._id}`)}>
             <div className="thumbnail">
               <img
                 // src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9g1yXNKpomzJ1y2AKUS2dJbCDEne6SjH_2fA4GLVA-g&s"
@@ -47,7 +50,7 @@ const HomeBlogTypeMain = ({ blog = {} }: any) => {
               </div>
             </div>
           </div>
-        </Link>
+        {/* </Link> */}
       </>
     );
   else return null;

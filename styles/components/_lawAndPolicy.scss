@@ -1,35 +1,27 @@
-.lawPolicyCardDiv {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin: 0px;
-  padding: 0px;
-  gap: 16px;
-  width: 345px;
-  height: 90px;
-  transition: 0.4s all;
-  cursor: pointer;
+.lawPolicyCard {
 
   .imageContainer {
-    width: 120px;
+    width: calc(120*100%/345);
     height: 100%;
     background: #d9d9d9;
     border-radius: 6px;
   }
+
   .blogContents {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 10px;
-    width: 209px;
-    height: fit-content;
+    gap: 6px;
+    width: calc(209*100%/345);
+    height: 100%;
 
     .blogCategoryTitle {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+
       p {
         margin: 0px;
         padding: 0px;
@@ -39,14 +31,18 @@
         font-size: 10px;
         line-height: 140%;
         text-transform: uppercase;
-        color: #0000ff;
+        color: #4F4F4F;
       }
     }
+
     .blogHeader {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      width: 100%;
+      height: fit-content;
+
       p {
         margin: 0px;
         padding: 0px;
@@ -56,6 +52,9 @@
         font-size: 16px;
         line-height: 140%;
         color: #333333;
+        width: 100%;
+        height: fit-content;
+        min-height: 44px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: initial;
@@ -75,27 +74,34 @@
   transform: scale(0.9);
 }
 
-@media only screen and (min-width: 768px) {
-  .lawPolicyCardDiv {
-    flex-direction: column;
-    width: 626.5px;
-    height: 133.33px;
+@media only screen and (min-width: 1024px) {
+  .lawPolicyCard {
+    box-sizing: border-box;
 
     .imageContainer {
-      width: 260px;
-      height: 133.33px;
+      width: 100%;
+      height: 182px;
     }
+
     .blogContents {
-      width: 350.5px;
+      width: 100%;
+      min-height: 106px;
       height: fit-content;
 
       .blogCategoryTitle {
+
         p {
+          color: #0000ff;
         }
       }
+
       .blogHeader {
+        width: 100%;
+        height: 56px;
+
         p {
           font-size: 20px;
+          line-height: 140%;
         }
       }
 

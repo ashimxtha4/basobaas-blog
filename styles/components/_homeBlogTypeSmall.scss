@@ -121,6 +121,7 @@
         -webkit-box-orient: vertical;
         margin: 0px;
         padding: 0px;
+        height: 40px;
       }
     }
     .blogBy {
@@ -151,9 +152,9 @@
   transform: scale(0.9);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .homeBlogTypeSmall {
-    width: 316.25px;
-    height: 247.5px;
+    width: 100%;
+    height: 100%;
   }
 }
