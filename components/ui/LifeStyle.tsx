@@ -9,7 +9,7 @@ const LifeStyle = ({ id }: { id: string }) => {
 
   useEffect(() => {
     getBlogByCategory(id, 4)
-      .then((data) => (console.log("data", data), setBlog(data)))
+      .then((data) => setBlog(data))
       .catch((err) => console.log("err", err))
       .finally(() => {
         setLoading(false);
