@@ -26,10 +26,11 @@ const HomeLoan = ({ id }: { id: string }) => {
           <label className="homeLoanTitle">Home Load</label>
           <span className="homeLoanViewAllButton">View All</span>
         </div>
-        {blog?.map((blog, ix) => {
-          return (
-            <div className="homeLoanCardDiv" key={ix}>
-              <div className="homeLoanCard">
+        <div className="homeLoanCardDiv">
+
+          {blog?.map((blog, ix) => {
+            return (
+              <div className="homeLoanCard" key={ix}>
                 <div className="homeLoan">
                   <div className="imageContainer">
                     {/* <Image
@@ -69,13 +70,20 @@ const HomeLoan = ({ id }: { id: string }) => {
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+
       </>
     );
   }
-  return null;
+  return <>
+    <div className="homeLoanTitleDiv">
+      <label className="homeLoanTitle">Home Load</label>
+      <span className="homeLoanViewAllButton">View All</span>
+    </div>
+    <div className="homeLoanCardDiv"></div>
+  </>;
 };
 
 export default HomeLoan;

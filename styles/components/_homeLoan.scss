@@ -5,7 +5,8 @@
   margin: 0px;
   padding: 0px;
   gap: 16px;
-  width: 345px;
+  // width: 345px;
+  width: 100%;
   height: 90px;
   transition: 0.4s all;
   cursor: pointer;
@@ -77,17 +78,17 @@
   transform: scale(0.9);
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .homeLoan {
-    width: 628px;
+    width: 100%;
     height: 107.33px;
 
     .imageContainer {
-      width: 260px;
+      width: calc(260*100%/628);
       height: 107.33px;
     }
     .blogContents {
-      width: 352px;
+      width: calc(352*100%/628);
       height: fit-content;
 
       .blogCategoryTitle {
@@ -97,6 +98,7 @@
       .blogHeader {
         p {
           font-size: 20px;
+          line-height: 140%;
         }
       }
 

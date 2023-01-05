@@ -24,14 +24,15 @@ const OurThoughts = ({ id }: { id: string }) => {
     return (
       <>
         <div className="ourThoughtsTitleDiv">
-                    <label className="ourThoughtsTitle">Our Thoughts</label>
-                    <span className="ourThoughtsViewAllButton">View All</span>
-                  </div>
-        {blog?.map((blog, ix) => {
-          return (
-            <div className="ourThoughtsCardDiv" key={ix}>
-              <div className="ourThoughtsCard">
-                <div className="ourThoughts">
+          <label className="ourThoughtsTitle">Our Thoughts</label>
+          <span className="ourThoughtsViewAllButton">View All</span>
+        </div>
+        <div className="ourThoughtsCardDiv">
+
+          {blog?.map((blog, ix) => {
+            return (
+              <div className="ourThoughtsCard" key={ix}>
+                <div className="homeLoan">
                   <div className="imageContainer">
                     {/* <Image
               src=""
@@ -70,13 +71,20 @@ const OurThoughts = ({ id }: { id: string }) => {
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+
       </>
     );
   }
-  return null;
+  return <>
+  <div className="ourThoughtsTitleDiv">
+    <label className="ourThoughtsTitle">Our Thoughts</label>
+    <span className="ourThoughtsViewAllButton">View All</span>
+  </div>
+  <div className="ourThoughtsCardDiv"></div>
+</>;;
 };
 
 export default OurThoughts;
