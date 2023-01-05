@@ -9,6 +9,7 @@ import LifeStyle from "../components/ui/LifeStyle";
 import HomeLoan from "../components/ui/HomeLoan";
 import OurThoughts from "../components/ui/OurThoughts";
 import LawAndPolicy from "../components/ui/LawAndPolicy";
+import MainProperty from "../components/ui/MainProperty";
 
 export const getBlogByCategory = async (id: String, limit?: number) => {
   var url = `/blogs?category=${id}`;
@@ -143,7 +144,7 @@ const HomePage = () => {
             <div className="contentBody">
               <div className="blogPreviewDiv">
                 <div className="bigComponent">
-                  <HomeBlogTypeMain blog={data.blogsByCategory[0]}/>
+                  <HomeBlogTypeMain blog={data.blogsByCategory[0]} />
                 </div>
                 <div className="smallComponentDiv">
                   {data.blogsByCategory.map((categorySpecificBlog, index) => {
@@ -185,18 +186,12 @@ const HomePage = () => {
                       .flatMap((i) => i)
                       .map((i, index) => (
                         <>
-                        <div className="marketSmallComponent" key={index}>
-                          <MarketNewsTypeSecondary blog={i} />
-                        </div>
-                        <div className="marketSmallComponent" key={index}>
-                        <MarketNewsTypeSecondary blog={i} />
-                      </div>
-                      <div className="marketSmallComponent" key={index}>
-                      <MarketNewsTypeSecondary blog={i} />
-                    </div>
-                    </>
+                          <div className="marketSmallComponent" key={index}>
+                            <MarketNewsTypeSecondary blog={i} />
+                          </div>
+                        </>
                       ))}
-                      
+
                   </div>
                 </div>
               </div>
@@ -211,20 +206,25 @@ const HomePage = () => {
                   <span className="propertyListViewAllButton">View All</span>
                 </div>
                 <div className="propertyCardDiv">
-                  <div className="propertyCard"></div>
-                  <div className="propertyCard"></div>
-                  <div className="propertyCard"></div>
-                  <div className="propertyCard"></div>
+                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard"><MainProperty /></div>
 
-                  <div className="propertyCard"></div>
-                  <div className="propertyCard"></div>
-                  <div className="propertyCard"></div>
+                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard"><MainProperty /></div>
                 </div>
               </div>
 
-              <div className="lifeStyleWrapper">
+              <div className="lifeStyleDiv">
+                
                 <LifeStyle id={data?.categories[1]?.id} />
               </div>
+
+              {/* <div className="lifeStyleDiv">
+                <LifeStyle id={data?.categories[1]?.id} />
+              </div> */}
 
               <div className="flexTwo">
                 <div className="homeLoanDiv">
@@ -243,7 +243,14 @@ const HomePage = () => {
                   <span className="propertyListViewAllButton">View All</span>
                 </div>
                 <div className="propertyCardDiv">
-                  <div className="propertyCard"></div>
+                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard"><MainProperty /></div>
+
+                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard"><MainProperty /></div>
                 </div>
               </div>
 

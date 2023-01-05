@@ -28,42 +28,119 @@ const LifeStyle = ({ id }: { id: string }) => {
         </div>
         <div className="lifeStyleCardDiv">
           {blog.map((blog, idx) => (
-            <div key={idx} className="homeBlogTypeSmall">
-              <div className="thumbnail">
-                <img
-                  src={imageUrlCheck(blog.images[0] as string)}
-                  className="blogCardBackground"
-                  alt="Basobaas Nepal"
-                />
-              </div>
-              <div className="cardContent">
-                <div className="blogCategoryTag">
-                  <p>{blog.category?.name}</p>
-                </div>
-                <div className="blogTitle">
-                  <p>{blog.title}</p>
-                </div>
-                <div className="blogBy">
-                  <div className="author">{blog.author?.fullName}</div>
-                  <div className="separator">
-                    <Icon
-                      icon="ci:dot-05-xl"
-                      width="15"
-                      height="15"
-                      color="#FFFFFF"
+            <>
+              <div key={idx} className="lifeStyleCard">
+                <div className="homeBlogTypeSmall">
+                  <div className="thumbnail">
+                    <img
+                      src={imageUrlCheck(blog.images[0] as string)}
+                      className="blogCardBackground"
+                      alt="Basobaas Nepal"
                     />
                   </div>
-                  <div className="posted">
-                    {/* {createdAt} */}
-                    {/* {blogPostedDate} */}
-                    hi
+                  <div className="cardContent">
+                    <div className="blogCategoryTag">
+                      <p>{blog.category?.name}</p>
+                    </div>
+                    <div className="blogTitle">
+                      <p>{blog.title}</p>
+                    </div>
+                    <div className="blogBy">
+                      <div className="author">{blog.author?.fullName}</div>
+                      <div className="separator">
+                        <Icon
+                          icon="ci:dot-05-xl"
+                          width="15"
+                          height="15"
+                          color="#FFFFFF"
+                        />
+                      </div>
+                      <div className="posted">
+                        {/* {createdAt} */}
+                        {/* {blogPostedDate} */}
+                        hi
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <div key={idx} className="lifeStyleCard">
+                <div className="homeBlogTypeSmall">
+                  <div className="thumbnail">
+                    <img
+                      src={imageUrlCheck(blog.images[0] as string)}
+                      className="blogCardBackground"
+                      alt="Basobaas Nepal"
+                    />
+                  </div>
+                  <div className="cardContent">
+                    <div className="blogCategoryTag">
+                      <p>{blog.category?.name}</p>
+                    </div>
+                    <div className="blogTitle">
+                      <p>{blog.title}</p>
+                    </div>
+                    <div className="blogBy">
+                      <div className="author">{blog.author?.fullName}</div>
+                      <div className="separator">
+                        <Icon
+                          icon="ci:dot-05-xl"
+                          width="15"
+                          height="15"
+                          color="#FFFFFF"
+                        />
+                      </div>
+                      <div className="posted">
+                        {/* {createdAt} */}
+                        {/* {blogPostedDate} */}
+                        hi
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div key={idx} className="lifeStyleCard">
+                <div className="homeBlogTypeSmall">
+                  <div className="thumbnail">
+                    <img
+                      src={imageUrlCheck(blog.images[0] as string)}
+                      className="blogCardBackground"
+                      alt="Basobaas Nepal"
+                    />
+                  </div>
+                  <div className="cardContent">
+                    <div className="blogCategoryTag">
+                      <p>{blog.category?.name}</p>
+                    </div>
+                    <div className="blogTitle">
+                      <p>{blog.title}</p>
+                    </div>
+                    <div className="blogBy">
+                      <div className="author">{blog.author?.fullName}</div>
+                      <div className="separator">
+                        <Icon
+                          icon="ci:dot-05-xl"
+                          width="15"
+                          height="15"
+                          color="#FFFFFF"
+                        />
+                      </div>
+                      <div className="posted">
+                        {/* {createdAt} */}
+                        {/* {blogPostedDate} */}
+                        hi
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
           ))}
         </div>
       </div>
+
+
+
     );
   else return null;
 };

@@ -40,6 +40,7 @@
     .propertyTitle {
       position: relative;
       width: 100%;
+
       p {
         position: relative;
         font-family: "Product Sans", sans-serif;
@@ -52,9 +53,11 @@
         padding: 0px;
       }
     }
+
     .propertyAddress {
       position: relative;
       width: 100%;
+
       p {
         position: relative;
         font-family: "Product Sans", sans-serif;
@@ -69,11 +72,13 @@
         padding: 0px;
       }
     }
+
     .propertyOverview {
       position: relative;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 8px;
       align-items: center;
       width: 100%;
 
@@ -134,34 +139,45 @@
     .propertyPrice {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
       gap: 3px;
       width: 100%;
       // display: none;
 
-      .price {
-        font-family: "Product Sans", sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 140%;
+      .priceDiv {
         display: flex;
+        flex-direction: row;
         align-items: center;
-        color: #0000ff;
-        max-width: 167px;
-        height: fit-content;
-      }
+        padding: 0px;
+        gap: 3px;
+        // height: fit-content;
+        height: 22px;
 
-      .unit{
-        font-family: 'Product Sans', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 140%;
-        display: flex;
-        align-items: center;
-        color: #0000FF;
+        .price {
+          font-family: "Product Sans", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 140%;
+          display: flex;
+          align-items: center;
+          color: #0000ff;
+          width: fit-content;
+          height: fit-content;
+          padding-bottom: 3px;
+        }
+
+        .unit {
+          font-family: 'Product Sans', sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 10px;
+          line-height: 140%;
+          display: flex;
+          align-items: center;
+          color: #0000FF;
+        }
       }
 
       .contactButtonContainer {
@@ -175,63 +191,118 @@
         border: 1px solid #2b2b2b;
         border-radius: 6px;
         margin: 0px;
-        // display: none;
+        font-family: "Product Sans", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        color: #2b2b2b;
+        background-color: transparent;
 
-        .contactButton {
-          font-family: "Product Sans", sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 140%;
-          text-align: center;
-          color: #2b2b2b;
-          border: none;
-          background: transparent;
-          margin: 0px;
-          padding: 0px;
-        }
+        // display: none;
       }
     }
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .card {
-    width: 300px;
-    height: 334px;
+    width: 100%;
+    min-height: 334px;
+    height: fit-content;
+    padding: 0px;
+    gap: 8px;
+    border: none;
 
     .imageContainer {
-      img {
-      }
+      width: 100%;
+      height: 198px;
+      border: solid 1px;
+
+
+      img {}
     }
 
     .contentContainer {
+      gap: 12px;
+      width: 100%;
+      min-height: 128px;
+      height: fit-content;
+
       .propertyTitle {
+
         p {
+          width: fit-content;
+          height: 28px;
+          font-family: 'Product Sans';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 140%;
+          color: #000000;
         }
       }
+
       .propertyAddress {
+
         p {
-        }
+          margin: 0px;
+          font-size: 12px;
+          }
       }
+
       .propertyOverview {
+
         .overviewDatas {
+
           .iconContainer {
-            .overviewIcons {
-            }
+    
+            .overviewIcons {}
           }
 
-          .overViewTags {
-          }
+          .overViewTags {}
         }
       }
 
       .propertyPrice {
-        .price {
+        justify-content: space-between;
+
+        .priceDiv {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          padding: 0px;
+          gap: 3px;
+          width: fit-content;
+          height: 25px;
+
+          .price {
+            font-family: "Product Sans", sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 140%;
+            display: flex;
+            align-items: center;
+            color: #0000ff;
+            width: fit-content;
+            height: 22px;
+          }
+
+          .unit {
+            padding-bottom: 2px;
+            font-size: 12px;
+          }
         }
-        .unit {
+
+        .contactButtonContainer {
+          background-color: transparent;
         }
+
       }
+
+
     }
   }
 }
