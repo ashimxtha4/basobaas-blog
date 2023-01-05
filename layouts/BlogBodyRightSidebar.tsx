@@ -27,13 +27,23 @@ const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
       getSpecificProperties();
     }
   }, []);
+
   return (
     <>
       <div className="rightSidebar">
         <div className="relatedSection">
           <div className="relatedSectionTitle">
             <p>Related</p>
-            <button>View All</button>
+            <Link
+              className="relatedBlogsView"
+              href={{
+                pathname: `/${blog[0]?.category?.name.replaceAll(" ", "")}/${
+                  blog[0]?.category?._id
+                }`,
+              }}
+            >
+              <button>View All</button>
+            </Link>
           </div>
 
           <div className="relatedSectionContainer">

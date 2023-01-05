@@ -37,7 +37,6 @@ const HomePage = () => {
     blogsWithSameCategory: [],
   });
 
-
   //GET ALL CATEGORIES TO GET CATEGORY ID AND MAP EACH CATEGORY TO GET BLOG
   const getAllCategories = async () => {
     try {
@@ -183,7 +182,7 @@ const HomePage = () => {
                     <div className="marketSmallComponent"></div> */}
 
                     {Object.values(getMarketNewsBlogs ?? {})
-                      .flatMap((i) => i)
+                      .flatMap((i) => i).splice(1,3)
                       .map((i, index) => (
                         <>
                           <div className="marketSmallComponent" key={index}>

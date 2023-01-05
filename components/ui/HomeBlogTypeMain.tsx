@@ -13,7 +13,7 @@ const HomeBlogTypeMain = ({ blog = {} }: any) => {
         {/* <Link
           style={{display:"inlineBlock"}}
           href={{
-            pathname: `blogDetails/${blog?._id}`,
+            pathname: `/blogDetails/${blog?._id}`,
           }}
         > */}
           <div className="homeBlogTypeMain" onClick={()=>router.push(`blogDetails/${blog?._id}`)}>

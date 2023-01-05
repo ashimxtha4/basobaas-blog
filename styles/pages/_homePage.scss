@@ -446,13 +446,12 @@
 
           .lifeStyleCardDiv {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: flex-start;
             padding: 0px;
             gap: 8px;
             width: 100%;
             height: 286px;
-            border: solid 1px;
             overflow-x: scroll;
             overflow-y: hidden;
 

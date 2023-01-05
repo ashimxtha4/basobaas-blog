@@ -21,7 +21,7 @@ const LifeStyle = ({ id }: { id: string }) => {
   }
   if (blog.length)
     return (
-      <div className="lifeStyleDiv">
+      <>
         <div className="lifeStyleTitleDiv">
           <label className="lifeStyleTitle">Lifestyle</label>
           <span className="lifeStyleViewAllButton">View All</span>
@@ -137,7 +137,7 @@ const LifeStyle = ({ id }: { id: string }) => {
             </>
           ))}
         </div>
-      </div>
+      </>
 
 
 
