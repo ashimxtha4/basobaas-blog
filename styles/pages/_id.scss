@@ -30,7 +30,7 @@
     align-items: center;
     min-width: 100vw;
     height: fit-content;
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
 
     .blogSecNavBlend {
       height: 105.5px;
@@ -58,7 +58,6 @@
       background-color: #ffffff;
       position: relative;
 
-
       .secNavDiv {
         height: fit-content;
         width: 100%;
@@ -80,7 +79,6 @@
 
         @media screen and (min-width: 768px) {
           padding: 24px 30px 32px 30px;
-
         }
 
         .categoryBlogBody {
@@ -221,6 +219,126 @@
                 align-items: center;
                 gap: 8px;
                 margin: 0px;
+
+                .pageIndex {
+                  background: #ffffff;
+                  border: 1px solid #dfe3e8;
+                  border-radius: 4px;
+
+                  .pageNumber {
+                    border-radius: 4px;
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    font-family: "Product Sans";
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 140%;
+                    text-align: center;
+                    color: black;
+                  }
+
+                  .page-link {
+                    margin: 0px;
+                    padding: 0px;
+                    border: none;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 4px;
+
+                    .pageNumberIcon {
+                      margin: 0px;
+                      padding: 0px;
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: center;
+                      align-items: center;
+                      border-radius: 4px;
+                      width: 32px;
+                      height: 32px;
+                    }
+
+                    .pageNumberIcon:hover {
+                      transform: none;
+                    }
+                  }
+
+                  .page-link:focus {
+                    box-shadow: none !important;
+                    border-color: transparent !important;
+                    border: none;
+                  }
+                }
+
+                .pageIndex:hover {
+                  border: 1px solid #0000ff;
+
+                  .pageNumber {
+                    color: #0000ff;
+                    background: #ffffff;
+                  }
+                }
+
+                .pageIndexIcon {
+                  background: #ffffff;
+                  border: 1px solid #dfe3e8;
+                  border-radius: 4px;
+
+                  .pageIconContainer {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0px;
+                    padding: 0px;
+
+                    .pageNumberIcon {
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: center;
+                      align-items: center;
+                      text-align: center;
+                    }
+                  }
+
+                  .pageIconContainer:hover {
+                    transform: none;
+                    background: #919eab;
+                    border-radius: 4px;
+                    border: none;
+                    border: 1px solid #919eab;
+                  }
+
+                  .page-link {
+                    border: none;
+                    width: 32px;
+                    height: 32px;
+                    margin: 0px;
+                    padding: 0px;
+                    border: none;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 4px;
+                  }
+
+                  .page-link:focus {
+                    box-shadow: none !important;
+                    border-color: transparent !important;
+                    border: none;
+                  }
+                }
+
+                .pageIndexIcon:hover {
+                  transform: none;
+                }
               }
             }
           }
@@ -237,7 +355,7 @@
               position: relative;
               width: 100%;
               height: 223px;
-              background-color: #D9D9D9;
+              background-color: #d9d9d9;
               z-index: 0;
             }
 
@@ -253,16 +371,13 @@
         width: 100%;
         min-height: none;
         height: 1015px;
-        background: #4F4F4F;
+        background: #4f4f4f;
       }
     }
   }
 }
 
-
-
 @media screen and (min-width: 1024px) {
-
   .alignmentContainer {
     height: 100%;
     padding: 0px;
@@ -319,7 +434,6 @@
           width: 100%;
           position: sticky;
           padding: 12px 5.5% 18px 5.5%;
-
         }
 
         .bodyContainer {
@@ -330,12 +444,12 @@
           .categoryBlogBody {
             flex-direction: row;
             justify-content: center;
-            gap: calc(40*100%/1280);
+            gap: calc(40 * 100% / 1280);
             align-items: flex-start;
             width: 100%;
 
             .leftBodySection {
-              width: calc(830*100%/1280);
+              width: calc(830 * 100% / 1280);
 
               .leftHeaderSection {
                 flex-direction: row;
@@ -344,9 +458,11 @@
                 position: relative;
 
                 .categoryHeader {
-                  .categoryInfo {}
+                  .categoryInfo {
+                  }
 
-                  .categoryTitle {}
+                  .categoryTitle {
+                  }
                 }
 
                 .sortSection {
@@ -354,16 +470,20 @@
                   top: 42px;
                   right: 0px;
 
-                  .sortTitle {}
+                  .sortTitle {
+                  }
 
                   .sortButton {
                     .subCategorySelect {
-                      .option {}
+                      .option {
+                      }
                     }
 
-                    .subCategorySelect:focus {}
+                    .subCategorySelect:focus {
+                    }
 
-                    .selectArrow {}
+                    .selectArrow {
+                    }
                   }
                 }
               }
@@ -377,7 +497,7 @@
               gap: 41px;
               padding: 0px;
               margin: 0px;
-              width: calc(410*100%/1280);
+              width: calc(410 * 100% / 1280);
               height: fit-content;
               overflow: hidden;
 
@@ -386,7 +506,7 @@
                 position: relative;
                 width: 100%;
                 height: 279px;
-                background-color: #D9D9D9;
+                background-color: #d9d9d9;
                 z-index: 0;
               }
 
@@ -402,11 +522,25 @@
           width: 100%;
           min-height: 474px;
           height: fit-content;
-          background: #4F4F4F;
+          background: #4f4f4f;
         }
       }
     }
   }
+}
 
-
+//FOR ACTIVE PAGINATIONS
+.activePage {
+  border: 1px solid #0000ff !important;
+  .pageNumber {
+    background-color: #d9d9d9 !important;
+    color: #0000ff;
+  }
+  .pageNumber:hover {
+    transform: none;
+  }
+}
+.activePage:hover {
+  transform: none;
+  border: none;
 }
