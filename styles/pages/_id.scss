@@ -116,7 +116,7 @@
                   font-family: "Product Sans", sans-serif;
                   font-style: normal;
                   font-weight: 400;
-                  font-size: 16px;
+                  font-size: 14px;
                   line-height: 140%;
                   color: #4f4f4f;
                   margin: 0px;
@@ -129,7 +129,7 @@
                   font-family: "Product Sans", sans-serif;
                   font-style: normal;
                   font-weight: 700;
-                  font-size: 24px;
+                  font-size: 20px;
                   line-height: 140%;
                   color: #0000ff;
                   margin: 0px;
@@ -153,7 +153,7 @@
                   font-family: "Product Sans", sans-serif;
                   font-style: normal;
                   font-weight: 700;
-                  font-size: 16px;
+                  font-size: 14px;
                   line-height: 140%;
                   color: #4f4f4f;
                   word-spacing: 3px;
@@ -161,7 +161,7 @@
 
                 .sortButton {
                   display: flex;
-                  position: relative;
+                  // position: relative;
                   flex-direction: row;
                   justify-content: center;
                   align-items: center;
@@ -173,7 +173,7 @@
                     font-family: "Product Sans", sans-serif;
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 16px;
+                    font-size: 14px;
                     line-height: 140%;
                     text-align: center;
                     color: #4f4f4f;
@@ -183,21 +183,15 @@
                     border: none;
                     background-color: transparent;
                     z-index: 2;
+                    position: relative;
 
                     .option {
                       width: 137px;
                       text-align: center;
                     }
                   }
-
                   .subCategorySelect:focus {
                     outline: none;
-                  }
-
-                  .selectArrow {
-                    position: absolute;
-                    right: 0;
-                    z-index: -1;
                   }
                 }
               }

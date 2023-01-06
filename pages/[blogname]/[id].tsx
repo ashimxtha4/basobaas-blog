@@ -20,7 +20,7 @@ export default function BlogPage() {
   const [skip, setSkip] = useState<number>(0);
 
   //STATE FOR LIMIT
-  const [limit, setLimit] = useState<number>(6);
+  const [limit, setLimit] = useState<number>(1);
 
   //STATE FOR CURRENT PAGE INDICATION
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -185,6 +185,7 @@ export default function BlogPage() {
                             width="30"
                             height="30"
                           />
+                          
                         </span>
                       </div>
                     </div>
