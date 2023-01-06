@@ -6,6 +6,7 @@ import BlogNavbar from "../../layouts/BlogNavbar";
 import CategorySpecificBlog from "../../components/ui/CategorySpecificBlog";
 import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
 import Navbar from "../../layouts/Navbar";
+import { Select } from "antd";
 
 export default function BlogPage() {
   //STATE FOR BLOGS
@@ -157,7 +158,7 @@ export default function BlogPage() {
                   <div className="leftBodySection">
                     <div className="leftHeaderSection">
                       <div className="categoryHeader">
-                        <p className="categoryInfo">क्यट्गोरी</p>
+                        <p className="categoryInfo">क्याटीगोरी</p>
                         <p className="categoryTitle">
                           {/* {blogs[0]?.category?.name} */}
                           Market Updates
@@ -166,30 +167,56 @@ export default function BlogPage() {
                       <div className="sortSection">
                         <span className="sortTitle">Sort By :</span>
                         <span className="sortButton">
-                          <select
+                          {/* <select
                             name="sort"
                             onChange={(e) => {
                               handleChange(e);
                             }}
                             defaultValue={blogs[0]?.subCategory?._id}
+                            className="subCategorySelect" */}
+                          {/* aria-label=".form-select-sm example" */}
+                          {/* > */}
+                          {/* {blogs?.map((i, k) => {
+                              return ( */}
+                          {/* <option value={i.subCategory?._id} key={k}> */}
+                          {/* {i.subCategory?.name} */}
+                          {/* Realestate business */}
+                          {/* </option> */}
+                          {/* ); */}
+                          {/* })} */}
+                          {/* </select> */}
+                          {/* <Icon */}
+                          {/* icon="ph:caret-down-bold" */}
+                          {/* color="#4f4f4f" width="20" height="20" */}
+                          {/* className="selectArrow" */}
+                          {/* /> */}
+                          <Select
+                            suffixIcon={
+                              <Icon
+                                icon="ph:caret-down-bold"
+                                color="#4f4f4f"
+                                width="20"
+                                height="20"
+                                className="selectArrow"
+                              />
+                            }
+                            defaultValue="Realstate Business"
                             className="subCategorySelect"
-                            // aria-label=".form-select-sm example"
-                          >
-                            {blogs?.map((i, k) => {
-                              return (
-                                <option value={i.subCategory?._id} key={k}>
-                                  {/* {i.subCategory?.name} */}
-                                  Realestate business
-                                </option>
-                              );
-                            })}
-                          </select>
-                          <Icon
-                            icon="ph:caret-down-bold"
-                            color="#4f4f4f"
-                            width="20"
-                            height="20"
-                            className="selectArrow"
+                            bordered={false}
+                            options={[
+                              {
+                                value: "realStateBusiness",
+                                label: "Realstate Business",
+                              },
+                              {
+                                value: "handicraft",
+                                label: "Handicraft",
+                              },
+                              {
+                                value: "textiles",
+                                label: "Textiles",
+                              },
+                            ]}
                           />
                         </span>
                       </div>
