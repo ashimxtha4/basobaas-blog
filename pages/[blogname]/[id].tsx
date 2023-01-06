@@ -156,7 +156,8 @@ export default function BlogPage() {
                       <div className="categoryHeader">
                         <p className="categoryInfo">Category</p>
                         <p className="categoryTitle">
-                          {blogs[0]?.category?.name}
+                          {/* {blogs[0]?.category?.name} */}
+                          Market Updates
                         </p>
                       </div>
                       <div className="sortSection">
@@ -174,25 +175,28 @@ export default function BlogPage() {
                             {blogs?.map((i, k) => {
                               return (
                                 <option value={i.subCategory?._id} key={k}>
-                                  {i.subCategory?.name}
+                                  {/* {i.subCategory?.name} */}
+                                  Realestate business
                                 </option>
                               );
                             })}
                           </select>
-                          <Icon
-                            className="selectArrow"
-                            icon="ri:arrow-drop-down-line"
-                            width="30"
-                            height="30"
-                          />
-                          
+                            <Icon icon="ph:caret-down-bold" color="#4f4f4f" width="20" height="20" className="selectArrow"/>
                         </span>
                       </div>
                     </div>
                     <div className="componentMapSection">
-                      {blogs.map((i, index) => {
-                        return <CategorySpecificBlog key={index} blog={i} />;
-                      })}
+                      {/* {blogs.map((i, index) => {
+                        return( 
+                        <CategorySpecificBlog key={index} blog={i} />
+                        )
+                      })} */}
+                      <CategorySpecificBlog />
+                      <CategorySpecificBlog />
+                      <CategorySpecificBlog />
+                      <CategorySpecificBlog />
+                      <CategorySpecificBlog />
+                      <CategorySpecificBlog />
                     </div>
                     <nav
                       aria-label="Page navigation example"
@@ -270,7 +274,7 @@ export default function BlogPage() {
                   </div>
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
-                    {/* <div className="blogAdDiv"></div> */}
+                    <div className="blogAdDiv"></div>
                     <BlogBodyRightSidebar blog={blogs} />
                   </div>
                 </div>
