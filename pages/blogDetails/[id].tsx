@@ -4,6 +4,7 @@ import BlogNavbar from "../../layouts/BlogNavbar";
 import { useState, useEffect } from "react";
 import { Router, useRouter } from "next/router";
 import { Icon } from "@iconify/react";
+import Navbar from "../../layouts/Navbar";
 import { IMG_URL } from "../../baseConstants";
 
 export default function BlogPage() {
@@ -77,7 +78,9 @@ export default function BlogPage() {
   return (
     <>
       <div className="blogDetailsAlignmentContainer">
-        <div className="navBlend"></div>
+        <div className="navBlend">
+          <Navbar/>
+        </div>
         <div className="blogContainerDiv">
           <div className="blogSecNavBlend"></div>
           <div className="footerBlend"></div>

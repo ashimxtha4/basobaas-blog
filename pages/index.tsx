@@ -10,6 +10,7 @@ import HomeLoan from "../components/ui/HomeLoan";
 import OurThoughts from "../components/ui/OurThoughts";
 import LawAndPolicy from "../components/ui/LawAndPolicy";
 import MainProperty from "../components/ui/MainProperty";
+import Navbar from "../layouts/Navbar";
 
 export const getBlogByCategory = async (id: String, limit?: number) => {
   var url = `/blogs?category=${id}`;
@@ -119,7 +120,7 @@ const HomePage = () => {
   return (
     <>
       <div className="alignmentContainer">
-        <div className="navBlend"></div>
+        <div className="navBlend"><Navbar/></div>
         <div className="containerDiv">
           <div className="secNavBlend"></div>
           <div className="footerBlend"></div>
@@ -227,7 +228,7 @@ const HomePage = () => {
 
               <div className="flexTwo">
                 <div className="homeLoanDiv">
-                  <HomeLoan id={data?.categories[2]?.id} />
+                  <HomeLoan id={data?.categories[3]?.id} />
                 </div>
                 <div className="ourThoughtsDiv">
                   <OurThoughts id={data?.categories[3]?.id} />

@@ -23,7 +23,7 @@ const HomeLoan = ({ id }: { id: string }) => {
     return (
       <>
         <div className="homeLoanTitleDiv">
-          <label className="homeLoanTitle">Home Load</label>
+          <label className="homeLoanTitle">Home Loan</label>
           <span className="homeLoanViewAllButton">View All</span>
         </div>
         <div className="homeLoanCardDiv">
@@ -79,7 +79,7 @@ const HomeLoan = ({ id }: { id: string }) => {
   }
   return <>
     <div className="homeLoanTitleDiv">
-      <label className="homeLoanTitle">Home Load</label>
+      <label className="homeLoanTitle">Home Loan</label>
       <span className="homeLoanViewAllButton">View All</span>
     </div>
     <div className="homeLoanCardDiv"></div>
