@@ -13,6 +13,8 @@
 
   .navBlend {
     width: 100vw;
+    display: flex;
+    justify-content: center;
     position: fixed;
     height: 53px;
     background: #ffffff;
