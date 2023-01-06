@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 1;
   position: relative;
   overflow: hidden;
 
@@ -52,7 +51,6 @@
     .contentDiv {
       height: fit-content;
       width: 375px;
-      // border: solid 1px;
       display: flex;
       flex-direction: column;
       // padding-top: 8px;
@@ -62,13 +60,13 @@
       .aboveNavDiv {
         position: relative;
         height: 98px;
-        // border: solid 1px blue;
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         gap: 4px;
         padding: 8px 15px 18px 15px;
+        border: solid 1px;
         // padding-top: 8px;
         // padding-bottom: 18px;
 
@@ -115,7 +113,6 @@
         position: sticky;
         padding: 12px 15px 18px 15px;
         background-color: #001338;
-        // border: solid 1px;
       }
 
       .contentBody {
@@ -126,7 +123,6 @@
         gap: 24px;
 
         .blogPreviewDiv {
-          border: solid 1px blue;
           position: relative;
           height: fit-content;
           width: 100%;
@@ -136,6 +132,7 @@
           gap: 10px;
           overflow-x: scroll;
           overflow-y: hidden;
+          border: solid 1px;
 
           .blogPreviewDiv::-webkit-scrollbar-track {
             /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
@@ -170,11 +167,11 @@
             gap: 10px;
             height: 250px;
             width: fit-content;
+            border: solid 1px;
 
             .smallComponent {
               height: 250px;
               width: fit-content;
-              border: solid 1px;
             }
           }
         }
@@ -184,7 +181,6 @@
         }
 
         .marketNewsDiv {
-          border: solid 2px brown;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -194,6 +190,7 @@
           width: 100%;
           height: fit-content;
           padding-right: 15px;
+          border: solid 1px;
 
           .titleDiv {
             display: flex;
@@ -208,7 +205,6 @@
             order: 0;
             align-self: stretch;
             flex-grow: 0;
-            border: solid 1px;
 
             .title {
               width: 114px;
@@ -249,8 +245,7 @@
             height: fit-content;
             flex: none;
             align-self: stretch;
-            flex-grow: 0;
-            // border: solid 1px;
+            border: solid 1px;
           }
 
           .marketBigComponent {
@@ -265,7 +260,6 @@
             flex: none;
             align-self: stretch;
             flex-grow: 0;
-            border: solid 1px;
           }
 
           .marketSmallComponentDiv {
@@ -279,7 +273,7 @@
             // height: fit-content;
             flex: none;
             align-self: stretch;
-            flex-grow: 0;
+            border: solid 1px;
 
             .marketSmallComponent {
               display: flex;
@@ -300,7 +294,6 @@
         }
 
         .propertyListDiv {
-          border: solid 1px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -325,7 +318,7 @@
             order: 0;
             align-self: stretch;
             flex-grow: 0;
-            border: solid 1px;
+            
 
             .propertyListTitle {
               width: fit-content;
@@ -370,7 +363,6 @@
             flex: none;
             align-self: stretch;
             flex-grow: 0;
-            border: solid 1px brown;
 
             .propertyCard {
               box-sizing: border-box;
@@ -398,7 +390,7 @@
           width: 100%;
           padding-right: 15px;
           height: 286px;
-          border: solid 1px;
+          
 
           .lifeStyleTitleDiv {
             display: flex;
@@ -413,7 +405,7 @@
             order: 0;
             align-self: stretch;
             flex-grow: 0;
-            border: solid 1px;
+            
 
             .lifeStyleTitle {
               width: fit-content;
@@ -454,8 +446,11 @@
             height: 286px;
             overflow-x: scroll;
             overflow-y: hidden;
+            border: solid 1px;
+
 
             .lifeStyleCard {
+              border: solid 1px;
               display: flex;
               flex-direction: column;
               justify-content: flex-end;
@@ -487,7 +482,7 @@
           gap: 24px;
           justify-content: center;
           align-items: center;
-          border: solid 1px;
+          
 
           .homeLoanDiv {
             display: flex;
@@ -500,6 +495,7 @@
             width: 100%;
             height: 354px;
             border: solid 1px;
+            
 
             .homeLoanTitleDiv {
               display: flex;
@@ -514,7 +510,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .homeLoanTitle {
                 width: fit-content;
@@ -553,13 +549,12 @@
               gap: 24px;
               width: 100%;
               height: 318px;
-              flex: none;
-              order: 1;
+              border: solid 1px;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 2px;
 
               .homeLoanCard {
+                border: solid 1px;
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -572,7 +567,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
               }
             }
           }
@@ -588,6 +583,7 @@
             width: 100%;
             height: 354px;
             border: solid 1px;
+            
 
             .ourThoughtsTitleDiv {
               display: flex;
@@ -602,7 +598,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .ourThoughtsTitle {
                 width: fit-content;
@@ -642,10 +638,9 @@
               width: 100%;
               height: 318px;
               flex: none;
-              order: 1;
               align-self: stretch;
-              flex-grow: 0;
               border: solid 1px;
+              
 
               .ourThoughtsCard {
                 display: flex;
@@ -657,10 +652,10 @@
                 width: 100%;
                 height: 90px;
                 flex: none;
-                order: 0;
+                border: solid 1px;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
               }
             }
           }
@@ -675,7 +670,7 @@
           gap: 24px;
           justify-content: center;
           align-items: center;
-          border: solid 1px;
+          
 
           .lawPolicyDiv {
             display: flex;
@@ -688,6 +683,7 @@
             width: 100%;
             height: 354px;
             border: solid 1px;
+            
 
             .lawPolicyTitleDiv {
               display: flex;
@@ -702,7 +698,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .lawPolicyTitle {
                 width: fit-content;
@@ -742,10 +738,9 @@
               width: 100%;
               height: 318px;
               flex: none;
-              order: 1;
               align-self: stretch;
-              flex-grow: 0;
               border: solid 1px;
+              
 
               .lawPolicyCard {
                 display: flex;
@@ -759,8 +754,7 @@
                 flex: none;
                 order: 0;
                 align-self: stretch;
-                flex-grow: 0;
-                border: solid 1px;
+                border: solid 1px;                
               }
             }
           }
@@ -779,7 +773,7 @@
           gap: 24px;
           justify-content: center;
           align-items: center;
-          border: solid 1px;
+          
 
           .flexThreeChild1Div {
             display: flex;
@@ -791,7 +785,7 @@
             position: relative;
             width: 100%;
             height: 354px;
-            border: solid 1px;
+            
 
             .flexThreeChild1TitleDiv {
               display: flex;
@@ -806,7 +800,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .flexThreeChild1Title {
                 width: fit-content;
@@ -846,10 +840,9 @@
               width: 100%;
               height: 318px;
               flex: none;
-              order: 1;
-              align-self: stretch;
-              flex-grow: 0;
               border: solid 1px;
+              align-self: stretch;
+              
 
               .flexThreeChild1Card {
                 display: flex;
@@ -863,8 +856,8 @@
                 flex: none;
                 order: 0;
                 align-self: stretch;
-                flex-grow: 0;
                 border: solid 1px;
+                
               }
             }
           }
@@ -880,6 +873,7 @@
             width: 100%;
             height: 354px;
             border: solid 1px;
+            
 
             .flexThreeChildTitleDiv {
               display: flex;
@@ -894,7 +888,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .flexThreeChildTitle {
                 width: fit-content;
@@ -936,8 +930,8 @@
               flex: none;
               order: 1;
               align-self: stretch;
-              flex-grow: 0;
               border: solid 1px;
+              
 
               .flexThreeChildCard {
                 display: flex;
@@ -951,8 +945,7 @@
                 flex: none;
                 order: 0;
                 align-self: stretch;
-                flex-grow: 0;
-                border: solid 1px;
+                border: solid 1px;                
               }
             }
           }
@@ -980,7 +973,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 1;
     position: relative;
     overflow: hidden;
 
@@ -1018,7 +1010,7 @@
         height: fit-content;
         width: 100%;
         max-width: 768px;
-        // border: solid 1px;
+        // 
         display: flex;
         flex-direction: column;
         // padding-top: 8px;
@@ -1028,7 +1020,6 @@
         .aboveNavDiv {
           position: relative;
           height: 98px;
-          // border: solid 1px blue;
           position: relative;
           display: flex;
           flex-direction: column;
@@ -1081,7 +1072,7 @@
           position: sticky;
           padding: 12px 15px 18px 15px;
           background-color: #001338;
-          // border: solid 1px;
+          // 
         }
 
         .contentBody {
@@ -1092,7 +1083,6 @@
           gap: 24px;
 
           .blogPreviewDiv {
-            border: solid 1px brown;
             position: relative;
             min-height: 500px;
             height: fit-content;
@@ -1113,8 +1103,7 @@
               width: fit-content;
               min-width: 100%;
               min-height: 500px;
-              border: solid 1px;
-              border: solid 1px green;
+              
             }
 
             .smallComponentDiv {
@@ -1131,7 +1120,7 @@
                 width: 32.9%;
                 // max-width: ;
                 min-width: none;
-                border: solid 1px;
+                
                 overflow: hidden;
               }
             }
@@ -1142,7 +1131,6 @@
           }
 
           .marketNewsDiv {
-            border: solid 2px brown;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -1165,7 +1153,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .title {
                 width: 114px;
@@ -1208,7 +1196,7 @@
               flex: none;
               align-self: stretch;
               flex-grow: 0;
-              // border: solid 1px;
+              // 
             }
 
             .marketBigComponent {
@@ -1224,7 +1212,7 @@
               flex: none;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
             }
 
             .marketSmallComponentDiv {
@@ -1239,7 +1227,6 @@
               flex: none;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px green;
 
               .marketSmallComponent {
                 display: flex;
@@ -1255,13 +1242,12 @@
                 flex: none;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px blue;
               }
             }
           }
 
           .propertyListDiv {
-            border: solid 1px;
+            
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -1286,7 +1272,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .propertyListTitle {
                 width: fit-content;
@@ -1331,7 +1317,6 @@
               flex: none;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px brown;
 
               .propertyCard {
                 box-sizing: border-box;
@@ -1353,7 +1338,7 @@
             width: 100%;
             min-height: 286px;
             height: fit-content;
-            border: solid 1px;
+            
 
             .lifeStyleTitleDiv {
               display: flex;
@@ -1368,7 +1353,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .lifeStyleTitle {
                 width: fit-content;
@@ -1408,7 +1393,7 @@
               width: 100%;
               min-height: 250px;
               height: fit-content;
-              border: solid 1px;
+              
               overflow-x: hidden;
               overflow-y: hidden;
 
@@ -1420,8 +1405,8 @@
                 padding: 0px;
                 gap: 10px;
                 width: 250px;
-                min-height: 250px;
-                height: fit-content;
+                height: 250px;
+                // height: fit-content;
                 background: linear-gradient(
                   0.14deg,
                   rgba(17, 16, 16, 0.7) 12.94%,
@@ -1445,7 +1430,7 @@
             gap: 2%;
             justify-content: center;
             align-items: center;
-            border: solid 1px;
+            
 
             .homeLoanDiv {
               display: flex;
@@ -1456,7 +1441,7 @@
               position: relative;
               width: 100%;
               height: 354px;
-              border: solid 1px;
+              
 
               .homeLoanTitleDiv {
                 display: flex;
@@ -1471,7 +1456,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .homeLoanTitle {
                   width: fit-content;
@@ -1514,7 +1499,7 @@
                 order: 1;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .homeLoanCard {
                   display: flex;
@@ -1529,7 +1514,7 @@
                   order: 0;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
@@ -1543,7 +1528,6 @@
               position: relative;
               width: 100%;
               height: 354px;
-              border: solid 1px green;
 
               .ourThoughtsTitleDiv {
                 display: flex;
@@ -1558,7 +1542,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .ourThoughtsTitle {
                   width: fit-content;
@@ -1601,7 +1585,7 @@
                 order: 1;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .ourThoughtsCard {
                   display: flex;
@@ -1616,7 +1600,7 @@
                   order: 0;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
@@ -1631,7 +1615,7 @@
             gap: 2%;
             justify-content: center;
             align-items: center;
-            border: solid 1px;
+            
 
             .lawPolicyDiv {
               display: flex;
@@ -1642,7 +1626,7 @@
               position: relative;
               width: 100%;
               height: 354px;
-              border: solid 1px;
+              
 
               .lawPolicyTitleDiv {
                 display: flex;
@@ -1657,7 +1641,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .lawPolicyTitle {
                   width: fit-content;
@@ -1700,7 +1684,7 @@
                 order: 1;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
                 overflow: hidden;
 
                 .lawPolicyCard {
@@ -1716,7 +1700,7 @@
                   order: 0;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
@@ -1730,7 +1714,7 @@
               position: relative;
               width: 100%;
               height: 354px;
-              border: solid 1px;
+              
 
               .lawPolicy2TitleDiv {
                 display: flex;
@@ -1745,7 +1729,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .lawPolicy2Title {
                   width: fit-content;
@@ -1788,7 +1772,7 @@
                 order: 1;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .lawPolicy2Card {
                   display: flex;
@@ -1803,7 +1787,7 @@
                   order: 0;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
@@ -1818,7 +1802,7 @@
             gap: 2%;
             justify-content: center;
             align-items: center;
-            border: solid 1px;
+            
 
             .flexThreeChild1Div {
               display: none;
@@ -1833,7 +1817,7 @@
               position: relative;
               width: 49%;
               height: 354px;
-              border: solid 1px;
+              
 
               .flexThreeChildTitleDiv {
                 display: flex;
@@ -1848,7 +1832,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .flexThreeChildTitle {
                   width: fit-content;
@@ -1891,7 +1875,7 @@
                 order: 1;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .flexThreeChildCard {
                   display: flex;
@@ -1906,7 +1890,7 @@
                   order: 0;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
@@ -1936,7 +1920,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // border: solid 5px yellow;
     overflow: hidden;
 
     .navBlend {
@@ -1946,19 +1929,18 @@
       height: 67px;
       background: #ffffff;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-      // border: solid blue 1px;
     }
 
     .containerDiv {
       position: relative;
-      // border: solid 1px;
+      // 
       width: 100%;
       // min-width: 100vw;
       top: 67px;
       // overflow-x:hidden;
 
       .secNavBlend {
-        height: 74px;
+        height: 72px;
         width: 100%;
         background-color: #001338;
         position: absolute;
@@ -1977,7 +1959,7 @@
         height: fit-content;
         width: 100%;
         max-width: 1440px;
-        // border: solid 1px;
+        // 
         display: flex;
         flex-direction: column;
         // padding-top: 8px;
@@ -1989,7 +1971,6 @@
           position: relative;
           height: 126px;
           width: 100%;
-          // border: solid 1px blue;
           position: relative;
           display: flex;
           flex-direction: row;
@@ -2001,7 +1982,7 @@
           // padding-bottom: 18px;
 
           .newsDiv {
-            // border: solid 1px;
+            // 
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -2045,7 +2026,6 @@
 
           .firstAdDiv {
             display: block;
-            border: solid 1px black;
             width: 865px;
             height: 94px;
             left: 495px;
@@ -2059,7 +2039,6 @@
           position: sticky;
           padding: 16px 5.5% 16px 5.5%;
           background-color: #001338;
-          border: solid 1px white;
         }
 
         .contentBody {
@@ -2068,10 +2047,8 @@
           display: flex;
           flex-direction: column;
           gap: 60px;
-          // border: solid yellow;
 
           .blogPreviewDiv {
-            border: solid 1px blue;
             position: relative;
             height: 500px;
             width: 100%;
@@ -2086,7 +2063,7 @@
               width: calc(637.5 * 100% / 1280);
               min-width: calc(637.5 * 100% / 1280);
               min-height: 100%;
-              border: solid 1px;
+              
             }
 
             .smallComponentDiv {
@@ -2099,13 +2076,12 @@
               min-width: calc(637.5 * 100% / 1280);
               min-height: 100%;
               overflow: visible;
-              // border: solid 1px red;
 
               .smallComponent {
                 height: 250px;
                 width: calc(316 * 100% / 637.5);
                 min-height: calc(637.5 * 100% / 1280);
-                // border: solid 1px;
+                // 
               }
             }
           }
@@ -2116,12 +2092,10 @@
             width: 100%;
             height: 100px;
             background: #d9d9d9;
-            border: solid;
             visibility: visible;
           }
 
           .marketNewsDiv {
-            border: solid 1px green;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -2146,7 +2120,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .title {
                 width: fit-content;
@@ -2187,7 +2161,7 @@
               flex: none;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .marketBigComponent {
                 position: relative;
@@ -2202,7 +2176,7 @@
                 flex: none;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
               }
 
               .marketSmallComponentDiv {
@@ -2217,7 +2191,7 @@
                 flex: none;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .marketSmallComponent {
                   // display: flex;
@@ -2230,14 +2204,14 @@
                   flex: none;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
           }
 
           .propertyListDiv {
-            border: solid 1px;
+            
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -2261,7 +2235,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .propertyListTitle {
                 width: fit-content;
@@ -2331,7 +2305,7 @@
             width: 100%;
             min-height: 360px;
             height: fit-content;
-            border: solid 1px;
+            
 
             .lifeStyleTitleDiv {
               display: flex;
@@ -2346,7 +2320,7 @@
               order: 0;
               align-self: stretch;
               flex-grow: 0;
-              border: solid 1px;
+              
 
               .lifeStyleTitle {
                 width: fit-content;
@@ -2386,7 +2360,7 @@
               width: 100%;
               height: fit-content;
               min-height: 310px;
-              border: solid 1px;
+              
               overflow: hidden;
 
               .lifeStyleCard {
@@ -2397,8 +2371,8 @@
                 padding: 0;
                 gap: 10px;
                 width: calc(410.67 * 100% / 1277);
-                height: fit-content;
-                min-height: 310px;
+                // height: fit-content;
+                height: 310px;
                 background: linear-gradient(
                   0.14deg,
                   rgba(17, 16, 16, 0.7) 12.94%,
@@ -2423,7 +2397,7 @@
             gap: calc(24 * 100% / 1277);
             justify-content: center;
             align-items: center;
-            border: solid 1px;
+            
 
             .homeLoanDiv {
               display: flex;
@@ -2435,7 +2409,7 @@
               width: 100%;
               height: fit-content;
               min-height: 420px;
-              border: solid 1px;
+              
 
               .homeLoanTitleDiv {
                 display: flex;
@@ -2450,7 +2424,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .homeLoanTitle {
                   width: fit-content;
@@ -2492,7 +2466,7 @@
                 flex: none;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .homeLoanCard {
                   // display: flex;
@@ -2508,7 +2482,7 @@
                   order: 0;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
@@ -2523,7 +2497,7 @@
               width: 100%;
               height: fit-content;
               min-height: 420px;
-              border: solid 1px;
+              
 
               .ourThoughtsTitleDiv {
                 display: flex;
@@ -2538,7 +2512,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .ourThoughtsTitle {
                   width: fit-content;
@@ -2580,7 +2554,7 @@
                 flex: none;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .ourThoughtsCard {
                   // display: flex;
@@ -2596,7 +2570,7 @@
                   order: 0;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
@@ -2623,7 +2597,7 @@
               width: 100%;
               min-height: 354px;
               height: fit-content;
-              border: solid 1px;
+              
 
               .lawPolicyTitleDiv {
                 display: flex;
@@ -2638,7 +2612,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .lawPolicyTitle {
                   width: fit-content;
@@ -2681,7 +2655,7 @@
                 flex: none;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .lawPolicyCard {
                   display: flex;
@@ -2691,7 +2665,7 @@
                   width: calc(302 * 100% / 1277);
                   height: 304px;
                   border-radius: 6px;
-                  border: solid 1px;
+                  
                 }
               }
             }
@@ -2705,7 +2679,7 @@
               position: relative;
               width: 100%;
               height: 354px;
-              border: solid 1px;
+              
 
               .lawPolicy2TitleDiv {
                 display: flex;
@@ -2720,7 +2694,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .lawPolicy2Title {
                   width: fit-content;
@@ -2763,7 +2737,7 @@
                 order: 1;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .lawPolicy2Card {
                   display: flex;
@@ -2778,7 +2752,7 @@
                   order: 0;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
@@ -2794,7 +2768,7 @@
             gap: calc(24 * 100% / 1277);
             justify-content: center;
             align-items: center;
-            border: solid 1px;
+            
 
             .flexThreeChildDiv {
               display: flex;
@@ -2806,7 +2780,7 @@
               width: 100%;
               min-height: 368px;
               height: fit-content;
-              border: solid 1px;
+              
 
               .flexThreeChildTitleDiv {
                 display: flex;
@@ -2821,7 +2795,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .flexThreeChildTitle {
                   width: fit-content;
@@ -2862,7 +2836,7 @@
                 flex: none;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .flexThreeChildCard {
                   width: 100%;
@@ -2871,7 +2845,7 @@
                   order: 0;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
@@ -2886,7 +2860,7 @@
               width: 100%;
               min-height: 368px;
               height: fit-content;
-              border: solid 1px;
+              
 
               .flexThreeChild1TitleDiv {
                 display: flex;
@@ -2901,7 +2875,7 @@
                 order: 0;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .flexThreeChild1Title {
                   width: fit-content;
@@ -2942,7 +2916,7 @@
                 flex: none;
                 align-self: stretch;
                 flex-grow: 0;
-                border: solid 1px;
+                
 
                 .flexThreeChild1Card {
                   width: 100%;
@@ -2951,7 +2925,7 @@
                   order: 0;
                   align-self: stretch;
                   flex-grow: 0;
-                  border: solid 1px;
+                  
                 }
               }
             }
