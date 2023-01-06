@@ -131,7 +131,9 @@ export default function BlogPage() {
   return (
     <>
       <div className="alignmentContainer">
-        <div className="navBlend"><Navbar/></div>
+        <div className="navBlend">
+          <Navbar />
+        </div>
         <div className="blogContainerDiv">
           <div className="blogSecNavBlend"></div>
           <div className="footerBlend"></div>
@@ -155,7 +157,7 @@ export default function BlogPage() {
                   <div className="leftBodySection">
                     <div className="leftHeaderSection">
                       <div className="categoryHeader">
-                        <p className="categoryInfo">Category</p>
+                        <p className="categoryInfo">क्यट्गोरी</p>
                         <p className="categoryTitle">
                           {/* {blogs[0]?.category?.name} */}
                           Market Updates
@@ -182,7 +184,13 @@ export default function BlogPage() {
                               );
                             })}
                           </select>
-                            <Icon icon="ph:caret-down-bold" color="#4f4f4f" width="20" height="20" className="selectArrow"/>
+                          <Icon
+                            icon="ph:caret-down-bold"
+                            color="#4f4f4f"
+                            width="20"
+                            height="20"
+                            className="selectArrow"
+                          />
                         </span>
                       </div>
                     </div>
