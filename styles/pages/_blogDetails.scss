@@ -52,11 +52,14 @@
       height: fit-content;
       width: 100%;
       min-width: 345px;
-      max-width: 890px;
+      max-width: 500px;
       display: flex;
       flex-direction: column;
       background-color: #ffffff;
       position: relative;
+      @media screen and (min-width: 768px) {
+        max-width: 800px;
+      }
 
       .secNavDiv {
         height: fit-content;
@@ -337,7 +340,6 @@
         .bodyContainer {
           padding: 24px 5.5% 40px 5.5%;
           width: 100%;
-          border: solid 1px;
 
           .categoryBlogBody {
             flex-direction: row;
