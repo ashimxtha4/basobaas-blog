@@ -33,7 +33,7 @@ const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
       <div className="rightSidebar">
         <div className="relatedSection">
           <div className="relatedSectionTitle">
-            <p>Related</p>
+            <p>सम्बन्धित ब्लगहरू</p>
             <Link
               className="relatedBlogsView"
               href={{
@@ -42,7 +42,7 @@ const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
                 }`,
               }}
             >
-              <button>View All</button>
+              <button>सबै हेर्नुहोस्</button>
             </Link>
           </div>
 
@@ -57,10 +57,10 @@ const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
         </div>
         <div className="featuredSection">
           <div className="featuredSectionTitle">
-            <p>Featured Properties</p>
+            <p>विशेष गुणहरू</p>
             <button>
               <Link href="https://basobaas.com/properties/all-properties">
-                View All
+                सबै हेर्नुहोस्
               </Link>
             </button>
           </div>

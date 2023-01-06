@@ -27,13 +27,13 @@ const RelatedBlogs = () => {
           <div className="categoryTitle">
             <p>
               {/* {blog.category?.name} */}
-              Travel
+              यात्रा
             </p>
           </div>
           <div className="blogHeader">
             <p>
               {/* {blog.title} */}
-              The most expensive area of Nepal with most expensive house
+              सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
             </p>
           </div>
         </div>

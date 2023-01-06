@@ -25,28 +25,39 @@ const CategorySpecificBlog = () => {
             <div className="blogCategoryTitle">
               <p>
                 {/* {blog.subCategory?.name} */}
-                Travel
+                यात्रा
               </p>
             </div>
             <div className="blogHeader">
               <p>
                 {/* {blog.title} */}
-                The most expensive area of Nepal with most expensive house
+                सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
               </p>
             </div>
           </div>
           <div className="blogBody">
             {/* <p dangerouslySetInnerHTML={{ __html: blog.content }}></p> */}
             <p>
-              A house is a single-unit residential building. It may range in
-              complexity from a rudimentary hut to a complex structure of wood,
-              masonry, concrete or other material, outfitted wit...
+              रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि
+              लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र
+              रेस्टुरेन्टहरूको दिमाग एकै पटक एक लाख ठाउँमा हुने अपेक्षा गरिन्छ।
+              जब यो एउटा यादगार रेस्टुरेन्ट अवधारणा निर्माण र डिजाइन गर्ने कुरा
+              आउँछ, त्यहाँ धेरै छन्। विभिन्न रेस्टुरेन्ट डिजाइनरहरू, ठेकेदारहरू,
+              सल्लाहकारहरू, र विशेषज्ञहरू जसले सबै योगदान गर्नेछन्। त्यहाँ विचार
+              गर्न समयरेखाहरू छन्, धेरै सरोकारवालाहरू, र रेस्टुरेन्ट निर्माणको
+              लागि उत्तम अभ्यासहरू। हामी रेस्टुरेन्ट निर्माण गर्नका लागि मुख्य
+              विचारहरू मार्फत हिंड्नेछौं, तपाईंको भविष्यका संरक्षकहरूका लागि
+              सुन्दर, समावेशी ठाउँ निर्माण र डिजाइन गर्ने रणनीतिहरू समावेश
+              गर्दै। विचार गर्नको लागि समयरेखाहरू, धेरै सरोकारवालाहरू, र
+              रेस्टुरेन्ट निर्माणका लागि उत्कृष्ट अभ्यासहरू छन्। हामी एउटा
+              सुन्दर, समावेशी निर्माण र डिजाइन गर्ने रणनीतिहरू समावेश गर्दै
+              रेस्टुरेन्ट निर्माण गर्ने मुख्य विचारहरू मार्फत हिंड्नेछौं।
             </p>
           </div>
           <div className="blogBy">
             <span className="author">
               {/* {blog.author?.fullName} */}
-              Rajan Adhikari
+              राजन अधिकारी
             </span>
             <span className="separator">
               <Icon
@@ -57,7 +68,7 @@ const CategorySpecificBlog = () => {
               />
             </span>
             <span className="posted">
-              {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}2 weeks ago
+              {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता अघि
             </span>
           </div>
         </div>
