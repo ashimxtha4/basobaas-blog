@@ -5,6 +5,7 @@ import { getAll } from "../../apiFetch/homePage/homePageAPI";
 import BlogNavbar from "../../layouts/BlogNavbar";
 import CategorySpecificBlog from "../../components/ui/CategorySpecificBlog";
 import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
+import Navbar from "../../layouts/Navbar";
 
 export default function BlogPage() {
   //STATE FOR BLOGS
@@ -130,7 +131,7 @@ export default function BlogPage() {
   return (
     <>
       <div className="alignmentContainer">
-        <div className="navBlend"></div>
+        <div className="navBlend"><Navbar/></div>
         <div className="blogContainerDiv">
           <div className="blogSecNavBlend"></div>
           <div className="footerBlend"></div>
