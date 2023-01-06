@@ -11,6 +11,7 @@ import OurThoughts from "../components/ui/OurThoughts";
 import LawAndPolicy from "../components/ui/LawAndPolicy";
 import MainProperty from "../components/ui/MainProperty";
 import Navbar from "../layouts/Navbar";
+import Footer from "../layouts/Footer";
 
 export const getBlogByCategory = async (id: String, limit?: number) => {
   var url = `/blogs?category=${id}`;
@@ -323,7 +324,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="contentFooter"></div>
+            <div className="contentFooter"><Footer/></div>
           </div>
         </div>
       </div>
