@@ -2,8 +2,10 @@ import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
 import { imageUrlCheck } from "../../utilities/helper";
+import MarketNews from "../../public/Images/Market News.svg";
 
-const CategorySpecificBlog = ({ blog }: { blog: any }) => {
+// const CategorySpecificBlog = ({ blog }: { blog: any }) => {
+const CategorySpecificBlog = () => {
   return (
     <>
       <div className="categorySpecificBlog">
@@ -16,19 +18,36 @@ const CategorySpecificBlog = ({ blog }: { blog: any }) => {
                 height={172}
               />
             ) : null} */}
+          <Image src={MarketNews} alt="Blog Picture" width={345} height={172} />
         </div>
         <div className="blogContents">
-          <div className="blogCategoryTitle">
-            <p>{blog.subCategory?.name}</p>
-          </div>
-          <div className="blogHeader">
-            <p>{blog.title}</p>
+          <div className="blogHeaderSectionContainer">
+            <div className="blogCategoryTitle">
+              <p>
+                {/* {blog.subCategory?.name} */}
+                Travel
+              </p>
+            </div>
+            <div className="blogHeader">
+              <p>
+                {/* {blog.title} */}
+                The most expensive area of Nepal with most expensive house
+              </p>
+            </div>
           </div>
           <div className="blogBody">
-            <p dangerouslySetInnerHTML={{ __html: blog.content }}></p>
+            {/* <p dangerouslySetInnerHTML={{ __html: blog.content }}></p> */}
+            <p>
+              A house is a single-unit residential building. It may range in
+              complexity from a rudimentary hut to a complex structure of wood,
+              masonry, concrete or other material, outfitted wit...
+            </p>
           </div>
           <div className="blogBy">
-            <span className="author">{blog.author?.fullName}</span>
+            <span className="author">
+              {/* {blog.author?.fullName} */}
+              Rajan Adhikari
+            </span>
             <span className="separator">
               <Icon
                 icon="ci:dot-05-xl"

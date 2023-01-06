@@ -161,7 +161,6 @@
 
                 .sortButton {
                   display: flex;
-                  // position: relative;
                   flex-direction: row;
                   justify-content: center;
                   align-items: center;
@@ -185,10 +184,15 @@
                     z-index: 2;
                     position: relative;
 
-                    .option {
-                      width: 137px;
+                    .selectOption {
+                      width: fit-content;
                       text-align: center;
+                      max-width: max-content;
+                      display: none;
                     }
+                  }
+                  .selectArrow {
+                    margin-left: 7.75px;
                   }
                   .subCategorySelect:focus {
                     outline: none;
@@ -202,7 +206,7 @@
               width: 100%;
               display: flex;
               flex-direction: column;
-              gap: 22px;
+              gap: 24px;
             }
 
             .paginationSection {
@@ -470,13 +474,12 @@
                   .sortButton {
                     .subCategorySelect {
                       .option {
+                        .selectArrow {
+                        }
                       }
                     }
 
                     .subCategorySelect:focus {
-                    }
-
-                    .selectArrow {
                     }
                   }
                 }
