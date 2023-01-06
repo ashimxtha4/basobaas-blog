@@ -47,9 +47,12 @@ const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
           </div>
 
           <div className="relatedSectionContainer">
-            {blog?.map((item, index) => {
+            {/* {blog?.map((item, index) => {
               return <RelatedBlogs blog={item} key={index} />;
-            })}
+            })} */}
+            <RelatedBlogs />
+            <RelatedBlogs />
+            <RelatedBlogs />
           </div>
         </div>
         <div className="featuredSection">
@@ -61,13 +64,16 @@ const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
               </Link>
             </button>
           </div>
-          {property.map((property, index) => {
+          {/* {property.map((property, index) => {
             return (
               <div className="featuredSectionContainer" key={index}>
                 <FeaturedProperties property={property} />
               </div>
             );
-          })}
+          })} */}
+          <FeaturedProperties />
+          <FeaturedProperties />
+          <FeaturedProperties />
         </div>
       </div>
     </>
