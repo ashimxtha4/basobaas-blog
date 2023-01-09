@@ -12,6 +12,8 @@ import LawAndPolicy from "../components/ui/LawAndPolicy";
 import MainProperty from "../components/ui/MainProperty";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
+import BottomComponent from "../components/ui/bottomComponent";
+
 
 export const getBlogByCategory = async (id: String, limit?: number) => {
   var url = `/blogs?category=${id}`;
@@ -266,9 +268,9 @@ const HomePage = () => {
                     <span className="lawPolicy2ViewAllButton">View All</span>
                   </div>
                   <div className="lawPolicy2CardDiv">
-                    <div className="lawPolicy2Card"></div>
-                    <div className="lawPolicy2Card"></div>
-                    <div className="lawPolicy2Card"></div>
+                    <div className="lawPolicy2Card"><BottomComponent/></div>
+                    <div className="lawPolicy2Card"><BottomComponent/></div>
+                    <div className="lawPolicy2Card"><BottomComponent/></div>
                   </div>
                 </div>
               </div>
@@ -284,9 +286,9 @@ const HomePage = () => {
                     </span>
                   </div>
                   <div className="flexThreeChild1CardDiv">
-                    <div className="flexThreeChild1Card"></div>
-                    <div className="flexThreeChild1Card"></div>
-                    <div className="flexThreeChild1Card"></div>
+                    <div className="flexThreeChild1Card"><BottomComponent/></div>
+                    <div className="flexThreeChild1Card"><BottomComponent/></div>
+                    <div className="flexThreeChild1Card"><BottomComponent/></div>
                   </div>
                 </div>
 
@@ -300,9 +302,9 @@ const HomePage = () => {
                     </span>
                   </div>
                   <div className="flexThreeChildCardDiv">
-                    <div className="flexThreeChildCard"></div>
-                    <div className="flexThreeChildCard"></div>
-                    <div className="flexThreeChildCard"></div>
+                    <div className="flexThreeChildCard"><BottomComponent/></div>
+                    <div className="flexThreeChildCard"><BottomComponent/></div>
+                    <div className="flexThreeChildCard"><BottomComponent/></div>
                   </div>
                 </div>
 
@@ -316,9 +318,9 @@ const HomePage = () => {
                     </span>
                   </div>
                   <div className="flexThreeChildCardDiv">
-                    <div className="flexThreeChildCard"></div>
-                    <div className="flexThreeChildCard"></div>
-                    <div className="flexThreeChildCard"></div>
+                    <div className="flexThreeChildCard"><BottomComponent/></div>
+                    <div className="flexThreeChildCard"><BottomComponent/></div>
+                    <div className="flexThreeChildCard"><BottomComponent/></div>
                   </div>
                 </div>
               </div>
