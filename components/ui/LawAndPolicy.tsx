@@ -2,24 +2,26 @@ import React, { useState, useEffect } from "react";
 import { getBlogByCategory } from "../../pages/index";
 import { Icon } from "@iconify/react";
 
-const LawAndPolicy = ({ id }: { id: any }) => {
+const LawAndPolicy = (
+  // { id }: { id: any }
+  ) => {
   const [blog, setBlog] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    getBlogByCategory(id, 4)
-      .then((data) => setBlog(data))
-      .catch((err) => console.log("err", err))
-      .finally(() => {
-        setLoading(false);
-      });
-  }, [id]);
+  // useEffect(() => {
+  //   getBlogByCategory(id, 4)
+  //     .then((data) => setBlog(data))
+  //     .catch((err) => console.log("err", err))
+  //     .finally(() => {
+  //       setLoading(false);
+  //     });
+  // }, [id]);
 
-  if (loading) {
-    <h1>Loading...</h1>;
-  }
+  // if (loading) {
+  //   <h1>Loading...</h1>;
+  // }
 
-  if (blog.length) {
+  // if (blog.length) {
     return (
       <>
         <div className="lawPolicyTitleDiv">
@@ -27,9 +29,10 @@ const LawAndPolicy = ({ id }: { id: any }) => {
           <span className="lawPolicyViewAllButton">View All</span>
         </div>
         <div className="lawPolicyCardDiv">
-          {blog.map((blog, index) => {
-            return (
-              <div className="lawPolicyCard" key={index}>
+          {/* {blog.map((blog, index) => {
+            return ( */}
+              {/* <div className="lawPolicyCard" key={index}> */}
+              <div className="lawPolicyCard">
                 <div className="imageContainer">
                   {/* <Image
             src=""
@@ -42,19 +45,21 @@ const LawAndPolicy = ({ id }: { id: any }) => {
                   <div className="blogCategoryTitle">
                     <p>
                       {/* ENTER BLOG CATEGORY TITLE HERE */}
-                      {blog?.category?.name}
+                      {/* {blog?.category?.name} */}
+                      category
                     </p>
                   </div>
                   <div className="blogHeader">
                     <p>
                       {/* ENTER BLOG TITLE HERE */}
                       {/* {blog?.title} */}
+                      hello
                     </p>
                   </div>
                   <div className="blogBy">
                     <span className="author">
                       {/* ENTER BLOG BY NAME HERE */}
-                      {blog?.author?.fullName}
+                      {/* {blog?.author?.fullName} */}
                     </span>
                     <span className="separator">
                       <Icon
@@ -72,15 +77,14 @@ const LawAndPolicy = ({ id }: { id: any }) => {
                 </div>
               </div>
 
-            );
-          })}
+            {/* ); */}
+          {/* // })} */}
         </div>
-
       </>
     );
-  }
+  // }
 
-  return null;
+  // return null;
 };
 
 export default LawAndPolicy;
