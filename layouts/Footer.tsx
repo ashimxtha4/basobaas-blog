@@ -41,6 +41,8 @@ const Footer = () => {
                 <span className="popularAreaContentSpan">Dhumbarahi | Thamel</span>
                 <span className="popularAreaContentSpan">Butwal | Chabel</span>
                 <span className="popularAreaContentSpan">Thankot | Naxal</span>
+                <span className="popularAreaContentSpan">Sukedhara | Thali</span>
+
               </div>
             </div>
             <div className="gorupThreeChild">
