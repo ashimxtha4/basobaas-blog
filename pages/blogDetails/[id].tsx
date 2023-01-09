@@ -6,6 +6,7 @@ import { Router, useRouter } from "next/router";
 import { Icon } from "@iconify/react";
 import Navbar from "../../layouts/Navbar";
 import { IMG_URL } from "../../baseConstants";
+import Footer from "../../layouts/Footer";
 
 export default function BlogPage() {
   const [blogs, setBlogs] = useState<any[]>([]);
@@ -178,7 +179,7 @@ export default function BlogPage() {
                 </div>
               )}
             </div>
-            <div className="footer"></div>
+            <div className="footer"><Footer/></div>
           </div>
         </div>
       </div>

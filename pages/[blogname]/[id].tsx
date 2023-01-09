@@ -6,6 +6,7 @@ import BlogNavbar from "../../layouts/BlogNavbar";
 import CategorySpecificBlog from "../../components/ui/CategorySpecificBlog";
 import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
 import Navbar from "../../layouts/Navbar";
+import Footer from "../../layouts/Footer";
 
 export default function BlogPage() {
   //STATE FOR BLOGS
@@ -281,7 +282,7 @@ export default function BlogPage() {
                 </div>
               )}
             </div>
-            <div className="footer"></div>
+            <div className="footer"><Footer/></div>
           </div>
         </div>
       </div>
