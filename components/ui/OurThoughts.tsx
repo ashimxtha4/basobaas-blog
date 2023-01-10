@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 // import { getBlogByCategory } from "../../pages";
-import OurThoughtsImage from "../../public/Images/MarketNewsImage.svg";
+import OurThoughtsImage from "../../public/Images/homeLoanImage2.svg";
 import Image from "next/image";
 
 const OurThoughts = () =>
@@ -36,7 +36,7 @@ const OurThoughts = () =>
             className="ourThoughtsCard"
             //  key={ix}
           >
-            <div className="homeLoan">
+            <div className="ourThoughts">
               <div className="imageContainer">
                 {/* <Image
               src=""
@@ -44,7 +44,7 @@ const OurThoughts = () =>
               width={260}
               height={133.33}
             /> */}
-                <Image src={OurThoughtsImage} alt="basobaas Nepal" />
+                <Image className="ourThoughtsImage" src={OurThoughtsImage} alt="basobaas Nepal" />
               </div>
               <div className="blogContents">
                 <div className="blogHeader">
@@ -75,12 +75,11 @@ const OurThoughts = () =>
                 </div>
               </div>
             </div>
-          </div>
-          <div
+          </div><div
             className="ourThoughtsCard"
             //  key={ix}
           >
-            <div className="homeLoan">
+            <div className="ourThoughts">
               <div className="imageContainer">
                 {/* <Image
               src=""
@@ -88,7 +87,7 @@ const OurThoughts = () =>
               width={260}
               height={133.33}
             /> */}
-                <Image src={OurThoughtsImage} alt="basobaas Nepal" />
+                <Image className="ourThoughtsImage" src={OurThoughtsImage} alt="basobaas Nepal" />
               </div>
               <div className="blogContents">
                 <div className="blogHeader">
@@ -119,12 +118,11 @@ const OurThoughts = () =>
                 </div>
               </div>
             </div>
-          </div>
-          <div
+          </div><div
             className="ourThoughtsCard"
             //  key={ix}
           >
-            <div className="homeLoan">
+            <div className="ourThoughts">
               <div className="imageContainer">
                 {/* <Image
               src=""
@@ -132,7 +130,7 @@ const OurThoughts = () =>
               width={260}
               height={133.33}
             /> */}
-                <Image src={OurThoughtsImage} alt="basobaas Nepal" />
+                <Image className="ourThoughtsImage" src={OurThoughtsImage} alt="basobaas Nepal" />
               </div>
               <div className="blogContents">
                 <div className="blogHeader">
