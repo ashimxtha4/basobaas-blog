@@ -420,6 +420,10 @@
                 height: 223px;
                 background-color: #d9d9d9;
                 z-index: 0;
+                display: none;
+                @media screen and (min-width: 1024px) {
+                  display: block;
+                }
               }
 
               .rightSidebar {
@@ -429,7 +433,7 @@
             }
             @media screen and (max-width: 1023px) {
               .rightBodySection {
-                display: none;
+                display: flex;
               }
             }
 
@@ -438,8 +442,23 @@
           }
 
           .blogDetailsFooterRelatedBlogs{
+            display: none;
+            flex-direction: column;
+            gap: 60px;
             width: 100%;
             height: fit-content;
+
+            .lawPolicyDiv{
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+            }
+
+            @media screen and (min-width: 1024px){
+              display: flex;
+            }
+
+
           }
 
           @media screen and (min-width: 1024px) {
@@ -465,7 +484,7 @@
       .footer {
         width: 100%;
         min-height: none;
-        height: 1015px;
+        height: fit-content;
         background: #4f4f4f;
       }
     }
@@ -499,7 +518,7 @@
       top: 67px;
 
       .blogSecNavBlend {
-        height: 71px;
+        height: 70.5px;
         width: 100%;
         background-color: #001338;
         position: absolute;
@@ -619,7 +638,6 @@
 
         .footer {
           width: 100%;
-          min-height: 474px;
           height: fit-content;
           background: #4f4f4f;
         }

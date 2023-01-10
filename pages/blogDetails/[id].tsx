@@ -13,6 +13,7 @@ import blogDetailsImage from "../../public/Images/blogDetails.svg";
 import blogDetailsImage2 from "../../public/Images/blogDetailsImage2.svg";
 import blogDetailsImage3 from "../../public/Images/blogDetailsImage3.svg";
 import LawAndPolicy from "../../components/ui/LawAndPolicy";
+import DetailProperty from "../../components/ui/detailProperty";
 export default function BlogPage() {
   const [blogs, setBlogs] = useState<any[]>([]);
   const [blog, setBlog] = useState<any>(null);
@@ -366,7 +367,11 @@ export default function BlogPage() {
                     </div>
                   </div>
                   <div className="blogDetailsFooterRelatedBlogs">
-                    <LawAndPolicy />
+                    <div className="lawPolicyDiv">
+                      <LawAndPolicy/>
+                      {/* id={data?.categories[4]?.id}  YO MILAUNU XA */}
+                    </div>
+                    <DetailProperty/>
                   </div>
                 </div>
               )}
