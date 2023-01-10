@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 // import { getBlogByCategory } from "../../pages";
+import HomeLoanImage from "../../public/Images/blogDetails.svg";
+import Image from "next/image";
 
 const HomeLoan = () =>
   // { id }: { id: string }
@@ -43,20 +45,21 @@ const HomeLoan = () =>
               width={260}
               height={133.33}
             /> */}
+                <Image src={HomeLoanImage} alt="basobaas Nepal" />
               </div>
               <div className="blogContents">
                 <div className="blogHeader">
                   <p>
                     {/* ENTER BLOG TITLE HERE */}
                     {/* {blog.title} */}
-                    {/* hi */}
+                    सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
                   </p>
                 </div>
                 <div className="blogBy">
                   <span className="author">
                     {/* ENTER BLOG BY NAME HERE */}
                     {/* {blog.author?.fullName} */}
-                    {/* hello */}
+                    राजन अधिकारी
                   </span>
                   <span className="separator">
                     <Icon
@@ -67,8 +70,96 @@ const HomeLoan = () =>
                     />
                   </span>
                   <span className="posted">
-                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}2 weeks
-                    ago
+                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता
+                    अघि
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="homeLoanCard"
+            //  key={ix}
+          >
+            <div className="homeLoan">
+              <div className="imageContainer">
+                {/* <Image
+              src=""
+              alt="Picture of the author"
+              width={260}
+              height={133.33}
+            /> */}
+                <Image src={HomeLoanImage} alt="basobaas Nepal" />
+              </div>
+              <div className="blogContents">
+                <div className="blogHeader">
+                  <p>
+                    {/* ENTER BLOG TITLE HERE */}
+                    {/* {blog.title} */}
+                    सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                  </p>
+                </div>
+                <div className="blogBy">
+                  <span className="author">
+                    {/* ENTER BLOG BY NAME HERE */}
+                    {/* {blog.author?.fullName} */}
+                    राजन अधिकारी
+                  </span>
+                  <span className="separator">
+                    <Icon
+                      icon="ci:dot-05-xl"
+                      width="15"
+                      height="15"
+                      color="#969696"
+                    />
+                  </span>
+                  <span className="posted">
+                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता
+                    अघि
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="homeLoanCard"
+            //  key={ix}
+          >
+            <div className="homeLoan">
+              <div className="imageContainer">
+                {/* <Image
+              src=""
+              alt="Picture of the author"
+              width={260}
+              height={133.33}
+            /> */}
+                <Image src={HomeLoanImage} alt="basobaas Nepal" />
+              </div>
+              <div className="blogContents">
+                <div className="blogHeader">
+                  <p>
+                    {/* ENTER BLOG TITLE HERE */}
+                    {/* {blog.title} */}
+                    सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                  </p>
+                </div>
+                <div className="blogBy">
+                  <span className="author">
+                    {/* ENTER BLOG BY NAME HERE */}
+                    {/* {blog.author?.fullName} */}
+                    राजन अधिकारी
+                  </span>
+                  <span className="separator">
+                    <Icon
+                      icon="ci:dot-05-xl"
+                      width="15"
+                      height="15"
+                      color="#969696"
+                    />
+                  </span>
+                  <span className="posted">
+                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता
+                    अघि
                   </span>
                 </div>
               </div>

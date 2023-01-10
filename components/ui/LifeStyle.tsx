@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { imageUrlCheck } from "../../utilities/helper";
+import Image from "next/image";
 // import { getBlogByCategory } from "../../pages/index";
+import LifeStyleImages from "../../public/Images/LifestyleImages.svg";
 
 const LifeStyle = () =>
   // { id }: { id: string }
@@ -32,8 +34,9 @@ const LifeStyle = () =>
           {/* {blog.map((blog, idx) => ( */}
           <>
             <div
-            //  key={idx} 
-             className="lifeStyleCard">
+              //  key={idx}
+              className="lifeStyleCard"
+            >
               <div className="homeBlogTypeSmall">
                 <div className="thumbnail">
                   {/* <img
@@ -41,19 +44,20 @@ const LifeStyle = () =>
                       className="blogCardBackground"
                       alt="Basobaas Nepal"
                     /> */}
+                  <Image src={LifeStyleImages} alt="basobaas nepal" />
                 </div>
                 <div className="cardContent">
                   <div className="blogCategoryTag">
                     <p>
                       {/* {blog.category?.name} */}
                       यात्रा
-                      </p>
+                    </p>
                   </div>
                   <div className="blogTitle">
                     <p>
                       {/* {blog.title} */}
                       सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
-                      </p>
+                    </p>
                   </div>
                   <div className="blogBy">
                     <div className="author">
@@ -70,8 +74,105 @@ const LifeStyle = () =>
                     </div>
                     <div className="posted">
                       {/* {createdAt} */}
-                      {/* {blogPostedDate} */}
-                      २ हप्ता अघि
+                      {/* {blogPostedDate} */}२ हप्ता अघि
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+          <>
+            <div
+              //  key={idx}
+              className="lifeStyleCard"
+            >
+              <div className="homeBlogTypeSmall">
+                <div className="thumbnail">
+                  {/* <img
+                      src={imageUrlCheck(blog.images[0] as string)}
+                      className="blogCardBackground"
+                      alt="Basobaas Nepal"
+                    /> */}
+                  <Image src={LifeStyleImages} alt="basobaas nepal" />
+                </div>
+                <div className="cardContent">
+                  <div className="blogCategoryTag">
+                    <p>
+                      {/* {blog.category?.name} */}
+                      यात्रा
+                    </p>
+                  </div>
+                  <div className="blogTitle">
+                    <p>
+                      {/* {blog.title} */}
+                      सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                    </p>
+                  </div>
+                  <div className="blogBy">
+                    <div className="author">
+                      {/* {blog.author?.fullName} */}
+                      राजन अधिकारी
+                    </div>
+                    <div className="separator">
+                      <Icon
+                        icon="ci:dot-05-xl"
+                        width="15"
+                        height="15"
+                        color="#FFFFFF"
+                      />
+                    </div>
+                    <div className="posted">
+                      {/* {createdAt} */}
+                      {/* {blogPostedDate} */}२ हप्ता अघि
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+          <>
+            <div
+              //  key={idx}
+              className="lifeStyleCard"
+            >
+              <div className="homeBlogTypeSmall">
+                <div className="thumbnail">
+                  {/* <img
+                      src={imageUrlCheck(blog.images[0] as string)}
+                      className="blogCardBackground"
+                      alt="Basobaas Nepal"
+                    /> */}
+                  <Image src={LifeStyleImages} alt="basobaas nepal" />
+                </div>
+                <div className="cardContent">
+                  <div className="blogCategoryTag">
+                    <p>
+                      {/* {blog.category?.name} */}
+                      यात्रा
+                    </p>
+                  </div>
+                  <div className="blogTitle">
+                    <p>
+                      {/* {blog.title} */}
+                      सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                    </p>
+                  </div>
+                  <div className="blogBy">
+                    <div className="author">
+                      {/* {blog.author?.fullName} */}
+                      राजन अधिकारी
+                    </div>
+                    <div className="separator">
+                      <Icon
+                        icon="ci:dot-05-xl"
+                        width="15"
+                        height="15"
+                        color="#FFFFFF"
+                      />
+                    </div>
+                    <div className="posted">
+                      {/* {createdAt} */}
+                      {/* {blogPostedDate} */}२ हप्ता अघि
                     </div>
                   </div>
                 </div>

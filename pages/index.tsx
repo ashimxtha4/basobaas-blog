@@ -277,6 +277,7 @@ const HomePage = () => {
                   //  id={data?.categories[3]?.id}
                   />
                 </div>
+
                 <div className="ourThoughtsDiv">
                   <OurThoughts
                   //  id={data?.categories[3]?.id}
