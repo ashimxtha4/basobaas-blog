@@ -252,7 +252,6 @@ const HomePage = () => {
                   <div className="propertyCard"><MainProperty /></div>
                   <div className="propertyCard"><MainProperty /></div>
                   <div className="propertyCard"><MainProperty /></div>
-
                   <div className="propertyCard"><MainProperty /></div>
                   <div className="propertyCard"><MainProperty /></div>
                   <div className="propertyCard"><MainProperty /></div>
@@ -261,7 +260,9 @@ const HomePage = () => {
 
               <div className="flexTwo">
                 <div className="lawPolicyDiv">
-                  <LawAndPolicy id={data?.categories[4]?.id} />
+                  <LawAndPolicy 
+                  // id={data?.categories[4]?.id}  YO MILAUNU XA
+                   />
                 </div>
 
                 <div className="lawPolicy2Div">
