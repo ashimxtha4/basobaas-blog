@@ -126,7 +126,9 @@ const HomePage = () => {
         <div className="navBlend"><Navbar/></div>
         <div className="containerDiv">
           <div className="secNavBlend"></div>
-          <div className="footerBlend"></div>
+          <div className="footerBlend">
+            <div className="lowerFooterBlend"></div>
+          </div>
 
           <div className="contentDiv">
             <div className="aboveNavDiv">
@@ -163,7 +165,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="adDiv"></div>
+              <div className="adDivs">Ad Div</div>
 
               <div className="marketNewsDiv">
                 <div className="titleDiv">
@@ -199,7 +201,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="adDiv"></div>
+              <div className="adDivs">Ad Div</div>
 
               <div className="propertyListDiv">
                 <div className="propertyListTitleDiv">

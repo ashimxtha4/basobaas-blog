@@ -6,6 +6,7 @@ import BlogNavbar from "../../layouts/BlogNavbar";
 import CategorySpecificBlog from "../../components/ui/CategorySpecificBlog";
 import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
 import Navbar from "../../layouts/Navbar";
+import Footer from "../../layouts/Footer";
 
 export default function BlogPage() {
   //STATE FOR BLOGS
@@ -131,10 +132,12 @@ export default function BlogPage() {
   return (
     <>
       <div className="alignmentContainer">
-        <div className="navBlend"><Navbar/></div>
+        <div className="navBlend"><Navbar /></div>
         <div className="blogContainerDiv">
           <div className="blogSecNavBlend"></div>
-          <div className="footerBlend"></div>
+          <div className="footerBlend">
+            <div className="lowerFooterBlend"></div>
+          </div>
           <div className="contentDiv">
             <div className="secNavDiv">
               <BlogNavbar />
@@ -171,7 +174,7 @@ export default function BlogPage() {
                             }}
                             defaultValue={blogs[0]?.subCategory?._id}
                             className="subCategorySelect"
-                            // aria-label=".form-select-sm example"
+                          // aria-label=".form-select-sm example"
                           >
                             {blogs?.map((i, k) => {
                               return (
@@ -182,7 +185,7 @@ export default function BlogPage() {
                               );
                             })}
                           </select>
-                            <Icon icon="ph:caret-down-bold" color="#4f4f4f" width="20" height="20" className="selectArrow"/>
+                          <Icon icon="ph:caret-down-bold" color="#4f4f4f" width="20" height="20" className="selectArrow" />
                         </span>
                       </div>
                     </div>
@@ -228,11 +231,10 @@ export default function BlogPage() {
                           {pageNumber.map((item, index) => {
                             return (
                               <li
-                                className={`page-item pageIndex ${
-                                  item === currentPage
+                                className={`page-item pageIndex ${item === currentPage
                                     ? "activePage"
                                     : "pageIndex"
-                                }`}
+                                  }`}
                                 key={index}
                               >
                                 <button
@@ -281,7 +283,7 @@ export default function BlogPage() {
                 </div>
               )}
             </div>
-            <div className="footer"></div>
+            <div className="footer"><Footer /></div>
           </div>
         </div>
       </div>

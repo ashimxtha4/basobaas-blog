@@ -6,6 +6,7 @@ import { Router, useRouter } from "next/router";
 import { Icon } from "@iconify/react";
 import Navbar from "../../layouts/Navbar";
 import { IMG_URL } from "../../baseConstants";
+import Footer from "../../layouts/Footer";
 
 export default function BlogPage() {
   const [blogs, setBlogs] = useState<any[]>([]);
@@ -79,11 +80,13 @@ export default function BlogPage() {
     <>
       <div className="blogDetailsAlignmentContainer">
         <div className="navBlend">
-          <Navbar/>
+          <Navbar />
         </div>
         <div className="blogContainerDiv">
           <div className="blogSecNavBlend"></div>
-          <div className="footerBlend"></div>
+          <div className="footerBlend">
+            <div className="lowerFooterBlend"></div>
+          </div>
           <div className="contentDiv">
             <div className="secNavDiv">
               <BlogNavbar />
@@ -178,7 +181,7 @@ export default function BlogPage() {
                 </div>
               )}
             </div>
-            <div className="footer"></div>
+            <div className="footer"><Footer /></div>
           </div>
         </div>
       </div>
