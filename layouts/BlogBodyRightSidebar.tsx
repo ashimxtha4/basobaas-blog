@@ -4,7 +4,9 @@ import { getAll } from "../apiFetch/homePage/homePageAPI";
 import RelatedBlogs from "../components/RelatedBlogs";
 import FeaturedProperties from "../components/ui/FeaturedProperties";
 
-const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
+const BlogBodyRightSidebar = (
+  // { blog }: { blog: any[] }
+  ) => {
   const [property, setProperty] = useState([]);
 
   //GET PROPERTY BY CONDITION WHERE PROPERTY ARE FEATURED
@@ -36,11 +38,12 @@ const BlogBodyRightSidebar = ({ blog }: { blog: any[] }) => {
             <p>सम्बन्धित ब्लगहरू</p>
             <Link
               className="relatedBlogsView"
-              href={{
-                pathname: `/${blog[0]?.category?.name.replaceAll(" ", "")}/${
-                  blog[0]?.category?._id
-                }`,
-              }}
+              // href={{
+              //   pathname: `/${blog[0]?.category?.name.replaceAll(" ", "")}/${
+              //     blog[0]?.category?._id
+              //   }`,
+              // }}
+              href="#"
             >
               <button>सबै हेर्नुहोस्</button>
             </Link>

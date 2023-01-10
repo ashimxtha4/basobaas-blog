@@ -14,72 +14,72 @@ import blogDetailsImage2 from "../../public/Images/blogDetailsImage2.svg";
 import blogDetailsImage3 from "../../public/Images/blogDetailsImage3.svg";
 import LawAndPolicy from "../../components/ui/LawAndPolicy";
 export default function BlogPage() {
-  const [blogs, setBlogs] = useState<any[]>([]);
-  const [blog, setBlog] = useState<any>(null);
-  const router = useRouter();
+//   const [blogs, setBlogs] = useState<any[]>([]);
+//   const [blog, setBlog] = useState<any>(null);
+//   const router = useRouter();
 
-  const [loading, setLoading] = useState<boolean>(true);
+//   const [loading, setLoading] = useState<boolean>(true);
 
-  const getBlogsById = async (id: string) => {
-    try {
-      setLoading(true);
-      const { blog } = await getAll(`/blogs/${id}`);
-      setLoading(false);
+//   const getBlogsById = async (id: string) => {
+//     try {
+//       setLoading(true);
+//       const { blog } = await getAll(`/blogs/${id}`);
+//       setLoading(false);
 
-      if (blog) setBlog(blog);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
+//       if (blog) setBlog(blog);
+//     } catch (error) {
+//       console.log(error);
+//       setLoading(false);
+//     }
+//   };
 
-  const getAllBlogsByCat = async (query: {
-    category: string;
-    limit?: string | number;
-    page?: string | number;
-    sort?: string;
-  }) => {
-    function prepareUrlQuery(query: object) {
-      var queryString = "?";
-      Object.keys(query).forEach((key: string, index: number) => {
-        //  @ts-ignore
-        if (query[key]) {
-          if (index > 0) {
-            //  @ts-ignore
-            queryString += "&" + key + "=" + query[key];
-          }
-          //  @ts-ignore
-          queryString += key + "=" + query[key];
-        }
-      });
-      return queryString;
-    }
+//   const getAllBlogsByCat = async (query: {
+//     category: string;
+//     limit?: string | number;
+//     page?: string | number;
+//     sort?: string;
+//   }) => {
+//     function prepareUrlQuery(query: object) {
+//       var queryString = "?";
+//       Object.keys(query).forEach((key: string, index: number) => {
+//         //  @ts-ignore
+//         if (query[key]) {
+//           if (index > 0) {
+//             //  @ts-ignore
+//             queryString += "&" + key + "=" + query[key];
+//           }
+//           //  @ts-ignore
+//           queryString += key + "=" + query[key];
+//         }
+//       });
+//       return queryString;
+//     }
 
-    try {
-      setLoading(true);
-      const { blogs } = await getAll("/blogs" + prepareUrlQuery(query));
-      setLoading(false);
+//     try {
+//       setLoading(true);
+//       const { blogs } = await getAll("/blogs" + prepareUrlQuery(query));
+//       setLoading(false);
 
-      if (blogs) setBlogs(blogs);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
+//       if (blogs) setBlogs(blogs);
+//     } catch (error) {
+//       console.log(error);
+//       setLoading(false);
+//     }
+//   };
 
-  useEffect(() => {
-    if (router.isReady) {
-      getBlogsById(router.query.id as string);
-    }
-  }, [router.query]);
+//   useEffect(() => {
+//     if (router.isReady) {
+//       getBlogsById(router.query.id as string);
+//     }
+//   }, [router.query]);
 
-  useEffect(() => {
-    if (blog) {
-      getAllBlogsByCat({
-        category: blog.category.id as string,
-      });
-    }
-  }, [blog]);
+//   useEffect(() => {
+//     if (blog) {
+//       getAllBlogsByCat({
+//         category: blog.category.id as string,
+//       });
+//     }
+//   }, [blog]);
 
   return (
     <>
@@ -97,7 +97,7 @@ export default function BlogPage() {
               <BlogNavbar />
             </div>
             <div className="bodyContainer">
-              {loading ? (
+              {/* {loading ? (
                 <div
                   className="spinner-border"
                   role="status"
@@ -107,7 +107,7 @@ export default function BlogPage() {
                 </div>
               ) : !blogs.length ? (
                 <h1>No Blogs Found</h1>
-              ) : (
+              ) : ( */}
                 <div className="categoryBlogBody">
                   <div className="blogDetailsMainSection">
                     <div className="blogDetailsLeftBodySection">
@@ -362,14 +362,16 @@ export default function BlogPage() {
                     {/* -------------------RIGHT SIDEBAR---------------------- */}
                     <div className="rightBodySection">
                       <div className="blogAdDiv"></div>
-                      <BlogBodyRightSidebar blog={blogs} />
+                      <BlogBodyRightSidebar
+                      //  blog={blogs} 
+                       />
                     </div>
                   </div>
                   <div className="blogDetailsFooterRelatedBlogs">
                     <LawAndPolicy />
                   </div>
                 </div>
-              )}
+              {/* )} */}
             </div>
             <div className="footer"><Footer /></div>
           </div>

@@ -14,116 +14,117 @@ import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import BottomComponent from "../components/ui/bottomComponent";
 
-
-export const getBlogByCategory = async (id: String, limit?: number) => {
-  var url = `/blogs?category=${id}`;
-  if (limit) {
-    url += `&limit=${limit}`;
-  }
-  try {
-    const { blogs } = await getAll(url);
-    if (blogs.length) {
-      return Promise.resolve(blogs);
-    }
-    return Promise.reject("blog not found");
-  } catch (error) {
-    return Promise.reject("SomeThing Went Wrong");
-  }
-};
+// export const getBlogByCategory = async (id: String, limit?: number) => {
+//   var url = `/blogs?category=${id}`;
+//   if (limit) {
+//     url += `&limit=${limit}`;
+//   }
+//   try {
+//     const { blogs } = await getAll(url);
+//     if (blogs.length) {
+//       return Promise.resolve(blogs);
+//     }
+//     return Promise.reject("blog not found");
+//   } catch (error) {
+//     return Promise.reject("SomeThing Went Wrong");
+//   }
+// };
 const HomePage = () => {
-  const [data, setData] = useState<{
-    categories: any[];
-    blogsByCategory: any[];
-    blogsWithSameCategory: any[];
-  }>({
-    categories: [],
-    blogsByCategory: [],
-    blogsWithSameCategory: [],
-  });
+  // const [data, setData] = useState<{
+  //   categories: any[];
+  //   blogsByCategory: any[];
+  //   blogsWithSameCategory: any[];
+  // }>({
+  //   categories: [],
+  //   blogsByCategory: [],
+  //   blogsWithSameCategory: [],
+  // });
 
-  //GET ALL CATEGORIES TO GET CATEGORY ID AND MAP EACH CATEGORY TO GET BLOG
-  const getAllCategories = async () => {
-    try {
-      const { blogCategories } = await getAll("/blogCategory");
-      if (blogCategories)
-        setData((prev) => ({ ...prev, categories: blogCategories }));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // //GET ALL CATEGORIES TO GET CATEGORY ID AND MAP EACH CATEGORY TO GET BLOG
+  // const getAllCategories = async () => {
+  //   try {
+  //     const { blogCategories } = await getAll("/blogCategory");
+  //     if (blogCategories)
+  //       setData((prev) => ({ ...prev, categories: blogCategories }));
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  //GET SPECIFIC BLOG BY CONDITION CATEROGY NAME AND DISPLAYED JUST ONCE
-  const getBlogByCategory = async (id: String) => {
-    try {
-      const { blogs } = await getAll(`/blogs?category=${id}&limit=1`);
-      if (blogs) {
-        setData((prev: any) => ({
-          ...prev,
-          blogsByCategory: [...prev.blogsByCategory, blogs[0]],
-        }));
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // //GET SPECIFIC BLOG BY CONDITION CATEROGY NAME AND DISPLAYED JUST ONCE
+  // const getBlogByCategory = async (id: String) => {
+  //   try {
+  //     const { blogs } = await getAll(`/blogs?category=${id}&limit=1`);
+  //     if (blogs) {
+  //       setData((prev: any) => ({
+  //         ...prev,
+  //         blogsByCategory: [...prev.blogsByCategory, blogs[0]],
+  //       }));
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  const getBlogsUnderOneCategory = async (id: string) => {
-    try {
-      const SameCategoryBlogs = await getAll(`/blogs?category=${id}`);
-      if (SameCategoryBlogs) {
-        let blogGroupByName = SameCategoryBlogs.blogs.reduce(
-          (acc: any, c: any) => {
-            acc[c?.category?.name] = [...(acc[c?.category?.name] || []), c];
-            return acc;
-          },
-          {} as any
-        );
-        setData((prev: any) => ({
-          ...prev,
-          blogsWithSameCategory: [
-            ...prev.blogsWithSameCategory,
-            blogGroupByName,
-          ],
-        }));
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getBlogsUnderOneCategory = async (id: string) => {
+  //   try {
+  //     const SameCategoryBlogs = await getAll(`/blogs?category=${id}`);
+  //     if (SameCategoryBlogs) {
+  //       let blogGroupByName = SameCategoryBlogs.blogs.reduce(
+  //         (acc: any, c: any) => {
+  //           acc[c?.category?.name] = [...(acc[c?.category?.name] || []), c];
+  //           return acc;
+  //         },
+  //         {} as any
+  //       );
+  //       setData((prev: any) => ({
+  //         ...prev,
+  //         blogsWithSameCategory: [
+  //           ...prev.blogsWithSameCategory,
+  //           blogGroupByName,
+  //         ],
+  //       }));
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  //TO HANDEL FIRST RENDER
-  const firstRender = useRef(true);
-  useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      getAllCategories();
-    }
+  // //TO HANDEL FIRST RENDER
+  // const firstRender = useRef(true);
+  // useEffect(() => {
+  //   if (firstRender.current) {
+  //     firstRender.current = false;
+  //     getAllCategories();
+  //   }
 
-    //TO RENDER LIMITED BLOGS BY CATEGORY
-    if (data.categories?.length > 0) {
-      //MAPPING
-      data.categories.map((category: any, index: number) => {
-        if (index > 0 && index <= 5) getBlogByCategory(category._id);
-      });
-    }
+  //   //TO RENDER LIMITED BLOGS BY CATEGORY
+  //   if (data.categories?.length > 0) {
+  //     //MAPPING
+  //     data.categories.map((category: any, index: number) => {
+  //       if (index > 0 && index <= 5) getBlogByCategory(category._id);
+  //     });
+  //   }
 
-    //TO RENDER LIMITED BLOGS WITH SAME CATEGORY
-    if (data.categories?.length > 0) {
-      //MAPPING
-      data.categories.map((category: any, index: number) => {
-        if (index > 0 && index <= 5) getBlogsUnderOneCategory(category._id);
-      });
-    }
-  }, [data.categories.length]);
+  //   //TO RENDER LIMITED BLOGS WITH SAME CATEGORY
+  //   if (data.categories?.length > 0) {
+  //     //MAPPING
+  //     data.categories.map((category: any, index: number) => {
+  //       if (index > 0 && index <= 5) getBlogsUnderOneCategory(category._id);
+  //     });
+  //   }
+  // }, [data.categories.length]);
 
-  const getMarketNewsBlogs = data?.blogsWithSameCategory.find(
-    (item) => item["कानून र निति"]
-  );
+  // const getMarketNewsBlogs = data?.blogsWithSameCategory.find(
+  //   (item) => item["कानून र निति"]
+  // );
 
   return (
     <>
       <div className="alignmentContainer">
-        <div className="navBlend"><Navbar/></div>
+        <div className="navBlend">
+          <Navbar />
+        </div>
         <div className="containerDiv">
           <div className="secNavBlend"></div>
           <div className="footerBlend">
@@ -149,19 +150,33 @@ const HomePage = () => {
             <div className="contentBody">
               <div className="blogPreviewDiv">
                 <div className="bigComponent">
-                  <HomeBlogTypeMain blog={data.blogsByCategory[0]} />
+                  <HomeBlogTypeMain
+                  //  blog={data.blogsByCategory[0]}
+                  />
                 </div>
                 <div className="smallComponentDiv">
-                  {data.blogsByCategory.map((categorySpecificBlog, index) => {
-                    if (index > 0 && index < 5)
-                      return (
-                        <div className="smallComponent" key={index}>
-                          <HomeBlogTypeSmall
-                            blog={data.blogsByCategory[index]}
-                          />
-                        </div>
-                      );
-                  })}
+                  {/* {data.blogsByCategory.map((categorySpecificBlog, index) => { */}
+                  {/* if (index > 0 && index < 5) */}
+                  {/* return ( */}
+                  <div
+                    className="smallComponent"
+                    //  key={index}
+                  >
+                    <HomeBlogTypeSmall
+                    // blog={data.blogsByCategory[index]}
+                    />
+                  </div>
+                  <div className="smallComponent">
+                    <HomeBlogTypeSmall />
+                  </div>
+                  <div className="smallComponent">
+                    <HomeBlogTypeSmall />
+                  </div>
+                  <div className="smallComponent">
+                    <HomeBlogTypeSmall />
+                  </div>
+                  {/* ); */}
+                  {/* // })} */}
                 </div>
               </div>
 
@@ -175,11 +190,11 @@ const HomePage = () => {
                 <div className="marketNewsContentDiv">
                   <div className="marketBigComponent">
                     <MarketNewsTypeMain
-                      blog={
-                        Object.values(getMarketNewsBlogs ?? {}).flatMap(
-                          (i) => i
-                        )[0]
-                      }
+                    // blog={
+                    //   Object.values(getMarketNewsBlogs ?? {}).flatMap(
+                    //     (i) => i
+                    //   )[0]
+                    // }
                     />
                   </div>
                   <div className="marketSmallComponentDiv">
@@ -187,16 +202,26 @@ const HomePage = () => {
                     <div className="marketSmallComponent"></div>
                     <div className="marketSmallComponent"></div> */}
 
-                    {Object.values(getMarketNewsBlogs ?? {})
+                    {/* {Object.values(getMarketNewsBlogs ?? {})
                       .flatMap((i) => i).splice(1,3)
-                      .map((i, index) => (
-                        <>
-                          <div className="marketSmallComponent" key={index}>
-                            <MarketNewsTypeSecondary blog={i} />
-                          </div>
-                        </>
-                      ))}
-
+                      .map((i, index) => ( */}
+                    <>
+                      <div
+                        className="marketSmallComponent"
+                        // key={index}
+                      >
+                        <MarketNewsTypeSecondary
+                        //  blog={i}
+                        />
+                      </div>
+                      <div className="marketSmallComponent">
+                        <MarketNewsTypeSecondary />
+                      </div>
+                      <div className="marketSmallComponent">
+                        <MarketNewsTypeSecondary />
+                      </div>
+                    </>
+                    {/* ))} */}
                   </div>
                 </div>
               </div>
@@ -211,20 +236,35 @@ const HomePage = () => {
                   <span className="propertyListViewAllButton">View All</span>
                 </div>
                 <div className="propertyCardDiv">
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
 
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
                 </div>
               </div>
 
               <div className="lifeStyleDiv">
-                
-                <LifeStyle id={data?.categories[1]?.id} />
+                <LifeStyle
+                //  id={data?.categories[1]?.id}
+                />
               </div>
 
               {/* <div className="lifeStyleDiv">
@@ -233,10 +273,14 @@ const HomePage = () => {
 
               <div className="flexTwo">
                 <div className="homeLoanDiv">
-                  <HomeLoan id={data?.categories[3]?.id} />
+                  <HomeLoan
+                  //  id={data?.categories[3]?.id}
+                  />
                 </div>
                 <div className="ourThoughtsDiv">
-                  <OurThoughts id={data?.categories[3]?.id} />
+                  <OurThoughts
+                  //  id={data?.categories[3]?.id}
+                  />
                 </div>
               </div>
 
@@ -248,21 +292,35 @@ const HomePage = () => {
                   <span className="propertyListViewAllButton">View All</span>
                 </div>
                 <div className="propertyCardDiv">
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
-                  <div className="propertyCard"><MainProperty /></div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
+                  <div className="propertyCard">
+                    <MainProperty />
+                  </div>
                 </div>
               </div>
 
               <div className="flexTwo">
                 <div className="lawPolicyDiv">
-                  <LawAndPolicy 
+                  <LawAndPolicy
                   // id={data?.categories[4]?.id}  YO MILAUNU XA
-                   />
+                  />
                 </div>
 
                 <div className="lawPolicy2Div">
@@ -271,9 +329,15 @@ const HomePage = () => {
                     <span className="lawPolicy2ViewAllButton">View All</span>
                   </div>
                   <div className="lawPolicy2CardDiv">
-                    <div className="lawPolicy2Card"><BottomComponent/></div>
-                    <div className="lawPolicy2Card"><BottomComponent/></div>
-                    <div className="lawPolicy2Card"><BottomComponent/></div>
+                    <div className="lawPolicy2Card">
+                      <BottomComponent />
+                    </div>
+                    <div className="lawPolicy2Card">
+                      <BottomComponent />
+                    </div>
+                    <div className="lawPolicy2Card">
+                      <BottomComponent />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -289,9 +353,15 @@ const HomePage = () => {
                     </span>
                   </div>
                   <div className="flexThreeChild1CardDiv">
-                    <div className="flexThreeChild1Card"><BottomComponent/></div>
-                    <div className="flexThreeChild1Card"><BottomComponent/></div>
-                    <div className="flexThreeChild1Card"><BottomComponent/></div>
+                    <div className="flexThreeChild1Card">
+                      <BottomComponent />
+                    </div>
+                    <div className="flexThreeChild1Card">
+                      <BottomComponent />
+                    </div>
+                    <div className="flexThreeChild1Card">
+                      <BottomComponent />
+                    </div>
                   </div>
                 </div>
 
@@ -305,9 +375,15 @@ const HomePage = () => {
                     </span>
                   </div>
                   <div className="flexThreeChildCardDiv">
-                    <div className="flexThreeChildCard"><BottomComponent/></div>
-                    <div className="flexThreeChildCard"><BottomComponent/></div>
-                    <div className="flexThreeChildCard"><BottomComponent/></div>
+                    <div className="flexThreeChildCard">
+                      <BottomComponent />
+                    </div>
+                    <div className="flexThreeChildCard">
+                      <BottomComponent />
+                    </div>
+                    <div className="flexThreeChildCard">
+                      <BottomComponent />
+                    </div>
                   </div>
                 </div>
 
@@ -321,15 +397,23 @@ const HomePage = () => {
                     </span>
                   </div>
                   <div className="flexThreeChildCardDiv">
-                    <div className="flexThreeChildCard"><BottomComponent/></div>
-                    <div className="flexThreeChildCard"><BottomComponent/></div>
-                    <div className="flexThreeChildCard"><BottomComponent/></div>
+                    <div className="flexThreeChildCard">
+                      <BottomComponent />
+                    </div>
+                    <div className="flexThreeChildCard">
+                      <BottomComponent />
+                    </div>
+                    <div className="flexThreeChildCard">
+                      <BottomComponent />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="contentFooter"><Footer/></div>
+            <div className="contentFooter">
+              <Footer />
+            </div>
           </div>
         </div>
       </div>
