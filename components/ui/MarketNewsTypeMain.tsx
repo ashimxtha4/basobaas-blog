@@ -20,7 +20,11 @@ const MarketNewsTypeMain = () =>
               />
               
             ) : null} */}
-            <Image src={HomeBlogMainImage} alt="Basobaas Nepal" />
+            <Image
+              src={HomeBlogMainImage}
+              alt="Basobaas Nepal"
+              className="image" height={300}
+            />
           </div>
           <div className="blogContents">
             <div className="blogCategoryTitle">

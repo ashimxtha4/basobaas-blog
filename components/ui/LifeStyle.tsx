@@ -37,14 +37,14 @@ const LifeStyle = () =>
               //  key={idx}
               className="lifeStyleCard"
             >
-              <div className="homeBlogTypeSmall">
+              <div className="lifestyle">
                 <div className="thumbnail">
                   {/* <img
                       src={imageUrlCheck(blog.images[0] as string)}
                       className="blogCardBackground"
                       alt="Basobaas Nepal"
                     /> */}
-                  <Image src={LifeStyleImages} alt="basobaas nepal" />
+                  <Image className="image" src={LifeStyleImages} alt="basobaas nepal" />
                 </div>
                 <div className="cardContent">
                   <div className="blogCategoryTag">
@@ -86,14 +86,14 @@ const LifeStyle = () =>
               //  key={idx}
               className="lifeStyleCard"
             >
-              <div className="homeBlogTypeSmall">
+              <div className="lifestyle">
                 <div className="thumbnail">
                   {/* <img
                       src={imageUrlCheck(blog.images[0] as string)}
                       className="blogCardBackground"
                       alt="Basobaas Nepal"
                     /> */}
-                  <Image src={LifeStyleImages} alt="basobaas nepal" />
+                  <Image className="image" src={LifeStyleImages} alt="basobaas nepal" />
                 </div>
                 <div className="cardContent">
                   <div className="blogCategoryTag">
@@ -135,14 +135,14 @@ const LifeStyle = () =>
               //  key={idx}
               className="lifeStyleCard"
             >
-              <div className="homeBlogTypeSmall">
+              <div className="lifestyle">
                 <div className="thumbnail">
                   {/* <img
                       src={imageUrlCheck(blog.images[0] as string)}
                       className="blogCardBackground"
                       alt="Basobaas Nepal"
                     /> */}
-                  <Image src={LifeStyleImages} alt="basobaas nepal" />
+                  <Image className="image" src={LifeStyleImages} alt="basobaas nepal" />
                 </div>
                 <div className="cardContent">
                   <div className="blogCategoryTag">
