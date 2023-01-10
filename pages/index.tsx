@@ -184,7 +184,7 @@ const HomePage = () => {
 
               <div className="marketNewsDiv">
                 <div className="titleDiv">
-                  <label className="title">Market New</label>
+                  <label className="title">Market News</label>
                   <span className="viewAllButton">View All</span>
                 </div>
                 <div className="marketNewsContentDiv">

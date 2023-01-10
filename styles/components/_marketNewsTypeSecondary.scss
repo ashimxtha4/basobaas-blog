@@ -15,6 +15,12 @@
     height: 100%;
     background: #d9d9d9;
     border-radius: 6px;
+    overflow: hidden;
+
+    .image{
+      height: 100%;
+      width: auto;
+    }
   }
   .blogContents {
     display: flex;

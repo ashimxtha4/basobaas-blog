@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
-import MarketNewsTypeSecondaryImage from "../../public/Images/MarketNewsSecondary.svg";
+import MarketNewsTypeSecondaryImage from "../../public/Images/smallMarket.svg";
 
 const MarketNewsTypeSecondary = (
   // { blog = {} as any }
@@ -20,6 +20,7 @@ const MarketNewsTypeSecondary = (
            <Image
               src={MarketNewsTypeSecondaryImage}
               alt="Basobaas Nepal"
+              className="image"
             />
         </div>
         <div className="blogContents">

@@ -254,7 +254,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        padding: calc(12*100%/1440) calc(20*100%/1440);
+        padding: calc(12*100%/1440) calc(15*100%/1440);
         /* gap: 360px; */
         width: 100%;
         max-width: 1440px;
@@ -278,7 +278,7 @@
             height: 43px;
 
             .hamburger {
-                display: block;
+                display: none;
             }
 
             .logo {

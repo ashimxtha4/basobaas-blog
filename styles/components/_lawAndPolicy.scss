@@ -68,10 +68,19 @@
     align-self: stretch;
 
     .imageContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 120px;
       height: 100%;
       background: #d9d9d9;
       border-radius: 6px;
+      overflow: hidden;
+
+      .image{
+        height: 100%;
+        width: auto;
+      }
     }
 
     .blogContents {

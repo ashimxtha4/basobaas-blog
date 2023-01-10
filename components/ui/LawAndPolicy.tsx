@@ -34,13 +34,13 @@ const LawAndPolicy = (props:any)=>{
           {/* <div className="lawPolicyCard" key={index}> */}
           <div className="lawPolicyCard">
             <div className="imageContainer">
-              {/* <Image
+              {/* <Image className="image"
             src=""
             alt="Picture of the author"
             width={260}
             height={133.33}
           /> */}
-              <Image src={LawAndPolicyImage} alt="basobaas Nepal" />
+              <Image className="image" src={LawAndPolicyImage} alt="basobaas Nepal" />
             </div>
             <div className="blogContents">
               <div className="blogCategoryTitle">
@@ -79,13 +79,13 @@ const LawAndPolicy = (props:any)=>{
           </div>
           <div className="lawPolicyCard">
             <div className="imageContainer">
-              {/* <Image
+              {/* <Image className="image"
             src=""
             alt="Picture of the author"
             width={260}
             height={133.33}
           /> */}
-              <Image src={LawAndPolicyImage} alt="basobaas Nepal" />
+              <Image className="image" src={LawAndPolicyImage} alt="basobaas Nepal" />
             </div>
             <div className="blogContents">
               <div className="blogCategoryTitle">
@@ -124,13 +124,13 @@ const LawAndPolicy = (props:any)=>{
           </div>
           <div className="lawPolicyCard">
             <div className="imageContainer">
-              {/* <Image
+              {/* <Image className="image"
             src=""
             alt="Picture of the author"
             width={260}
             height={133.33}
           /> */}
-              <Image src={LawAndPolicyImage} alt="basobaas Nepal" />
+              <Image className="image" src={LawAndPolicyImage} alt="basobaas Nepal" />
             </div>
             <div className="blogContents">
               <div className="blogCategoryTitle">
@@ -169,13 +169,13 @@ const LawAndPolicy = (props:any)=>{
           </div>
           <div className="lawPolicyCard">
             <div className="imageContainer">
-              {/* <Image
+              {/* <Image className="image"
             src=""
             alt="Picture of the author"
             width={260}
             height={133.33}
           /> */}
-              <Image src={LawAndPolicyImage} alt="basobaas Nepal" />
+              <Image className="image" src={LawAndPolicyImage} alt="basobaas Nepal" />
             </div>
             <div className="blogContents">
               <div className="blogCategoryTitle">

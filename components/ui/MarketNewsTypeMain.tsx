@@ -24,6 +24,7 @@ const MarketNewsTypeMain = (
             <Image
               src={HomeBlogMainImage}
               alt="Basobaas Nepal"
+              className="image" height={300}
             />
           </div>
           <div className="blogContents">
