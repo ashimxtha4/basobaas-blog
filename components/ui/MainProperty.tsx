@@ -1,26 +1,29 @@
 import React from 'react'
 import { Priceformatter } from '../../utilities/helper'
 import { Icon } from "@iconify/react";
+import propertyImage from "../../public/Images/propertyImage.svg"
+import Image from 'next/image';
 
 const MainProperty = () => {
   return (
     <>
       <div className="card">
         <div className="imageContainer">
+          <Image src={propertyImage} alt="noImage" />
           {/* <img className="image" src={IMG_URL + property.propertyImages[0]} /> */}
         </div>
         <div className="contentContainer">
           <div className="propertyTitle">
             <p>
               {/* {property.pricing.title} */}
-              ola
+              Binayak Colony
             </p>
           </div>
           <div className="propertyAddress">
             <p>
               <Icon icon="ph:map-pin-bold" color="#707580" width="18" height="18" inline={true} style={{ marginRight: "8px" }} />
               {/* {property.location?.streetName}, {property.location?.locality} */}
-              ola2
+              Chobar,Lalitpur
             </p>
           </div>
           <div className="propertyOverview">
@@ -34,7 +37,7 @@ const MainProperty = () => {
               </span>
               <span className="overViewTags">
                 {/* {property.overview?.bedRoom} */}
-                23
+                2
               </span>
               <span className="overViewTags">Beds</span>
             </div>
@@ -48,7 +51,7 @@ const MainProperty = () => {
               </span>
               <span className="overViewTags">
                 {/* {property.overview?.bathRoom} */}
-                24
+                1
               </span>
               <span className="overViewTags">Bath</span>
             </div>
@@ -60,7 +63,7 @@ const MainProperty = () => {
                   className="overviewIcons"
                 />
               </span>
-              <span className="overViewTags">5700</span>
+              <span className="overViewTags">1200</span>
               <span className="overViewTags">sq.ft</span>
             </div>
           </div>

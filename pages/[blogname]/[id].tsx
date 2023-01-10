@@ -7,6 +7,7 @@ import CategorySpecificBlog from "../../components/ui/CategorySpecificBlog";
 import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
 import Navbar from "../../layouts/Navbar";
 import { Select } from "antd";
+import Footer from "../../layouts/Footer";
 
 export default function BlogPage() {
   //STATE FOR BLOGS
@@ -137,7 +138,9 @@ export default function BlogPage() {
         </div>
         <div className="blogContainerDiv">
           <div className="blogSecNavBlend"></div>
-          <div className="footerBlend"></div>
+          <div className="footerBlend">
+            <div className="lowerFooterBlend"></div>
+          </div>
           <div className="contentDiv">
             <div className="secNavDiv">
               <BlogNavbar />
@@ -263,11 +266,10 @@ export default function BlogPage() {
                           {pageNumber.map((item, index) => {
                             return (
                               <li
-                                className={`page-item pageIndex ${
-                                  item === currentPage
+                                className={`page-item pageIndex ${item === currentPage
                                     ? "activePage"
                                     : "pageIndex"
-                                }`}
+                                  }`}
                                 key={index}
                               >
                                 <button
@@ -316,7 +318,7 @@ export default function BlogPage() {
                 </div>
               )}
             </div>
-            <div className="footer"></div>
+            <div className="footer"><Footer /></div>
           </div>
         </div>
       </div>
