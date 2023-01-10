@@ -260,7 +260,7 @@ const HomePage = () => {
 
               <div className="flexTwo">
                 <div className="lawPolicyDiv">
-                  <LawAndPolicy 
+                  <LawAndPolicy title="Law & Policy"
                   // id={data?.categories[4]?.id}  YO MILAUNU XA
                    />
                 </div>

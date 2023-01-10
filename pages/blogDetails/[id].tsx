@@ -368,7 +368,7 @@ export default function BlogPage() {
                   </div>
                   <div className="blogDetailsFooterRelatedBlogs">
                     <div className="lawPolicyDiv">
-                      <LawAndPolicy/>
+                      <LawAndPolicy title="Related Blogs" />
                       {/* id={data?.categories[4]?.id}  YO MILAUNU XA */}
                     </div>
                     <DetailProperty/>

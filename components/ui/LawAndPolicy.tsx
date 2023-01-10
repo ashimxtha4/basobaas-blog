@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getBlogByCategory } from "../../pages/index";
 import { Icon } from "@iconify/react";
 
-const LawAndPolicy = (
+const LawAndPolicy = (props:any
   // { id }: { id: any }
   ) => {
   const [blog, setBlog] = useState<any[]>([]);
@@ -25,7 +25,7 @@ const LawAndPolicy = (
     return (
       <>
         <div className="lawPolicyTitleDiv">
-          <label className="lawPolicyTitle">Law & Policy</label>
+          <label className="lawPolicyTitle">{props.title}</label>
           <span className="lawPolicyViewAllButton">View All</span>
         </div>
         <div className="lawPolicyCardDiv">
