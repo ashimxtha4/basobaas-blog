@@ -19,7 +19,7 @@
     height: 180px;
     border: solid 1px;
 
-    .image{
+    .image {
       height: auto;
       width: 100%;
     }
@@ -58,10 +58,10 @@
       p {
         margin: 0px;
         padding: 0px;
-        font-family: "Product Sans", sans-serif;
+        font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 20px;
         line-height: 140%;
         color: #333333;
         overflow: hidden;
@@ -81,11 +81,11 @@
       p {
         margin: 0px;
         padding: 0px;
-        font-family: "Product Sans", sans-serif;
+        font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 140%;
+        line-height: 180%;
         color: #333333;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -132,7 +132,7 @@
     .imageContainer {
       height: 300px;
 
-      .image{
+      .image {
         height: 100%;
         width: auto;
       }
