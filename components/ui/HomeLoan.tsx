@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 // import { getBlogByCategory } from "../../pages";
-import HomeLoanImage from "../../public/Images/blogDetails.svg";
+import HomeLoanImage from "../../public/Images/homeLoanImage2.svg";
 import Image from "next/image";
 
 const HomeLoan = () =>
@@ -45,7 +45,11 @@ const HomeLoan = () =>
               width={260}
               height={133.33}
             /> */}
-                <Image src={HomeLoanImage} alt="basobaas Nepal" />
+                <Image
+                  className="homeLoanImage"
+                  src={HomeLoanImage}
+                  alt="basobaas Nepal"
+                />
               </div>
               <div className="blogContents">
                 <div className="blogHeader">
@@ -89,7 +93,11 @@ const HomeLoan = () =>
               width={260}
               height={133.33}
             /> */}
-                <Image src={HomeLoanImage} alt="basobaas Nepal" />
+                <Image
+                  className="homeLoanImage"
+                  src={HomeLoanImage}
+                  alt="basobaas Nepal"
+                />
               </div>
               <div className="blogContents">
                 <div className="blogHeader">
@@ -133,7 +141,11 @@ const HomeLoan = () =>
               width={260}
               height={133.33}
             /> */}
-                <Image src={HomeLoanImage} alt="basobaas Nepal" />
+                <Image
+                  className="homeLoanImage"
+                  src={HomeLoanImage}
+                  alt="basobaas Nepal"
+                />
               </div>
               <div className="blogContents">
                 <div className="blogHeader">
