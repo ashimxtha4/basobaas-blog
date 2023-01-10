@@ -14,15 +14,15 @@ const HomeBlogTypeMain = () =>
     // if (Object.keys(blog).length > 0)
     return (
       <>
-        <Link
+        {/* <Link
           style={{display:"inlineBlock"}}
           href={{
-            pathname: `/blogDetails/${123}`,
+            pathname: `/blogDetails/${blog?._id}`,
           }}
-        >
+        > */}
         <div
           className="homeBlogTypeMain"
-          // onClick={() => router.push(`blogDetails/${blog?._id}`)}
+          onClick={() => router.push(`blogDetails/${123}`)}
         >
           <div className="thumbnail">
             {/* <img
@@ -70,7 +70,7 @@ const HomeBlogTypeMain = () =>
             </div>
           </div>
         </div>
-        </Link>
+        {/* </Link> */}
       </>
     );
     // else return null;
