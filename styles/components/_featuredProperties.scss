@@ -6,15 +6,18 @@
   flex-direction: row;
   align-items: flex-start;
   padding: 0px;
-  gap: calc(12*100%/410);
+  gap: calc(12 * 100% / 410);
 
   .imageContainer {
-    width: calc(120*100%/410);
+    width: calc(120 * 100% / 410);
     // min-width: 100px;
     height: 102px;
     border-radius: 3px;
+    overflow: hidden;
 
-    img {
+    .image {
+      width: auto;
+      height: 100%;
       border-radius: inherit;
       object-fit: contain;
     }
@@ -26,9 +29,9 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    gap: 7px;
+    gap: 6px;
     min-width: 215px;
-    width: calc(274*100%/410);
+    width: calc(274 * 100% / 410);
     height: 102px;
 
     .propertyTitle {
@@ -49,7 +52,7 @@
     .propertyAddress {
       position: relative;
       width: 100%;
-      
+
       p {
         position: relative;
         font-family: "Product Sans", sans-serif;
@@ -79,21 +82,17 @@
         position: relative;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
         width: fit-content;
         height: min-content;
+        gap: 8px;
 
         .iconContainer {
           position: relative;
           width: fit-content;
           height: fit-content;
-          margin: 0px;
-          padding: 0px;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
+          margin: 0;
+          padding: 0;
 
           .overviewIcons {
             margin: 0px;
@@ -125,6 +124,12 @@
           padding: 2px 0px 0px 1px;
           width: auto;
           word-spacing: 2px;
+          gap: 8px;
+        }
+
+        .overViewInformation {
+          display: flex;
+          flex-direction: row;
         }
       }
     }
@@ -143,6 +148,7 @@
         display: flex;
         align-items: center;
         color: #0000ff;
+        margin-right: 1.5px;
       }
       .unit {
         font-family: "Product Sans", sans-serif;
@@ -153,7 +159,8 @@
         display: flex;
         align-items: center;
         color: #0000ff;
-        word-spacing: -3px;
+        // word-spacing: -3px;
+        word-spacing: 2px;
       }
     }
   }

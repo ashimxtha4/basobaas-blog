@@ -29,7 +29,7 @@
       padding: 0px;
 
       p {
-        font-family: "Product Sans", sans-serif;
+        font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
@@ -43,7 +43,7 @@
       .relatedBlogsView {
         button {
           background: transparent;
-          font-family: "Product Sans", sans-serif;
+          font-family: "Ek Mukta";
           font-style: normal;
           font-weight: 400;
           font-size: 16px;
@@ -90,7 +90,7 @@
       padding: 0px;
 
       p {
-        font-family: "Product Sans", sans-serif;
+        font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
@@ -101,7 +101,7 @@
       }
       button {
         background: transparent;
-        font-family: "Product Sans", sans-serif;
+        font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -119,8 +119,6 @@
   }
 }
 
-
-
 @media screen and (min-width: 768px) {
   .rightSidebar {
     width: 100%;
@@ -128,7 +126,7 @@
     flex-direction: row;
     gap: 2.5%;
     align-items: flex-start;
-    
+
     .relatedSection {
       width: 100%;
       .relatedSectionTitle {
@@ -154,13 +152,11 @@
   }
 }
 
-
-
 @media screen and (min-width: 1024px) {
   .rightSidebar {
     width: 490px;
     flex-direction: column;
-    gap:40px ;
+    gap: 40px;
     // padding-right: 72.5px;
 
     .relatedSection {
@@ -187,4 +183,3 @@
     }
   }
 }
-
