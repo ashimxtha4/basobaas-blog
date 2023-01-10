@@ -64,7 +64,7 @@ const CategorySpecificBlog = () => {
                 icon="ci:dot-05-xl"
                 width="15"
                 height="15"
-                color="#4F4F4F"
+                color="#969696"
               />
             </span>
             <span className="posted">

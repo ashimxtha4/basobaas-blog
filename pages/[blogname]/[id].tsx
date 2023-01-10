@@ -161,14 +161,14 @@ export default function BlogPage() {
                   <div className="leftBodySection">
                     <div className="leftHeaderSection">
                       <div className="categoryHeader">
-                        <p className="categoryInfo">क्याटीगोरी</p>
+                        <p className="categoryInfo">श्रेणी</p>
                         <p className="categoryTitle">
                           {/* {blogs[0]?.category?.name} */}
-                          Market Updates
+                          बजार अपडेटहरू
                         </p>
                       </div>
                       <div className="sortSection">
-                        <span className="sortTitle">Sort By :</span>
+                        <span className="sortTitle">क्रमबद्ध गर्नुहोस्:</span>
                         <span className="sortButton">
                           {/* <select
                             name="sort"
@@ -203,21 +203,21 @@ export default function BlogPage() {
                                 className="selectArrow"
                               />
                             }
-                            defaultValue="Realstate Business"
+                            defaultValue="घर जग्गा व्यवसाय"
                             className="subCategorySelect"
                             bordered={false}
                             options={[
                               {
                                 value: "realStateBusiness",
-                                label: "Realstate Business",
+                                label: "घर जग्गा व्यवसाय",
                               },
                               {
-                                value: "handicraft",
-                                label: "Handicraft",
+                                value: "agriculture",
+                                label: "कृषि",
                               },
                               {
-                                value: "textiles",
-                                label: "Textiles",
+                                value: "construction",
+                                label: "निर्माण सेवा",
                               },
                             ]}
                           />
@@ -266,10 +266,11 @@ export default function BlogPage() {
                           {pageNumber.map((item, index) => {
                             return (
                               <li
-                                className={`page-item pageIndex ${item === currentPage
+                                className={`page-item pageIndex ${
+                                  item === currentPage
                                     ? "activePage"
                                     : "pageIndex"
-                                  }`}
+                                }`}
                                 key={index}
                               >
                                 <button
@@ -313,12 +314,16 @@ export default function BlogPage() {
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
                     <div className="blogAdDiv"></div>
-                    <BlogBodyRightSidebar blog={blogs} />
+                    <BlogBodyRightSidebar
+                    //  blog={blogs}
+                    />
                   </div>
                 </div>
               )}
             </div>
-            <div className="footer"><Footer /></div>
+            <div className="footer">
+              <Footer />
+            </div>
           </div>
         </div>
       </div>
