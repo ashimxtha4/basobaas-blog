@@ -9,7 +9,7 @@ const MainProperty = () => {
     <>
       <div className="card">
         <div className="imageContainer">
-          <Image src={propertyImage} alt="noImage" />
+          <Image src={propertyImage} alt="noImage" className='img' />
           {/* <img className="image" src={IMG_URL + property.propertyImages[0]} /> */}
         </div>
         <div className="contentContainer">
@@ -35,11 +35,13 @@ const MainProperty = () => {
                   className="overviewIcons"
                 />
               </span>
-              <span className="overViewTags">
-                {/* {property.overview?.bedRoom} */}
-                2
-              </span>
-              <span className="overViewTags">Beds</span>
+              <div className='overViewText'>
+                <span className="overViewTags">
+                  {/* {property.overview?.bedRoom} */}
+                  2
+                </span>
+                <span className="overViewTags">Beds</span>
+              </div>
             </div>
             <div className="overviewDatas">
               <span className="iconContainer">
@@ -49,11 +51,13 @@ const MainProperty = () => {
                   className="overviewIcons"
                 />
               </span>
-              <span className="overViewTags">
-                {/* {property.overview?.bathRoom} */}
-                1
-              </span>
-              <span className="overViewTags">Bath</span>
+              <div className='overViewText'>
+                <span className="overViewTags">
+                  {/* {property.overview?.bathRoom} */}
+                  1
+                </span>
+                <span className="overViewTags">Bath</span>
+              </div>
             </div>
             <div className="overviewDatas">
               <span className="iconContainer">
@@ -63,8 +67,10 @@ const MainProperty = () => {
                   className="overviewIcons"
                 />
               </span>
-              <span className="overViewTags">1200</span>
-              <span className="overViewTags">sq.ft</span>
+              <div className='overViewText'>
+                <span className="overViewTags">1200</span>
+                <span className="overViewTags">sq.ft</span>
+              </div>
             </div>
           </div>
           <div className="propertyPrice">

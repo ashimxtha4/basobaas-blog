@@ -4,9 +4,7 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import LawAndPolicyImage from "../../public/Images/LawAndPolicyImage.svg";
 
-const LawAndPolicy = () =>
-  // { id }: { id: any }
-  {
+const LawAndPolicy = (props:any)=>{
     const [blog, setBlog] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -27,7 +25,7 @@ const LawAndPolicy = () =>
     return (
       <>
         <div className="lawPolicyTitleDiv">
-          <label className="lawPolicyTitle">Law & Policy</label>
+          <label className="lawPolicyTitle">{props.title}</label>
           <span className="lawPolicyViewAllButton">View All</span>
         </div>
         <div className="lawPolicyCardDiv">

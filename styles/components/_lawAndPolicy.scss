@@ -1,129 +1,263 @@
-.lawPolicyCard {
+.lawPolicyTitleDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+  width: 100%;
+  height: 34px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
 
-  .imageContainer {
-    width: calc(120*100%/345);
-    height: 100%;
-    background: #d9d9d9;
-    border-radius: 6px;
+
+  .lawPolicyTitle {
+    width: fit-content;
+    height: 28px;
+    font-family: "Product Sans", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+    color: #333333;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
   }
 
-  .blogContents {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 6px;
-    width: calc(209*100%/345);
-    height: 100%;
-
-    .blogCategoryTitle {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-
-      p {
-        margin: 0px;
-        padding: 0px;
-        font-family: "Product Sans", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 140%;
-        text-transform: uppercase;
-        color: #4F4F4F;
-      }
-    }
-
-    .blogHeader {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      height: fit-content;
-
-      p {
-        margin: 0px;
-        padding: 0px;
-        font-family: "Product Sans", sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 140%;
-        color: #333333;
-        width: 100%;
-        height: fit-content;
-        min-height: 44px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: initial;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-      }
-    }
-
-    .blogBy {
-      display: none;
-    }
+  .lawPolicyViewAllButton {
+    width: fit-content;
+    height: 22px;
+    font-family: "Product Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #333333;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
   }
 }
 
-.marketNewsTypeSecondary:hover {
-  transform: scale(0.9);
-}
+.lawPolicyCardDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  width: 100%;
+  height: 318px;
+  flex: none;
+  align-self: stretch;
 
-@media only screen and (min-width: 1024px) {
+
   .lawPolicyCard {
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 90px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
 
     .imageContainer {
-      width: 100%;
-      height: 182px;
+      width: 120px;
+      height: 100%;
+      background: #d9d9d9;
+      border-radius: 6px;
     }
 
     .blogContents {
-      width: 100%;
-      min-height: 106px;
-      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 6px;
+      width: calc(209*100%/345);
+      height: 100%;
 
       .blogCategoryTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
 
         p {
-          color: #0000ff;
+          margin: 0px;
+          padding: 0px;
+          font-family: "Product Sans", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 10px;
+          line-height: 140%;
+          text-transform: uppercase;
+          color: #4F4F4F;
         }
       }
 
       .blogHeader {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
         width: 100%;
-        height: 56px;
+        height: fit-content;
 
         p {
-          font-size: 20px;
+          margin: 0px;
+          padding: 0px;
+          font-family: "Product Sans", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 16px;
           line-height: 140%;
+          color: #333333;
+          width: 100%;
+          height: fit-content;
+          min-height: 44px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: initial;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
         }
       }
 
       .blogBy {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
+        display: none;
+      }
+    }
+  }
+}
 
-        .author,
-        .posted {
-          font-family: "Product Sans", sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 140%;
-          color: #4f4f4f;
+// .marketNewsTypeSecondary:hover {
+//   transform: scale(0.9);
+// }
+
+@media only screen and (min-width: 1024px) {
+  .lawPolicyTitleDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    width: 100%;
+    height: 34px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+
+    .lawPolicyTitle {
+      width: fit-content;
+      height: 28px;
+      font-family: "Product Sans", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 140%;
+      color: #333333;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+
+    .lawPolicyViewAllButton {
+      width: fit-content;
+      height: 22px;
+      font-family: "Product Sans", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #333333;
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+    }
+  }
+
+
+  .lawPolicyCardDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: calc(24 * 100% / 1277);
+    width: 100%;
+    min-height: 304px;
+    height: fit-content;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+
+
+    .lawPolicyCard {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: calc(302 * 100% / 1277);
+      height: 304px;
+      border-radius: 6px;
+
+      .imageContainer {
+        width: 100%;
+        height: 182px;
+      }
+
+      .blogContents {
+        width: 100%;
+        min-height: 106px;
+        height: fit-content;
+
+        .blogCategoryTitle {
+
+          p {
+            color: #0000ff;
+          }
         }
 
-        .separator {
+        .blogHeader {
+          width: 100%;
+          height: 56px;
+
+          p {
+            font-size: 20px;
+            line-height: 140%;
+          }
+        }
+
+        .blogBy {
           display: flex;
+          flex-direction: row;
           align-items: center;
+          gap: 8px;
+
+          .author,
+          .posted {
+            font-family: "Product Sans", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: #4f4f4f;
+          }
+
+          .separator {
+            display: flex;
+            align-items: center;
+          }
         }
       }
     }

@@ -9,17 +9,22 @@
   gap: calc(12 * 100% / 410);
 
   .imageContainer {
-    width: calc(120 * 100% / 410);
+    width: 120px;
     // min-width: 100px;
+    overflow: hidden;
     height: 102px;
     border-radius: 3px;
     overflow: hidden;
+    @media only screen and (min-width: 1024px){
+      height: 105px;
+    }
 
     .image {
-      width: auto;
-      height: 100%;
+      width: 120px;
+      height: 102px;
       border-radius: inherit;
       object-fit: contain;
+      // border-radius: 3px;
     }
   }
 
@@ -30,13 +35,14 @@
     align-items: flex-start;
     padding: 0px;
     gap: 6px;
-    min-width: 215px;
+    // min-width: 215px;
     width: calc(274 * 100% / 410);
     height: 102px;
 
     .propertyTitle {
       position: relative;
       width: 100%;
+
       p {
         position: relative;
         font-family: "Product Sans", sans-serif;
@@ -49,6 +55,7 @@
         padding: 0px;
       }
     }
+
     .propertyAddress {
       position: relative;
       width: 100%;
@@ -67,6 +74,7 @@
         padding: 0px;
       }
     }
+
     .propertyOverview {
       position: relative;
       display: flex;
@@ -77,6 +85,7 @@
       min-width: 100%;
       width: fit-content;
       overflow: hidden;
+      
 
       .overviewDatas {
         position: relative;
@@ -86,6 +95,12 @@
         width: fit-content;
         height: min-content;
         gap: 8px;
+        @media only screen and (min-width: 1024px){
+          gap: 4px;
+        }
+        @media only screen and (min-width: 1100px){
+          gap: 8px;
+        }
 
         .iconContainer {
           position: relative;
@@ -108,28 +123,35 @@
           }
         }
 
-        .overViewTags {
-          position: relative;
-          font-family: "Product Sans", sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 2px;
-          line-height: 140%;
-          color: #707580;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          flex-grow: 1;
-          margin: 0px;
-          padding: 2px 0px 0px 1px;
-          width: auto;
-          word-spacing: 2px;
-          gap: 8px;
-        }
-
         .overViewInformation {
           display: flex;
           flex-direction: row;
+          gap: 2px;
+
+          .overViewTags {
+            position: relative;
+            font-family: "Product Sans", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: #707580;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            flex-grow: 1;
+            margin: 0px;
+            padding: 2px 0px 0px 1px;
+            width: auto;
+            word-spacing: 2px;
+            gap: 8px;
+            @media only screen and (min-width: 1024px){
+              font-size: 11px;
+            }
+            @media only screen and (min-width: 1050px){
+              font-size: 12px;
+            }
+          }
         }
       }
     }
@@ -139,6 +161,7 @@
       flex-direction: row;
       gap: 3px;
       width: 100%;
+
       .price {
         font-family: "Product Sans", sans-serif;
         font-style: normal;
@@ -150,6 +173,7 @@
         color: #0000ff;
         margin-right: 1.5px;
       }
+
       .unit {
         font-family: "Product Sans", sans-serif;
         font-style: normal;
@@ -164,42 +188,48 @@
       }
     }
   }
-  @media screen and (min-width: 768px) {
-    .imageContainer {
-      height: 105px;
-    }
-
-    .contentContainer {
-      height: 105px;
-
-      .propertyTitle {
-        p {
-        }
-      }
-      .propertyAddress {
-        p {
-          font-size: 14px;
-        }
-      }
-      .propertyOverview {
-        .overviewDatas {
-          .iconContainer {
-            .overviewIcons {
-            }
-          }
-
-          .overViewTags {
-            font-size: 12px;
-          }
-        }
-      }
-
-      .propertyPrice {
-        .price {
-        }
-        .unit {
-        }
-      }
-    }
-  }
 }
+
+// @media screen and (min-width: 768px) {
+//   .featuredProperties {
+//     .imageContainer {
+//       width: 120px;
+//       height: 105px;
+//     }
+
+//     .contentContainer {
+//       height: 105px;
+
+//       .propertyTitle {
+//         p {}
+//       }
+
+//       .propertyAddress {
+//         p {
+//           font-size: 14px;
+//         }
+//       }
+
+//       .propertyOverview {
+//         .overviewDatas {
+//           .iconContainer {
+//             .overviewIcons {}
+//           }
+
+//           .overViewInformation {
+//             .overViewTags {
+//               font-size: 12px;
+//             }
+//           }
+
+//         }
+//       }
+
+//       .propertyPrice {
+//         .price {}
+
+//         .unit {}
+//       }
+//     }
+//   }
+// }

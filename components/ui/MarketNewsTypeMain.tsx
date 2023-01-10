@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
-import HomeBlogMainImage from "../../public/Images/blogDetails.svg";
+import HomeBlogMainImage from "../../public/Images/MarketNewsImage.svg";
 
 const MarketNewsTypeMain = (
   // { blog = {} }: any

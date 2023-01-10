@@ -20,10 +20,12 @@
     width: 100%;
     height: 140px;
     border-radius: 3px;
+    overflow: hidden;
 
-    img {
+    .img {
       border-radius: inherit;
-      object-fit: contain;
+      width: 100%;
+      height: auto;
     }
   }
 
@@ -90,6 +92,7 @@
         align-items: center;
         width: fit-content;
         height: min-content;
+        gap: 8px;
 
         .iconContainer {
           position: relative;
@@ -116,23 +119,32 @@
           }
         }
 
-        .overViewTags {
-          position: relative;
-          font-family: "Product Sans", sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 12px;
-          line-height: 140%;
-          color: #707580;
+        .overViewText {
+          width: fit-content;
           display: flex;
           flex-direction: row;
-          flex-wrap: nowrap;
-          flex-grow: 1;
-          margin: 0px;
-          padding: 2px 0px 0px 1px;
-          width: auto;
-          word-spacing: 2px;
+          gap: 2px;
+
+          .overViewTags {
+            position: relative;
+            font-family: "Product Sans", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 140%;
+            color: #707580;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            flex-grow: 1;
+            margin: 0px;
+            padding: 2px 0px 0px 1px;
+            width: auto;
+            word-spacing: 2px;
+          }
         }
+
+
       }
     }
 
@@ -199,8 +211,6 @@
         text-align: center;
         color: #2b2b2b;
         background-color: transparent;
-
-        // display: none;
       }
     }
   }
@@ -218,10 +228,8 @@
     .imageContainer {
       width: 100%;
       height: 198px;
-      border: solid 1px;
 
-
-      img {}
+      .img {}
     }
 
     .contentContainer {
@@ -249,7 +257,7 @@
         p {
           margin: 0px;
           font-size: 12px;
-          }
+        }
       }
 
       .propertyOverview {
@@ -257,11 +265,18 @@
         .overviewDatas {
 
           .iconContainer {
-    
+
             .overviewIcons {}
           }
 
-          .overViewTags {}
+          .overViewText {
+            width: fit-content;
+            display: flex;
+            flex-direction: row;
+            gap: 2px;
+
+            .overViewTags {}
+          }
         }
       }
 
