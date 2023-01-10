@@ -59,7 +59,7 @@
           font-family: "Ek Mukta";
           font-style: normal;
           font-weight: 700;
-          font-size: 16px;
+          font-size: 20px;
           line-height: 140%;
           color: #333333;
           overflow: hidden;
@@ -84,14 +84,14 @@
         font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
-        line-height: 140%;
+        font-size: 16px;
+        line-height: 180%;
         color: #4f4f4f;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: initial;
         display: -webkit-box;
-        -webkit-line-clamp: 4;
+        -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
       }
 

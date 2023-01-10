@@ -2,10 +2,14 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { imageUrlCheck } from "../../utilities/helper";
+import HomeBlogMainImage from "../../public/Images/blogDetails.svg";
+import Image from "next/image";
 
-const HomeBlogTypeSmall = ({ blog = {} }: any) => {
-  const blogPostedDate = blog.createdAt;
-  if (Object.keys(blog).length > 0)
+const HomeBlogTypeSmall = () =>
+  // { blog = {} }: any
+  {
+    // const blogPostedDate = blog.createdAt;
+    // if (Object.keys(blog).length > 0)
     return (
       <>
         <div
@@ -13,21 +17,35 @@ const HomeBlogTypeSmall = ({ blog = {} }: any) => {
           // style={{ backgroundImage: `url(${blog.images[0]})` }}
         >
           <div className="thumbnail">
-            <img
+            {/* <img
               src={imageUrlCheck(blog.images[0] as string)}
               className="blogCardBackground"
+              alt="Basobaas Nepal"
+            /> */}
+            <Image
+              className="blogCardBackground"
+              src={HomeBlogMainImage}
               alt="Basobaas Nepal"
             />
           </div>
           <div className="cardContent">
             <div className="blogCategoryTag">
-              <p>{blog.category?.name}</p>
+              <p>
+                {/* {blog.category?.name} */}
+                यात्रा
+              </p>
             </div>
             <div className="blogTitle">
-              <p>{blog.title}</p>
+              <p>
+                {/* {blog.title} */}
+                सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+              </p>
             </div>
             <div className="blogBy">
-              <div className="author">{blog.author?.fullName}</div>
+              <div className="author">
+                {/* {blog.author?.fullName} */}
+                राजन अधिकारी
+              </div>
               <div className="separator">
                 <Icon
                   icon="ci:dot-05-xl"
@@ -38,15 +56,14 @@ const HomeBlogTypeSmall = ({ blog = {} }: any) => {
               </div>
               <div className="posted">
                 {/* {createdAt} */}
-                {/* {blogPostedDate} */}
-                hi
+                {/* {blogPostedDate} */}२ हप्ता अघि
               </div>
             </div>
           </div>
         </div>
       </>
     );
-  else return null;
-};
+    // else return null;
+  };
 
 export default HomeBlogTypeSmall;

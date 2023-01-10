@@ -178,7 +178,6 @@
             gap: 10px;
             height: 250px;
             width: fit-content;
-            border: solid 1px;
 
             .smallComponent {
               height: 250px;
@@ -2101,18 +2100,21 @@
             .smallComponentDiv {
               display: flex;
               flex-direction: row;
+              justify-content: center;
+              align-items: center;
               flex-wrap: wrap;
               gap: calc(5 * 100% / 637.5);
               height: 100%;
               width: fit-content;
               min-width: calc(637.5 * 100% / 1280);
               min-height: 100%;
-              overflow: visible;
+              overflow: hidden;
 
               .smallComponent {
                 height: 250px;
                 width: calc(316 * 100% / 637.5);
                 min-height: calc(637.5 * 100% / 1280);
+                overflow: hidden;
                 // 
               }
             }
