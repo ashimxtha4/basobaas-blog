@@ -1,10 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
+import HomeBlogMainImage from "../../public/Images/blogDetails.svg";
 
-const MarketNewsTypeMain = ({ blog = {} }: any) => {
+const MarketNewsTypeMain = (
+  // { blog = {} }: any
+  ) => {
 
-  if (Object.keys(blog).length > 0)
+  // if (Object.keys(blog).length > 0)
     return (
       <>
         <div className="marketNewsTypeMain">
@@ -16,28 +19,38 @@ const MarketNewsTypeMain = ({ blog = {} }: any) => {
                 width={345}
                 height={180}
               />
+              
             ) : null} */}
+            <Image
+              src={HomeBlogMainImage}
+              alt="Basobaas Nepal"
+            />
           </div>
           <div className="blogContents">
             <div className="blogCategoryTitle">
               <p>
                 {/* ENTER BLOG CATEGORY TITLE HERE */}
-                {blog.category?.name}
+                {/* {blog.category?.name} */}
               </p>
             </div>
             <div className="blogHeader">
               <p>
                 {/* ENTER BLOG TITLE HERE */}
-                {blog.title}
+                {/* {blog.title} */}
+                सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
               </p>
             </div>
             <div className="blogBody">
               {/* <p dangerouslySetInnerHTML={blog.content}></p> */}
+              <p>
+              घर भनेको एकल-इकाई आवासीय भवन हो। यो प्रारम्भिक झुपडीबाट काठ, चिनाई, कंक्रीट वा अन्य सामग्रीको जटिल संरचना सम्मको जटिलतामा हुन सक्छ, आउटफिट गरिएको बुद्धि...
+              </p>
             </div>
             <div className="blogBy">
               <span className="author">
                 {/* ENTER BLOG BY NAME HERE */}
-                {blog.author?.fullName}
+                {/* {blog.author?.fullName} */}
+                राजन अधिकारी
               </span>
               <span className="separator">
                 <Icon
@@ -55,7 +68,7 @@ const MarketNewsTypeMain = ({ blog = {} }: any) => {
         </div>
       </>
     );
-  else return null;
+  // else return null;
 };
 
 export default MarketNewsTypeMain;

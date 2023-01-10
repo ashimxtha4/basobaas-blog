@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
-import { getBlogByCategory } from "../../pages";
+// import { getBlogByCategory } from "../../pages";
 
-const OurThoughts = ({ id }: { id: string }) => {
+const OurThoughts = (
+  // { id }: { id: string }
+  ) => {
   const [blog, setBlog] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    getBlogByCategory(id, 3)
-      .then((data) => setBlog(data))
-      .catch((err) => console.log("err", err))
-      .finally(() => {
-        setLoading(false);
-      });
-  }, [id]);
-  if (loading) {
-    <h1>Loading...</h1>;
-  }
+  // useEffect(() => {
+  //   getBlogByCategory(id, 3)
+  //     .then((data) => setBlog(data))
+  //     .catch((err) => console.log("err", err))
+  //     .finally(() => {
+  //       setLoading(false);
+  //     });
+  // }, [id]);
+  // if (loading) {
+  //   <h1>Loading...</h1>;
+  // }
 
-  if (blog.length) {
+  // if (blog.length) {
     return (
       <>
         <div className="ourThoughtsTitleDiv">
@@ -43,14 +45,14 @@ const OurThoughts = ({ id }: { id: string }) => {
                     <div className="blogHeader">
                       <p>
                         {/* ENTER BLOG TITLE HERE */}
-                        {blog.title}
+                        {/* {blog.title} */}
                         {/* hi */}
                       </p>
                     </div>
                     <div className="blogBy">
                       <span className="author">
                         {/* ENTER BLOG BY NAME HERE */}
-                        {blog.author?.fullName}
+                        {/* {blog.author?.fullName} */}
                         {/* hello */}
                       </span>
                       <span className="separator">
@@ -75,14 +77,14 @@ const OurThoughts = ({ id }: { id: string }) => {
 
       </>
     );
-  }
-  return <>
-  <div className="ourThoughtsTitleDiv">
-    <label className="ourThoughtsTitle">Our Thoughts</label>
-    <span className="ourThoughtsViewAllButton">View All</span>
-  </div>
-  <div className="ourThoughtsCardDiv"></div>
-</>;;
+  // }
+//   return <>
+//   <div className="ourThoughtsTitleDiv">
+//     <label className="ourThoughtsTitle">Our Thoughts</label>
+//     <span className="ourThoughtsViewAllButton">View All</span>
+//   </div>
+//   <div className="ourThoughtsCardDiv"></div>
+// </>;;
 };
 
 export default OurThoughts;
