@@ -21,10 +21,25 @@
     justify-content: center;
     align-items: center;
 
-    .image{
-      height: auto;
-      width: 100%;
+    .image {
+      height: 100%;
+      width: auto;
       border-radius: inherit;
+
+      @media only screen and (min-width: 400px) {
+        height: auto;
+        width: 100%;
+      }
+
+      @media only screen and (min-width: 726px) {
+        height: 100%;
+        width: auto;
+      }
+
+      @media only screen and (min-width: 800px) {
+        height: auto;
+        width: 100%;
+      }
     }
   }
 
@@ -40,6 +55,7 @@
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+
       p {
         margin: 0px;
         padding: 0px;
@@ -52,18 +68,20 @@
         color: #0000ff;
       }
     }
+
     .blogHeader {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+
       p {
         margin: 0px;
         padding: 0px;
-        font-family: "Product Sans", sans-serif;
+        font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 20px;
         line-height: 140%;
         color: #333333;
         overflow: hidden;
@@ -80,14 +98,15 @@
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+
       p {
         margin: 0px;
         padding: 0px;
-        font-family: "Product Sans", sans-serif;
+        font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 140%;
+        line-height: 180%;
         color: #333333;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -134,9 +153,14 @@
     .imageContainer {
       height: 300px;
 
-      .image{
+      .image {
         height: 100%;
         width: auto;
+
+        @media only screen and (min-width: 1349px) {
+          height: auto;
+          width: 100%;
+        }
       }
     }
   }
