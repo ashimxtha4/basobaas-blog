@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Icon } from "@iconify/react";
 import MarketNewsTypeSecondaryImage from "../../public/Images/smallMarket.svg";
 
-const MarketNewsTypeSecondary = (
+const MarketNewsTypeSecondary = (props:any
   // { blog = {} as any }
   ) => {
   // if (Object.keys(blog).length > 0)
@@ -18,7 +18,7 @@ const MarketNewsTypeSecondary = (
             height={133.33}
           /> */}
            <Image
-              src={MarketNewsTypeSecondaryImage}
+              src={props.data.thumbnail}
               alt="Basobaas Nepal"
               className="image"
             />
@@ -28,14 +28,14 @@ const MarketNewsTypeSecondary = (
             <p>
               {/* ENTER BLOG CATEGORY TITLE HERE */}
               {/* {blog.category?.title} */}
-              यात्रा
+              {props.data.categoryTag}
             </p>
           </div>
           <div className="blogHeader">
             <p>
               {/* ENTER BLOG TITLE HERE */}
               {/* {blog.title} */}
-              सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+              {props.data.title}
             </p>
           </div>
           <div className="blogBy">

@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import propertyImage from "../../public/Images/propertyImage.svg"
 import Image from 'next/image';
 
-const MainProperty = () => {
+const MainProperty = (props:any) => {
   return (
     <>
       <div className="card">

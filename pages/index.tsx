@@ -19,6 +19,14 @@ import downImage2 from "../public/Images/downImage2.svg";
 import downImage3 from "../public/Images/downImage3.svg";
 import downImage4 from "../public/Images/downImage4.svg";
 import downImage5 from "../public/Images/downImage5.svg";
+import RelatedBlogImage1 from "../public/Images/relatedBlogsImage1.svg";
+import RelatedBlogImage2 from "../public/Images/relatedBlogsImage2.svg";
+import RelatedBlogImage3 from "../public/Images/relatedBlogsImage3.svg";
+import FeaturedPropertyImage1 from "../public/Images/featuredPropertyImage1.svg";
+import FeaturedPropertyImage2 from "../public/Images/featuredPropertyImage2.svg";
+import FeaturedPropertyImage3 from "../public/Images/featuredPropertyImage3.svg";
+import FeaturedPropertyImage4 from "../public/Images/featuredPropertyImage4.svg";
+// import { dummyRelatedBlogsData, dummyPropertyData } from "../dummyData"
 import Link from "next/link";
 
 // export const getBlogByCategory = async (id: String, limit?: number) => {
@@ -126,6 +134,82 @@ const HomePage = () => {
   //   (item) => item["कानून र निति"]
   // );
 
+  const dummyRelatedBlogsData = [
+    {
+      thumbnail: RelatedBlogImage1,
+      categoryTag: "यात्रा",
+      title: "सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।",
+    },
+    {
+      thumbnail: RelatedBlogImage2,
+      categoryTag: "यात्रा",
+      title: "नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।",
+    },
+    {
+      thumbnail: RelatedBlogImage3,
+      categoryTag: "यात्रा",
+      title: "रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।",
+    },
+    {
+      thumbnail: RelatedBlogImage3,
+      categoryTag: "यात्रा",
+      title: "नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।",
+    },
+  ];
+
+  //DUMMY DATA FOR FEATURED PROPERTY
+  const dummyPropertyData = [
+    {
+      photo: FeaturedPropertyImage1,
+      title: "Karyabinayak Homes",
+      address: "Karyabinayak, Lalitpur",
+      beds: 2,
+      bath: 1,
+      sqft: 1200,
+      price: "39.5 Lakhs",
+      priceLabel: "Anna",
+    },
+    {
+      photo: FeaturedPropertyImage1,
+      title: "Karyabinayak Homes",
+      address: "Karyabinayak, Lalitpur",
+      beds: 2,
+      bath: 1,
+      sqft: 1200,
+      price: "20 Thousand",
+      priceLabel: "sq.ft",
+    },
+    {
+      photo: FeaturedPropertyImage2,
+      title: "Civil Homes",
+      address: "Kalimati, Kathmandu",
+      beds: 3,
+      bath: 3,
+      sqft: 3200,
+      price: "3.55 Crore",
+      priceLabel: "Onwards",
+    },
+    {
+      photo: FeaturedPropertyImage1,
+      title: "Karyabinayak Homes",
+      address: "Karyabinayak, Lalitpur",
+      beds: 2,
+      bath: 1,
+      sqft: 1200,
+      price: "39.5 Lakhs",
+      priceLabel: "Anna",
+    },
+    {
+      photo: FeaturedPropertyImage3,
+      title: "Padma Colony",
+      address: "Sitapaila Rd 5, Nagarjun 44600",
+      beds: 4,
+      bath: 5,
+      sqft: 5790,
+      price: "5.75 Crore",
+      priceLabel: "Total Price",
+    },
+  ];
   return (
     <>
       <div className="alignmentContainer">
@@ -167,23 +251,15 @@ const HomePage = () => {
                   {/* {data.blogsByCategory.map((categorySpecificBlog, index) => { */}
                   {/* if (index > 0 && index < 5) */}
                   {/* return ( */}
-                  <div
-                    className="smallComponent"
-                    //  key={index}
-                  >
-                    <HomeBlogTypeSmall
+                  {dummyRelatedBlogsData.map((data, index) => <div className="smallComponent" key={index}>
+                    <HomeBlogTypeSmall data={data}
                     // blog={data.blogsByCategory[index]}
                     />
                   </div>
-                  <div className="smallComponent">
-                    <HomeBlogTypeSmall />
-                  </div>
-                  <div className="smallComponent">
-                    <HomeBlogTypeSmall />
-                  </div>
-                  <div className="smallComponent">
-                    <HomeBlogTypeSmall />
-                  </div>
+
+                  )}
+
+
                   {/* ); */}
                   {/* // })} */}
                 </div>
@@ -214,22 +290,13 @@ const HomePage = () => {
                     {/* {Object.values(getMarketNewsBlogs ?? {})
                       .flatMap((i) => i).splice(1,3)
                       .map((i, index) => ( */}
-                    <>
-                      <div
-                        className="marketSmallComponent"
-                        // key={index}
-                      >
-                        <MarketNewsTypeSecondary
-                        //  blog={i}
-                        />
-                      </div>
-                      <div className="marketSmallComponent">
-                        <MarketNewsTypeSecondary />
-                      </div>
-                      <div className="marketSmallComponent">
-                        <MarketNewsTypeSecondary />
-                      </div>
-                    </>
+                    {dummyRelatedBlogsData.splice(0, 3).map((data, index) => <div className="marketSmallComponent">
+                      <MarketNewsTypeSecondary data={data} />
+                    </div>
+
+                    )}
+
+
                     {/* ))} */}
                   </div>
                 </div>
@@ -252,28 +319,9 @@ const HomePage = () => {
                   </span>
                 </div>
                 <div className="propertyCardDiv">
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
-
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
+                  {dummyPropertyData.map((data,index)=><div className="propertyCard" key={index}>
+                    <MainProperty data={data} />
+                  </div>)}
                 </div>
               </div>
 
@@ -289,7 +337,7 @@ const HomePage = () => {
 
               <div className="flexTwo">
                 <div className="homeLoanDiv">
-                  <HomeLoan
+                  <HomeLoan 
                   //  id={data?.categories[3]?.id}
                   />
                 </div>
@@ -342,7 +390,7 @@ const HomePage = () => {
                 <div className="lawPolicyDiv">
                   <LawAndPolicy
                     title="कानून र नीति"
-                    // id={data?.categories[4]?.id}  YO MILAUNU XA
+                  // id={data?.categories[4]?.id}  YO MILAUNU XA
                   />
                 </div>
 
