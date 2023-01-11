@@ -396,6 +396,9 @@
         min-height: none;
         height: fit-content;
         background: #4f4f4f;
+        border: none;
+        outline: none;
+        z-index: 2;
       }
     }
   }

@@ -48,6 +48,11 @@ const BlogNavbar = () => {
                   </li>
                 );
               })}
+              <li className="nav-item invi-item">
+                <Link className="nav-link active" href={"#"}>
+                  हाम्रो विचार
+                </Link>
+              </li>
               {/* <li className="nav-item expandedNavItems">
                 <a className="nav-link" href="#">
                   Life & Policies

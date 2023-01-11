@@ -24,8 +24,7 @@ select:focus {
   // min-height: 72px;
   margin: 0px;
   padding: 0;
-  border: none;
-  
+
 
   .navbarContainer {
     display: flex;
@@ -36,13 +35,36 @@ select:focus {
     border-radius: 0px;
     justify-content: space-between;
     width: 100%;
-    
+    border: solid 1px white;
+
+
+    @media only screen and (min-width: 1024px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
 
     .navbarTop {
-      width: 100%;
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      width: fit-content;
+      border: solid 1px white;
+
 
       ul {
         justify-content: space-between;
+
+        .invi-item {
+          display: none;
+
+          @media only screen and (min-width :768px) {
+            display: inline;
+          }
+        }
+
         li {
           a {
             // width: 70px;
@@ -60,19 +82,24 @@ select:focus {
             padding: 0px;
           }
 
+
+
           ul {
             background-color: #001338;
+
             li {
               a {
                 background-color: #001338;
               }
             }
           }
+
           .dropdown-menu {
             left: auto;
             right: 0%;
           }
         }
+
         .moreDropDown {
           a {
             span {
@@ -85,15 +112,18 @@ select:focus {
             }
           }
         }
+
         .expandedNavItems {
           display: flex;
         }
       }
     }
+
     .navbarBottom {
       padding: 0px;
       margin: 0px;
-      width: 100%;
+      width: fit-content;
+      border: solid 1px white;
 
       form {
         display: flex;
@@ -102,13 +132,14 @@ select:focus {
         align-items: center;
         justify-content: space-between;
         position: relative;
-        width: 100%;
-        
+        width: fit-content;
+
 
 
         .searchSection {
           width: 100%;
           position: relative;
+
           .searchBox {
             display: flex;
             flex-direction: row;
@@ -129,6 +160,7 @@ select:focus {
             line-height: 140%;
             color: #545454;
           }
+
           .searchIcon {
             position: absolute;
             right: 16px;
@@ -141,7 +173,7 @@ select:focus {
           flex-direction: row;
           align-items: center;
           position: relative;
-          
+
 
 
           .languageSelect {
@@ -175,7 +207,7 @@ select:focus {
   }
 
   // @media only screen and (min-width: 768px) {
-    
+
   // }
 
   @media only screen and (min-width: 1024px) {
