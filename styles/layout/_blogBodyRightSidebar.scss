@@ -82,7 +82,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
     margin: 0px;
     padding: 0px;
@@ -143,6 +143,7 @@
         }
       }
       .relatedSectionContainer {
+        gap: 38px;
       }
     }
     .featuredSection {
@@ -175,6 +176,7 @@
         }
       }
       .relatedSectionContainer {
+        gap: 24px;
       }
     }
     .featuredSection {

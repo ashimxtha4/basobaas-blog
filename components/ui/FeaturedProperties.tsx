@@ -5,7 +5,7 @@ import { IMG_URL } from "../../baseConstants";
 import Image from "next/image";
 import FeaturedPropertyImage from "../../public/Images/Featured Properties1.svg";
 
-const FeaturedProperties = () =>
+const FeaturedProperties = ({property}:{property:any}) =>
   //   {
   //   property,
   // }: {
@@ -37,7 +37,8 @@ const FeaturedProperties = () =>
             /> */}
             <Image
               className="image"
-              src={FeaturedPropertyImage}
+              // src={FeaturedPropertyImage}
+              src={property.thumbnail}
               alt="Featured Properties"
             />
           </div>
@@ -45,13 +46,15 @@ const FeaturedProperties = () =>
             <div className="propertyTitle">
               <p>
                 {/* {property.pricing.title} */}
-                Karyabinayak Homes
+                {/* Karyabinayak Homes */}
+                {property.title}
               </p>
             </div>
             <div className="propertyAddress">
               <p>
                 {/* {property.location?.streetName}, {property.location?.locality} */}
-                Karyabinayak, Lalitpur
+                {/* Karyabinayak, Lalitpur */}
+                {property.address}
               </p>
             </div>
             <div className="propertyOverview">
@@ -65,7 +68,9 @@ const FeaturedProperties = () =>
                 </div>
                 <div className="overViewInformation">
                   <span className="overViewTags">
-                    {/* {property.overview?.bedRoom} */}2
+                    {/* {property.overview?.bedRoom} */}
+                    {/* 2 */}
+                    {property.beds}
                   </span>
                   <span className="overViewTags">Beds</span>
                 </div>
@@ -80,7 +85,9 @@ const FeaturedProperties = () =>
                 </div>
                 <div className="overViewInformation">
                   <span className="overViewTags">
-                    {/* {property.overview?.bathRoom} */}1
+                    {/* {property.overview?.bathRoom} */}
+                    {/* 1 */}
+                    {property.bath}
                   </span>
                   <span className="overViewTags">Bath</span>
                 </div>
@@ -94,7 +101,10 @@ const FeaturedProperties = () =>
                   />
                 </div>
                 <div className="overViewInformation">
-                  <span className="overViewTags">1200</span>
+                  <span className="overViewTags">
+                    {/* 1200 */}
+                    {property.sqft}
+                    </span>
                   <span className="overViewTags">sq.ft</span>
                 </div>
               </div>
@@ -102,10 +112,13 @@ const FeaturedProperties = () =>
             <div className="propertyPrice">
               <span className="price">
                 {/* NPR. {Priceformatter(property.pricing?.price)} */}
-                3.35 Lakh
+                {/* 3.35 Lakh */}
+                {property.price}
               </span>
               <span className="unit">
-                {/* / {property.pricing?.label} */}/ Onwards
+                {/* / {property.pricing?.label} */}
+                {/* / Onwards */}
+                / {property.priceLabel}
               </span>
             </div>
           </div>
