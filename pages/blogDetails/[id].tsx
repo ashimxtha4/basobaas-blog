@@ -117,7 +117,7 @@ export default function BlogPage() {
                         <div className="categoryInfo">
                           <div className="catAndSubCat">
                             <span className="catSubCatNames">
-                              <Link href="#">होम</Link>
+                              <Link href="/">होम</Link>
                             </span>
                             <span>
                               <Icon

@@ -22,9 +22,12 @@ const HomeBlogTypeMain = () =>
         > */}
         <div
           className="homeBlogTypeMain"
-          onClick={() => router.push(`blogDetails/${123}`)}
+          // onClick={() => router.push(`blogDetails/${123}`)}
         >
-          <div className="thumbnail">
+          <div
+            className="thumbnail"
+            onClick={() => router.push(`blogDetails/${123}`)}
+          >
             {/* <img
                 // src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9g1yXNKpomzJ1y2AKUS2dJbCDEne6SjH_2fA4GLVA-g&s"
                 src={imageUrlCheck(blog.images[0] as string)}
@@ -39,10 +42,15 @@ const HomeBlogTypeMain = () =>
           </div>
           <div className="cardContent">
             <div className="blogCategoryTag">
-              <p>
-                {/* {blog.category?.name} */}
-                यात्रा
-              </p>
+              <Link
+                className="blogTagLinks"
+                href="/कानूनरनिति/63a5c027fd935e139f0bab67"
+              >
+                <p>
+                  {/* {blog.category?.name} */}
+                  यात्रा
+                </p>
+              </Link>
             </div>
             <div className="blogTitle">
               <p>

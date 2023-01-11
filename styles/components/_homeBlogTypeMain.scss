@@ -81,7 +81,13 @@
       background: #0000ff;
       padding: 0px 12px;
       border-radius: 3px;
+      z-index: 3;
+      
+      isolation: isolate;
 
+      .blogTagLinks{
+        display: inline-block;
+        transform: none;
       p {
         display: flex;
         flex-direction: row;
@@ -98,6 +104,7 @@
         margin: 0px;
         padding: 0px;
       }
+    }
     }
 
     .blogTitle {
