@@ -152,7 +152,7 @@ const HomePage = () => {
               <div className="firstAdDiv"></div>
             </div>
 
-            <div className="secNavDiv">
+            <div className="secNavDiv container-fluid">
               <BlogNavbar />
             </div>
 
