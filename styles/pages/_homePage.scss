@@ -1072,7 +1072,7 @@
                 line-height: 140%;
                 text-align: center;
                 color: #0000FF;
-                padding-top: 3px;
+                padding-top: 4px;
               }
             }
 
@@ -1191,7 +1191,7 @@
                 font-family: "Ek Mukta";
                 font-style: normal;
                 font-weight: 700;
-                font-size: 24px;
+                font-size: 20px;
                 line-height: 140%;
                 color: #333333;
                 flex: none;
@@ -1310,7 +1310,7 @@
                 font-family: "Ek Mukta";
                 font-style: normal;
                 font-weight: 700;
-                font-size: 24px;
+                font-size: 20px;
                 line-height: 140%;
                 color: #333333;
                 flex: none;
@@ -1391,7 +1391,7 @@
                 font-family: "Ek Mukta";
                 font-style: normal;
                 font-weight: 700;
-                font-size: 24px;
+                font-size: 20px;
                 line-height: 140%;
                 color: #333333;
                 flex: none;
@@ -1492,7 +1492,7 @@
                   font-family: "Ek Mukta";
                   font-style: normal;
                   font-weight: 700;
-                  font-size: 24px;
+                  font-size: 20px;
                   line-height: 140%;
                   color: #333333;
                   flex: none;
@@ -1578,7 +1578,7 @@
                   font-family: "Ek Mukta";
                   font-style: normal;
                   font-weight: 700;
-                  font-size: 24px;
+                  font-size: 20px;
                   line-height: 140%;
                   color: #333333;
                   flex: none;
@@ -1677,7 +1677,7 @@
                   font-family: "Ek Mukta";
                   font-style: normal;
                   font-weight: 700;
-                  font-size: 24px;
+                  font-size: 20px;
                   line-height: 140%;
                   color: #333333;
                   flex: none;
@@ -1765,7 +1765,7 @@
                   font-family: "Ek Mukta";
                   font-style: normal;
                   font-weight: 700;
-                  font-size: 24px;
+                  font-size: 20px;
                   line-height: 140%;
                   color: #333333;
                   flex: none;
@@ -1868,7 +1868,7 @@
                   font-family: "Ek Mukta";
                   font-style: normal;
                   font-weight: 700;
-                  font-size: 24px;
+                  font-size: 20px;
                   line-height: 140%;
                   color: #333333;
                   flex: none;
@@ -1968,7 +1968,7 @@
       // overflow-x:hidden;
 
       .secNavBlend {
-        height: 76px;
+        height: 72px;
         width: 100%;
         background-color: #001338;
         position: absolute;
@@ -2030,15 +2030,14 @@
             height: 106px;
             left: 80px;
             top: 87.5px;
-            // height: fit-content;
-            border: solid 1px;
+            height: fit-content;
 
             .newsHeader {
               width: fit-content;
               height: fit-content;
               display: flex;
               flex-direction: column;
-              height: 48px;
+              height: fit-content;
               font-family: "Ek Mukta";
               font-style: normal;
               font-weight: 700;
@@ -2047,6 +2046,7 @@
               color: #333333;
               padding: 0px;
               margin: 0px;
+              gap: 2px;
 
               .newsSubHeading {
                 font-family: 'Ek Mukta';
@@ -2056,6 +2056,7 @@
                 line-height: 140%;
                 text-align: center;
                 color: #0000FF;
+                height: fit-content;
               }
             }
 
