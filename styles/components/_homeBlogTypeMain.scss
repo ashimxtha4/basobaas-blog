@@ -18,7 +18,6 @@
   padding: 0px;
   transition: 0.4s all;
   position: relative;
-  // border: solid 2px red;
 
   .thumbnail {
     display: flex;
@@ -81,7 +80,13 @@
       background: #0000ff;
       padding: 0px 12px;
       border-radius: 3px;
+      z-index: 3;
+      
+      isolation: isolate;
 
+      .blogTagLinks{
+        display: inline-block;
+        transform: none;
       p {
         display: flex;
         flex-direction: row;
@@ -98,6 +103,7 @@
         margin: 0px;
         padding: 0px;
       }
+    }
     }
 
     .blogTitle {

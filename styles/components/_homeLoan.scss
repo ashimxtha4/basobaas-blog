@@ -24,9 +24,9 @@
       width: auto;
       height: 100%;
       @media only screen and (min-width: 1024px) {
-          width: unset;
-          height: unset;
-        }
+        width: unset;
+        height: unset;
+      }
     }
   }
   .blogContents {
@@ -84,10 +84,6 @@
       }
     }
   }
-}
-
-.marketNewsTypeSecondary:hover {
-  transform: scale(0.9);
 }
 
 @media only screen and (min-width: 1024px) {

@@ -19,6 +19,7 @@ import downImage2 from "../public/Images/downImage2.svg"
 import downImage3 from "../public/Images/downImage3.svg"
 import downImage4 from "../public/Images/downImage4.svg"
 import downImage5 from "../public/Images/downImage5.svg"
+import Link from "next/link";
 
 
 // export const getBlogByCategory = async (id: String, limit?: number) => {
@@ -141,7 +142,9 @@ const HomePage = () => {
           <div className="contentDiv">
             <div className="aboveNavDiv">
               <div className="newsDiv">
-                <div className="newsHeader">बसोबास <span className="newsSubHeading">समाचार र लेख</span></div>
+                <div className="newsHeader">
+                  बसोबास <span className="newsSubHeading">समाचार र लेख</span>
+                </div>
                 <div className="newsTexts">
                   हामी तपाईंलाई घर जग्गा बारे पूर्ण समाचार प्रदान गर्दछौं।
                 </div>
@@ -167,7 +170,7 @@ const HomePage = () => {
                   {/* return ( */}
                   <div
                     className="smallComponent"
-                  //  key={index}
+                    //  key={index}
                   >
                     <HomeBlogTypeSmall
                     // blog={data.blogsByCategory[index]}
@@ -215,7 +218,7 @@ const HomePage = () => {
                     <>
                       <div
                         className="marketSmallComponent"
-                      // key={index}
+                        // key={index}
                       >
                         <MarketNewsTypeSecondary
                         //  blog={i}
@@ -240,7 +243,14 @@ const HomePage = () => {
                   <label className="propertyListTitle">
                     सम्बन्धित घर जग्गाहरु
                   </label>
-                  <span className="propertyListViewAllButton">सबै हेर्नुहोस्</span>
+                  <span className="propertyListViewAllButton">
+                    <Link
+                      className="propertyViewLink"
+                      href="https://basobaas.com/properties/all-properties"
+                    >
+                      सबै हेर्नुहोस्
+                    </Link>
+                  </span>
                 </div>
                 <div className="propertyCardDiv">
                   <div className="propertyCard">
@@ -294,10 +304,15 @@ const HomePage = () => {
 
               <div className="propertyListDiv">
                 <div className="propertyListTitleDiv">
-                  <label className="propertyListTitle">
-                    विशेष घर जग्गाहरु
-                  </label>
-                  <span className="propertyListViewAllButton">सबै हेर्नुहोस्</span>
+                  <label className="propertyListTitle">विशेष घर जग्गाहरु</label>
+                  <span className="propertyListViewAllButton">
+                    <Link
+                      className="propertyViewLink"
+                      href="https://basobaas.com/properties/premium-properties"
+                    >
+                      सबै हेर्नुहोस्
+                    </Link>
+                  </span>
                 </div>
                 <div className="propertyCardDiv">
                   <div className="propertyCard">
@@ -326,15 +341,18 @@ const HomePage = () => {
 
               <div className="flexTwo">
                 <div className="lawPolicyDiv">
-                  <LawAndPolicy title="कानून र नीति"
-                  // id={data?.categories[4]?.id}  YO MILAUNU XA
+                  <LawAndPolicy
+                    title="कानून र नीति"
+                    // id={data?.categories[4]?.id}  YO MILAUNU XA
                   />
                 </div>
 
                 <div className="lawPolicy2Div">
                   <div className="lawPolicy2TitleDiv">
                     <label className="lawPolicy2Title">बजार अद्यावधिकहरू</label>
-                    <span className="lawPolicy2ViewAllButton">सबै हेर्नुहोस्</span>
+                    <span className="lawPolicy2ViewAllButton">
+                      सबै हेर्नुहोस्
+                    </span>
                   </div>
                   <div className="lawPolicy2CardDiv">
                     <div className="lawPolicy2Card">

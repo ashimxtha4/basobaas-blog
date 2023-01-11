@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { IMG_URL } from "../baseConstants";
-import RelatedBlogsImage1 from "../public/Images/relatedBlogsImage1.svg";
+import { IMG_URL } from "../../baseConstants";
+import RelatedBlogsImage1 from "../../public/Images/relatedBlogsImage1.svg";
 
 // const RelatedBlogs = ({ blog }: { blog: any }) => {
 const RelatedBlogs = () => {
-
   return (
     <>
       {/* <Link

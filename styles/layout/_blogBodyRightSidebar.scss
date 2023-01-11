@@ -69,6 +69,13 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
+
+      .blogComponentLinks {
+        transform: none;
+        &:hover {
+          transform: none;
+        }
+      }
     }
   }
   .featuredSection {
