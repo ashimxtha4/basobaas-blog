@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { getAll } from "../apiFetch/homePage/homePageAPI";
 import RelatedBlogs from "../components/RelatedBlogs";
 import FeaturedProperties from "../components/ui/FeaturedProperties";
+import { useRouter } from "next/router";
 
 const BlogBodyRightSidebar = (
   // { blog }: { blog: any[] }
@@ -30,6 +31,9 @@ const BlogBodyRightSidebar = (
     }
   }, []);
 
+  const router = useRouter()
+
+
   return (
     <>
       <div className="rightSidebar">
@@ -43,19 +47,19 @@ const BlogBodyRightSidebar = (
               //     blog[0]?.category?._id
               //   }`,
               // }}
-              href="#"
+              href="/कानूनरनिति/63a5c027fd935e139f0bab67"
             >
               <button>सबै हेर्नुहोस्</button>
             </Link>
           </div>
 
-          <div className="relatedSectionContainer">
+          <div className="relatedSectionContainer" >
             {/* {blog?.map((item, index) => {
               return <RelatedBlogs blog={item} key={index} />;
             })} */}
-            <RelatedBlogs />
-            <RelatedBlogs />
-            <RelatedBlogs />
+            <Link href="/कानूनरनिति/63a5c027fd935e139f0bab67"><RelatedBlogs /></Link>
+            <Link href="/कानूनरनिति/63a5c027fd935e139f0bab67"><RelatedBlogs /></Link>
+            <Link href="/कानूनरनिति/63a5c027fd935e139f0bab67"><RelatedBlogs /></Link>
           </div>
         </div>
         <div className="featuredSection">
