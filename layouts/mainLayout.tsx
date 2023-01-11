@@ -31,7 +31,7 @@ const MainLayout = () => {
               <div className="marketNewsDiv">
                 <div className="titleDiv">
                   <label className="title">Market New</label>
-                  <span className="viewAllButton">View All</span>
+                  <span className="viewAllButton">सबै हेर्नुहोस्</span>
                 </div>
                 <div className="marketNewsContentDiv">
                   <div className="marketBigComponent"></div>

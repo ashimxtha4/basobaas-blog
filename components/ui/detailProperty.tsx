@@ -8,7 +8,7 @@ const DetailProperty = () => {
                 <label className="propertyListTitle">
                     Featured Properties
                 </label>
-                <span className="propertyListViewAllButton">View All</span>
+                <span className="propertyListViewAllButton">सबै हेर्नुहोस्</span>
             </div>
             <div className="propertyCardDiv">
                 <div className="propertyCard"><MainProperty /></div>

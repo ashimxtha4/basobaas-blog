@@ -27,8 +27,8 @@ const HomeLoan = () =>
     return (
       <>
         <div className="homeLoanTitleDiv">
-          <label className="homeLoanTitle">Home Loan</label>
-          <span className="homeLoanViewAllButton">View All</span>
+          <label className="homeLoanTitle">होम लोन</label>
+          <span className="homeLoanViewAllButton">सबै हेर्नुहोस्</span>
         </div>
         <div className="homeLoanCardDiv">
           {/* {blog?.map((blog, ix) => { */}
@@ -74,8 +74,7 @@ const HomeLoan = () =>
                     />
                   </span>
                   <span className="posted">
-                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता
-                    अघि
+                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता अघि
                   </span>
                 </div>
               </div>
