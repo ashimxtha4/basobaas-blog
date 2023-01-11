@@ -30,7 +30,7 @@ const BlogNavbar = () => {
       <nav className="navbar navbar-expand blogNavbar">
         <div className="navbarContainer">
           <div className="navbarTop">
-            <ul className="navbar-nav d-flex flex-row">
+            <ul className="navbar-nav navbarTopContents">
               <li className="nav-item">
                 <Link className="nav-link active" href={"/"}>
                   होम पेज
@@ -87,7 +87,7 @@ const BlogNavbar = () => {
                   className="languageSelect"
                   aria-label=".form-select-sm example"
                 >
-                  <option value="np">Nep</option>
+                  <option value="np">नेपाली</option>
                   <option value="en">Eng</option>
                 </select>
                 <Icon

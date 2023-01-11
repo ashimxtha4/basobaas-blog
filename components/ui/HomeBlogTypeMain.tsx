@@ -4,7 +4,7 @@ import { useState } from "react";
 import { imageUrlCheck } from "../../utilities/helper";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import HomeBlogMainImage from "../../public/Images/blogDetails.svg";
+import HomeBlogMainImage from "../../public/Images/blogDetailsImage1.svg";
 import Image from "next/image";
 
 const HomeBlogTypeMain = () =>

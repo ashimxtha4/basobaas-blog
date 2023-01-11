@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IMG_URL } from "../baseConstants";
-import RelatedBlogsImage from "../public/Images/Related1.svg";
+import RelatedBlogsImage1 from "../public/Images/relatedBlogsImage1.svg";
 
 // const RelatedBlogs = ({ blog }: { blog: any }) => {
 const RelatedBlogs = () => {
@@ -18,7 +18,7 @@ const RelatedBlogs = () => {
         <div className="imageContainer">
           {/* <img src={`${IMG_URL as string}` + `${blog.images[0]}`} /> */}
           <Image
-            src={RelatedBlogsImage}
+            src={RelatedBlogsImage1}
             alt="Picture of the author"
             className="relatedBlogImages"
           />
