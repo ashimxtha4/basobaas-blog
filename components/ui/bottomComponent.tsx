@@ -1,9 +1,10 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import downImage from "../../public/Images/downImage.svg"
 
 
-const BottomComponent = () => {
+
+
+const BottomComponent = (props:any) => {
 
     const blog = {
         image: "https://place-hold.it/32x23",
@@ -12,7 +13,12 @@ const BottomComponent = () => {
     return (
         <div className="bottomComponent">
             <div className="imageDiv">
-                <Image className="image" src={downImage} alt="no Image" />
+                {/* <div className="hover">
+                    <span className="playButton">
+                        <Image src={playButton} alt="no Image" />
+                    </span>
+                </div> */}
+                <Image className="image" src={props.image} alt="no Image" />
             </div>
             <div className="desDiv">
                 <div className="headingDiv">{blog.title}</div>
