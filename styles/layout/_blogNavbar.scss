@@ -25,7 +25,6 @@ select:focus {
   margin: 0px;
   padding: 0;
 
-
   .navbarContainer {
     display: flex;
     flex-direction: column;
@@ -36,14 +35,12 @@ select:focus {
     justify-content: space-between;
     width: 100%;
 
-
     @media only screen and (min-width: 1024px) {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       width: 100%;
     }
-
 
     .navbarTop {
       display: flex;
@@ -87,8 +84,6 @@ select:focus {
             flex-grow: 0;
             padding: 0px;
           }
-
-
 
           ul {
             background-color: #001338;
@@ -144,8 +139,6 @@ select:focus {
         width: 100%;
         
 
-
-
         .searchSection {
           width: 100%;
           position: relative;
@@ -183,8 +176,6 @@ select:focus {
           flex-direction: row;
           align-items: center;
           position: relative;
-
-
 
           .languageSelect {
             font-family: "Product Sans", sans-serif;

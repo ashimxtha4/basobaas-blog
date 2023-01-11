@@ -2,7 +2,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { imageUrlCheck } from "../../utilities/helper";
-import HomeBlogMainImage from "../../public/Images/blogDetails.svg";
+import HomeBlogMainImage from "../../public/Images/blogDetailsImage1.svg";
 import Image from "next/image";
 
 const HomeBlogTypeSmall = () =>
