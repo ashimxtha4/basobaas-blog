@@ -148,7 +148,7 @@ export default function BlogPage() {
                               {/* {blog?.subCategory?.name} */}
                               <Link href="#">
                                 {/* {blog?.subCategory?.name} */}
-                                घर सुधार
+                                कानून र नीति
                               </Link>
                             </span>
                           </div>
@@ -158,7 +158,7 @@ export default function BlogPage() {
                       <div className="blogDetailsTitle">
                         <div className="blogSubCategoryTitle">
                           {/* {blog?.subCategory?.name} */}
-                          घर सुधार
+                          कानून र नीति
                         </div>
 
                         <div className="blogTitleAndAuthor">

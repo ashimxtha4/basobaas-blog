@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 // import { getBlogByCategory } from "../../pages";
-import OurThoughtsImage from "../../public/Images/homeLoanImage2.svg";
 import Image from "next/image";
+import OurThoughtsImage1 from "../../public/Images/homeLoanImage2.svg";
+import OurThoughtsImage2 from "../../public/Images/homeLoanImage3.svg";
+import OurThoughtsImage3 from "../../public/Images/homeLoanImage1.svg";
 
 const OurThoughts = () =>
   // { id }: { id: string }
@@ -44,21 +46,26 @@ const OurThoughts = () =>
               width={260}
               height={133.33}
             /> */}
-                <Image className="ourThoughtsImage" src={OurThoughtsImage} alt="basobaas Nepal" />
+                <Image
+                  className="ourThoughtsImage"
+                  src={OurThoughtsImage1}
+                  alt="basobaas Nepal"
+                />
               </div>
               <div className="blogContents">
                 <div className="blogHeader">
                   <p>
                     {/* ENTER BLOG TITLE HERE */}
                     {/* {blog.title} */}
-                    सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                    नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र, ७३ प्रतिशत भौतिक
+                    प्रगति।
                   </p>
                 </div>
                 <div className="blogBy">
                   <span className="author">
                     {/* ENTER BLOG BY NAME HERE */}
                     {/* {blog.author?.fullName} */}
-                    राजन अधिकारी
+                    राजन मगर
                   </span>
                   <span className="separator">
                     <Icon
@@ -69,13 +76,14 @@ const OurThoughts = () =>
                     />
                   </span>
                   <span className="posted">
-                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता
+                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}११ घण्टा
                     अघि
                   </span>
                 </div>
               </div>
             </div>
-          </div><div
+          </div>
+          <div
             className="ourThoughtsCard"
             //  key={ix}
           >
@@ -87,21 +95,26 @@ const OurThoughts = () =>
               width={260}
               height={133.33}
             /> */}
-                <Image className="ourThoughtsImage" src={OurThoughtsImage} alt="basobaas Nepal" />
+                <Image
+                  className="ourThoughtsImage"
+                  src={OurThoughtsImage2}
+                  alt="basobaas Nepal"
+                />
               </div>
               <div className="blogContents">
                 <div className="blogHeader">
                   <p>
                     {/* ENTER BLOG TITLE HERE */}
                     {/* {blog.title} */}
-                    सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                    पद्मा कोलोनीः उत्कृष्ट डिजाइनका घरमा आकर्षक फर्निचरको प्रयोग
+                    ।
                   </p>
                 </div>
                 <div className="blogBy">
                   <span className="author">
                     {/* ENTER BLOG BY NAME HERE */}
                     {/* {blog.author?.fullName} */}
-                    राजन अधिकारी
+                    कपिल कार्की
                   </span>
                   <span className="separator">
                     <Icon
@@ -112,13 +125,13 @@ const OurThoughts = () =>
                     />
                   </span>
                   <span className="posted">
-                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता
-                    अघि
+                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}४ दिन अघि
                   </span>
                 </div>
               </div>
             </div>
-          </div><div
+          </div>
+          <div
             className="ourThoughtsCard"
             //  key={ix}
           >
@@ -130,21 +143,26 @@ const OurThoughts = () =>
               width={260}
               height={133.33}
             /> */}
-                <Image className="ourThoughtsImage" src={OurThoughtsImage} alt="basobaas Nepal" />
+                <Image
+                  className="ourThoughtsImage"
+                  src={OurThoughtsImage3}
+                  alt="basobaas Nepal"
+                />
               </div>
               <div className="blogContents">
                 <div className="blogHeader">
                   <p>
                     {/* ENTER BLOG TITLE HERE */}
                     {/* {blog.title} */}
-                    सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                    तुलसी विवाह किन र कसरी गर्ने ! यस्ता छन् जान्नैपर्ने
+                    कुराहरू।
                   </p>
                 </div>
                 <div className="blogBy">
                   <span className="author">
                     {/* ENTER BLOG BY NAME HERE */}
                     {/* {blog.author?.fullName} */}
-                    राजन अधिकारी
+                    कमल पण्डित
                   </span>
                   <span className="separator">
                     <Icon
@@ -155,7 +173,8 @@ const OurThoughts = () =>
                     />
                   </span>
                   <span className="posted">
-                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता
+                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}७ 
+महिना
                     अघि
                   </span>
                 </div>

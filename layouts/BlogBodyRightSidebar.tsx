@@ -16,17 +16,17 @@ import FeaturedPropertyImage4 from "../public/Images/featuredPropertyImage4.svg"
 const dummyRelatedBlogsData = [
   {
     thumbnail: RelatedBlogImage1,
-    categoryTag: "यात्रा",
+    categoryTag: "कानून र नीति",
     title: "सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।",
   },
   {
     thumbnail: RelatedBlogImage2,
-    categoryTag: "यात्रा",
+    categoryTag: "कानून र नीति",
     title: "नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।",
   },
   {
     thumbnail: RelatedBlogImage3,
-    categoryTag: "यात्रा",
+    categoryTag: "कानून र नीति",
     title: "नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।",
   },
 ];

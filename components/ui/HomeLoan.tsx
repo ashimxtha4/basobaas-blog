@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 // import { getBlogByCategory } from "../../pages";
-import HomeLoanImage from "../../public/Images/homeLoanImage2.svg";
 import Image from "next/image";
+import HomeLoanImage1 from "../../public/Images/homeLoanImage1.svg";
+import HomeLoanImage2 from "../../public/Images/homeLoanImage2.svg";
+import HomeLoanImage3 from "../../public/Images/homeLoanImage3.svg";
 
 const HomeLoan = () =>
   // { id }: { id: string }
@@ -47,7 +49,7 @@ const HomeLoan = () =>
             /> */}
                 <Image
                   className="homeLoanImage"
-                  src={HomeLoanImage}
+                  src={HomeLoanImage1}
                   alt="basobaas Nepal"
                 />
               </div>
@@ -74,54 +76,7 @@ const HomeLoan = () =>
                     />
                   </span>
                   <span className="posted">
-                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता अघि
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="homeLoanCard"
-            //  key={ix}
-          >
-            <div className="homeLoan">
-              <div className="imageContainer">
-                {/* <Image
-              src=""
-              alt="Picture of the author"
-              width={260}
-              height={133.33}
-            /> */}
-                <Image
-                  className="homeLoanImage"
-                  src={HomeLoanImage}
-                  alt="basobaas Nepal"
-                />
-              </div>
-              <div className="blogContents">
-                <div className="blogHeader">
-                  <p>
-                    {/* ENTER BLOG TITLE HERE */}
-                    {/* {blog.title} */}
-                    सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
-                  </p>
-                </div>
-                <div className="blogBy">
-                  <span className="author">
-                    {/* ENTER BLOG BY NAME HERE */}
-                    {/* {blog.author?.fullName} */}
-                    राजन अधिकारी
-                  </span>
-                  <span className="separator">
-                    <Icon
-                      icon="ci:dot-05-xl"
-                      width="15"
-                      height="15"
-                      color="#969696"
-                    />
-                  </span>
-                  <span className="posted">
-                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता
+                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}१ हप्ता
                     अघि
                   </span>
                 </div>
@@ -142,7 +97,7 @@ const HomeLoan = () =>
             /> */}
                 <Image
                   className="homeLoanImage"
-                  src={HomeLoanImage}
+                  src={HomeLoanImage2}
                   alt="basobaas Nepal"
                 />
               </div>
@@ -151,14 +106,14 @@ const HomeLoan = () =>
                   <p>
                     {/* ENTER BLOG TITLE HERE */}
                     {/* {blog.title} */}
-                    सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                    अनधिकृत संरचना हटाउने तयारीमा उपत्यका विकास प्राधिकरण।
                   </p>
                 </div>
                 <div className="blogBy">
                   <span className="author">
                     {/* ENTER BLOG BY NAME HERE */}
                     {/* {blog.author?.fullName} */}
-                    राजन अधिकारी
+                    आशिम श्रेष्ठ
                   </span>
                   <span className="separator">
                     <Icon
@@ -169,7 +124,55 @@ const HomeLoan = () =>
                     />
                   </span>
                   <span className="posted">
-                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता
+                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ महिना
+                    अघि
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="homeLoanCard"
+            //  key={ix}
+          >
+            <div className="homeLoan">
+              <div className="imageContainer">
+                {/* <Image
+              src=""
+              alt="Picture of the author"
+              width={260}
+              height={133.33}
+            /> */}
+                <Image
+                  className="homeLoanImage"
+                  src={HomeLoanImage3}
+                  alt="basobaas Nepal"
+                />
+              </div>
+              <div className="blogContents">
+                <div className="blogHeader">
+                  <p>
+                    {/* ENTER BLOG TITLE HERE */}
+                    {/* {blog.title} */}
+                    अवैध रूपमा सञ्चालित २ सय भन्दा बढि क्रसर उद्योग बन्द।
+                  </p>
+                </div>
+                <div className="blogBy">
+                  <span className="author">
+                    {/* ENTER BLOG BY NAME HERE */}
+                    {/* {blog.author?.fullName} */}
+                    रुद्र कँडेल
+                  </span>
+                  <span className="separator">
+                    <Icon
+                      icon="ci:dot-05-xl"
+                      width="15"
+                      height="15"
+                      color="#969696"
+                    />
+                  </span>
+                  <span className="posted">
+                    {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}३ महिना
                     अघि
                   </span>
                 </div>
