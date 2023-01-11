@@ -23,7 +23,8 @@ const MarketNewsTypeMain = () =>
             <Image
               src={HomeBlogMainImage}
               alt="Basobaas Nepal"
-              className="image" height={300}
+              className="image"
+              height={300}
             />
           </div>
           <div className="blogContents">
@@ -64,7 +65,7 @@ const MarketNewsTypeMain = () =>
                 />
               </span>
               <span className="posted">
-                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}2 weeks ago
+                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता अघि
               </span>
             </div>
           </div>
