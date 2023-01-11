@@ -5,7 +5,7 @@ import { IMG_URL } from "../../baseConstants";
 import RelatedBlogsImage1 from "../../public/Images/relatedBlogsImage1.svg";
 
 // const RelatedBlogs = ({ blog }: { blog: any }) => {
-const RelatedBlogs = () => {
+const RelatedBlogs = ({ blog }: { blog: any }) => {
   return (
     <>
       {/* <Link
@@ -18,7 +18,8 @@ const RelatedBlogs = () => {
         <div className="imageContainer">
           {/* <img src={`${IMG_URL as string}` + `${blog.images[0]}`} /> */}
           <Image
-            src={RelatedBlogsImage1}
+            // src={RelatedBlogsImage1}
+            src={blog.thumbnail}
             alt="Picture of the author"
             className="relatedBlogImages"
           />
@@ -27,13 +28,15 @@ const RelatedBlogs = () => {
           <div className="categoryTitle">
             <p>
               {/* {blog.category?.name} */}
-              यात्रा
+              {/* यात्रा */}
+              {blog.categoryTag}
             </p>
           </div>
           <div className="blogHeader">
             <p>
               {/* {blog.title} */}
-              सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+              {/* सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र। */}
+              {blog.title}
             </p>
           </div>
         </div>

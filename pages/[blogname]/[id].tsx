@@ -313,7 +313,7 @@ export default function BlogPage() {
                   </div>
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
-                    <div className="blogAdDiv"></div>
+                    <div className="blogAdDiv">AD</div>
                     <BlogBodyRightSidebar
                     //  blog={blogs}
                     />
