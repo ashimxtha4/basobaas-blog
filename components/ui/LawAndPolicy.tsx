@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 // import { getBlogByCategory } from "../../pages/index";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import LawAndPolicyImage from "../../public/Images/LawAndPolicyImage.svg";
+import LawAndPolicyImage1 from "../../public/Images/LawAndPolicyImage.svg";
+import LawAndPolicyImage2 from "../../public/Images/LawAndPolicyImage2.svg";
+import LawAndPolicyImage3 from "../../public/Images/LawAndPolicyImage3.svg";
+import LawAndPolicyImage4 from "../../public/Images/LawAndPolicyImage4.svg";
 
 const LawAndPolicy = (props: any) => {
   const [blog, setBlog] = useState<any[]>([]);
@@ -42,7 +45,7 @@ const LawAndPolicy = (props: any) => {
           /> */}
             <Image
               className="image"
-              src={LawAndPolicyImage}
+              src={LawAndPolicyImage1}
               alt="basobaas Nepal"
             />
           </div>
@@ -51,14 +54,15 @@ const LawAndPolicy = (props: any) => {
               <p>
                 {/* ENTER BLOG CATEGORY TITLE HERE */}
                 {/* {blog?.category?.name} */}
-                यात्रा
+                कानुन र नीति
               </p>
             </div>
             <div className="blogHeader">
               <p>
                 {/* ENTER BLOG TITLE HERE */}
                 {/* {blog?.title} */}
-                सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र, ७३ प्रतिशत भौतिक
+                प्रगति।
               </p>
             </div>
             <div className="blogBy">
@@ -76,7 +80,7 @@ const LawAndPolicy = (props: any) => {
                 />
               </span>
               <span className="posted">
-                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता अघि
+                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ मिनेट अघि
               </span>
             </div>
           </div>
@@ -91,7 +95,7 @@ const LawAndPolicy = (props: any) => {
           /> */}
             <Image
               className="image"
-              src={LawAndPolicyImage}
+              src={LawAndPolicyImage2}
               alt="basobaas Nepal"
             />
           </div>
@@ -100,21 +104,21 @@ const LawAndPolicy = (props: any) => {
               <p>
                 {/* ENTER BLOG CATEGORY TITLE HERE */}
                 {/* {blog?.category?.name} */}
-                यात्रा
+                कानुन र नीति
               </p>
             </div>
             <div className="blogHeader">
               <p>
                 {/* ENTER BLOG TITLE HERE */}
                 {/* {blog?.title} */}
-                सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                पद्मा कोलोनीः उत्कृष्ट डिजाइनका घरमा आकर्षक फर्निचरको प्रयोग ।
               </p>
             </div>
             <div className="blogBy">
               <span className="author">
                 {/* ENTER BLOG BY NAME HERE */}
                 {/* {blog?.author?.fullName} */}
-                राजन अधिकारी
+                कपिल कार्की
               </span>
               <span className="separator">
                 <Icon
@@ -125,7 +129,7 @@ const LawAndPolicy = (props: any) => {
                 />
               </span>
               <span className="posted">
-                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता अघि
+                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}५ दिन अघि
               </span>
             </div>
           </div>
@@ -140,7 +144,7 @@ const LawAndPolicy = (props: any) => {
           /> */}
             <Image
               className="image"
-              src={LawAndPolicyImage}
+              src={LawAndPolicyImage3}
               alt="basobaas Nepal"
             />
           </div>
@@ -149,21 +153,21 @@ const LawAndPolicy = (props: any) => {
               <p>
                 {/* ENTER BLOG CATEGORY TITLE HERE */}
                 {/* {blog?.category?.name} */}
-                यात्रा
+                कानुन र नीति
               </p>
             </div>
             <div className="blogHeader">
               <p>
                 {/* ENTER BLOG TITLE HERE */}
                 {/* {blog?.title} */}
-                सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                तुलसी विवाह किन र कसरी गर्ने ! यस्ता छन् जान्नैपर्ने कुराहरू।
               </p>
             </div>
             <div className="blogBy">
               <span className="author">
                 {/* ENTER BLOG BY NAME HERE */}
                 {/* {blog?.author?.fullName} */}
-                राजन अधिकारी
+                कमल पण्डित
               </span>
               <span className="separator">
                 <Icon
@@ -174,7 +178,7 @@ const LawAndPolicy = (props: any) => {
                 />
               </span>
               <span className="posted">
-                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता अघि
+                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}१ हप्ता अघि
               </span>
             </div>
           </div>
@@ -189,7 +193,7 @@ const LawAndPolicy = (props: any) => {
           /> */}
             <Image
               className="image"
-              src={LawAndPolicyImage}
+              src={LawAndPolicyImage4}
               alt="basobaas Nepal"
             />
           </div>
@@ -198,7 +202,7 @@ const LawAndPolicy = (props: any) => {
               <p>
                 {/* ENTER BLOG CATEGORY TITLE HERE */}
                 {/* {blog?.category?.name} */}
-                यात्रा
+                कानुन र नीति
               </p>
             </div>
             <div className="blogHeader">
@@ -223,7 +227,7 @@ const LawAndPolicy = (props: any) => {
                 />
               </span>
               <span className="posted">
-                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}२ हप्ता अघि
+                {/* CALCULATE DATE AGO HERE BY USING MOMENT.JS */}१० महिना अघि
               </span>
             </div>
           </div>
