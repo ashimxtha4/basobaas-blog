@@ -3,9 +3,11 @@ import Link from "next/link";
 import React from "react";
 import { IMG_URL } from "../baseConstants";
 import RelatedBlogsImage1 from "../public/Images/relatedBlogsImage1.svg";
+import { useRouter } from "next/router";
 
 // const RelatedBlogs = ({ blog }: { blog: any }) => {
 const RelatedBlogs = () => {
+  const router = useRouter()
   return (
     <>
       {/* <Link
