@@ -27,8 +27,8 @@ const LifeStyle = () =>
     return (
       <>
         <div className="lifeStyleTitleDiv">
-          <label className="lifeStyleTitle">Lifestyle</label>
-          <span className="lifeStyleViewAllButton">View All</span>
+          <label className="lifeStyleTitle">जीवनशैली</label>
+          <span className="lifeStyleViewAllButton">सबै हेर्नुहोस्</span>
         </div>
         <div className="lifeStyleCardDiv">
           {/* {blog.map((blog, idx) => ( */}

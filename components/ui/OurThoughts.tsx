@@ -26,8 +26,8 @@ const OurThoughts = () =>
     return (
       <>
         <div className="ourThoughtsTitleDiv">
-          <label className="ourThoughtsTitle">Our Thoughts</label>
-          <span className="ourThoughtsViewAllButton">View All</span>
+          <label className="ourThoughtsTitle">हाम्रा विचारहरू</label>
+          <span className="ourThoughtsViewAllButton">सबै हेर्नुहोस्</span>
         </div>
         <div className="ourThoughtsCardDiv">
           {/* {blog?.map((blog, ix) => { */}

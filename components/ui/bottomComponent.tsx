@@ -16,7 +16,7 @@ const BottomComponent = () => {
             </div>
             <div className="desDiv">
                 <div className="headingDiv">{blog.title}</div>
-                <div className="timeDiv">दुई हप्ता पहिले</div>
+                <div className="timeDiv">२ हप्ता अघि</div>
             </div>
         </div>
     )

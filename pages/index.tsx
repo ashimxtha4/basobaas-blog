@@ -134,9 +134,9 @@ const HomePage = () => {
           <div className="contentDiv">
             <div className="aboveNavDiv">
               <div className="newsDiv">
-                <div className="newsHeader">News & Insights</div>
+                <div className="newsHeader">बसोबास <span className="newsSubHeading">समाचार र लेख</span></div>
                 <div className="newsTexts">
-                  We provide you the complete new about real estate.
+                  हामी तपाईंलाई घर जग्गा बारे पूर्ण समाचार प्रदान गर्दछौं।
                 </div>
               </div>
 
@@ -160,7 +160,7 @@ const HomePage = () => {
                   {/* return ( */}
                   <div
                     className="smallComponent"
-                    //  key={index}
+                  //  key={index}
                   >
                     <HomeBlogTypeSmall
                     // blog={data.blogsByCategory[index]}
@@ -184,8 +184,8 @@ const HomePage = () => {
 
               <div className="marketNewsDiv">
                 <div className="titleDiv">
-                  <label className="title">Market News</label>
-                  <span className="viewAllButton">View All</span>
+                  <label className="title">बजार खबर</label>
+                  <span className="viewAllButton">सबै हेर्नुहोस्</span>
                 </div>
                 <div className="marketNewsContentDiv">
                   <div className="marketBigComponent">
@@ -208,7 +208,7 @@ const HomePage = () => {
                     <>
                       <div
                         className="marketSmallComponent"
-                        // key={index}
+                      // key={index}
                       >
                         <MarketNewsTypeSecondary
                         //  blog={i}
@@ -231,9 +231,9 @@ const HomePage = () => {
               <div className="propertyListDiv">
                 <div className="propertyListTitleDiv">
                   <label className="propertyListTitle">
-                    Related Properties
+                    सम्बन्धित घर जग्गाहरु
                   </label>
-                  <span className="propertyListViewAllButton">View All</span>
+                  <span className="propertyListViewAllButton">सबै हेर्नुहोस्</span>
                 </div>
                 <div className="propertyCardDiv">
                   <div className="propertyCard">
@@ -288,9 +288,9 @@ const HomePage = () => {
               <div className="propertyListDiv">
                 <div className="propertyListTitleDiv">
                   <label className="propertyListTitle">
-                    Featured Properties
+                    विशेष घर जग्गाहरु
                   </label>
-                  <span className="propertyListViewAllButton">View All</span>
+                  <span className="propertyListViewAllButton">सबै हेर्नुहोस्</span>
                 </div>
                 <div className="propertyCardDiv">
                   <div className="propertyCard">
@@ -319,7 +319,7 @@ const HomePage = () => {
 
               <div className="flexTwo">
                 <div className="lawPolicyDiv">
-                  <LawAndPolicy title="Law & Policy"
+                  <LawAndPolicy title="कानून र नीति"
                   // id={data?.categories[4]?.id}  YO MILAUNU XA
                   />
                 </div>
@@ -327,7 +327,7 @@ const HomePage = () => {
                 <div className="lawPolicy2Div">
                   <div className="lawPolicy2TitleDiv">
                     <label className="lawPolicy2Title">Property Video</label>
-                    <span className="lawPolicy2ViewAllButton">View All</span>
+                    <span className="lawPolicy2ViewAllButton">सबै हेर्नुहोस्</span>
                   </div>
                   <div className="lawPolicy2CardDiv">
                     <div className="lawPolicy2Card">
@@ -347,10 +347,10 @@ const HomePage = () => {
                 <div className="flexThreeChild1Div">
                   <div className="flexThreeChild1TitleDiv">
                     <label className="flexThreeChild1Title">
-                      Property Video
+                      बजार अद्यावधिकहरू
                     </label>
                     <span className="flexThreeChild1ViewAllButton">
-                      View All
+                      सबै हेर्नुहोस्
                     </span>
                   </div>
                   <div className="flexThreeChild1CardDiv">
@@ -369,10 +369,10 @@ const HomePage = () => {
                 <div className="flexThreeChildDiv">
                   <div className="flexThreeChildTitleDiv">
                     <label className="flexThreeChildTitle">
-                      Basobaas Roundup
+                      बासोबास राउन्डअप
                     </label>
                     <span className="flexThreeChildViewAllButton">
-                      View All
+                      सबै हेर्नुहोस्
                     </span>
                   </div>
                   <div className="flexThreeChildCardDiv">
@@ -391,10 +391,10 @@ const HomePage = () => {
                 <div className="flexThreeChildDiv">
                   <div className="flexThreeChildTitleDiv">
                     <label className="flexThreeChildTitle">
-                      Educational Video
+                      शैक्षिक भिडियो
                     </label>
                     <span className="flexThreeChildViewAllButton">
-                      View All
+                      सबै हेर्नुहोस्
                     </span>
                   </div>
                   <div className="flexThreeChildCardDiv">

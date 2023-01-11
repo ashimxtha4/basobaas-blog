@@ -50,7 +50,7 @@ const BlogNavbar = () => {
               })}
               <li className="nav-item invi-item">
                 <Link className="nav-link active" href={"#"}>
-                  हाम्रो विचार
+                  हाम्रा विचारहरू
                 </Link>
               </li>
               {/* <li className="nav-item expandedNavItems">
