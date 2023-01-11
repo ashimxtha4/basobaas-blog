@@ -326,7 +326,7 @@ const HomePage = () => {
 
                 <div className="lawPolicy2Div">
                   <div className="lawPolicy2TitleDiv">
-                    <label className="lawPolicy2Title">Property Video</label>
+                    <label className="lawPolicy2Title">बजार अद्यावधिकहरू</label>
                     <span className="lawPolicy2ViewAllButton">सबै हेर्नुहोस्</span>
                   </div>
                   <div className="lawPolicy2CardDiv">
