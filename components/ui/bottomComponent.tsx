@@ -7,7 +7,7 @@ const BottomComponent = () => {
 
     const blog = {
         image: "https://place-hold.it/32x23",
-        title: "The most expensive area of nepal with most expensive house",
+        title: "सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।",
     }
     return (
         <div className="bottomComponent">
@@ -16,7 +16,7 @@ const BottomComponent = () => {
             </div>
             <div className="desDiv">
                 <div className="headingDiv">{blog.title}</div>
-                <div className="timeDiv">2 weeks Ago</div>
+                <div className="timeDiv">दुई हप्ता पहिले</div>
             </div>
         </div>
     )
