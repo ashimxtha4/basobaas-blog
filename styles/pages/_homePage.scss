@@ -766,7 +766,7 @@
               .lawPolicyCard {
                 display: flex;
                 flex-direction: row;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: flex-start;
                 padding: 0px;
                 gap: 16px;
@@ -2335,7 +2335,7 @@
               width: 100%;
               min-height: 334px;
               height: fit-content;
-              overflow-x: hidden;
+              overflow-x: scroll;
               overflow-y: hidden;
               flex: none;
               align-self: stretch;
@@ -3015,6 +3015,7 @@
 .propertCardDiv::-webkit-scrollbar {
   // width: 12px;
   height: 2px;
+  display: none;
 }
 
 .propertCardDiv::-webkit-scrollbar-track {
@@ -3029,6 +3030,7 @@
 .lifeStyleCardDiv::-webkit-scrollbar {
   // width: 12px;
   height: 2px;
+  display: none;
 }
 
 .lifeStyleCardDiv::-webkit-scrollbar-track {
@@ -3043,6 +3045,7 @@
 .blogPreviewDiv::-webkit-scrollbar {
   // width: 12px;
   height: 2px;
+  display: none;
 }
 
 .blogPreviewDiv::-webkit-scrollbar-track {
@@ -3058,6 +3061,7 @@
 .propertyCardDiv::-webkit-scrollbar {
   // width: 12px;
   height: 2px;
+  display: none;
 }
 
 .propertyCardDiv::-webkit-scrollbar-track {
