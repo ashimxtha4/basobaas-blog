@@ -437,7 +437,7 @@
           align-items: flex-start;
           padding: 0px;
           gap: 24px;
-          width:fit-content;
+          width: fit-content;
           height: 230px;
 
           .gorupThreeChildHeading {
@@ -584,6 +584,12 @@
     gap: 32px;
     padding: 24px 5.5% 32px 5.5%;
     height: fit-content;
+
+    @media only screen and (min-width:1300px) {
+      justify-content: flex-start;
+      gap: 200px;
+    }
+
 
     .firstDiv {
       display: flex;
@@ -751,7 +757,7 @@
           align-items: flex-start;
           padding: 0px;
           gap: 24px;
-          width:fit-content;
+          width: fit-content;
           height: 230px;
           // border: solid 1px white;
 

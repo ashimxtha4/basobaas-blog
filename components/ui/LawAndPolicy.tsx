@@ -26,7 +26,7 @@ const LawAndPolicy = (props:any)=>{
       <>
         <div className="lawPolicyTitleDiv">
           <label className="lawPolicyTitle">{props.title}</label>
-          <span className="lawPolicyViewAllButton">View All</span>
+          <span className="lawPolicyViewAllButton">सबै हेर्नुहोस्</span>
         </div>
         <div className="lawPolicyCardDiv">
           {/* {blog.map((blog, index) => {
