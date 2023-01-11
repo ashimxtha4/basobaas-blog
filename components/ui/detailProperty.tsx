@@ -6,7 +6,7 @@ const DetailProperty = () => {
         <div className="detailPropertyListDiv">
             <div className="propertyListTitleDiv">
                 <label className="propertyListTitle">
-                विशेष गुणहरू
+                विशेष घर जग्गाहरु
                 </label>
                 <span className="propertyListViewAllButton">सबै हेर्नुहोस्</span>
             </div>

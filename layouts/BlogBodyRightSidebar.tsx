@@ -64,7 +64,7 @@ const BlogBodyRightSidebar = (
         </div>
         <div className="featuredSection">
           <div className="featuredSectionTitle">
-            <p>विशेष गुणहरू</p>
+            <p>विशेष घर जग्गाहरु</p>
             <button>
               <Link href="https://basobaas.com/properties/all-properties">
                 सबै हेर्नुहोस्
