@@ -1,284 +1,280 @@
 .detailPropertyListDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  width: 100%;
+  min-height: 400px;
+  height: fit-content;
+  color: black;
+
+  .propertyListTitleDiv {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: 0px;
     gap: 16px;
     width: 100%;
-    min-height: 400px;
+    height: 34px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+
+    .propertyListTitle {
+      width: fit-content;
+      height: 28px;
+      font-family: "Ek Mukta";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 140%;
+      color: #333333;
+      flex: none;
+      flex-grow: 0;
+    }
+
+    .propertyListViewAllButton {
+      width: fit-content;
+      height: 22px;
+      font-family: "Ek Mukta";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #333333;
+      flex: none;
+      flex-grow: 0;
+    }
+  }
+
+  .propertyCardDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: calc(24 * 100% / 1277);
+    width: 100%;
     height: fit-content;
-    color: black;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex: none;
+    align-self: stretch;
 
-    .propertyListTitleDiv {
+    .propertyCard {
+      .card {
+        box-sizing: border-box;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0px;
-        gap: 16px;
-        width: 100%;
-        height: 34px;
-        flex: none;
-        order: 0;
-        align-self: stretch;
-        flex-grow: 0;
-
-
-        .propertyListTitle {
-            width: fit-content;
-            height: 28px;
-            font-family: "Product Sans", sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 140%;
-            color: #333333;
-            flex: none;
-            flex-grow: 0;
-        }
-
-        .propertyListViewAllButton {
-            width: fit-content;
-            height: 22px;
-            font-family: "Product Sans", sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 140%;
-            color: #333333;
-            flex: none;
-            flex-grow: 0;
-        }
-    }
-
-    .propertyCardDiv {
-        display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: flex-start;
-        padding: 0px;
-        gap: calc(24 * 100% / 1277);
-        width: 100%;
-        height: fit-content;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        flex: none;
-        align-self: stretch;
+        padding: 8px 8px 16px;
+        gap: 8px;
+        isolation: isolate;
+        width: 302px;
+        height: 358px;
+        background: #ffffff;
+        border: 1px solid #d8d8d8;
+        border-radius: 6px;
 
-        .propertyCard {
+        .imageContainer {
+          width: 286px;
+          height: 198px;
+          border-radius: 3px;
+          overflow: hidden;
 
-            .card {
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 8px 8px 16px;
-                gap: 8px;
-                isolation: isolate;
-                width: 302px;
-                height: 358px;
-                background: #FFFFFF;
-                border: 1px solid #D8D8D8;
-                border-radius: 6px;
-
-                .imageContainer {
-                    width: 286px;
-                    height: 198px;
-                    border-radius: 3px;
-                    overflow: hidden;
-
-                    .img {
-                        border-radius: inherit;
-                        width: 100%;
-                        height: auto;
-                    }
-                }
-
-                .contentContainer {
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    padding: 0px;
-                    gap: 12px;
-                    width: 100%;
-                    height: 122px;
-
-                    .propertyTitle {
-                        position: relative;
-                        width: 100%;
-
-                        p {
-                            position: relative;
-                            font-family: "Product Sans", sans-serif;
-                            font-style: normal;
-                            font-weight: 700;
-                            font-size: 16px;
-                            line-height: 140%;
-                            color: #2c2c2c;
-                            margin: 0px;
-                            padding: 0px;
-                        }
-                    }
-
-                    .propertyAddress {
-                        position: relative;
-                        width: 100%;
-
-                        p {
-                            position: relative;
-                            font-family: "Product Sans", sans-serif;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 12px;
-                            line-height: 140%;
-                            display: flex;
-                            align-items: center;
-                            color: #707580;
-                            margin: 0px;
-                            padding: 0px;
-                        }
-                    }
-
-                    .propertyOverview {
-                        position: relative;
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-start;
-                        gap: 8px;
-                        align-items: center;
-                        width: 100%;
-
-                        .overviewDatas {
-                            position: relative;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                            align-items: center;
-                            width: fit-content;
-                            height: min-content;
-                            gap: 8px;
-
-                            .iconContainer {
-                                position: relative;
-                                width: fit-content;
-                                height: fit-content;
-                                margin: 0px;
-                                padding: 0px;
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: center;
-                                align-items: center;
-
-                                .overviewIcons {
-                                    margin: 0px;
-                                    padding: 0px;
-                                    gap: 0px;
-                                    width: fit-content;
-                                    height: fit-content;
-                                    display: flex;
-                                    flex-direction: row;
-                                    justify-content: center;
-                                    align-items: center;
-                                    text-align: center;
-                                }
-                            }
-
-                            .overViewText {
-                                width: fit-content;
-                                display: flex;
-                                flex-direction: row;
-                                gap: 2px;
-
-                                .overViewTags {
-                                    position: relative;
-                                    font-family: "Product Sans", sans-serif;
-                                    font-style: normal;
-                                    font-weight: 400;
-                                    font-size: 12px;
-                                    line-height: 140%;
-                                    color: #707580;
-                                    display: flex;
-                                    flex-direction: row;
-                                    flex-wrap: nowrap;
-                                    flex-grow: 1;
-                                    margin: 0px;
-                                    padding: 2px 0px 0px 1px;
-                                    width: auto;
-                                    word-spacing: 2px;
-                                }
-                            }
-
-
-                        }
-                    }
-
-                    .propertyPrice {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        align-items: center;
-                        gap: 3px;
-                        width: 100%;
-                        // display: none;
-
-                        .priceDiv {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            padding: 0px;
-                            gap: 3px;
-                            // height: fit-content;
-                            height: 22px;
-
-                            .price {
-                                font-family: "Product Sans", sans-serif;
-                                font-style: normal;
-                                font-weight: 700;
-                                font-size: 16px;
-                                line-height: 140%;
-                                display: flex;
-                                align-items: center;
-                                color: #0000ff;
-                                width: fit-content;
-                                height: fit-content;
-                                padding-bottom: 3px;
-                            }
-
-                            .unit {
-                                font-family: 'Product Sans', sans-serif;
-                                font-style: normal;
-                                font-weight: 400;
-                                font-size: 10px;
-                                line-height: 140%;
-                                display: flex;
-                                align-items: center;
-                                color: #0000FF;
-                            }
-                        }
-
-                        .contactButtonContainer {
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: center;
-                            align-items: center;
-                            padding: 6px 15.5px;
-                            width: 80px;
-                            height: 32px;
-                            border: 1px solid #2b2b2b;
-                            border-radius: 6px;
-                            margin: 0px;
-                            font-family: "Product Sans", sans-serif;
-                            font-style: normal;
-                            font-weight: 400;
-                            font-size: 14px;
-                            line-height: 140%;
-                            text-align: center;
-                            color: #2b2b2b;
-                            background-color: transparent;
-                        }
-                    }
-                }
-            }
+          .img {
+            border-radius: inherit;
+            width: 100%;
+            height: auto;
+          }
         }
+
+        .contentContainer {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0px;
+          gap: 12px;
+          width: 100%;
+          height: 122px;
+
+          .propertyTitle {
+            position: relative;
+            width: 100%;
+
+            p {
+              position: relative;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 700;
+              font-size: 16px;
+              line-height: 140%;
+              color: #2c2c2c;
+              margin: 0px;
+              padding: 0px;
+            }
+          }
+
+          .propertyAddress {
+            position: relative;
+            width: 100%;
+
+            p {
+              position: relative;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 140%;
+              display: flex;
+              align-items: center;
+              color: #707580;
+              margin: 0px;
+              padding: 0px;
+            }
+          }
+
+          .propertyOverview {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 8px;
+            align-items: center;
+            width: 100%;
+
+            .overviewDatas {
+              position: relative;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              width: fit-content;
+              height: min-content;
+              gap: 8px;
+
+              .iconContainer {
+                position: relative;
+                width: fit-content;
+                height: fit-content;
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                .overviewIcons {
+                  margin: 0px;
+                  padding: 0px;
+                  gap: 0px;
+                  width: fit-content;
+                  height: fit-content;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+                  text-align: center;
+                }
+              }
+
+              .overViewText {
+                width: fit-content;
+                display: flex;
+                flex-direction: row;
+                gap: 2px;
+
+                .overViewTags {
+                  position: relative;
+                  font-family: "Product Sans", sans-serif;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 140%;
+                  color: #707580;
+                  display: flex;
+                  flex-direction: row;
+                  flex-wrap: nowrap;
+                  flex-grow: 1;
+                  margin: 0px;
+                  padding: 2px 0px 0px 1px;
+                  width: auto;
+                  word-spacing: 2px;
+                }
+              }
+            }
+          }
+
+          .propertyPrice {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3px;
+            width: 100%;
+            // display: none;
+
+            .priceDiv {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              padding: 0px;
+              gap: 3px;
+              // height: fit-content;
+              height: 22px;
+
+              .price {
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 140%;
+                display: flex;
+                align-items: center;
+                color: #0000ff;
+                width: fit-content;
+                height: fit-content;
+                padding-bottom: 3px;
+              }
+
+              .unit {
+                font-family: "Product Sans", sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 140%;
+                display: flex;
+                align-items: center;
+                color: #0000ff;
+              }
+            }
+
+            .contactButtonContainer {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              padding: 6px 15.5px;
+              width: 80px;
+              height: 32px;
+              border: 1px solid #2b2b2b;
+              border-radius: 6px;
+              margin: 0px;
+              font-family: "Product Sans", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 140%;
+              text-align: center;
+              color: #2b2b2b;
+              background-color: transparent;
+            }
+          }
+        }
+      }
     }
+  }
 }

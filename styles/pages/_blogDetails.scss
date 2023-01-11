@@ -49,12 +49,12 @@
       background: #4f4f4f;
       bottom: 0px;
 
-      .lowerFooterBlend{
+      .lowerFooterBlend {
         position: absolute;
         bottom: 0px;
         height: 201.5px;
         width: 100%;
-        background-color: #1E1E1E;
+        background-color: #1e1e1e;
         // z-index: 2;
       }
     }
@@ -422,7 +422,16 @@
                 z-index: 0;
                 display: none;
                 @media screen and (min-width: 1024px) {
-                  display: block;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+                  font-family: "Product Sans";
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 140%;
+                  color: #000000;
                 }
               }
 
@@ -441,24 +450,22 @@
             }
           }
 
-          .blogDetailsFooterRelatedBlogs{
+          .blogDetailsFooterRelatedBlogs {
             display: none;
             flex-direction: column;
             gap: 60px;
             width: 100%;
             height: fit-content;
 
-            .lawPolicyDiv{
+            .lawPolicyDiv {
               display: flex;
               flex-direction: column;
               gap: 16px;
             }
 
-            @media screen and (min-width: 1024px){
+            @media screen and (min-width: 1024px) {
               display: flex;
             }
-
-
           }
 
           @media screen and (min-width: 1024px) {
@@ -532,12 +539,12 @@
         background: #4f4f4f;
         bottom: 0px;
 
-        .lowerFooterBlend{
+        .lowerFooterBlend {
           position: absolute;
           bottom: 0px;
           height: 139.5px;
           width: 100%;
-          background-color: #1E1E1E;
+          background-color: #1e1e1e;
           // z-index: 2;
         }
       }
