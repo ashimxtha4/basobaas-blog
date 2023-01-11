@@ -13,6 +13,13 @@ import MainProperty from "../components/ui/MainProperty";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import BottomComponent from "../components/ui/bottomComponent";
+import downImage from "../public/Images/downImage.svg"
+import downImage1 from "../public/Images/downImage1.svg"
+import downImage2 from "../public/Images/downImage2.svg"
+import downImage3 from "../public/Images/downImage3.svg"
+import downImage4 from "../public/Images/downImage4.svg"
+import downImage5 from "../public/Images/downImage5.svg"
+
 
 // export const getBlogByCategory = async (id: String, limit?: number) => {
 //   var url = `/blogs?category=${id}`;
@@ -355,13 +362,13 @@ const HomePage = () => {
                   </div>
                   <div className="flexThreeChild1CardDiv">
                     <div className="flexThreeChild1Card">
-                      <BottomComponent />
+                      <BottomComponent image={downImage} />
                     </div>
                     <div className="flexThreeChild1Card">
-                      <BottomComponent />
+                      <BottomComponent image={downImage1} />
                     </div>
                     <div className="flexThreeChild1Card">
-                      <BottomComponent />
+                      <BottomComponent image={downImage2} />
                     </div>
                   </div>
                 </div>
@@ -377,13 +384,13 @@ const HomePage = () => {
                   </div>
                   <div className="flexThreeChildCardDiv">
                     <div className="flexThreeChildCard">
-                      <BottomComponent />
+                      <BottomComponent image={downImage3} />
                     </div>
                     <div className="flexThreeChildCard">
-                      <BottomComponent />
+                      <BottomComponent image={downImage4} />
                     </div>
                     <div className="flexThreeChildCard">
-                      <BottomComponent />
+                      <BottomComponent image={downImage5} />
                     </div>
                   </div>
                 </div>
@@ -399,13 +406,13 @@ const HomePage = () => {
                   </div>
                   <div className="flexThreeChildCardDiv">
                     <div className="flexThreeChildCard">
-                      <BottomComponent />
+                      <BottomComponent image={downImage2} />
                     </div>
                     <div className="flexThreeChildCard">
-                      <BottomComponent />
+                      <BottomComponent image={downImage5} />
                     </div>
                     <div className="flexThreeChildCard">
-                      <BottomComponent />
+                      <BottomComponent image={downImage1} />
                     </div>
                   </div>
                 </div>
