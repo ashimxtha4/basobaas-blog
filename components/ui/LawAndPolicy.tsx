@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 // import { getBlogByCategory } from "../../pages/index";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import LawAndPolicyImage1 from "../../public/Images/LawAndPolicyImage.svg";
-import LawAndPolicyImage2 from "../../public/Images/LawAndPolicyImage2.svg";
-import LawAndPolicyImage3 from "../../public/Images/LawAndPolicyImage3.svg";
-import LawAndPolicyImage4 from "../../public/Images/LawAndPolicyImage4.svg";
+import LawAndPolicyImage1 from "../../Images/LawAndPolicyImage.svg";
+import LawAndPolicyImage2 from "../../Images/LawAndPolicyImage2.svg";
+import LawAndPolicyImage3 from "../../Images/LawAndPolicyImage3.svg";
+import LawAndPolicyImage4 from "../../Images/LawAndPolicyImage4.svg";
 
 const LawAndPolicy = (props: any) => {
   const [blog, setBlog] = useState<any[]>([]);

@@ -145,17 +145,17 @@ const HomePage = () => {
     },
     {
       thumbnail: RelatedBlogImage2,
-      categoryTag: "यात्रा",
+      categoryTag: "जीवनशैली",
       title: "नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।",
     },
     {
       thumbnail: RelatedBlogImage3,
-      categoryTag: "यात्रा",
+      categoryTag: "बजार खबर",
       title: "रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।",
     },
     {
       thumbnail: FeaturedPropertyImage3,
-      categoryTag: "यात्रा",
+      categoryTag: "कानून र नीति",
       title: "नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।",
     },
   ];

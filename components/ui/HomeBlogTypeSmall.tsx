@@ -24,7 +24,7 @@ const HomeBlogTypeSmall = (props:any) =>
             /> */}
             <Image
               className="blogCardBackground"
-              src={props.data.thumbnail}
+              src={props.data?.thumbnail}
               alt="Basobaas Nepal"
             />
           </div>
@@ -32,13 +32,13 @@ const HomeBlogTypeSmall = (props:any) =>
             <div className="blogCategoryTag">
               <p>
                 {/* {blog.category?.name} */}
-                {props.data.categoryTag}
+                {props.data?.categoryTag}
               </p>
             </div>
             <div className="blogTitle">
               <p>
                 {/* {blog.title} */}
-                {props.data.title}
+                {props.data?.title}
                 {/* सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र। */}
               </p>
             </div>
