@@ -1,6 +1,6 @@
 a:hover {
-  transform: scale(1.2);
-  transition: 0.4s all;
+  transform: none;
+  text-decoration: underline;
 }
 
 .dropdown-toggle::after {
@@ -46,24 +46,22 @@ select:focus {
       display: flex;
       flex-direction: row;
       width: 100%;
-      @media only screen and (min-width :1024px) {
+      @media only screen and (min-width: 1024px) {
         width: fit-content;
-        min-width: calc(675*100%/1440);
+        min-width: calc(675 * 100% / 1440);
       }
-      
-
 
       ul {
         width: 100%;
         justify-content: space-between;
-        @media only screen and (min-width :768px) {
+        @media only screen and (min-width: 768px) {
           gap: 32px;
         }
 
         .invi-item {
           display: none;
 
-          @media only screen and (min-width :710px) {
+          @media only screen and (min-width: 710px) {
             display: inline;
           }
         }
@@ -125,7 +123,7 @@ select:focus {
       margin: 0px;
       width: 100%;
       @media only screen and (min-width: 1024px) {
-        min-width: calc(448*100%/1440);
+        min-width: calc(448 * 100% / 1440);
         width: fit-content;
       }
 
@@ -137,7 +135,6 @@ select:focus {
         justify-content: space-between;
         position: relative;
         width: 100%;
-        
 
         .searchSection {
           width: 100%;
