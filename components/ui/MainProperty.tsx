@@ -9,21 +9,21 @@ const MainProperty = (props:any) => {
     <>
       <div className="card">
         <div className="imageContainer">
-          <Image src={props.data.photo} alt="noImage" className='img' />
+          <Image src={props.data.photo as any} alt="noImage" className='img' />
           {/* <img className="image" src={IMG_URL + property.propertyImages[0]} /> */}
         </div>
         <div className="contentContainer">
           <div className="propertyTitle">
             <p>
               {/* {property.pricing.title} */}
-              {props.data.title}
+              {props.data.title as string}
             </p>
           </div>
           <div className="propertyAddress">
             <p>
               <Icon icon="ph:map-pin-bold" color="#707580" width="18" height="18" inline={true} style={{ marginRight: "8px" }} />
               {/* {property.location?.streetName}, {property.location?.locality} */}
-              {props.data.address}
+              {props.data.address as string}
             </p>
           </div>
           <div className="propertyOverview">

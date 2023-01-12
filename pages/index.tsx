@@ -137,7 +137,7 @@ const HomePage = () => {
   //   (item) => item["कानून र निति"]
   // );
 
-  const dummyRelatedBlogsData = [
+  const dummyRelatedBlogsData:any = [
     {
       thumbnail: RelatedBlogImage1,
       categoryTag: "यात्रा",
@@ -154,14 +154,14 @@ const HomePage = () => {
       title: "रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।",
     },
     {
-      thumbnail: RelatedBlogImage3,
+      thumbnail: FeaturedPropertyImage3,
       categoryTag: "यात्रा",
       title: "नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।",
     },
   ];
 
   //DUMMY DATA FOR FEATURED PROPERTY
-  const dummyPropertyData = [
+  const dummyPropertyData:any = [
     {
       photo: FeaturedPropertyImage3,
       title: "Padma Colony",
@@ -213,6 +213,60 @@ const HomePage = () => {
       priceLabel: "Total Price",
     }     
   ];
+
+  const dummyPropertyData2:any = [
+    {
+      photo: FeaturedPropertyImage3,
+      title: "Padma Colony",
+      address: "Sitapaila Rd 5, Nagarjun 44600",
+      beds: 4,
+      bath: 5,
+      sqft: 1790,
+      price: "5.75 Crore",
+      priceLabel: "Total Price",
+    },
+    {
+      photo: FeaturedPropertyImage4,
+      title: "Karyabinayak Homes",
+      address: "Karyabinayak, Lalitpur",
+      beds: 2,
+      bath: 1,
+      sqft: 1200,
+      price: "20 Thousand",
+      priceLabel: "sq.ft",
+    },
+    {
+      photo: FeaturedPropertyImage2,
+      title: "Civil Homes",
+      address: "Kalimati, Kathmandu",
+      beds: 3,
+      bath: 3,
+      sqft: 3200,
+      price: "3.55 Crore",
+      priceLabel: "Onwards",
+    },
+    {
+      photo: FeaturedPropertyImage1,
+      title: "Ranjana Complex",
+      address: "New-Road, Kathmandu",
+      beds: 0,
+      bath: 0,
+      sqft: 3651,
+      price: "50 Lakhs",
+      priceLabel: "month",
+    },
+    {
+      photo: LifestyleImages,
+      title: "Vinayak Colony",
+      address: "Bhaisipati, Lalitpur",
+      beds: 5,
+      bath: 4,
+      sqft: 4200,
+      price: "9.5 Crore",
+      priceLabel: "Total Price",
+    }     
+  ];
+
   return (
     <>
       <div className="alignmentContainer">
@@ -254,7 +308,7 @@ const HomePage = () => {
                   {/* {data.blogsByCategory.map((categorySpecificBlog, index) => { */}
                   {/* if (index > 0 && index < 5) */}
                   {/* return ( */}
-                  {dummyRelatedBlogsData.map((data, index) => <div className="smallComponent" key={index}>
+                  {dummyRelatedBlogsData.map((data:any, index:number) => <div className="smallComponent" key={index}>
                     <HomeBlogTypeSmall data={data}
                     // blog={data.blogsByCategory[index]}
                     />
@@ -293,7 +347,7 @@ const HomePage = () => {
                     {/* {Object.values(getMarketNewsBlogs ?? {})
                       .flatMap((i) => i).splice(1,3)
                       .map((i, index) => ( */}
-                    {dummyRelatedBlogsData.splice(0, 3).map((data, index) => <div className="marketSmallComponent" key={index}>
+                    {dummyRelatedBlogsData.splice(0, 3).map((data:any, index:number) => <div className="marketSmallComponent" key={index}>
                       <MarketNewsTypeSecondary data={data} />
                     </div>
 
@@ -322,7 +376,7 @@ const HomePage = () => {
                   </span>
                 </div>
                 <div className="propertyCardDiv">
-                  {dummyPropertyData.map((data, index) => <div className="propertyCard" key={index}>
+                  {dummyPropertyData.map((data:any, index:number) => <div className="propertyCard" key={index}>
                     <MainProperty data={data} />
                   </div>)}
                 </div>
@@ -365,7 +419,7 @@ const HomePage = () => {
                   </span>
                 </div>
                 <div className="propertyCardDiv">
-                  {dummyPropertyData.map((data,index)=>
+                  {dummyPropertyData2.map((data:any,index:number)=>
                   <div className="propertyCard" key={index}>
                     <MainProperty data={data} />
                   </div>)}

@@ -6,12 +6,36 @@ import Image from "next/image";
 import LifeStyleImages from "../../public/Images/LifestyleImages.svg";
 import blogDetailsImage1 from "../../public/Images/blogDetailsImage1.svg";
 import LawAndPolicyImage from "../../public/Images/LawAndPolicyImage.svg";
+import RelatedBlogImage1 from "../../public/Images/relatedBlogsImage1.svg";
+import RelatedBlogImage2 from "../../public/Images/relatedBlogsImage2.svg";
+import RelatedBlogImage3 from "../../public/Images/relatedBlogsImage3.svg";
 
-import {dummyRelatedBlogsData} from "../../dummyData"
 
 const LifeStyle = () =>
   // { id }: { id: string }
   {
+    const dummyRelatedBlogsData:any = [
+      {
+        thumbnail: RelatedBlogImage1,
+        categoryTag: "यात्रा",
+        title: "सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।",
+      },
+      {
+        thumbnail: RelatedBlogImage2,
+        categoryTag: "यात्रा",
+        title: "नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।",
+      },
+      {
+        thumbnail: RelatedBlogImage3,
+        categoryTag: "यात्रा",
+        title: "रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।",
+      },
+      {
+        thumbnail: RelatedBlogImage3,
+        categoryTag: "यात्रा",
+        title: "नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।",
+      },
+    ];
     const [blog, setBlog] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
 
