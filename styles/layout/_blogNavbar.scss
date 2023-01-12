@@ -1,6 +1,5 @@
 a:hover {
   transform: none;
-  text-decoration: underline;
 }
 
 .dropdown-toggle::after {
@@ -81,6 +80,9 @@ select:focus {
             order: 1;
             flex-grow: 0;
             padding: 0px;
+          }
+          a:hover {
+            text-decoration: underline;
           }
 
           ul {
