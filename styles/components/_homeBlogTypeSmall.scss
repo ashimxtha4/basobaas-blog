@@ -110,7 +110,7 @@
         font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 700;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 150%;
         color: #ffffff;
         overflow: hidden;
@@ -121,7 +121,7 @@
         -webkit-box-orient: vertical;
         margin: 0px;
         padding: 0px;
-        height: 40px;
+        height: 44px;
       }
     }
     .blogBy {
@@ -136,8 +136,11 @@
         font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
-        line-height: 140%;
+        font-size: 13px;
+        @media only screen and (min-width: 1024px) {
+          font-size: 14px;
+        }
+        line-height: 150%;
         color: #ffffff;
       }
 

@@ -106,7 +106,7 @@
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
-        line-height: 180%;
+        line-height: 150%;
         color: #333333;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -128,8 +128,13 @@
         font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
-        line-height: 140%;
+        font-size: 13px;
+
+        @media only screen and (min-width: 1024px) {
+          font-size: 14px;
+        }
+
+        line-height: 150%;
         color: #4f4f4f;
       }
 

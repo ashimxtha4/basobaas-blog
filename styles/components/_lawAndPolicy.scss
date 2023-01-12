@@ -19,7 +19,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
-    line-height: 140%;
+    line-height: 150%;
     color: #333333;
     flex: none;
     order: 0;
@@ -33,7 +33,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
-    line-height: 140%;
+    line-height: 150%;
     color: #333333;
     flex: none;
     order: 1;
@@ -67,7 +67,7 @@
 
     .imageContainer {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
       width: 120px;
       height: 100%;
@@ -103,7 +103,7 @@
           font-style: normal;
           font-weight: 400;
           font-size: 10px;
-          line-height: 140%;
+          line-height: 150%;
           text-transform: uppercase;
           color: #4f4f4f;
         }
@@ -124,7 +124,7 @@
           font-style: normal;
           font-weight: 700;
           font-size: 16px;
-          line-height: 140%;
+          line-height: 150%;
           color: #333333;
           width: 100%;
           height: fit-content;
@@ -167,7 +167,7 @@
       font-style: normal;
       font-weight: 700;
       font-size: 20px;
-      line-height: 140%;
+      line-height: 150%;
       color: #333333;
       flex: none;
       order: 0;
@@ -181,7 +181,7 @@
       font-style: normal;
       font-weight: 400;
       font-size: 16px;
-      line-height: 140%;
+      line-height: 150%;
       color: #333333;
       flex: none;
       order: 1;
@@ -249,7 +249,7 @@
             font-style: normal;
             font-weight: 400;
             font-size: 14px;
-            line-height: 140%;
+            line-height: 150%;
             color: #4f4f4f;
           }
 
