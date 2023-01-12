@@ -293,7 +293,7 @@ const HomePage = () => {
                     {/* {Object.values(getMarketNewsBlogs ?? {})
                       .flatMap((i) => i).splice(1,3)
                       .map((i, index) => ( */}
-                    {dummyRelatedBlogsData.splice(0, 3).map((data, index) => <div className="marketSmallComponent">
+                    {dummyRelatedBlogsData.splice(0, 3).map((data, index) => <div className="marketSmallComponent" key={index}>
                       <MarketNewsTypeSecondary data={data} />
                     </div>
 

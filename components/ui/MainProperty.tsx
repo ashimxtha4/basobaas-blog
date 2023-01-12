@@ -5,7 +5,6 @@ import propertyImage from "../../public/Images/propertyImage.svg"
 import Image from 'next/image';
 
 const MainProperty = (props:any) => {
-  console.log(props.data,"yei ho")
   return (
     <>
       <div className="card">
