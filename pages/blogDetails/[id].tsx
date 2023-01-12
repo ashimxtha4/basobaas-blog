@@ -245,7 +245,7 @@ export default function BlogPage() {
 
                           <Image
                             className="imageInBlogs"
-                            src={blogDetailsImage3}
+                            src={blogDetailsImage2}
                             alt="blogDetails"
                           />
                           <div className="blogAdSection">Adv</div>

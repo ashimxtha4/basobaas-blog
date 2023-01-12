@@ -5,25 +5,25 @@ import { getAll } from "../apiFetch/homePage/homePageAPI";
 import { useRef } from "react";
 
 const BlogNavbar = () => {
-  const [category, setCategory] = useState([]);
+  // const [category, setCategory] = useState([]);
 
-  const firstRender = useRef(true);
+  // const firstRender = useRef(true);
 
-  const getAllCategories = async () => {
-    try {
-      const { blogCategories } = await getAll("/blogCategory?limit=4");
-      if (blogCategories) setCategory(blogCategories);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const getAllCategories = async () => {
+  //   try {
+  //     const { blogCategories } = await getAll("/blogCategory?limit=4");
+  //     if (blogCategories) setCategory(blogCategories);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      getAllCategories();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (firstRender.current) {
+  //     firstRender.current = false;
+  //     getAllCategories();
+  //   }
+  // }, []);
 
   return (
     <>
@@ -36,20 +36,52 @@ const BlogNavbar = () => {
                   होम पेज
                 </Link>
               </li>
-              {category?.map((item: any, index) => {
-                return (
-                  <li className="nav-item expandedNavItems" key={index}>
+              {/* {category?.map((item: any, index) => {
+                return ( */}
+              {/* <li className="nav-item expandedNavItems" key={index}>
                     <a
                       className="nav-link"
                       href={`/${item.name.replaceAll(" ", "")}/${item._id}`}
                     >
                       {item.name}
                     </a>
-                  </li>
-                );
-              })}
+                  </li> */}
+              {/* );
+              })} */}
+              <li className="nav-item">
+                <Link
+                  className="nav-link active"
+                  href="/कानूनरनिति/63a5c027fd935e139f0bab67"
+                >
+                  कानून र नीति
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link active" href={"/"}>
+                  बजार अद्यावधिकहरू
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link active"
+                  href="/कानूनरनिति/63a5c027fd935e139f0bab67"
+                >
+                  होम लोन
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link active"
+                  href="/कानूनरनिति/63a5c027fd935e139f0bab67"
+                >
+                  डेकोर
+                </Link>
+              </li>
               <li className="nav-item invi-item">
-                <Link className="nav-link active" href={"#"}>
+                <Link
+                  className="nav-link active"
+                  href="/कानूनरनिति/63a5c027fd935e139f0bab67"
+                >
                   हाम्रा विचारहरू
                 </Link>
               </li>
