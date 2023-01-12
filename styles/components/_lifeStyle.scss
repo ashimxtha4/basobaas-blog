@@ -21,8 +21,8 @@
 
   .thumbnail {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -33,6 +33,9 @@
       rgba(0, 0, 0, 0) 67.86%
     );
     overflow: hidden;
+    border-radius: 6px;
+    
+
     
     .image{
       height: 100%;

@@ -21,6 +21,8 @@
     height: 140px;
     border-radius: 3px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 
     .img {
       border-radius: inherit;

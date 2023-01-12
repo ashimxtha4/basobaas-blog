@@ -21,7 +21,7 @@ const BottomComponent = (props:any) => {
                 <Image className="image" src={props.image} alt="no Image" />
             </div>
             <div className="desDiv">
-                <div className="headingDiv">{blog.title}</div>
+                <div className="headingDiv">{props.title}</div>
                 <div className="timeDiv">२ हप्ता अघि</div>
             </div>
         </div>

@@ -5,7 +5,7 @@ import { imageUrlCheck } from "../../utilities/helper";
 import HomeBlogMainImage from "../../public/Images/blogDetailsImage1.svg";
 import Image from "next/image";
 
-const HomeBlogTypeSmall = () =>
+const HomeBlogTypeSmall = (props:any) =>
   // { blog = {} }: any
   {
     // const blogPostedDate = blog.createdAt;
@@ -24,7 +24,7 @@ const HomeBlogTypeSmall = () =>
             /> */}
             <Image
               className="blogCardBackground"
-              src={HomeBlogMainImage}
+              src={props.data.thumbnail}
               alt="Basobaas Nepal"
             />
           </div>
@@ -32,13 +32,14 @@ const HomeBlogTypeSmall = () =>
             <div className="blogCategoryTag">
               <p>
                 {/* {blog.category?.name} */}
-                यात्रा
+                {props.data.categoryTag}
               </p>
             </div>
             <div className="blogTitle">
               <p>
                 {/* {blog.title} */}
-                सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।
+                {props.data.title}
+                {/* सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र। */}
               </p>
             </div>
             <div className="blogBy">
