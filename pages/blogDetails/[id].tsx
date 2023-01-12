@@ -10,7 +10,6 @@ import Footer from "../../layouts/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import blogDetailsImage from "../../public/Images/blogDetailsImage1.svg";
-import blogDetailsImage2 from "../../public/Images/blogDetailsImage2.svg";
 import blogDetailsImage3 from "../../public/Images/blogDetailsImage3.svg";
 import LawAndPolicy from "../../components/ui/LawAndPolicy";
 import DetailProperty from "../../components/ui/detailProperty";
@@ -208,7 +207,7 @@ export default function BlogPage() {
                           /> */}
                           <Image
                             // className="blogDetailsImage"
-                            src={blogDetailsImage}
+                            src={blogDetailsImage3}
                             alt="blogDetails"
                           />
                         </div>
@@ -245,7 +244,7 @@ export default function BlogPage() {
 
                           <Image
                             className="imageInBlogs"
-                            src={blogDetailsImage2}
+                            src={blogDetailsImage}
                             alt="blogDetails"
                           />
                           <div className="blogAdSection">Adv</div>
