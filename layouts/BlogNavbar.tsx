@@ -114,7 +114,7 @@ const BlogNavbar = () => {
                   color="#545454"
                 />
               </div>
-              <div>
+              {/* <div>
                 <select
                   className="languageSelect"
                   aria-label=".form-select-sm example"
@@ -128,7 +128,7 @@ const BlogNavbar = () => {
                   width="18"
                   height="18"
                 />
-              </div>
+              </div> */}
             </form>
           </div>
         </div>
