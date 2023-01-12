@@ -32,7 +32,7 @@
         font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 700;
-        font-size: 24px;
+        font-size: 18px;
         line-height: 140%;
         color: #333333;
         margin: 0px;
@@ -46,7 +46,7 @@
           font-family: "Ek Mukta";
           font-style: normal;
           font-weight: 400;
-          font-size: 16px;
+          font-size: 13px;
           line-height: 140%;
           color: #333333;
           border: none;
@@ -100,7 +100,7 @@
         font-family: "Ek Mukta";
         font-style: normal;
         font-weight: 700;
-        font-size: 24px;
+        font-size: 18px;
         line-height: 140%;
         color: #333333;
         margin: 0px;
@@ -136,12 +136,7 @@
 
     .relatedSection {
       width: 100%;
-      .relatedSectionTitle {
-        p {
-        }
-        button {
-        }
-      }
+
       .relatedSectionContainer {
         gap: 38px;
       }
@@ -171,8 +166,15 @@
       width: 100%;
       .relatedSectionTitle {
         p {
+          font-size: 20px;
         }
         button {
+        }
+
+        .relatedBlogsView {
+          button {
+            font-size: 16px;
+          }
         }
       }
       .relatedSectionContainer {
@@ -183,6 +185,7 @@
       width: 100%;
       .featuredSectionTitle {
         p {
+          font-size: 20px;
         }
         button {
         }
