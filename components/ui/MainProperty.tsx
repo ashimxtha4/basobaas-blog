@@ -5,25 +5,26 @@ import propertyImage from "../../public/Images/propertyImage.svg"
 import Image from 'next/image';
 
 const MainProperty = (props:any) => {
+  console.log(props.data,"yei ho")
   return (
     <>
       <div className="card">
         <div className="imageContainer">
-          <Image src={propertyImage} alt="noImage" className='img' />
+          <Image src={props.data.photo} alt="noImage" className='img' />
           {/* <img className="image" src={IMG_URL + property.propertyImages[0]} /> */}
         </div>
         <div className="contentContainer">
           <div className="propertyTitle">
             <p>
               {/* {property.pricing.title} */}
-              Binayak Colony
+              {props.data.title}
             </p>
           </div>
           <div className="propertyAddress">
             <p>
               <Icon icon="ph:map-pin-bold" color="#707580" width="18" height="18" inline={true} style={{ marginRight: "8px" }} />
               {/* {property.location?.streetName}, {property.location?.locality} */}
-              Chobar,Lalitpur
+              {props.data.address}
             </p>
           </div>
           <div className="propertyOverview">
@@ -38,7 +39,7 @@ const MainProperty = (props:any) => {
               <div className='overViewText'>
                 <span className="overViewTags">
                   {/* {property.overview?.bedRoom} */}
-                  2
+                  {props.data.beds}
                 </span>
                 <span className="overViewTags">Beds</span>
               </div>
@@ -54,7 +55,7 @@ const MainProperty = (props:any) => {
               <div className='overViewText'>
                 <span className="overViewTags">
                   {/* {property.overview?.bathRoom} */}
-                  1
+                  {props.data.bath}
                 </span>
                 <span className="overViewTags">Bath</span>
               </div>
@@ -68,7 +69,7 @@ const MainProperty = (props:any) => {
                 />
               </span>
               <div className='overViewText'>
-                <span className="overViewTags">1200</span>
+                <span className="overViewTags">{props.data.sqft}</span>
                 <span className="overViewTags">sq.ft</span>
               </div>
             </div>
@@ -77,11 +78,11 @@ const MainProperty = (props:any) => {
             <div className='priceDiv'>
               <span className="price">
                 {/* NPR. {Priceformatter(property.pricing?.price)} */}
-                NPR. 3.50 Lakhs
+                NPR. {props.data.price}
               </span>
               <span className="unit">
                 {/* / {property.pricing?.label} */}
-                /Onwards
+                /{props.data.priceLabel}
               </span>
             </div>
 

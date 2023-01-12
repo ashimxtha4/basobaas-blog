@@ -4,6 +4,9 @@ import { imageUrlCheck } from "../../utilities/helper";
 import Image from "next/image";
 // import { getBlogByCategory } from "../../pages/index";
 import LifeStyleImages from "../../public/Images/LifestyleImages.svg";
+import blogDetailsImage1 from "../../public/Images/blogDetailsImage1.svg";
+import LawAndPolicyImage from "../../public/Images/LawAndPolicyImage.svg";
+
 import {dummyRelatedBlogsData} from "../../dummyData"
 
 const LifeStyle = () =>
@@ -45,7 +48,7 @@ const LifeStyle = () =>
                       className="blogCardBackground"
                       alt="Basobaas Nepal"
                     /> */}
-                  <Image className="image" src={dummyRelatedBlogsData[0].thumbnail} alt="basobaas nepal" />
+                  <Image className="image" src={blogDetailsImage1} alt="basobaas nepal" />
                 </div>
                 <div className="cardContent">
                   <div className="blogCategoryTag">
@@ -94,7 +97,7 @@ const LifeStyle = () =>
                       className="blogCardBackground"
                       alt="Basobaas Nepal"
                     /> */}
-                  <Image className="image" src={dummyRelatedBlogsData[1].thumbnail} alt="basobaas nepal" />
+                  <Image className="image" src={LawAndPolicyImage} alt="basobaas nepal" />
                 </div>
                 <div className="cardContent">
                   <div className="blogCategoryTag">
