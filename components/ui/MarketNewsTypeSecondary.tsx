@@ -18,7 +18,7 @@ const MarketNewsTypeSecondary = (props:any
             height={133.33}
           /> */}
            <Image
-              src={props.data.thumbnail}
+              src={props.data?.thumbnail}
               alt="Basobaas Nepal"
               className="image"
             />
@@ -28,14 +28,14 @@ const MarketNewsTypeSecondary = (props:any
             <p>
               {/* ENTER BLOG CATEGORY TITLE HERE */}
               {/* {blog.category?.title} */}
-              {props.data.categoryTag}
+              {props.data?.categoryTag}
             </p>
           </div>
           <div className="blogHeader">
             <p>
               {/* ENTER BLOG TITLE HERE */}
               {/* {blog.title} */}
-              {props.data.title}
+              {props.data?.title}
             </p>
           </div>
           <div className="blogBy">
