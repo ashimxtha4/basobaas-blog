@@ -74,10 +74,12 @@
       background: #d9d9d9;
       border-radius: 6px;
       overflow: hidden;
+      overflow: hidden;
 
       .image {
         height: 100%;
         width: auto;
+        transition: .3s ease-in-out;
       }
     }
 
@@ -261,4 +263,12 @@
       }
     }
   }
+}
+
+.lawPolicyCard:hover .blogHeader {
+  text-decoration: underline;
+}
+
+.lawPolicyCard:hover .image {
+  transform: scale(1.1);
 }
