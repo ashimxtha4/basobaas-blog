@@ -19,6 +19,7 @@
     overflow: hidden;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 
     .ourThoughtsImage {
       width: auto;
@@ -27,6 +28,7 @@
         width: unset;
         height: unset;
       }
+      transition: .3s ease-in-out;
     }
   }
   .blogContents {
@@ -84,6 +86,14 @@
       }
     }
   }
+}
+
+.ourThoughts:hover .blogHeader p {
+  text-decoration: underline;
+}
+
+.ourThoughts:hover .ourThoughtsImage {
+  transform: scale(1.1);
 }
 
 @media only screen and (min-width: 1024px) {
