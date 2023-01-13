@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import play from "../../public/Images/play.svg"
 
 
 
@@ -13,11 +14,11 @@ const BottomComponent = (props:any) => {
     return (
         <div className="bottomComponent">
             <div className="imageDiv">
-                {/* <div className="hover">
+                <div className="hover">
                     <span className="playButton">
-                        <Image src={playButton} alt="no Image" />
+                        <Image src={play} className="img" alt="no Image" />
                     </span>
-                </div> */}
+                </div>
                 <Image className="image" src={props.image} alt="no Image" />
             </div>
             <div className="desDiv">
