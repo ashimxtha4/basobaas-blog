@@ -5,7 +5,7 @@ import { IMG_URL } from "../../baseConstants";
 import Image from "next/image";
 import FeaturedPropertyImage from "../../public/Images/Featured Properties1.svg";
 
-const FeaturedProperties = ({property}:{property:any}) =>
+const FeaturedProperties = ({ property }: { property: any }) =>
   //   {
   //   property,
   // }: {
@@ -104,7 +104,7 @@ const FeaturedProperties = ({property}:{property:any}) =>
                   <span className="overViewTags">
                     {/* 1200 */}
                     {property.sqft}
-                    </span>
+                  </span>
                   <span className="overViewTags">sq.ft</span>
                 </div>
               </div>
@@ -117,8 +117,7 @@ const FeaturedProperties = ({property}:{property:any}) =>
               </span>
               <span className="unit">
                 {/* / {property.pricing?.label} */}
-                {/* / Onwards */}
-                / {property.priceLabel}
+                {/* / Onwards */}/ {property.priceLabel}
               </span>
             </div>
           </div>
