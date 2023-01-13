@@ -25,6 +25,7 @@
       height: 100%;
       width: auto;
       border-radius: inherit;
+      transition: 0.3s ease-in-out;
 
       @media only screen and (min-width: 400px) {
         height: auto;
@@ -165,4 +166,13 @@
       }
     }
   }
+}
+
+
+.marketNewsTypeMain:hover .blogHeader p {
+  text-decoration: underline;
+}
+
+.marketNewsTypeMain:hover .image {
+  transform: scale(1.1);
 }

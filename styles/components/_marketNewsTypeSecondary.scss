@@ -20,6 +20,7 @@
     .image {
       height: 100%;
       width: auto;
+      transition: 0.3s ease-in-out;
     }
   }
   .blogContents {
@@ -121,4 +122,14 @@
       }
     }
   }
+}
+
+
+
+.marketNewsTypeSecondary:hover .blogHeader p {
+  text-decoration: underline;
+}
+
+.marketNewsTypeSecondary:hover .image {
+  transform: scale(1.1);
 }

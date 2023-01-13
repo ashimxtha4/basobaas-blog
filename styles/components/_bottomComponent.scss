@@ -10,6 +10,7 @@
         height: 100%;
         overflow: hidden;
         position: relative;
+        overflow: hidden;
 
         .hover {
             position: absolute;
@@ -31,6 +32,7 @@
         .image {
             width: 100%;
             height: auto;
+            transition: .3s ease-in-out;
         }
 
     }
@@ -71,3 +73,12 @@
         }
     }
 }
+
+
+.bottomComponent:hover .headingDiv {
+    text-decoration: underline;
+  }
+  
+  .bottomComponent:hover .image {
+    transform: scale(1.1);
+  }

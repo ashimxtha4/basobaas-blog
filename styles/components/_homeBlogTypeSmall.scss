@@ -15,7 +15,7 @@
   align-self: stretch;
   margin: 0px;
   padding: 0px;
-  transition: 0.4s all;
+  // transition: 0.4s all;
   position: relative;
 
   .thumbnail {
@@ -31,12 +31,15 @@
       rgba(17, 16, 16, 0.7) 12.94%,
       rgba(0, 0, 0, 0) 67.86%
     );
+    overflow: hidden;
 
     .blogCardBackground {
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: -1;
+      transition: 0.3s ease-in-out;
+      transform: scale(1.01);
     }
   }
 
@@ -157,4 +160,13 @@
     width: 100%;
     height: 100%;
   }
+}
+
+
+.homeBlogTypeSmall:hover .blogTitle p {
+  text-decoration: underline;
+}
+
+.homeBlogTypeSmall:hover .blogCardBackground {
+  transform: scale(1.1);
 }
