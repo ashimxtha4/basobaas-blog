@@ -19,7 +19,7 @@ const RelatedBlogs = ({ blog }: { blog: any }) => {
           {/* <img src={`${IMG_URL as string}` + `${blog.images[0]}`} /> */}
           <Image
             // src={RelatedBlogsImage1}
-            src={blog.thumbnail}
+            src={blog?.thumbnail}
             alt="Picture of the author"
             className="relatedBlogImages"
           />
@@ -29,14 +29,14 @@ const RelatedBlogs = ({ blog }: { blog: any }) => {
             <p>
               {/* {blog.category?.name} */}
               {/* यात्रा */}
-              {blog.categoryTag}
+              {blog?.categoryTag}
             </p>
           </div>
           <div className="blogHeader">
             <p>
               {/* {blog.title} */}
               {/* सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र। */}
-              {blog.title}
+              {blog?.title}
             </p>
           </div>
         </div>
