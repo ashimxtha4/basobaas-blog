@@ -103,7 +103,7 @@ const Footer = () => {
                 </span>
                 <span className="socialName">
                   <Link
-                    style={{ transform: "none" }}
+                    style={{ transform: "none",  color:"unset"  }}
                     href="https://www.instagram.com/basobaas/?hl=en"
                   >
                     Instagram
@@ -116,7 +116,7 @@ const Footer = () => {
                 </span>
                 <span className="socialName">
                   <Link
-                    style={{ transform: "none" }}
+                    style={{ transform: "none", color:"unset" }}
                     href="https://www.facebook.com/basobaas/"
                   >
                     Facebook
