@@ -1,19 +1,33 @@
-import React from 'react'
-import { Priceformatter } from '../../utilities/helper'
+import React from "react";
+import { Priceformatter } from "../../utilities/helper";
 import { Icon } from "@iconify/react";
-import propertyImage from "../../public/Images/propertyImage.svg"
-import Image from 'next/image';
+import propertyImage from "../../public/Images/propertyImage.svg";
+import Image from "next/image";
 
-const MainProperty = (props:any) => {
+const MainProperty = (props: any) => {
   return (
     <>
       <div className="card">
-        <div className='saleRentTag'><p>For Sale</p></div>
+        <div className="saleRentTag">
+          <p>For Sale</p>
+        </div>
         <div className="imageContainer">
-          <Image src={props.data?.photo as any} alt="noImage" className='img' />
+          <Image src={props.data?.photo as any} alt="noImage" className="img" />
           {/* <img className="image" src={IMG_URL + property.propertyImages[0]} /> */}
         </div>
         <div className="contentContainer">
+          <div className="propertyPrice">
+            <div className="priceDiv">
+              <span className="price">
+                {/* NPR. {Priceformatter(property.pricing?.price)} */}
+                NPR. {props.data?.price}
+              </span>
+              <span className="unit">
+                {/* / {property.pricing?.label} */}/{props.data?.priceLabel}
+              </span>
+            </div>
+            {/* <button className='contactButtonContainer'>Contact</button> */}
+          </div>
           <div className="propertyTitle">
             <p>
               {/* {property.pricing.title} */}
@@ -22,7 +36,14 @@ const MainProperty = (props:any) => {
           </div>
           <div className="propertyAddress">
             <p>
-              <Icon icon="ph:map-pin-bold" color="#707580" width="18" height="18" inline={true} style={{ marginRight: "8px" }} />
+              <Icon
+                icon="ph:map-pin-bold"
+                color="#707580"
+                width="18"
+                height="18"
+                inline={true}
+                style={{ marginRight: "8px" }}
+              />
               {/* {property.location?.streetName}, {property.location?.locality} */}
               {props.data?.address as string}
             </p>
@@ -36,7 +57,7 @@ const MainProperty = (props:any) => {
                   className="overviewIcons"
                 />
               </span>
-              <div className='overViewText'>
+              <div className="overViewText">
                 <span className="overViewTags">
                   {/* {property.overview?.bedRoom} */}
                   {props.data?.beds}
@@ -52,7 +73,7 @@ const MainProperty = (props:any) => {
                   className="overviewIcons"
                 />
               </span>
-              <div className='overViewText'>
+              <div className="overViewText">
                 <span className="overViewTags">
                   {/* {property.overview?.bathRoom} */}
                   {props.data?.bath}
@@ -68,30 +89,16 @@ const MainProperty = (props:any) => {
                   className="overviewIcons"
                 />
               </span>
-              <div className='overViewText'>
+              <div className="overViewText">
                 <span className="overViewTags">{props.data?.sqft}</span>
                 <span className="overViewTags">sq.ft</span>
               </div>
             </div>
           </div>
-          <div className="propertyPrice">
-            <div className='priceDiv'>
-              <span className="price">
-                {/* NPR. {Priceformatter(property.pricing?.price)} */}
-                NPR. {props.data?.price}
-              </span>
-              <span className="unit">
-                {/* / {property.pricing?.label} */}
-                /{props.data?.priceLabel}
-              </span>
-            </div>
-
-            <button className='contactButtonContainer'>Contact</button>
-          </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default MainProperty
+export default MainProperty;
