@@ -79,7 +79,7 @@
       .image {
         height: 100%;
         width: auto;
-        transition: .3s ease-in-out;
+        transition: 0.3s ease-in-out;
       }
     }
 
@@ -259,6 +259,21 @@
             display: flex;
             align-items: center;
           }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1420px) {
+  .lawPolicyCardDiv {
+    .lawPolicyCard {
+      .imageContainer {
+        width: 100%;
+        height: 182px;
+
+        .image {
+          width: 100%;
+          height: auto;
         }
       }
     }
