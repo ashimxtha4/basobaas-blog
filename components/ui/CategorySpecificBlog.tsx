@@ -20,6 +20,7 @@ const CategorySpecificBlog = ({ blog }: { blog: any }) => {
               />
             ) : null} */}
           <Image
+            className="blogListingImage"
             //  src={MarketNews}
             src={blog.thumbnail}
             alt="Blog Picture"

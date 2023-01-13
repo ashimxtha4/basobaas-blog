@@ -14,7 +14,16 @@
     overflow: hidden;
     border-radius: 6px;
     width: 100%;
-    height: 180px;
+    height: fit-content;
+    max-height: 422px;
+    overflow: hidden;
+
+    .blogListingImage {
+      transition: 0.3s ease-in-out;
+      border-radius: 6px;
+      max-height: 422px;
+      overflow: hidden;
+    }
   }
 
   .blogContents {
@@ -122,8 +131,37 @@
       }
     }
   }
-}
 
+  &:hover {
+    .imageContainer {
+      .blogListingImage {
+        &:hover {
+          transform: scale(1.02);
+        }
+
+        &:hover {
+          height: inherit;
+        }
+      }
+    }
+
+    .blogContents {
+      .blogHeaderSectionContainer {
+        .blogHeader {
+          p {
+            text-decoration: underline;
+          }
+        }
+      }
+      .blogBy {
+        .author,
+        .posted {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
 // .categorySpecificBlog:hover {
 //   transform: scale(0.9);
 // }
@@ -133,7 +171,8 @@
     // width: 100%;
 
     .imageContainer {
-      height: 422px;
+      max-height: 422px;
+      overflow: hidden;
     }
   }
 }
