@@ -71,13 +71,6 @@ const DetailProperty = () => {
             {dummyPropertyData.map((data:any, index:number) => <div className="propertyCard" key={index}>
                     <MainProperty data={data} />
                   </div>)}
-                {/* <div className="propertyCard"><MainProperty /></div>
-                <div className="propertyCard"><MainProperty /></div>
-                <div className="propertyCard"><MainProperty /></div>
-                <div className="propertyCard"><MainProperty /></div>
-                <div className="propertyCard"><MainProperty /></div>
-                <div className="propertyCard"><MainProperty /></div>
-                <div className="propertyCard"><MainProperty /></div> */}
             </div>
         </div>
     )
