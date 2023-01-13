@@ -8,6 +8,7 @@ const MainProperty = (props:any) => {
   return (
     <>
       <div className="card">
+        <div className='saleRentTag'><p>For Sale</p></div>
         <div className="imageContainer">
           <Image src={props.data?.photo as any} alt="noImage" className='img' />
           {/* <img className="image" src={IMG_URL + property.propertyImages[0]} /> */}
