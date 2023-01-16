@@ -109,7 +109,6 @@
         }
 
         .imageContainer {
-          // width: 295px;
           height: 198px;
           border-radius: 3px;
           overflow: hidden;
@@ -246,7 +245,6 @@
             align-items: center;
             gap: 3px;
             width: 100%;
-            // display: none;
 
             .priceDiv {
               display: flex;
@@ -254,7 +252,6 @@
               align-items: center;
               padding: 0px;
               gap: 3px;
-              // height: fit-content;
               height: 22px;
 
               .price {
