@@ -1,6 +1,6 @@
 import { IMG_URL } from "../baseConstants";
 
-//FUNCTION TO CHANGE IMAGE URL
+//FUNCTION TO CHANGE OR ADD IMAGE URL
 export function imageUrlCheck(imgUrl: string) {
   let urlCheck = imgUrl.indexOf("undefined") >= 0;
   if (urlCheck) {

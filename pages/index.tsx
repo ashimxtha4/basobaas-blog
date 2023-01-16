@@ -1,8 +1,8 @@
+import Link from "next/link";
+import Navbar from "../layouts/Navbar";
 import BlogNavbar from "../layouts/BlogNavbar";
-import { getAll } from "../apiFetch/homePage/homePageAPI";
 import HomeBlogTypeSmall from "../components/ui/HomeBlogTypeSmall";
 import HomeBlogTypeMain from "../components/ui/HomeBlogTypeMain";
-import { useEffect, useState, useRef } from "react";
 import MarketNewsTypeMain from "../components/ui/MarketNewsTypeMain";
 import MarketNewsTypeSecondary from "../components/ui/MarketNewsTypeSecondary";
 import LifeStyle from "../components/ui/LifeStyle";
@@ -10,9 +10,8 @@ import HomeLoan from "../components/ui/HomeLoan";
 import OurThoughts from "../components/ui/OurThoughts";
 import LawAndPolicy from "../components/ui/LawAndPolicy";
 import MainProperty from "../components/ui/MainProperty";
-import Navbar from "../layouts/Navbar";
-import Footer from "../layouts/Footer";
 import BottomComponent from "../components/ui/bottomComponent";
+import Footer from "../layouts/Footer";
 import downImage from "../public/Images/downImage.svg";
 import downImage1 from "../public/Images/downImage1.svg";
 import downImage2 from "../public/Images/downImage2.svg";
@@ -27,115 +26,9 @@ import FeaturedPropertyImage2 from "../public/Images/featuredPropertyImage2.svg"
 import FeaturedPropertyImage3 from "../public/Images/featuredPropertyImage3.svg";
 import FeaturedPropertyImage4 from "../public/Images/featuredPropertyImage4.svg";
 import LifestyleImages from "../public/Images/LifestyleImages.svg";
+import Head from "next/head";
 
-// import { dummyRelatedBlogsData, dummyPropertyData } from "../dummyData"
-import Link from "next/link";
-
-// export const getBlogByCategory = async (id: String, limit?: number) => {
-//   var url = `/blogs?category=${id}`;
-//   if (limit) {
-//     url += `&limit=${limit}`;
-//   }
-//   try {
-//     const { blogs } = await getAll(url);
-//     if (blogs.length) {
-//       return Promise.resolve(blogs);
-//     }
-//     return Promise.reject("blog not found");
-//   } catch (error) {
-//     return Promise.reject("SomeThing Went Wrong");
-//   }
-// };
 const HomePage = () => {
-  // const [data, setData] = useState<{
-  //   categories: any[];
-  //   blogsByCategory: any[];
-  //   blogsWithSameCategory: any[];
-  // }>({
-  //   categories: [],
-  //   blogsByCategory: [],
-  //   blogsWithSameCategory: [],
-  // });
-
-  // //GET ALL CATEGORIES TO GET CATEGORY ID AND MAP EACH CATEGORY TO GET BLOG
-  // const getAllCategories = async () => {
-  //   try {
-  //     const { blogCategories } = await getAll("/blogCategory");
-  //     if (blogCategories)
-  //       setData((prev) => ({ ...prev, categories: blogCategories }));
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // //GET SPECIFIC BLOG BY CONDITION CATEROGY NAME AND DISPLAYED JUST ONCE
-  // const getBlogByCategory = async (id: String) => {
-  //   try {
-  //     const { blogs } = await getAll(`/blogs?category=${id}&limit=1`);
-  //     if (blogs) {
-  //       setData((prev: any) => ({
-  //         ...prev,
-  //         blogsByCategory: [...prev.blogsByCategory, blogs[0]],
-  //       }));
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // const getBlogsUnderOneCategory = async (id: string) => {
-  //   try {
-  //     const SameCategoryBlogs = await getAll(`/blogs?category=${id}`);
-  //     if (SameCategoryBlogs) {
-  //       let blogGroupByName = SameCategoryBlogs.blogs.reduce(
-  //         (acc: any, c: any) => {
-  //           acc[c?.category?.name] = [...(acc[c?.category?.name] || []), c];
-  //           return acc;
-  //         },
-  //         {} as any
-  //       );
-  //       setData((prev: any) => ({
-  //         ...prev,
-  //         blogsWithSameCategory: [
-  //           ...prev.blogsWithSameCategory,
-  //           blogGroupByName,
-  //         ],
-  //       }));
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // //TO HANDEL FIRST RENDER
-  // const firstRender = useRef(true);
-  // useEffect(() => {
-  //   if (firstRender.current) {
-  //     firstRender.current = false;
-  //     getAllCategories();
-  //   }
-
-  //   //TO RENDER LIMITED BLOGS BY CATEGORY
-  //   if (data.categories?.length > 0) {
-  //     //MAPPING
-  //     data.categories.map((category: any, index: number) => {
-  //       if (index > 0 && index <= 5) getBlogByCategory(category._id);
-  //     });
-  //   }
-
-  //   //TO RENDER LIMITED BLOGS WITH SAME CATEGORY
-  //   if (data.categories?.length > 0) {
-  //     //MAPPING
-  //     data.categories.map((category: any, index: number) => {
-  //       if (index > 0 && index <= 5) getBlogsUnderOneCategory(category._id);
-  //     });
-  //   }
-  // }, [data.categories.length]);
-
-  // const getMarketNewsBlogs = data?.blogsWithSameCategory.find(
-  //   (item) => item["कानून र निति"]
-  // );
-
   const dummyRelatedBlogsData: any = [
     {
       thumbnail: RelatedBlogImage1,
@@ -270,6 +163,16 @@ const HomePage = () => {
 
   return (
     <>
+      <Head>
+        <title>
+          Basobaas News - Real Estate News, Reports & Lifestyle In Nepal
+        </title>
+        <meta
+          property="og:title"
+          content="Basobaas News - Real Estate News, Reports & Lifestyle In Nepal"
+          key="title"
+        />
+      </Head>
       <div className="alignmentContainer">
         <div className="navBlend">
           <Navbar />
@@ -301,25 +204,14 @@ const HomePage = () => {
             <div className="contentBody">
               <div className="blogPreviewDiv">
                 <div className="bigComponent">
-                  <HomeBlogTypeMain
-                  //  blog={data.blogsByCategory[0]}
-                  />
+                  <HomeBlogTypeMain />
                 </div>
                 <div className="smallComponentDiv">
-                  {/* {data.blogsByCategory.map((categorySpecificBlog, index) => { */}
-                  {/* if (index > 0 && index < 5) */}
-                  {/* return ( */}
                   {dummyRelatedBlogsData.map((data: any, index: number) => (
                     <div className="smallComponent" key={index}>
-                      <HomeBlogTypeSmall
-                        data={data}
-                        // blog={data.blogsByCategory[index]}
-                      />
+                      <HomeBlogTypeSmall data={data} />
                     </div>
                   ))}
-
-                  {/* ); */}
-                  {/* // })} */}
                 </div>
               </div>
 
@@ -332,22 +224,9 @@ const HomePage = () => {
                 </div>
                 <div className="marketNewsContentDiv">
                   <div className="marketBigComponent">
-                    <MarketNewsTypeMain
-                    // blog={
-                    //   Object.values(getMarketNewsBlogs ?? {}).flatMap(
-                    //     (i) => i
-                    //   )[0]
-                    // }
-                    />
+                    <MarketNewsTypeMain />
                   </div>
                   <div className="marketSmallComponentDiv">
-                    {/* <div className="marketSmallComponent"></div>
-                    <div className="marketSmallComponent"></div>
-                    <div className="marketSmallComponent"></div> */}
-
-                    {/* {Object.values(getMarketNewsBlogs ?? {})
-                      .flatMap((i) => i).splice(1,3)
-                      .map((i, index) => ( */}
                     {dummyRelatedBlogsData
                       .splice(0, 3)
                       .map((data: any, index: number) => (
@@ -355,8 +234,6 @@ const HomePage = () => {
                           <MarketNewsTypeSecondary data={data} />
                         </div>
                       ))}
-
-                    {/* ))} */}
                   </div>
                 </div>
               </div>
@@ -387,26 +264,16 @@ const HomePage = () => {
               </div>
 
               <div className="lifeStyleDiv">
-                <LifeStyle
-                //  id={data?.categories[1]?.id}
-                />
+                <LifeStyle />
               </div>
-
-              {/* <div className="lifeStyleDiv">
-                <LifeStyle id={data?.categories[1]?.id} />
-              </div> */}
 
               <div className="flexTwo">
                 <div className="homeLoanDiv">
-                  <HomeLoan
-                  //  id={data?.categories[3]?.id}
-                  />
+                  <HomeLoan />
                 </div>
 
                 <div className="ourThoughtsDiv">
-                  <OurThoughts
-                  //  id={data?.categories[3]?.id}
-                  />
+                  <OurThoughts />
                 </div>
               </div>
 
@@ -428,35 +295,12 @@ const HomePage = () => {
                       <MainProperty data={data} />
                     </div>
                   ))}
-
-                  {/* <div className="propertyCard">
-                    <MainProperty />
-                    [FeaturedPropertyImage1,"Karyabinayak Homes","Karyabinayak, Lalitpur","2","1","1200","3.5 Crore","Total Price"]
-                  </div>
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div>
-                  <div className="propertyCard">
-                    <MainProperty />
-                  </div> */}
                 </div>
               </div>
 
               <div className="flexTwo">
                 <div className="lawPolicyDiv">
-                  <LawAndPolicy
-                    title="कानून र नीति"
-                    // id={data?.categories[4]?.id}  YO MILAUNU XA
-                  />
+                  <LawAndPolicy title="कानून र नीति" />
                 </div>
 
                 <div className="lawPolicy2Div">
