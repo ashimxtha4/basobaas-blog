@@ -28,7 +28,6 @@ import FeaturedPropertyImage3 from "../public/Images/featuredPropertyImage3.svg"
 import FeaturedPropertyImage4 from "../public/Images/featuredPropertyImage4.svg";
 import LifestyleImages from "../public/Images/LifestyleImages.svg";
 
-
 // import { dummyRelatedBlogsData, dummyPropertyData } from "../dummyData"
 import Link from "next/link";
 
@@ -137,7 +136,7 @@ const HomePage = () => {
   //   (item) => item["कानून र निति"]
   // );
 
-  const dummyRelatedBlogsData:any = [
+  const dummyRelatedBlogsData: any = [
     {
       thumbnail: RelatedBlogImage1,
       categoryTag: "यात्रा",
@@ -151,17 +150,19 @@ const HomePage = () => {
     {
       thumbnail: RelatedBlogImage3,
       categoryTag: "बजार खबर",
-      title: "रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।",
+      title:
+        "रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।",
     },
     {
       thumbnail: FeaturedPropertyImage3,
       categoryTag: "कानून र नीति",
-      title: "नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।",
+      title:
+        "नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।",
     },
   ];
 
   //DUMMY DATA FOR FEATURED PROPERTY
-  const dummyPropertyData:any = [
+  const dummyPropertyData: any = [
     {
       photo: FeaturedPropertyImage3,
       title: "Padma Colony",
@@ -211,10 +212,10 @@ const HomePage = () => {
       sqft: 4200,
       price: "9.5 Crore",
       priceLabel: "Total Price",
-    }     
+    },
   ];
 
-  const dummyPropertyData2:any = [
+  const dummyPropertyData2: any = [
     {
       photo: FeaturedPropertyImage3,
       title: "Padma Colony",
@@ -264,7 +265,7 @@ const HomePage = () => {
       sqft: 4200,
       price: "9.5 Crore",
       priceLabel: "Total Price",
-    }     
+    },
   ];
 
   return (
@@ -308,14 +309,14 @@ const HomePage = () => {
                   {/* {data.blogsByCategory.map((categorySpecificBlog, index) => { */}
                   {/* if (index > 0 && index < 5) */}
                   {/* return ( */}
-                  {dummyRelatedBlogsData.map((data:any, index:number) => <div className="smallComponent" key={index}>
-                    <HomeBlogTypeSmall data={data}
-                    // blog={data.blogsByCategory[index]}
-                    />
-                  </div>
-
-                  )}
-
+                  {dummyRelatedBlogsData.map((data: any, index: number) => (
+                    <div className="smallComponent" key={index}>
+                      <HomeBlogTypeSmall
+                        data={data}
+                        // blog={data.blogsByCategory[index]}
+                      />
+                    </div>
+                  ))}
 
                   {/* ); */}
                   {/* // })} */}
@@ -347,12 +348,13 @@ const HomePage = () => {
                     {/* {Object.values(getMarketNewsBlogs ?? {})
                       .flatMap((i) => i).splice(1,3)
                       .map((i, index) => ( */}
-                    {dummyRelatedBlogsData.splice(0, 3).map((data:any, index:number) => <div className="marketSmallComponent" key={index}>
-                      <MarketNewsTypeSecondary data={data} />
-                    </div>
-
-                    )}
-
+                    {dummyRelatedBlogsData
+                      .splice(0, 3)
+                      .map((data: any, index: number) => (
+                        <div className="marketSmallComponent" key={index}>
+                          <MarketNewsTypeSecondary data={data} />
+                        </div>
+                      ))}
 
                     {/* ))} */}
                   </div>
@@ -376,9 +378,11 @@ const HomePage = () => {
                   </span>
                 </div>
                 <div className="propertyCardDiv">
-                  {dummyPropertyData.map((data:any, index:number) => <div className="propertyCard" key={index}>
-                    <MainProperty data={data} />
-                  </div>)}
+                  {dummyPropertyData.map((data: any, index: number) => (
+                    <div className="propertyCard" key={index}>
+                      <MainProperty data={data} />
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -419,11 +423,12 @@ const HomePage = () => {
                   </span>
                 </div>
                 <div className="propertyCardDiv">
-                  {dummyPropertyData2.map((data:any,index:number)=>
-                  <div className="propertyCard" key={index}>
-                    <MainProperty data={data} />
-                  </div>)}
-                  
+                  {dummyPropertyData2.map((data: any, index: number) => (
+                    <div className="propertyCard" key={index}>
+                      <MainProperty data={data} />
+                    </div>
+                  ))}
+
                   {/* <div className="propertyCard">
                     <MainProperty />
                     [FeaturedPropertyImage1,"Karyabinayak Homes","Karyabinayak, Lalitpur","2","1","1200","3.5 Crore","Total Price"]
@@ -450,7 +455,7 @@ const HomePage = () => {
                 <div className="lawPolicyDiv">
                   <LawAndPolicy
                     title="कानून र नीति"
-                  // id={data?.categories[4]?.id}  YO MILAUNU XA
+                    // id={data?.categories[4]?.id}  YO MILAUNU XA
                   />
                 </div>
 
@@ -463,13 +468,22 @@ const HomePage = () => {
                   </div>
                   <div className="lawPolicy2CardDiv">
                     <div className="lawPolicy2Card">
-                      <BottomComponent image={downImage} title="सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।" />
+                      <BottomComponent
+                        image={downImage}
+                        title="सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।"
+                      />
                     </div>
                     <div className="lawPolicy2Card">
-                      <BottomComponent image={downImage1} title="नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।" />
+                      <BottomComponent
+                        image={downImage1}
+                        title="नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।"
+                      />
                     </div>
                     <div className="lawPolicy2Card">
-                      <BottomComponent image={downImage2} title="रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।" />
+                      <BottomComponent
+                        image={downImage2}
+                        title="रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।"
+                      />
                     </div>
                   </div>
                 </div>
@@ -487,13 +501,22 @@ const HomePage = () => {
                   </div>
                   <div className="flexThreeChild1CardDiv">
                     <div className="lawPolicy2Card">
-                      <BottomComponent image={downImage} title="सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।" />
+                      <BottomComponent
+                        image={downImage}
+                        title="सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।"
+                      />
                     </div>
                     <div className="lawPolicy2Card">
-                      <BottomComponent image={downImage1} title="नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।" />
+                      <BottomComponent
+                        image={downImage1}
+                        title="नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।"
+                      />
                     </div>
                     <div className="lawPolicy2Card">
-                      <BottomComponent image={downImage2} title="रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।" />
+                      <BottomComponent
+                        image={downImage2}
+                        title="रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।"
+                      />
                     </div>
                   </div>
                 </div>
@@ -509,13 +532,22 @@ const HomePage = () => {
                   </div>
                   <div className="flexThreeChildCardDiv">
                     <div className="flexThreeChildCard">
-                      <BottomComponent image={downImage3} title="रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।" />
+                      <BottomComponent
+                        image={downImage3}
+                        title="रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।"
+                      />
                     </div>
                     <div className="flexThreeChildCard">
-                      <BottomComponent image={downImage4} title="नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।" />
+                      <BottomComponent
+                        image={downImage4}
+                        title="नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।"
+                      />
                     </div>
                     <div className="flexThreeChildCard">
-                      <BottomComponent image={downImage5} title="नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।" />
+                      <BottomComponent
+                        image={downImage5}
+                        title="नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।"
+                      />
                     </div>
                   </div>
                 </div>
@@ -530,14 +562,23 @@ const HomePage = () => {
                     </span>
                   </div>
                   <div className="flexThreeChildCardDiv">
-                  <div className="flexThreeChildCard">
-                      <BottomComponent image={downImage2} title="डिजाइन गर्ने रणनीतिहरू समावेश गर्दै।" />
+                    <div className="flexThreeChildCard">
+                      <BottomComponent
+                        image={downImage2}
+                        title="डिजाइन गर्ने रणनीतिहरू समावेश गर्दै।"
+                      />
                     </div>
                     <div className="flexThreeChildCard">
-                      <BottomComponent image={downImage5} title="विशेषज्ञहरू जसले सबै योगदान गर्नेछन्।त्यहाँ विचार गर्न समयरेखाहरू छन्, धेरै सरोकारवालाहरू, र रेस्टुरेन्ट निर्माणको लागि उत्तम अभ्यासहरू।" />
+                      <BottomComponent
+                        image={downImage5}
+                        title="विशेषज्ञहरू जसले सबै योगदान गर्नेछन्।त्यहाँ विचार गर्न समयरेखाहरू छन्, धेरै सरोकारवालाहरू, र रेस्टुरेन्ट निर्माणको लागि उत्तम अभ्यासहरू।"
+                      />
                     </div>
                     <div className="flexThreeChildCard">
-                      <BottomComponent image={downImage1} title="जब यो एउटा यादगार रेस्टुरेन्ट अवधारणा निर्माण र डिजाइन गर्ने कुरा आउँछ, त्यहाँ धेरै छन्।" />
+                      <BottomComponent
+                        image={downImage1}
+                        title="जब यो एउटा यादगार रेस्टुरेन्ट अवधारणा निर्माण र डिजाइन गर्ने कुरा आउँछ, त्यहाँ धेरै छन्।"
+                      />
                     </div>
                   </div>
                 </div>
