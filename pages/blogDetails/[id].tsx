@@ -12,19 +12,27 @@ import DetailProperty from "../../components/ui/detailProperty";
 export default function BlogPage() {
   return (
     <>
-      <div className="blogDetailsAlignmentContainer">
-        <div className="navBlend">
-          <Navbar />
+    <div className="navBlend">
+        <Navbar />
+      </div>
+      <div className="secNavDivWrapper">
+        <div className="secNavDiv">
+          <BlogNavbar />
         </div>
+      </div>
+      <div className="blogDetailsAlignmentContainer">
+        {/* <div className="navBlend">
+          <Navbar />
+        </div> */}
         <div className="blogContainerDiv">
-          <div className="blogSecNavBlend"></div>
+          {/* <div className="blogSecNavBlend"></div> */}
           <div className="footerBlend">
             <div className="lowerFooterBlend"></div>
           </div>
           <div className="contentDiv">
-            <div className="secNavDiv">
+            {/* <div className="secNavDiv">
               <BlogNavbar />
-            </div>
+            </div> */}
             <div className="bodyContainer">
               <div className="categoryBlogBody">
                 <div className="blogDetailsMainSection">

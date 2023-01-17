@@ -37,7 +37,7 @@ const HomeLoan = () => {
                     color="#969696"
                   />
                 </span>
-                <span className="posted">अघि</span>
+                <span className="posted">२ हप्ता अघि</span>
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@ const HomeLoan = () => {
                     color="#969696"
                   />
                 </span>
-                <span className="posted">अघि</span>
+                <span className="posted">२ हप्ता अघि</span>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ const HomeLoan = () => {
                     color="#969696"
                   />
                 </span>
-                <span className="posted">अघि</span>
+                <span className="posted">२ हप्ता अघि</span>
               </div>
             </div>
           </div>

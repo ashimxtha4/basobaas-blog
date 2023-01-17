@@ -1,7 +1,115 @@
+.navBlend {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: sticky;
+  height: 53px;
+  top: 0px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  z-index: 3;
+}
+
+.aboveNavDivWrapper {
+  width: 100%;
+  position: relative;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  .aboveNavDiv {
+    position: relative;
+    height: 98px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 8px 15px 18px 15px;
+    width: 100%;
+    max-width: 500px;
+
+    .newsDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      height: fit-content;
+
+      .newsHeader {
+        width: fit-content;
+        height: 48px;
+        font-family: "Ek Mukta";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+        color: #333333;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        padding: 0px;
+        margin: 0px;
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+        gap: 6px;
+
+        .newsSubHeading {
+          font-family: "Ek Mukta";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 140%;
+          text-align: center;
+          color: #0000ff;
+          width: fit-content;
+        }
+      }
+
+      .newsTexts {
+        width: 345px;
+        height: 24px;
+        font-family: "Ek Mukta";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #969696;
+        flex: none;
+        align-self: stretch;
+        flex-grow: 0;
+      }
+    }
+
+    .firstAdDiv {
+      display: none;
+    }
+  }
+}
+
+.secNavDivWrapper {
+  width: 100%;
+  position: relative;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  top: 53px;
+  background-color: #001338;
+  align-self: start;
+  z-index: 3;
+  position: sticky;
+
+  .secNavDiv {
+    height: fit-content;
+    width: 100%;
+    padding: 12px 15px 18px 15px;
+    max-width: 500px;
+  }
+}
+
 .alignmentContainer {
   min-height: 100vh;
   height: 100%;
-  padding-bottom: 55px;
   width: 100%;
   background-color: white;
   color: #333333;
@@ -10,36 +118,17 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-
-  .navBlend {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    position: fixed;
-    height: 53px;
-    background: #ffffff;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-    z-index: 3;
-  }
+  padding: 0px;
 
   .containerDiv {
     position: relative;
     display: flex;
     flex-direction: column;
-    top: 53px;
     width: 100%;
     align-items: center;
     min-width: 100vw;
     height: fit-content;
     background-color: #ffffff;
-
-    .secNavBlend {
-      height: 105.5px;
-      width: 100%;
-      background-color: #001338;
-      position: absolute;
-      top: 98px;
-    }
 
     .footerBlend {
       position: absolute;
@@ -67,81 +156,7 @@
       background-color: #ffffff;
       position: relative;
 
-      .aboveNavDiv {
-        position: relative;
-        height: 98px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 4px;
-        padding: 8px 15px 18px 15px;
-
-        .newsDiv {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          gap: 10px;
-          height: fit-content;
-
-          .newsHeader {
-            width: fit-content;
-            height: 48px;
-            font-family: "Ek Mukta";
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 24px;
-            color: #333333;
-            flex: none;
-            order: 0;
-            flex-grow: 0;
-            padding: 0px;
-            margin: 0px;
-            display: flex;
-            flex-direction: row;
-            height: fit-content;
-            gap: 6px;
-
-            .newsSubHeading {
-              font-family: "Ek Mukta";
-              font-style: normal;
-              font-weight: 700;
-              font-size: 20px;
-              line-height: 140%;
-              text-align: center;
-              color: #0000ff;
-              width: fit-content;
-            }
-          }
-
-          .newsTexts {
-            width: 345px;
-            height: 24px;
-            font-family: "Ek Mukta";
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 140%;
-            color: #969696;
-            flex: none;
-            align-self: stretch;
-            flex-grow: 0;
-          }
-        }
-
-        .firstAdDiv {
-          display: none;
-        }
-      }
-
-      .secNavDiv {
-        height: fit-content;
-        width: 100%;
-        position: sticky;
-        padding: 12px 15px 18px 15px;
-        background-color: #001338;
-      }
+ 
 
       .contentBody {
         height: fit-content;
@@ -321,7 +336,7 @@
           flex-direction: column;
           align-items: flex-start;
           padding: 0px;
-          gap: 16px;
+          gap: 8px;
           width: 100%;
           min-height: 338px;
           height: fit-content;
@@ -335,16 +350,14 @@
             padding: 0px;
             gap: 16px;
             width: 100%;
-            height: 28px;
+            height: fit-content;
             padding-right: 15px;
-            flex: none;
-            order: 0;
             align-self: stretch;
             flex-grow: 0;
 
             .propertyListTitle {
               width: fit-content;
-              height: 28px;
+              height: fit-content;
               font-family: "Ek Mukta";
               font-style: normal;
               font-weight: 700;
@@ -933,10 +946,82 @@
 }
 
 @media only screen and (min-width: 710px) {
+  .navBlend {
+    width: 100vw;
+    position: sticky;
+    height: 53px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    z-index: 3;
+  }
+  .aboveNavDivWrapper {
+    .aboveNavDiv {
+      position: relative;
+      height: 98px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 4px;
+      padding: 8px 15px 18px 15px;
+      max-width: 800px;
+
+      .newsDiv {
+        .newsHeader {
+          width: fit-content;
+          height: fit-content;
+          font-family: "Ek Mukta";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 140%;
+          color: #333333;
+
+          .newsSubHeading {
+            font-family: "Ek Mukta";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 140%;
+            text-align: center;
+            color: #0000ff;
+            padding-top: 4px;
+          }
+        }
+
+        .newsTexts {
+          width: 345px;
+          height: 24px;
+          font-family: "Ek Mukta";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+          color: #969696;
+          flex: none;
+          align-self: stretch;
+          flex-grow: 0;
+        }
+      }
+
+      .firstAdDiv {
+        display: none;
+      }
+    }
+  }
+  .secNavDivWrapper {
+    .secNavDiv {
+      height: fit-content;
+      width: 100%;
+      position: sticky;
+      padding: 12px 15px 18px 15px;
+      background-color: #001338;
+      max-width: 800px;
+    }
+  }
+
   .alignmentContainer {
-    min-height: 100vh;
     height: 100%;
-    padding-bottom: 55px;
     width: 100%;
     background-color: white;
     color: #333333;
@@ -946,21 +1031,11 @@
     position: relative;
     overflow: hidden;
 
-    .navBlend {
-      width: 100vw;
-      position: fixed;
-      height: 53px;
-      background: #ffffff;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-      z-index: 3;
-    }
-
     .containerDiv {
       position: relative;
       display: flex;
       flex-direction: column;
       position: relative;
-      top: 53px;
       width: 100%;
       align-items: center;
       min-width: 100vw;
@@ -992,73 +1067,12 @@
         background-color: #ffffff;
         position: relative;
 
-        .aboveNavDiv {
-          position: relative;
-          height: 98px;
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          gap: 4px;
-          padding: 8px 15px 18px 15px;
-
-          .newsDiv {
-            .newsHeader {
-              width: fit-content;
-              height: fit-content;
-              font-family: "Ek Mukta";
-              font-style: normal;
-              font-weight: 700;
-              font-size: 24px;
-              line-height: 140%;
-              color: #333333;
-
-              .newsSubHeading {
-                font-family: "Ek Mukta";
-                font-style: normal;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 140%;
-                text-align: center;
-                color: #0000ff;
-                padding-top: 4px;
-              }
-            }
-
-            .newsTexts {
-              width: 345px;
-              height: 24px;
-              font-family: "Ek Mukta";
-              font-style: normal;
-              font-weight: 400;
-              font-size: 14px;
-              line-height: 140%;
-              color: #969696;
-              flex: none;
-              align-self: stretch;
-              flex-grow: 0;
-            }
-          }
-
-          .firstAdDiv {
-            display: none;
-          }
-        }
-
-        .secNavDiv {
-          height: fit-content;
-          width: 100%;
-          position: sticky;
-          padding: 12px 15px 18px 15px;
-          background-color: #001338;
-        }
-
         .contentBody {
           height: fit-content;
           padding: 16px 18px 40px 18px;
           display: flex;
           flex-direction: column;
-          gap: 24px;
+          gap: 40px;
 
           .blogPreviewDiv {
             position: relative;
@@ -1222,7 +1236,7 @@
             flex-direction: column;
             align-items: flex-start;
             padding: 0px;
-            gap: 16px;
+            gap: 8px;
             width: 100%;
             min-height: 338px;
             height: fit-content;
@@ -1850,11 +1864,124 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .navBlend {
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    height: 67px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aboveNavDivWrapper {
+    position: relative;
+    .aboveNavDiv {
+      position: relative;
+      height: 138px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      padding: 0px;
+      max-width: 1440px;
+      padding: 16px 5.5% 16px 5.5%;
+      @media only screen and (min-width: 1440px) {
+        padding: 16px 80px 16px 80px;
+      }
+
+      .newsDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 8px;
+        width: 367px;
+        height: 106px;
+        left: 80px;
+        top: 87.5px;
+        height: fit-content;
+
+        .newsHeader {
+          width: fit-content;
+          height: fit-content;
+          display: flex;
+          flex-direction: column;
+          height: fit-content;
+          font-family: "Ek Mukta";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 140%;
+          color: #333333;
+          padding: 0px;
+          margin: 0px;
+          gap: 2px;
+
+          .newsSubHeading {
+            font-family: "Ek Mukta";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 140%;
+            text-align: center;
+            color: #0000ff;
+            height: fit-content;
+          }
+        }
+
+        .newsTexts {
+          width: 345px;
+          height: 24px;
+          font-family: "Ek Mukta";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+          color: #969696;
+          flex: none;
+          align-self: stretch;
+          flex-grow: 0;
+        }
+      }
+
+      .firstAdDiv {
+        display: block;
+        width: 865px;
+        height: 94px;
+        left: 495px;
+        top: 83px;
+        background: #d9d9d9;
+      }
+    }
+  }
+
+  .secNavDivWrapper {
+    height: fit-content;
+    position: sticky;
+    width: 100%;
+    top: 66.5px;
+    .secNavDiv {
+      height: fit-content;
+      width: 100%;
+      padding: 16px 5.5% 16px 5.5%;
+      @media only screen and (min-width: 1440px) {
+        padding: 16px 80px 16px 80px;
+      }
+      background-color: #001338;
+      max-width: 1440px;
+    }
+  }
+
   .alignmentContainer {
     height: 100%;
-    position: absolute;    
+    position:relative;
     padding: 0px;
-    padding-bottom: 69px;
     width: 100%;
     background: #ffffff;
     color: #333333;
@@ -1863,23 +1990,10 @@
     align-items: center;
     overflow: hidden;
 
-    .navBlend {
-      width: 100%;
-      position: fixed;
-      top: 0px;
-      height: 67px;
-      background: #ffffff;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-      display: flex;
-      justify-content: center;
-      align-items:center ;
-    }
-
     .containerDiv {
       position: relative;
       width: 100%;
-      top: 67px;
-      
+
       .secNavBlend {
         height: 72px;
         width: 100%;
@@ -1914,95 +2028,9 @@
         position: relative;
         box-shadow: none;
 
-        .aboveNavDiv {
-          position: relative;
-          height: 138px;
-          width: 100%;
-          position: relative;
-          display: flex;
-          flex-direction: row;
-          justify-content: flex-start;
-          align-items: center;
-          gap: 48px;
-          padding: 0px 5.55% 0px 5.55%;
-
-          .newsDiv {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 0px;
-            gap: 8px;
-            width: 367px;
-            height: 106px;
-            left: 80px;
-            top: 87.5px;
-            height: fit-content;
-
-            .newsHeader {
-              width: fit-content;
-              height: fit-content;
-              display: flex;
-              flex-direction: column;
-              height: fit-content;
-              font-family: "Ek Mukta";
-              font-style: normal;
-              font-weight: 700;
-              font-size: 32px;
-              line-height: 140%;
-              color: #333333;
-              padding: 0px;
-              margin: 0px;
-              gap: 2px;
-
-              .newsSubHeading {
-                font-family: "Ek Mukta";
-                font-style: normal;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 140%;
-                text-align: center;
-                color: #0000ff;
-                height: fit-content;
-              }
-            }
-
-            .newsTexts {
-              width: 345px;
-              height: 24px;
-              font-family: "Ek Mukta";
-              font-style: normal;
-              font-weight: 400;
-              font-size: 14px;
-              line-height: 140%;
-              color: #969696;
-              flex: none;
-              align-self: stretch;
-              flex-grow: 0;
-            }
-          }
-
-          .firstAdDiv {
-            display: block;
-            width: 865px;
-            height: 94px;
-            left: 495px;
-            top: 83px;
-            background: #d9d9d9;
-          }
-        }
-
-        .secNavDiv {
-          height: fit-content;
-          width: 100%;
-          position: sticky;
-          padding: 16px 5.5% 16px 5.5%;
-          background-color: #001338;
-        }
-
         .contentBody {
           height: fit-content;
-          padding: 24px 5.55% 60px 5.55%;
+          padding: 5px 5.55% 60px 5.55%;
           display: flex;
           flex-direction: column;
           gap: 60px;
@@ -2527,7 +2555,7 @@
               gap: 16px;
               position: relative;
               width: 100%;
-              min-height: 354px;
+              min-height: none;
               height: fit-content;
 
               .lawPolicyTitleDiv {
@@ -2580,11 +2608,12 @@
                 padding: 0px;
                 gap: calc(24 * 100% / 1277);
                 width: 100%;
-                min-height: 304px;
-                height: fit-content;
+                min-height: none;
+                height: 265px;
                 flex: none;
                 align-self: stretch;
                 flex-grow: 0;
+                padding: 0px;
 
                 .lawPolicyCard {
                   display: flex;
@@ -2592,7 +2621,7 @@
                   justify-content: center;
                   align-items: flex-start;
                   width: calc(302 * 100% / 1277);
-                  height: 304px;
+                  height: 265px;
                   border-radius: 6px;
                 }
               }

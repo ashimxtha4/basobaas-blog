@@ -38,7 +38,7 @@ const OurThoughts = () => {
                     color="#969696"
                   />
                 </span>
-                <span className="posted">अघि</span>
+                <span className="posted">२ हप्ता अघि</span>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@ const OurThoughts = () => {
                     color="#969696"
                   />
                 </span>
-                <span className="posted"></span>
+                <span className="posted">२ हप्ता अघि</span>
               </div>
             </div>
           </div>
@@ -98,7 +98,7 @@ const OurThoughts = () => {
                     color="#969696"
                   />
                 </span>
-                <span className="posted">महिना अघि</span>
+                <span className="posted">२ महिना अघि</span>
               </div>
             </div>
           </div>

@@ -126,11 +126,11 @@
         text-overflow: ellipsis;
         white-space: initial;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         margin: 0px;
         padding: 0px;
-        height: 44px;
+        height: fit-content;
       }
     }
     .blogBy {

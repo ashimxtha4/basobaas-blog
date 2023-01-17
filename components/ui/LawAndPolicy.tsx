@@ -41,7 +41,7 @@ const LawAndPolicy = (props: any) => {
                   color="#969696"
                 />
               </span>
-              <span className="posted"></span>
+              <span className="posted">२ हप्ता अघि</span>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@ const LawAndPolicy = (props: any) => {
                   color="#969696"
                 />
               </span>
-              <span className="posted"></span>
+              <span className="posted">२ हप्ता अघि</span>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ const LawAndPolicy = (props: any) => {
                   color="#969696"
                 />
               </span>
-              <span className="posted"></span>
+              <span className="posted">२ हप्ता अघि</span>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ const LawAndPolicy = (props: any) => {
                   color="#969696"
                 />
               </span>
-              <span className="posted"></span>
+              <span className="posted">२ हप्ता अघि</span>
             </div>
           </div>
         </div>
