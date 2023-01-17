@@ -27,8 +27,22 @@ import FeaturedPropertyImage3 from "../public/Images/featuredPropertyImage3.svg"
 import FeaturedPropertyImage4 from "../public/Images/featuredPropertyImage4.svg";
 import LifestyleImages from "../public/Images/LifestyleImages.svg";
 import Head from "next/head";
+import { useAppSelector, useAppDispatch } from "../store";
+import { useEffect } from "react";
+import { getAllBlogs } from "../apis/actions";
+import { setBlogs } from "../slices/blogSlice";
 
 const HomePage = () => {
+  const dispatch = useAppDispatch();
+  const { data } = useAppSelector((state) => state.getAll);
+  console.log(data);
+
+  useEffect(() => {
+    //@ts-ignore
+    getAllBlogs(dispatch);
+  }, []);
+
+  //DUMMY DATA FOR RELATED BLOGS
   const dummyRelatedBlogsData: any = [
     {
       thumbnail: RelatedBlogImage1,
@@ -160,6 +174,8 @@ const HomePage = () => {
       priceLabel: "Total Price",
     },
   ];
+
+  const { value } = useAppSelector((state) => state.getAll);
 
   return (
     <>
