@@ -253,8 +253,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start;
-        padding: calc(12*100%/1440) calc(15*100%/1440);
+        align-items: center;
+        padding: 0px calc(15*100%/1440);
         /* gap: 360px; */
         width: 100%;
         max-width: 1440px;
@@ -292,7 +292,7 @@
             .linkDiv {
                 display: flex;
                 flex-direction: row;
-                align-items: flex-start;
+                align-items: center;
                 padding: 0px;
                 justify-content: space-between;
                 width: calc(570*100%/740);

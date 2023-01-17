@@ -26,7 +26,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
     top: 53px;
     width: 100%;
     align-items: center;
@@ -1874,7 +1873,7 @@
 @media only screen and (min-width: 1024px) {
   .alignmentContainer {
     height: 100%;
-    // width: 100%;
+    position: absolute;    
     padding: 0px;
     padding-bottom: 69px;
     width: 100%;
@@ -1892,16 +1891,17 @@
       height: 67px;
       background: #ffffff;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+      display: flex;
+      justify-content: center;
+      align-items:center ;
     }
 
     .containerDiv {
+      border: solid 1px;
       position: relative;
-      //
       width: 100%;
-      // min-width: 100vw;
       top: 67px;
-      // overflow-x:hidden;
-
+      
       .secNavBlend {
         height: 72px;
         width: 100%;
@@ -1954,7 +1954,6 @@
           // padding-bottom: 18px;
 
           .newsDiv {
-            //
             display: flex;
             flex-direction: column;
             justify-content: space-between;
