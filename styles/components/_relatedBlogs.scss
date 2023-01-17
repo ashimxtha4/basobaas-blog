@@ -1,4 +1,3 @@
-// .LinkHover {
 .relatedBlogs {
   width: 100%;
   height: fit-content;
@@ -16,7 +15,6 @@
     overflow: hidden;
 
     .relatedBlogImages {
-      // max-width: 100%;
       width: auto;
       height: 100%;
       border-radius: 6px;
@@ -69,7 +67,6 @@
     .imageContainer {
       .relatedBlogImages {
         transform: scale(1.1);
-        // transition: 1s ease-in-out;
       }
     }
     .contentContainer {
@@ -79,7 +76,6 @@
     }
   }
 }
-// }
 
 .LinkHover:hover {
   transform: none;

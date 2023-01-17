@@ -1,12 +1,10 @@
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
 import footerLogo from "../public/Images/footerLogo.svg";
 import playStore from "../public/Images/playStore.svg";
 import appStore from "../public/Images/appStore.svg";
 import facebook from "../public/Images/facebook.svg";
 import instagram from "../public/Images/instagram.svg";
-
-import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -103,7 +101,7 @@ const Footer = () => {
                 </span>
                 <span className="socialName">
                   <Link
-                    style={{ transform: "none",  color:"unset"  }}
+                    style={{ transform: "none", color: "unset" }}
                     href="https://www.instagram.com/basobaas/?hl=en"
                   >
                     Instagram
@@ -116,7 +114,7 @@ const Footer = () => {
                 </span>
                 <span className="socialName">
                   <Link
-                    style={{ transform: "none", color:"unset" }}
+                    style={{ transform: "none", color: "unset" }}
                     href="https://www.facebook.com/basobaas/"
                   >
                     Facebook

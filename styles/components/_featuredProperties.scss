@@ -10,7 +10,6 @@
 
   .imageContainer {
     width: 120px;
-    // min-width: 100px;
     overflow: hidden;
     height: 102px;
     border-radius: 3px;
@@ -25,7 +24,6 @@
       border-radius: inherit;
       object-fit: contain;
       transition: 0.3s ease-in-out;
-      // border-radius: 3px;
     }
   }
 
@@ -183,7 +181,6 @@
         display: flex;
         align-items: center;
         color: #0000ff;
-        // word-spacing: -3px;
         word-spacing: 2px;
       }
     }
@@ -205,47 +202,3 @@
     }
   }
 }
-
-// @media screen and (min-width: 768px) {
-//   .featuredProperties {
-//     .imageContainer {
-//       width: 120px;
-//       height: 105px;
-//     }
-
-//     .contentContainer {
-//       height: 105px;
-
-//       .propertyTitle {
-//         p {}
-//       }
-
-//       .propertyAddress {
-//         p {
-//           font-size: 14px;
-//         }
-//       }
-
-//       .propertyOverview {
-//         .overviewDatas {
-//           .iconContainer {
-//             .overviewIcons {}
-//           }
-
-//           .overViewInformation {
-//             .overViewTags {
-//               font-size: 12px;
-//             }
-//           }
-
-//         }
-//       }
-
-//       .propertyPrice {
-//         .price {}
-
-//         .unit {}
-//       }
-//     }
-//   }
-// }
