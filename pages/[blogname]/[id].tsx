@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Icon } from "@iconify/react";
 import Navbar from "../../layouts/Navbar";
 import BlogNavbar from "../../layouts/BlogNavbar";
@@ -11,6 +10,7 @@ import CategorySpecificImage1 from "../../public/Images/categorySpecificImage1.s
 import CategorySpecificImage2 from "../../public/Images/categorySpecificImage2.svg";
 import CategorySpecificImage3 from "../../public/Images/categorySpecificImage3.svg";
 import CategorySpecificImage4 from "../../public/Images/categorySpecificImage4.svg";
+import { Pagination } from "antd";
 
 const dummyBlogCategories = [
   {
@@ -71,40 +71,6 @@ const dummyBlogCategories = [
   },
 ];
 export default function BlogPage() {
-  //STATE FOR BLOG COUNT
-  const [blogCount, setBlogCount] = useState<number>(1);
-
-  //STATE FOR LIMIT
-  const [limit, setLimit] = useState<number>(1);
-
-  //STATE FOR CURRENT PAGE INDICATION
-  const [currentPage, setCurrentPage] = useState<number>(1);
-
-  //STATE FOR PAGE NUMBERS
-  const pageNumber = [];
-  for (let i = 1; i <= Math.ceil(blogCount / limit); i++) {
-    pageNumber.push(i);
-  }
-
-  const handlePreviousClick = () => {
-    if (currentPage > 1) {
-      setCurrentPage(Number(currentPage - 1));
-    }
-  };
-
-  //FUNCTION FOR PAGE NUMBER CLICK
-  const handleClick = (e: any) => {
-    const { value } = e.target;
-    setCurrentPage(Number(value));
-  };
-
-  //FUNCTION FOR PAGE NEXT CLICK
-  const handleNextClick = () => {
-    if (currentPage >= 1) {
-      setCurrentPage(Number(currentPage + 1));
-    }
-  };
-
   return (
     <>
       <div className="alignmentContainer">
@@ -176,79 +142,15 @@ export default function BlogPage() {
                       );
                     })}
                   </div>
-                  <nav
-                    aria-label="Page navigation example"
+                  <div className="paginationSectionContainer">
+                    <Pagination
                     className="paginationSection"
-                  >
-                    {blogCount >= limit ? (
-                      <ul className="pagination pageNumberArea">
-                        <li className="page-item pageIndexIcon">
-                          <a
-                            className="page-link pageIconContainer"
-                            href="#"
-                            aria-label="Previous"
-                          >
-                            <span
-                              className="pageNumberIcon"
-                              aria-hidden="true"
-                              onClick={handlePreviousClick}
-                            >
-                              <Icon
-                                icon="material-symbols:chevron-left"
-                                color="#c4cdd5"
-                                width="24"
-                                inline={true}
-                              />
-                            </span>
-                          </a>
-                        </li>
-                        {pageNumber.map((item, index) => {
-                          return (
-                            <li
-                              className={`page-item pageIndex ${
-                                item === currentPage
-                                  ? "activePage"
-                                  : "pageIndex"
-                              }`}
-                              key={index}
-                            >
-                              <button
-                                className="page-link pageNumber"
-                                value={item}
-                                onClick={(e) => {
-                                  handleClick(e);
-                                }}
-                              >
-                                {item}
-                              </button>
-                            </li>
-                          );
-                        })}
-
-                        <li className="page-item pageIndexIcon">
-                          <a
-                            className="page-link pageIconContainer"
-                            href="#"
-                            aria-label="Next"
-                          >
-                            <span
-                              className="pageNumberIcon"
-                              aria-hidden="true"
-                              onClick={handleNextClick}
-                            >
-                              <Icon
-                                icon="material-symbols:chevron-right"
-                                color="#c4cdd5"
-                                width="24"
-                                height="24"
-                                inline={true}
-                              />
-                            </span>
-                          </a>
-                        </li>
-                      </ul>
-                    ) : null}
-                  </nav>
+                      defaultCurrent={5}
+                      pageSize={5}
+                      total={50}
+                      hideOnSinglePage={true}
+                    />
+                  </div>
                 </div>
                 {/* -------------------RIGHT SIDEBAR---------------------- */}
                 <div className="rightBodySection">
