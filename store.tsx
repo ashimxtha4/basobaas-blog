@@ -1,9 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import getAllSlice from "./slices/blogSlice";
+import blogSlice from "./slices/blogSlice";
+import categorySlice from "./slices/categorySlice";
+import videoSlice from "./slices/videoSlice";
 
 export const store = configureStore({
-  reducer: { getAll: getAllSlice },
+  reducer: {
+    blogData: blogSlice,
+    categoryData: categorySlice,
+    videoData: videoSlice,
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
