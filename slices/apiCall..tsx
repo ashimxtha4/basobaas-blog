@@ -9,8 +9,8 @@ const initialState: CounterState = {
   value: 0,
 }
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const apiSlice = createSlice({
+  name: 'get',
   initialState,
   reducers: {
     increment: (state) => {
@@ -20,6 +20,6 @@ export const counterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { increment } = counterSlice.actions
+export const { increment } = apiSlice.actions
 
-export default counterSlice.reducer
+export default apiSlice.reducer

@@ -177,14 +177,30 @@ const HomePage = () => {
         <div className="navBlend">
           <Navbar />
         </div>
+        {/* <div className="aboveNavDiv">
+          <div className="newsDiv">
+            <div className="newsHeader">
+              बसोबास <span className="newsSubHeading">समाचार र लेख</span>
+            </div>
+            <div className="newsTexts">
+              हामी तपाईंलाई घर जग्गा बारे पूर्ण समाचार प्रदान गर्दछौं।
+            </div>
+          </div>
+
+          <div className="firstAdDiv"></div>
+        </div>
+
+        <div className="secNavDiv container-fluid">
+          <BlogNavbar />
+        </div> */}
         <div className="containerDiv">
-          <div className="secNavBlend"></div>
+          {/* <div className="secNavBlend"></div> */}
           <div className="footerBlend">
             <div className="lowerFooterBlend"></div>
           </div>
 
           <div className="contentDiv">
-            <div className="aboveNavDiv">
+            {/* <div className="aboveNavDiv">
               <div className="newsDiv">
                 <div className="newsHeader">
                   बसोबास <span className="newsSubHeading">समाचार र लेख</span>
@@ -199,7 +215,7 @@ const HomePage = () => {
 
             <div className="secNavDiv container-fluid">
               <BlogNavbar />
-            </div>
+            </div> */}
 
             <div className="contentBody">
               <div className="blogPreviewDiv">
