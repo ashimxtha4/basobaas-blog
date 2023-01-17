@@ -1,3 +1,4 @@
+//MAIN BLOG LAYOUT
 const MainLayout = () => {
   return (
     <>

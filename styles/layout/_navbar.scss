@@ -1,505 +1,458 @@
 .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 14.5px;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+  border: none;
+
+  @media screen and (min-width: 768px) {
+    max-width: 800px;
+  }
+
+  .leftDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    gap: 16px;
+    min-width: none;
+    width: fit-content;
+    height: 43px;
+
+    .hamburger {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
+    .logo {
+      width: 119px;
+      height: 29px;
+      cursor: pointer;
+    }
+  }
+
+  .linkDiv {
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    justify-content: space-between;
+    width: calc(570 * 100% / 740);
+    max-width: 561px;
+    height: 35px;
+    flex: none;
+
+    .linksData {
+      width: fit-content;
+      height: 19px;
+      font-family: "Product Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1em;
+      line-height: 19px;
+      text-align: center;
+      color: #333333;
+      flex: none;
+      flex-grow: 0;
+      border-bottom: none;
+      transition: ease-in-out 0.4s;
+    }
+
+    .linksData::after {
+      display: block;
+      content: "";
+      border-bottom: none;
+      color: white;
+      border-bottom: solid 1px;
+      transition: ease-in-out 0.4s;
+    }
+
+    .linksData:hover::after {
+      color: #2465bb;
+      border-bottom: solid 1px;
+    }
+
+    .linksData:hover {
+      color: #2465bb;
+      opacity: 0.9;
+    }
+  }
+
+  .rightDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    gap: 30px;
+    min-width: none;
+    width: fit-content;
+    max-width: 382px;
+    height: fit-content;
+
+    .searchIcon {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0px;
+      width: calc(40 * 100% / 382);
+      min-width: 24px;
+      height: 24px;
+      flex: none;
+      flex-grow: 0;
+      transition-duration: 0.3s;
+      cursor: pointer;
+    }
+
+    .searchIcon:hover {
+      opacity: 0.7;
+    }
+
+    .plus {
+      display: block;
+      position: relative;
+      top: -3px;
+      height: 24px;
+      width: 24px;
+      padding: 0px;
+    }
+
+    .buttonDiv {
+      display: none;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px;
+      min-width: 283px;
+      width: calc(322 * 100% / 382);
+      max-width: 322px;
+      height: 43px;
+
+      .blueButton {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 12px;
+        gap: 5.7%;
+        width: calc(173 * 100% / 322);
+        min-width: 173px;
+        height: 43px;
+        background: #f5f5ff;
+        border-radius: 5px;
+        border: none;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        cursor: pointer;
+        transition-duration: 0.3s;
+
+        p {
+          width: fit-content;
+          height: 19px;
+          font-family: "Product Sans";
+          font-style: normal;
+          font-weight: 400;
+          font-size: calc(16 * 100px / 123);
+          line-height: 19px;
+          text-transform: capitalize;
+          color: #333333;
+          flex: none;
+          flex-grow: 0;
+          margin: 0px;
+          padding: 0px;
+        }
+
+        span {
+          min-width: 16px;
+          height: 16px;
+          display: flex;
+          align-items: center;
+        }
+
+        .blueButton:hover {
+          opacity: 0.8;
+          background: #012367;
+        }
+      }
+
+      .userDiv {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1.5% 0%;
+        padding-top: 2%;
+        gap: 0%;
+        min-width: 110px;
+        width: calc(133 * 100% / 322);
+        max-width: 133px;
+        height: 40px;
+
+        .imageDiv {
+          display: flex;
+          width: calc(24 * 100% / 133);
+          height: 24px;
+          flex: none;
+          flex-grow: 0;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        .name {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          min-width: 86px;
+          width: 68%;
+          height: 24px;
+          font-family: "Roboto";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 24px;
+          color: #161616;
+          flex: none;
+          flex-grow: 0;
+          margin: 0px;
+          padding: 0px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-left: 15px;
-    padding-right: 14.5px;
+    padding: 0px calc(15 * 100% / 1440);
     width: 100%;
-    // max-width: 500px;
-    height: 100%;
+    max-width: 1440px;
+    height: 67px;
     left: 0px;
     top: 0px;
-    background: #FFFFFF;
+    background: #ffffff;
     border: none;
 
-    // @media screen and (min-width:710px) {
-    //     max-width: 710px;
-    // }
-
-    @media screen and (min-width:768px) {
-        max-width: 800px;
-    }
-
     .leftDiv {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px;
+      gap: calc(40 * 100% / 740);
+      min-width: 53%;
+      width: fit-content;
+      height: 43px;
+
+      .hamburger {
+        display: none;
+      }
+
+      .logo {
+        min-width: 130px;
+        width: calc(139 * 100% / 740);
+        max-width: 139px;
+        height: 35px;
+        cursor: pointer;
+      }
+
+      .linkDiv {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        padding: 0px;
-        gap: 16px;
-        min-width: none;
-        /* 740px */
-        width: fit-content;
-        /* max-width: 740px; */
-        height: 43px;
-
-        .hamburger {
-            display: block;
-            width: 24px;
-            height: 24px;
-        }
-
-        .logo {
-            width: 119px;
-            height: 29px;
-            cursor: pointer;
-        }
-    }
-
-    .linkDiv {
-        display: none;
-        flex-direction: row;
-        align-items: flex-start;
         padding: 0px;
         justify-content: space-between;
-        width: calc(570*100%/740);
+        width: calc(570 * 100% / 740);
         max-width: 561px;
         height: 35px;
         flex: none;
 
-
         .linksData {
-            width: fit-content;
-            height: 19px;
-            font-family: 'Product Sans';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 1em;
-            line-height: 19px;
-            text-align: center;
-            color: #333333;
-            flex: none;
-            flex-grow: 0;
-            border-bottom: none;
-            transition: ease-in-out 0.4s;
+          width: fit-content;
+          height: 19px;
+          font-family: "Product Sans";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1em;
+          line-height: 19px;
+          text-align: center;
+          color: #333333;
+          flex: none;
+          flex-grow: 0;
+          border-bottom: none;
+          transition: ease-in-out 0.4s;
         }
 
         .linksData::after {
-            display: block;
-            content: "";
-            border-bottom: none;
-            color: white;
-            border-bottom: solid 1px;
-            transition: ease-in-out 0.4s;
+          display: block;
+          content: "";
+          border-bottom: none;
+          color: white;
+          border-bottom: solid 1px;
+          transition: ease-in-out 0.4s;
         }
 
         .linksData:hover::after {
-            color: #2465bb;
-            border-bottom: solid 1px;
+          color: #2465bb;
+          border-bottom: solid 1px;
         }
 
         .linksData:hover {
-            color: #2465bb;
-            opacity: 0.9;
+          color: #2465bb;
+          opacity: 0.9;
         }
-
+      }
     }
 
     .rightDiv {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px;
+      gap: calc(20 * 100% / 382);
+      min-width: 323px;
+      width: calc(382 * 100% / 1440);
+      max-width: 382px;
+      height: 43px;
+
+      .searchIcon {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 8px;
+        width: calc(40 * 100% / 382);
+        min-width: 40px;
+        height: 40px;
+        transition-duration: 0.3s;
+        cursor: pointer;
+      }
+
+      .searchIcon:hover {
+        opacity: 0.7;
+      }
+
+      .plus {
+        display: none;
+      }
+
+      .buttonDiv {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         padding: 0px;
-        gap: 30px;
-        /* gap: calc(20*100%/382); */
-        min-width: none;
-        width: fit-content;
-        /* 382px */
-        max-width: 382px;
-        height: fit-content;
+        min-width: 283px;
+        width: calc(322 * 100% / 382);
+        max-width: 322px;
+        height: 43px;
 
-        .searchIcon {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+        .blueButton {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          padding: 12px;
+          gap: 5.7%;
+          width: calc(173 * 100% / 322);
+          min-width: 173px;
+          height: 43px;
+          background: #f5f5ff;
+          border-radius: 5px;
+          border: none;
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+          cursor: pointer;
+          transition-duration: 0.3s;
+
+          p {
+            width: fit-content;
+            height: 19px;
+            font-family: "Product Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: calc(16 * 100px / 123);
+            line-height: 19px;
+            text-transform: capitalize;
+            color: #333333;
+            flex: none;
+            flex-grow: 0;
+            margin: 0px;
             padding: 0px;
-            width: calc(40*100%/382);
-            min-width: 24px;
+          }
+
+          span {
+            min-width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+          }
+
+          .blueButton:hover {
+            opacity: 0.8;
+            background: #012367;
+          }
+        }
+
+        .userDiv {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+          padding: 1.5% 0%;
+          padding-top: 2%;
+          gap: 0%;
+          min-width: 110px;
+          width: calc(133 * 100% / 322);
+          max-width: 133px;
+          height: 40px;
+
+          .imageDiv {
+            display: flex;
+            width: calc(24 * 100% / 133);
             height: 24px;
             flex: none;
             flex-grow: 0;
-            transition-duration: 0.3s;
+            justify-content: center;
             cursor: pointer;
-        }
+          }
 
-        .searchIcon:hover {
-            opacity: 0.7;
-        }
-
-        .plus{
-            display: block;
-            position: relative;
-            top: -3px;
+          .name {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 86px;
+            width: 68%;
             height: 24px;
-            width: 24px;
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #161616;
+            flex: none;
+            flex-grow: 0;
+            margin: 0px;
             padding: 0px;
+            cursor: pointer;
+          }
         }
-
-        .buttonDiv {
-            display: none;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0px;
-            /* gap: calc(16*100%/322); */
-            min-width: 283px;
-            width: calc(322*100%/382);
-            max-width: 322px;
-            height: 43px;
-
-            .blueButton {
-                display: none;
-                flex-direction: row;
-                justify-content: center;
-                align-items: flex-start;
-                padding: 12px;
-                gap: 5.7%;
-                width: calc(173*100%/322);
-                min-width: 173px;
-                height: 43px;
-                background: #F5F5FF;
-                border-radius: 5px;
-                border: none;
-                flex: none;
-                order: 0;
-                flex-grow: 0;
-                cursor: pointer;
-                transition-duration: 0.3s;
-
-                p {
-                    width: fit-content;
-                    height: 19px;
-                    font-family: 'Product Sans';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: calc(16*100px/123);
-                    line-height: 19px;
-                    text-transform: capitalize;
-                    color: #333333;
-                    flex: none;
-                    flex-grow: 0;
-                    margin: 0px;
-                    padding: 0px;
-                }
-
-                span {
-                    min-width: 16px;
-                    height: 16px;
-                    display: flex;
-                    align-items: center;
-                }
-
-                .blueButton:hover {
-                    opacity: 0.8;
-                    background: #012367;
-                }
-            }
-
-            .userDiv {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-around;
-                padding: 1.5% 0%;
-                padding-top: 2%;
-                gap: 0%;
-                /*8*/
-                min-width: 110px;
-                width: calc(133*100%/322);
-                max-width: 133px;
-                height: 40px;
-
-                .imageDiv {
-                    display: flex;
-                    width: calc(24*100%/133);
-                    height: 24px;
-                    flex: none;
-                    flex-grow: 0;
-                    justify-content: center;
-                    cursor: pointer;
-                    /* border: solid 1px;  */
-                }
-
-                .name {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    min-width: 86px;
-                    width: 68%;
-                    height: 24px;
-                    font-family: 'Roboto';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 24px;
-                    color: #161616;
-                    flex: none;
-                    flex-grow: 0;
-                    /* border: solid 1px; */
-                    margin: 0px;
-                    padding: 0px;
-                    cursor: pointer;
-                }
-            }
-
-        }
+      }
     }
+  }
 }
-
-@media screen and (min-width:1024px) {
-    .nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0px calc(15*100%/1440);
-        /* gap: 360px; */
-        width: 100%;
-        max-width: 1440px;
-        height: 67px;
-        left: 0px;
-        top: 0px;
-        background: #FFFFFF;
-        border: none;
-
-        .leftDiv {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0px;
-            gap: calc(40*100%/740);
-            min-width: 53%;
-            /* 740px */
-            width: fit-content;
-            /* max-width: 740px; */
-            height: 43px;
-
-            .hamburger {
-                display: none;
-            }
-
-            .logo {
-                min-width: 130px;
-                width: calc(139*100%/740);
-                max-width: 139px;
-                height: 35px;
-                cursor: pointer;
-            }
-
-            .linkDiv {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                padding: 0px;
-                justify-content: space-between;
-                width: calc(570*100%/740);
-                max-width: 561px;
-                height: 35px;
-                flex: none;
-
-
-                .linksData {
-                    width: fit-content;
-                    height: 19px;
-                    font-family: 'Product Sans';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 1em;
-                    line-height: 19px;
-                    text-align: center;
-                    color: #333333;
-                    flex: none;
-                    flex-grow: 0;
-                    border-bottom: none;
-                    transition: ease-in-out 0.4s;
-                }
-
-                .linksData::after {
-                    display: block;
-                    content: "";
-                    border-bottom: none;
-                    color: white;
-                    border-bottom: solid 1px;
-                    transition: ease-in-out 0.4s;
-                }
-
-                .linksData:hover::after {
-                    color: #2465bb;
-                    border-bottom: solid 1px;
-                }
-
-                .linksData:hover {
-                    color: #2465bb;
-                    opacity: 0.9;
-                }
-
-            }
-        }
-
-
-        .rightDiv {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0px;
-            gap: calc(20*100%/382);
-            min-width: 323px;
-            width: calc(382*100%/1440);
-            /* 382px */
-            max-width: 382px;
-            height: 43px;
-
-            .searchIcon {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                padding: 8px;
-                /* gap: 10px; */
-                width: calc(40*100%/382);
-                min-width: 40px;
-                height: 40px;
-                transition-duration: 0.3s;
-                cursor: pointer;
-            }
-
-            .searchIcon:hover {
-                opacity: 0.7;
-            }
-
-            .plus{
-                display: none;
-            }
-
-            .buttonDiv {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                padding: 0px;
-                /* gap: calc(16*100%/322); */
-                min-width: 283px;
-                width: calc(322*100%/382);
-                max-width: 322px;
-                height: 43px;
-
-                .blueButton {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: flex-start;
-                    padding: 12px;
-                    gap: 5.7%;
-                    width: calc(173*100%/322);
-                    min-width: 173px;
-                    height: 43px;
-                    background: #F5F5FF;
-                    border-radius: 5px;
-                    border: none;
-                    flex: none;
-                    order: 0;
-                    flex-grow: 0;
-                    cursor: pointer;
-                    transition-duration: 0.3s;
-
-                    p {
-                        width: fit-content;
-                        height: 19px;
-                        font-family: 'Product Sans';
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: calc(16*100px/123);
-                        line-height: 19px;
-                        text-transform: capitalize;
-                        color: #333333;
-                        flex: none;
-                        flex-grow: 0;
-                        margin: 0px;
-                        padding: 0px;
-                    }
-
-                    span {
-                        min-width: 16px;
-                        height: 16px;
-                        display: flex;
-                        align-items: center;
-                    }
-
-                    .blueButton:hover {
-                        opacity: 0.8;
-                        background: #012367;
-                    }
-                }
-
-                .userDiv {
-                    /* border: solid 1px; */
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: space-around;
-                    padding: 1.5% 0%;
-                    padding-top: 2%;
-                    gap: 0%;
-                    /*8*/
-                    min-width: 110px;
-                    width: calc(133*100%/322);
-                    max-width: 133px;
-                    height: 40px;
-
-                    .imageDiv {
-                        display: flex;
-                        width: calc(24*100%/133);
-                        height: 24px;
-                        flex: none;
-                        flex-grow: 0;
-                        justify-content: center;
-                        cursor: pointer;
-                        /* border: solid 1px;  */
-                    }
-
-                    .name {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        min-width: 86px;
-                        width: 68%;
-                        height: 24px;
-                        font-family: 'Roboto';
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 14px;
-                        line-height: 24px;
-                        color: #161616;
-                        flex: none;
-                        flex-grow: 0;
-                        /* border: solid 1px; */
-                        margin: 0px;
-                        padding: 0px;
-                        cursor: pointer;
-                    }
-                }
-
-            }
-        }
-    }
-}
-
-/* @media only screen and  (min-width:1439) {
-    .leftDiv{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        padding: 0px;
-        gap: calc(40*100%/740);
-        width:  740px ;    
-        height: 43px;
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-        border: solid 0px; 
-    }
-} */

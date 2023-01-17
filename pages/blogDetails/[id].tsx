@@ -1,86 +1,15 @@
-import { getAll } from "../../apiFetch/homePage/homePageAPI";
+import { Icon } from "@iconify/react";
+import Link from "next/link";
+import Navbar from "../../layouts/Navbar";
 import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
 import BlogNavbar from "../../layouts/BlogNavbar";
-import { useState, useEffect } from "react";
-import { Router, useRouter } from "next/router";
-import { Icon } from "@iconify/react";
-import Navbar from "../../layouts/Navbar";
-import { IMG_URL } from "../../baseConstants";
 import Footer from "../../layouts/Footer";
-import Link from "next/link";
 import Image from "next/image";
 import blogDetailsImage from "../../public/Images/blogDetailsImage1.svg";
 import blogDetailsImage3 from "../../public/Images/blogDetailsImage3.svg";
 import LawAndPolicy from "../../components/ui/LawAndPolicy";
 import DetailProperty from "../../components/ui/detailProperty";
 export default function BlogPage() {
-  //   const [blogs, setBlogs] = useState<any[]>([]);
-  //   const [blog, setBlog] = useState<any>(null);
-  //   const router = useRouter();
-
-  //   const [loading, setLoading] = useState<boolean>(true);
-
-  //   const getBlogsById = async (id: string) => {
-  //     try {
-  //       setLoading(true);
-  //       const { blog } = await getAll(`/blogs/${id}`);
-  //       setLoading(false);
-
-  //       if (blog) setBlog(blog);
-  //     } catch (error) {
-  //       console.log(error);
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   const getAllBlogsByCat = async (query: {
-  //     category: string;
-  //     limit?: string | number;
-  //     page?: string | number;
-  //     sort?: string;
-  //   }) => {
-  //     function prepareUrlQuery(query: object) {
-  //       var queryString = "?";
-  //       Object.keys(query).forEach((key: string, index: number) => {
-  //         //  @ts-ignore
-  //         if (query[key]) {
-  //           if (index > 0) {
-  //             //  @ts-ignore
-  //             queryString += "&" + key + "=" + query[key];
-  //           }
-  //           //  @ts-ignore
-  //           queryString += key + "=" + query[key];
-  //         }
-  //       });
-  //       return queryString;
-  //     }
-
-  //     try {
-  //       setLoading(true);
-  //       const { blogs } = await getAll("/blogs" + prepareUrlQuery(query));
-  //       setLoading(false);
-
-  //       if (blogs) setBlogs(blogs);
-  //     } catch (error) {
-  //       console.log(error);
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   useEffect(() => {
-  //     if (router.isReady) {
-  //       getBlogsById(router.query.id as string);
-  //     }
-  //   }, [router.query]);
-
-  //   useEffect(() => {
-  //     if (blog) {
-  //       getAllBlogsByCat({
-  //         category: blog.category.id as string,
-  //       });
-  //     }
-  //   }, [blog]);
-
   return (
     <>
       <div className="blogDetailsAlignmentContainer">
@@ -97,17 +26,6 @@ export default function BlogPage() {
               <BlogNavbar />
             </div>
             <div className="bodyContainer">
-              {/* {loading ? (
-                <div
-                  className="spinner-border"
-                  role="status"
-                  style={{ position: "absolute", left: "50%" }}
-                >
-                  <span className="visually-hidden">Loading...</span>
-                </div>
-              ) : !blogs.length ? (
-                <h1>No Blogs Found</h1>
-              ) : ( */}
               <div className="categoryBlogBody">
                 <div className="blogDetailsMainSection">
                   <div className="blogDetailsLeftBodySection">
@@ -129,10 +47,7 @@ export default function BlogPage() {
                             </span>
 
                             <span className="catSubCatNames">
-                              <Link href="#">
-                                {/* {blog?.category?.name} */}
-                                सल्लाह
-                              </Link>
+                              <Link href="#">सल्लाह</Link>
                             </span>
                             <span>
                               <Icon
@@ -144,34 +59,23 @@ export default function BlogPage() {
                               />{" "}
                             </span>
                             <span className="catSubCatNames">
-                              {/* {blog?.subCategory?.name} */}
-                              <Link href="#">
-                                {/* {blog?.subCategory?.name} */}
-                                कानून र नीति
-                              </Link>
+                              <Link href="#">कानून र नीति</Link>
                             </span>
                           </div>
                         </div>
                       </div>
 
                       <div className="blogDetailsTitle">
-                        <div className="blogSubCategoryTitle">
-                          {/* {blog?.subCategory?.name} */}
-                          कानून र नीति
-                        </div>
+                        <div className="blogSubCategoryTitle">कानून र नीति</div>
 
                         <div className="blogTitleAndAuthor">
                           <div className="blogTitle">
-                            {/* {blog?.title} */}
                             सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो
                             क्षेत्र।
                           </div>
                           <div className="blogByAndShare">
                             <div className="blogBy">
-                              <div className="author">
-                                {/* {blog.author?.fullName} */}
-                                राजन अधिकारी
-                              </div>
+                              <div className="author">राजन अधिकारी</div>
                               <div className="separator">
                                 <Icon
                                   icon="ci:dot-05-xl"
@@ -180,10 +84,7 @@ export default function BlogPage() {
                                   color="#333333"
                                 />
                               </div>
-                              <div className="posted">
-                                {/* {createdAt} */}
-                                {/* {blogPostedDate} */}२ हप्ता अघि
-                              </div>
+                              <div className="posted"></div>
                             </div>
                             <button className="shareButton">
                               <Icon
@@ -199,24 +100,10 @@ export default function BlogPage() {
                       </div>
                     </div>
                     <div className="blogDetailsComponentSection">
-                      {/* <p dangerouslySetInnerHTML={{__html:blog.content}}></p> */}
                       <div className="blogDetails">
                         <div className="blogDetailsThumbnail">
-                          {/* <img
-                            src={`${IMG_URL as string}` + `${blog?.images[0]}`}
-                          /> */}
-                          <Image
-                            // className="blogDetailsImage"
-                            src={blogDetailsImage3}
-                            alt="blogDetails"
-                          />
+                          <Image src={blogDetailsImage3} alt="blogDetails" />
                         </div>
-                        {/* <div
-                          className="blogDetailsFromBackend"
-                          dangerouslySetInnerHTML={{
-                            __html: blog?.content,
-                          }}
-                        ></div> */}
                         <div className="blogDetailsFromBackend">
                           <p>
                             रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक
@@ -366,20 +253,16 @@ export default function BlogPage() {
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
                     <div className="blogAdDiv">AD</div>
-                    <BlogBodyRightSidebar
-                    //  blog={blogs}
-                    />
+                    <BlogBodyRightSidebar />
                   </div>
                 </div>
                 <div className="blogDetailsFooterRelatedBlogs">
                   <div className="lawPolicyDiv">
                     <LawAndPolicy title="सम्बन्धित ब्लगहरू" />
-                    {/* id={data?.categories[4]?.id}  YO MILAUNU XA */}
                   </div>
                   <DetailProperty />
                 </div>
               </div>
-              {/* )} */}
             </div>
             <div className="footer">
               <Footer />

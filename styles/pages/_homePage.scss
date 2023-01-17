@@ -54,7 +54,6 @@
         height: 339px;
         width: 100%;
         background-color: #1e1e1e;
-        // z-index: 2;
       }
     }
 
@@ -77,8 +76,6 @@
         justify-content: flex-start;
         gap: 4px;
         padding: 8px 15px 18px 15px;
-        // padding-top: 8px;
-        // padding-bottom: 18px;
 
         .newsDiv {
           display: flex;
@@ -165,7 +162,6 @@
           overflow-y: hidden;
 
           .blogPreviewDiv::-webkit-scrollbar-track {
-            /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
             -webkit-border-radius: 10px;
             border-radius: 10px;
             display: none;
@@ -264,9 +260,6 @@
               line-height: 140%;
               color: #333333;
               cursor: pointer;
-              // :hover{
-              //   text-decoration: underline;
-              // }
             }
           }
 
@@ -304,7 +297,6 @@
             gap: 24px;
             width: 100%;
             height: 345px;
-            // height: fit-content;
             flex: none;
             align-self: stretch;
 
@@ -316,8 +308,6 @@
               padding: 0px;
               gap: 16px;
               width: 100%;
-              // min-height: 90px;
-              // min-height: 133.33px;
               height: 29%;
               flex: none;
               align-self: stretch;
@@ -990,7 +980,6 @@
           height: 201px;
           width: 100%;
           background-color: #1e1e1e;
-          // z-index: 2;
         }
       }
 
@@ -1000,7 +989,6 @@
         max-width: 800px;
         display: flex;
         flex-direction: column;
-        // padding-top: 8px;
         background-color: #ffffff;
         position: relative;
 
@@ -1013,8 +1001,6 @@
           justify-content: flex-start;
           gap: 4px;
           padding: 8px 15px 18px 15px;
-          // padding-top: 8px;
-          // padding-bottom: 18px;
 
           .newsDiv {
             .newsHeader {
@@ -1065,7 +1051,6 @@
           position: sticky;
           padding: 12px 15px 18px 15px;
           background-color: #001338;
-          //
         }
 
         .contentBody {
@@ -1091,7 +1076,6 @@
               display: flex;
               flex-direction: row;
               justify-content: center;
-              // align-items: center;
               height: fit-content;
               width: fit-content;
               min-width: 100%;
@@ -1188,7 +1172,6 @@
               flex: none;
               align-self: stretch;
               flex-grow: 0;
-              //
             }
 
             .marketBigComponent {
@@ -1214,7 +1197,6 @@
               gap: 24px;
               width: 49%;
               height: 388px;
-              // height: fit-content;
               flex: none;
               align-self: stretch;
               flex-grow: 0;
@@ -1227,8 +1209,6 @@
                 padding: 0px;
                 gap: 16px;
                 width: 100%;
-                // min-height: 90px;
-                // min-height: 133.33px;
                 height: 29%;
                 flex: none;
                 align-self: stretch;
@@ -1393,7 +1373,6 @@
                 gap: 10px;
                 width: 250px;
                 height: 250px;
-                // height: fit-content;
                 background: linear-gradient(
                   0.14deg,
                   rgba(17, 16, 16, 0.7) 12.94%,
@@ -1923,7 +1902,6 @@
           height: 139.5px;
           width: 100%;
           background-color: #1e1e1e;
-          // z-index: 2;
         }
       }
 
@@ -1931,10 +1909,8 @@
         height: fit-content;
         width: 100%;
         max-width: 1440px;
-        //
         display: flex;
         flex-direction: column;
-        // padding-top: 8px;
         background-color: #ffffff;
         position: relative;
         box-shadow: none;
@@ -1950,8 +1926,6 @@
           align-items: center;
           gap: 48px;
           padding: 0px 5.55% 0px 5.55%;
-          // padding-top: 8px;
-          // padding-bottom: 18px;
 
           .newsDiv {
             display: flex;
@@ -2063,14 +2037,13 @@
               width: fit-content;
               min-width: calc(637.5 * 100% / 1280);
               min-height: 100%;
-              overflow:hidden;
+              overflow: hidden;
 
               .smallComponent {
                 height: 245px;
                 width: calc(316 * 100% / 637.5);
                 min-height: calc(637.5 * 100% / 1280);
                 overflow: hidden;
-                //
               }
             }
           }
@@ -2184,10 +2157,6 @@
                 flex-grow: 0;
 
                 .marketSmallComponent {
-                  // display: flex;
-                  // flex-direction: column;
-                  // justify-content: center;
-                  // align-items: flex-start;
                   padding: 0px;
                   width: 100%;
                   height: 133.33px;
@@ -2355,7 +2324,6 @@
                 padding: 0;
                 gap: 10px;
                 width: calc(410.67 * 100% / 1277);
-                // height: fit-content;
                 height: 310px;
                 background: linear-gradient(
                   0.14deg,
@@ -2449,11 +2417,6 @@
                 flex-grow: 0;
 
                 .homeLoanCard {
-                  // display: flex;
-                  // flex-direction: row;
-                  // justify-content: center;
-                  // align-items: flex-start;
-                  // gap: 24px;
                   padding: 0px;
                   width: 100%;
                   min-height: 107.33px;
@@ -2533,11 +2496,6 @@
                 flex-grow: 0;
 
                 .ourThoughtsCard {
-                  // display: flex;
-                  // flex-direction: row;
-                  // justify-content: center;
-                  // align-items: flex-start;
-                  // gap: 24px;
                   padding: 0px;
                   width: 100%;
                   min-height: 107.33px;
@@ -2893,7 +2851,6 @@
         .contentFooter {
           position: relative;
           width: 100%;
-          // min-height: 474px;
           height: fit-content;
           background: #4f4f4f;
         }
@@ -2902,20 +2859,8 @@
   }
 }
 
-// ::-webkit-scrollbar-corner {
-//   background: rgba(0, 0, 0, 0.5);
-// }
-
-// .propertCardDiv {
-//   scrollbar-width: 10px;
-//   scrollbar-color: green red;
-// }
-
-/* Works on Chrome, Edge, and Safari */
 .propertCardDiv::-webkit-scrollbar {
-  // width: 12px;
   height: 2px;
-  // display: none;
 }
 
 .propertCardDiv::-webkit-scrollbar-track {
@@ -2928,7 +2873,6 @@
 }
 
 .lifeStyleCardDiv::-webkit-scrollbar {
-  // width: 12px;
   height: 2px;
   display: none;
 }
@@ -2943,7 +2887,6 @@
 }
 
 .blogPreviewDiv::-webkit-scrollbar {
-  // width: 12px;
   height: 2px;
   display: none;
 }
@@ -2958,7 +2901,6 @@
 }
 
 .propertyCardDiv::-webkit-scrollbar {
-  // width: 12px;
   height: 2px;
   display: none;
 }
