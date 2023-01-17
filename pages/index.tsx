@@ -28,7 +28,7 @@ import FeaturedPropertyImage4 from "../public/Images/featuredPropertyImage4.svg"
 import LifestyleImages from "../public/Images/LifestyleImages.svg";
 import Head from "next/head";
 import { useAppSelector, useAppDispatch } from "../store";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { getAllBlogs } from "../apis/actions";
 import { setBlogs } from "../slices/blogSlice";
 
@@ -37,10 +37,14 @@ const HomePage = () => {
   const { data } = useAppSelector((state) => state.getAll);
   console.log(data);
 
+  const firstRender = useRef(true);
   useEffect(() => {
-    //@ts-ignore
-    getAllBlogs(dispatch);
-  }, []);
+    if (firstRender.current) {
+      firstRender.current = false;
+      //@ts-ignore
+      getAllBlogs(dispatch);
+    }
+  }, [dispatch]);
 
   //DUMMY DATA FOR RELATED BLOGS
   const dummyRelatedBlogsData: any = [
