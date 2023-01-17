@@ -29,13 +29,11 @@ import LifestyleImages from "../public/Images/LifestyleImages.svg";
 import Head from "next/head";
 import { useAppSelector, useAppDispatch } from "../store";
 import { useEffect, useRef } from "react";
-import { getAllBlogs } from "../apis/actions";
-import { setBlogs } from "../slices/blogSlice";
+import { getAllBlogs, getAllCategory } from "../apis/actions";
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
-  const { data } = useAppSelector((state) => state.getAll);
-  console.log(data);
+  const { data } = useAppSelector((state) => state.blogData);
 
   const firstRender = useRef(true);
   useEffect(() => {
@@ -43,6 +41,8 @@ const HomePage = () => {
       firstRender.current = false;
       //@ts-ignore
       getAllBlogs(dispatch);
+      //@ts-ignore
+      getAllCategory(dispatch);
     }
   }, [dispatch]);
 
@@ -179,7 +179,7 @@ const HomePage = () => {
     },
   ];
 
-  const { value } = useAppSelector((state) => state.getAll);
+  const { value } = useAppSelector((state) => state.blogData);
 
   return (
     <>

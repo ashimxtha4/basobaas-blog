@@ -1,8 +1,12 @@
 import { api } from "./api";
 
-//Get Blogs
+//Blogs
 let blogs = {
   getBlogs: () => api.get("collections/blogs/records/"),
 };
 
-export const request = { ...blogs };
+//Categories
+let category = {
+  getCategory: () => api.get("collections/category/records"),
+};
+export const request = { ...blogs, ...category };
