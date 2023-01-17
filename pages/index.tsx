@@ -173,26 +173,30 @@ const HomePage = () => {
           key="title"
         />
       </Head>
-      <div className="alignmentContainer">
-        <div className="navBlend">
-          <Navbar />
-        </div>
-        {/* <div className="aboveNavDiv">
-          <div className="newsDiv">
-            <div className="newsHeader">
-              बसोबास <span className="newsSubHeading">समाचार र लेख</span>
-            </div>
-            <div className="newsTexts">
-              हामी तपाईंलाई घर जग्गा बारे पूर्ण समाचार प्रदान गर्दछौं।
-            </div>
+      <div className="navBlend">
+        <Navbar />
+      </div>
+      <div className="aboveNavDivWrapper">
+      <div className="aboveNavDiv">
+        <div className="newsDiv">
+          <div className="newsHeader">
+            बसोबास <span className="newsSubHeading">समाचार र लेख</span>
           </div>
-
-          <div className="firstAdDiv"></div>
+          <div className="newsTexts">
+            हामी तपाईंलाई घर जग्गा बारे पूर्ण समाचार प्रदान गर्दछौं।
+          </div>
         </div>
 
-        <div className="secNavDiv container-fluid">
-          <BlogNavbar />
-        </div> */}
+        <div className="firstAdDiv"></div>
+      </div>
+      </div>
+    <div className="secNavDivWrapper">
+    <div className="secNavDiv">
+        <BlogNavbar />
+      </div>
+    </div>
+      
+      <div className="alignmentContainer">
         <div className="containerDiv">
           {/* <div className="secNavBlend"></div> */}
           <div className="footerBlend">

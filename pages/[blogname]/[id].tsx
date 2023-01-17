@@ -73,19 +73,21 @@ const dummyBlogCategories = [
 export default function BlogPage() {
   return (
     <>
-      <div className="alignmentContainer">
-        <div className="navBlend">
-          <Navbar />
+      <div className="navBlend">
+        <Navbar />
+      </div>
+      <div className="secNavDivWrapper">
+        <div className="secNavDiv">
+          <BlogNavbar />
         </div>
+      </div>
+      <div className="catAlignmentContainer">
         <div className="blogContainerDiv">
-          <div className="blogSecNavBlend"></div>
+          {/* <div className="blogSecNavBlend"></div> */}
           <div className="footerBlend">
             <div className="lowerFooterBlend"></div>
           </div>
           <div className="contentDiv">
-            <div className="secNavDiv">
-              <BlogNavbar />
-            </div>
             <div className="bodyContainer">
               {/* LOADING SPINNER TO BE ADDED */}
               <div className="categoryBlogBody">
@@ -144,7 +146,7 @@ export default function BlogPage() {
                   </div>
                   <div className="paginationSectionContainer">
                     <Pagination
-                    className="paginationSection"
+                      className="paginationSection"
                       defaultCurrent={5}
                       pageSize={5}
                       total={50}
