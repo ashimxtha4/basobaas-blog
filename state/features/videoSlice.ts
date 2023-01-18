@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
-import { fetchVideos } from '../actions/actions';
+import { fetchVideos } from "../actions/actions";
 
 export interface VideoState {
   value: number;
   data: any;
-  loading:boolean
+  loading: boolean;
 }
 
 const initialState: VideoState = {
   value: 0,
   data: [],
-  loading:true,
+  loading: true,
 };
 
 export const videoSlice = createSlice({
@@ -24,27 +24,23 @@ export const videoSlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
-    setVideo: (state, action: PayloadAction<any>) => {
-      state.data = action.payload;
-    },
-    allVideo: (state, action: PayloadAction<any>) => {},
   },
   extraReducers(builder) {
-      builder
-      .addCase(fetchVideos.pending, (state, action:PayloadAction<any>)=>{
-        state.loading = true
+    builder
+      .addCase(fetchVideos.pending, (state, action: PayloadAction<any>) => {
+        state.loading = true;
       })
-      .addCase(fetchVideos.fulfilled, (state, action:PayloadAction<any>)=>{
-        state.loading = false
-        state.data = action.payload
+      .addCase(fetchVideos.fulfilled, (state, action: PayloadAction<any>) => {
+        state.loading = false;
+        state.data = action.payload;
       })
-      .addCase(fetchVideos.rejected,(state,action:PayloadAction<any>)=>{
-        state.loading = false
-        state.data=[]
-      })
+      .addCase(fetchVideos.rejected, (state, action: PayloadAction<any>) => {
+        state.loading = false;
+        state.data = [];
+      });
   },
 });
 
-export const { increment, decrement, setVideo, allVideo } = videoSlice.actions;
+export const { increment, decrement } = videoSlice.actions;
 
 export default videoSlice.reducer;

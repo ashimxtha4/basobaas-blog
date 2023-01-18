@@ -1,14 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { fetchCategory } from "../actions/actions";
 
 export interface CategoryState {
   value: number;
   data: any;
+  loading: boolean;
 }
 
 const initialState: CategoryState = {
   value: 0,
   data: [],
+  loading: true,
 };
 
 export const categorySlice = createSlice({
@@ -21,14 +23,21 @@ export const categorySlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
-    setCategory: (state, action: PayloadAction<any>) => {
-      state.data = action.payload;
-    },
-    allCategory: (state, action: PayloadAction<any>) => {},
+  },
+  extraReducers(builder) {
+    builder
+      .addCase(fetchCategory.pending, (state, action: PayloadAction<any>) => {})
+      .addCase(fetchCategory.fulfilled, (state, action: PayloadAction<any>) => {
+        state.loading = false;
+        state.data = action.payload;
+      })
+      .addCase(fetchCategory.rejected, (state, action: PayloadAction<any>) => {
+        state.loading = false;
+        state.data = [];
+      });
   },
 });
 
-export const { increment, decrement, setCategory, allCategory } =
-  categorySlice.actions;
+export const { increment, decrement } = categorySlice.actions;
 
 export default categorySlice.reducer;
