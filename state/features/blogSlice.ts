@@ -1,17 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
-import { fetchBlogs } from "../actions/actions";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { blogQueryType, fetchBlogs } from "../actions/actions";
 
 export interface BlogState {
   value: number;
-  data: any;
   loading: boolean;
+  data: any[];
+  lifestyle:any[],
+  marketnews:any[],
 }
-
+type fetchPostActionType={
+    data:any,
+  whichCat?:string
+  
+}
 const initialState: BlogState = {
   value: 0,
-  data: [],
   loading: true,
+  data: [],
+  lifestyle:[],
+  marketnews:[],
 };
 
 export const blogSlice = createSlice({
@@ -30,9 +37,24 @@ export const blogSlice = createSlice({
       .addCase(fetchBlogs.pending, (state, action: PayloadAction<any>) => {
         state.loading = true;
       })
-      .addCase(fetchBlogs.fulfilled, (state, action: PayloadAction<any>) => {
+      .addCase(fetchBlogs.fulfilled, (state, {payload,type}: PayloadAction<any>) => {
+
+      const {data,whichCat}=payload as fetchPostActionType;
         state.loading = false;
-        state.data = action.payload;
+        if(whichCat){          
+          //@ts-ignore
+          state[whichCat.replaceAll(" ", "").toLowerCase()]=data
+        }
+        else{
+          state.data=data.items.slice(0,5);
+        }
+        // if(whichCat==='Lifestyle'){
+        //   state.lifestyleBlog = data;
+        // }
+        // else if (whichCat==='Market News'){
+        //   state.marketNewsBlog = data;
+
+        // }
       })
       .addCase(fetchBlogs.rejected, (state, action: PayloadAction<any>) => {
         state.loading = false;
