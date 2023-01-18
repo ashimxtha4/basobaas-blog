@@ -4,6 +4,7 @@ export type blogQueryType = {
   page?: number;
   perPage?: number;
   category?: string;
+  // sort?: string
 };
 
 //BLOGS

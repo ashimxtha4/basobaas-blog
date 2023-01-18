@@ -7,29 +7,31 @@ let blogs = {
     page?: string | number;
     perPage?: string | number;
     category?: string;
+    // sort?:string
   }) => {
-    let restQuery = JSON.parse(JSON.stringify(query));
-    delete restQuery.category;
-    return api.get(
-      "collections/blogs/records/" +
-        `${
-          query.category
-            ? `? ${
-                Object.keys(restQuery).length && stringify(restQuery) + "&"
-              }filter=(category.name_en='${query.category}')`
-            : "?" + stringify(query)
-        }`
-    );
+      let restQuery = { ...query };
+      delete restQuery.category;
+      return api.get(
+        "collections/blogs/records/" + 
+          `${
+            query.category
+              ? `? ${
+                  Object.keys(restQuery).length && stringify(restQuery) + "&"
+                }filter=(category.cate_slug='${query.category}')&sort=-created`
+              : "?" + stringify(query)+"&sort=-created"
+          }`
+      );
+    
   },
 };
 
 //Categories
 let category = {
-  getCategory: () => api.get("collections/category/records"),
+  getCategory: async () => await api.get("collections/category/records"),
 };
 
 //Categories
 let videos = {
-  getVideos: () => api.get("collections/videos/records"),
+  getVideos: async () => await api.get("collections/videos/records"),
 };
 export const request = { ...blogs, ...category, ...videos };

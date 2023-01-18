@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchBlogs } from "../actions/actions";
+import { blogQueryType, fetchBlogs } from "../actions/actions";
 
 export interface BlogState {
   value: number;
@@ -45,8 +45,15 @@ export const blogSlice = createSlice({
             //@ts-ignore
             state[whichCat.replaceAll(" ", "").toLowerCase()] = data;
           } else {
-            state.data = data.items.slice(0, 5);
+            state.data = data.items;
           }
+          // if(whichCat==='Lifestyle'){
+          //   state.lifestyleBlog = data;
+          // }
+          // else if (whichCat==='Market News'){
+          //   state.marketNewsBlog = data;
+
+          // }
         }
       )
       .addCase(fetchBlogs.rejected, (state, action: PayloadAction<any>) => {
