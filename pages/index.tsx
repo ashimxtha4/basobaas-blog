@@ -49,7 +49,8 @@ const HomePage = () => {
       firstRender.current = false;
       dispatch(
         fetchBlogs({
-          page: 1
+          page: 1,
+          perPage: 5
         })
       );
       dispatch(

@@ -7,31 +7,18 @@ let blogs = {
     page?: string | number;
     perPage?: string | number;
     category?: string;
+    // sort?:string
   }) => {
-    // if (query.category == "Law & Policy") {
-    //   let restQuery = { ...query };
-    //   delete restQuery.category;
-    //   return api.get(
-    //     "collections/blogs/records/" +
-    //       `${
-    //         query.category
-    //           ? `? ${
-    //               Object.keys(restQuery).length && stringify(restQuery) + "&"
-    //             }filter=(category.cate_slug='law_policy')`
-    //           : "?" + stringify(query)
-    //       }`
-    //   );
-    // } else {
       let restQuery = { ...query };
       delete restQuery.category;
       return api.get(
-        "collections/blogs/records/" +
+        "collections/blogs/records/" + 
           `${
             query.category
               ? `? ${
                   Object.keys(restQuery).length && stringify(restQuery) + "&"
-                }filter=(category.cate_slug='${query.category}')`
-              : "?" + stringify(query)
+                }filter=(category.cate_slug='${query.category}')&sort=-created`
+              : "?" + stringify(query)+"&sort=-created"
           }`
       );
     
