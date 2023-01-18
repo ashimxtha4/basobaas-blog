@@ -1,24 +1,23 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { blogQueryType, fetchBlogs } from "../actions/actions";
 
 export interface BlogState {
   value: number;
-  loading: boolean;
+  loading: string;
   data: any[];
-  lifestyle:any[],
-  marketnews:any[],
+  lifestyle: any[];
+  marketnews: any[];
 }
-type fetchPostActionType={
-    data:any,
-  whichCat?:string
-  
-}
+type fetchPostActionType = {
+  data: any;
+  whichCat?: string;
+};
 const initialState: BlogState = {
   value: 0,
-  loading: true,
+  loading: "",
   data: [],
-  lifestyle:[],
-  marketnews:[],
+  lifestyle: [],
+  marketnews: [],
 };
 
 export const blogSlice = createSlice({
@@ -35,29 +34,30 @@ export const blogSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchBlogs.pending, (state, action: PayloadAction<any>) => {
-        state.loading = true;
+        state.loading = "loading";
       })
-      .addCase(fetchBlogs.fulfilled, (state, {payload,type}: PayloadAction<any>) => {
+      .addCase(
+        fetchBlogs.fulfilled,
+        (state, { payload, type }: PayloadAction<any>) => {
+          const { data, whichCat } = payload as fetchPostActionType;
+          state.loading = "success";
+          if (whichCat) {
+            //@ts-ignore
+            state[whichCat.replaceAll(" ", "").toLowerCase()] = data;
+          } else {
+            state.data = data.items.slice(0, 5);
+          }
+          // if(whichCat==='Lifestyle'){
+          //   state.lifestyleBlog = data;
+          // }
+          // else if (whichCat==='Market News'){
+          //   state.marketNewsBlog = data;
 
-      const {data,whichCat}=payload as fetchPostActionType;
-        state.loading = false;
-        if(whichCat){          
-          //@ts-ignore
-          state[whichCat.replaceAll(" ", "").toLowerCase()]=data
+          // }
         }
-        else{
-          state.data=data.items.slice(0,5);
-        }
-        // if(whichCat==='Lifestyle'){
-        //   state.lifestyleBlog = data;
-        // }
-        // else if (whichCat==='Market News'){
-        //   state.marketNewsBlog = data;
-
-        // }
-      })
+      )
       .addCase(fetchBlogs.rejected, (state, action: PayloadAction<any>) => {
-        state.loading = false;
+        state.loading = "failed";
         state.data = [];
       });
   },

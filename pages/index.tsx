@@ -39,6 +39,10 @@ const HomePage = () => {
   const dispatch = useAppDispatch();
   const { data, loading } = useAppSelector((state) => state.blogData);
 
+  useEffect(()=>{
+    console.log("data",data)
+  },[data])
+
   const firstRender = useRef(true);
   useEffect(() => {
     if (firstRender.current) {
