@@ -43,7 +43,26 @@ const HomePage = () => {
   useEffect(() => {
     if (firstRender.current) {
       firstRender.current = false;
-      dispatch(fetchBlogs());
+      dispatch(
+        fetchBlogs({
+          page: 1,
+          perPage: 1,
+        })
+      );
+      dispatch(
+        fetchBlogs({
+          page: 1,
+          perPage: 1,
+          category:'Lifestyle'
+        })
+      );
+      dispatch(
+        fetchBlogs({
+          page: 1,
+          perPage: 1,
+          category:'Market News'
+        })
+      );
       dispatch(fetchCategory());
       dispatch(fetchVideos());
     }
