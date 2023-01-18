@@ -45,7 +45,7 @@ export const blogSlice = createSlice({
             //@ts-ignore
             state[whichCat.replaceAll(" ", "").toLowerCase()] = data;
           } else {
-            state.data = data.items.slice(0, 5);
+            state.data = data.items.slice(-5);
           }
           // if(whichCat==='Lifestyle'){
           //   state.lifestyleBlog = data;

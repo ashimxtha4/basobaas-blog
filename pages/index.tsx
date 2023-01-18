@@ -49,43 +49,42 @@ const HomePage = () => {
       firstRender.current = false;
       dispatch(
         fetchBlogs({
-          page: 1,
-          perPage: 5,
+          page: 1
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 4,
-          category:'Market News'
+          category:'market_news'
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'Lifestyle'
+          category:'lifestyle'
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'Home Loan'
+          category:'home_loan'
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'Our Thoughts'
+          category:'our_thoughts'
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'Law & Policy'
+          category:'law_policy'
         })
       );
       dispatch(fetchCategory());
