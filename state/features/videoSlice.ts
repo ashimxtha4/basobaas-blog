@@ -5,13 +5,13 @@ import { fetchVideos } from "../actions/actions";
 export interface VideoState {
   value: number;
   data: any;
-  loading: boolean;
+  loading: string;
 }
 
 const initialState: VideoState = {
   value: 0,
   data: [],
-  loading: true,
+  loading: "",
 };
 
 export const videoSlice = createSlice({
@@ -28,14 +28,14 @@ export const videoSlice = createSlice({
   extraReducers(builder) {
     builder
       .addCase(fetchVideos.pending, (state, action: PayloadAction<any>) => {
-        state.loading = true;
+        state.loading = "loading";
       })
       .addCase(fetchVideos.fulfilled, (state, action: PayloadAction<any>) => {
-        state.loading = false;
+        state.loading = "success";
         state.data = action.payload;
       })
       .addCase(fetchVideos.rejected, (state, action: PayloadAction<any>) => {
-        state.loading = false;
+        state.loading = "failed";
         state.data = [];
       });
   },

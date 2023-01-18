@@ -3,10 +3,25 @@ import { api } from "./api";
 
 //Blogs
 let blogs = {
-  getBlogs: (query: { page?: string | number, perPage?: string | number, category?:string }) =>
-{ 
- return api.get("collections/blogs/records/"+`${ query.category?`?filter=(category.name_en='${query.category}')`:'?'+stringify(query)}`)
-}};
+  getBlogs: (query: {
+    page?: string | number;
+    perPage?: string | number;
+    category?: string;
+  }) => {
+    let restQuery = JSON.parse(JSON.stringify(query));
+    delete restQuery.category;
+    return api.get(
+      "collections/blogs/records/" +
+        `${
+          query.category
+            ? `? ${
+                Object.keys(restQuery).length && stringify(restQuery) + "&"
+              }filter=(category.name_en='${query.category}')`
+            : "?" + stringify(query)
+        }`
+    );
+  },
+};
 
 //Categories
 let category = {
