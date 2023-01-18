@@ -29,22 +29,23 @@ import LifestyleImages from "../public/Images/LifestyleImages.svg";
 import Head from "next/head";
 import { useAppSelector, useAppDispatch, store } from "../state";
 import { useEffect, useRef } from "react";
-import { fetchVideos, getAllBlogs, getAllCategory } from "../state/actions/actions";
+import {
+  fetchBlogs,
+  fetchCategory,
+  fetchVideos,
+} from "../state/actions/actions";
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
-  const { data } = useAppSelector((state) => state.blogData);
+  const { data, loading } = useAppSelector((state) => state.blogData);
 
   const firstRender = useRef(true);
   useEffect(() => {
     if (firstRender.current) {
       firstRender.current = false;
-      //@ts-ignore
-      getAllBlogs(dispatch);
-      //@ts-ignore
-      getAllCategory(dispatch);
-
-      store.dispatch(fetchVideos())
+      dispatch(fetchBlogs());
+      dispatch(fetchCategory());
+      dispatch(fetchVideos());
     }
   }, [dispatch]);
 
@@ -199,35 +200,32 @@ const HomePage = () => {
         <Navbar />
       </div>
       <div className="aboveNavDivWrapper">
-      <div className="aboveNavDiv">
-        <div className="newsDiv">
-          <div className="newsHeader">
-            बसोबास <span className="newsSubHeading">समाचार र लेख</span>
+        <div className="aboveNavDiv">
+          <div className="newsDiv">
+            <div className="newsHeader">
+              बसोबास <span className="newsSubHeading">समाचार र लेख</span>
+            </div>
+            <div className="newsTexts">
+              हामी तपाईंलाई घर जग्गा बारे पूर्ण समाचार प्रदान गर्दछौं।
+            </div>
           </div>
-          <div className="newsTexts">
-            हामी तपाईंलाई घर जग्गा बारे पूर्ण समाचार प्रदान गर्दछौं।
-          </div>
-        </div>
 
-        <div className="firstAdDiv"></div>
+          <div className="firstAdDiv"></div>
+        </div>
       </div>
+      <div className="secNavDivWrapper">
+        <div className="secNavDiv">
+          <BlogNavbar />
+        </div>
       </div>
-    <div className="secNavDivWrapper">
-    <div className="secNavDiv">
-        <BlogNavbar />
-      </div>
-    </div>
-      
+
       <div className="alignmentContainer">
         <div className="containerDiv">
-         
           <div className="footerBlend">
             <div className="lowerFooterBlend"></div>
           </div>
 
           <div className="contentDiv">
-
-
             <div className="contentBody">
               <div className="blogPreviewDiv">
                 <div className="bigComponent">

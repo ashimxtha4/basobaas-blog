@@ -1,8 +1,6 @@
 export type videoResponseType = {
-    _id:string,
-    thumbnail:string,
-}
+  _id: string;
+  thumbnail: string;
+};
 
-export type blogResponseType = {
-    
-}
+export type blogResponseType = {};
