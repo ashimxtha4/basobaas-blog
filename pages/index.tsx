@@ -46,21 +46,42 @@ const HomePage = () => {
       dispatch(
         fetchBlogs({
           page: 1,
-          perPage: 1,
+          perPage: 5,
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
-          perPage: 1,
+          perPage: 4,
+          category:'Market News'
+        })
+      );
+      dispatch(
+        fetchBlogs({
+          page: 1,
+          perPage: 3,
           category:'Lifestyle'
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
-          perPage: 1,
-          category:'Market News'
+          perPage: 3,
+          category:'Home Loan'
+        })
+      );
+      dispatch(
+        fetchBlogs({
+          page: 1,
+          perPage: 3,
+          category:'Our Thoughts'
+        })
+      );
+      dispatch(
+        fetchBlogs({
+          page: 1,
+          perPage: 3,
+          category:'Law & Policy'
         })
       );
       dispatch(fetchCategory());

@@ -4,13 +4,13 @@ import { fetchCategory } from "../actions/actions";
 export interface CategoryState {
   value: number;
   data: any;
-  loading: boolean;
+  loading: string;
 }
 
 const initialState: CategoryState = {
   value: 0,
   data: [],
-  loading: true,
+  loading: "",
 };
 
 export const categorySlice = createSlice({
@@ -26,13 +26,15 @@ export const categorySlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(fetchCategory.pending, (state, action: PayloadAction<any>) => {})
+      .addCase(fetchCategory.pending, (state, action: PayloadAction<any>) => {
+        state.loading = "loading";
+      })
       .addCase(fetchCategory.fulfilled, (state, action: PayloadAction<any>) => {
-        state.loading = false;
+        state.loading = "success";
         state.data = action.payload;
       })
       .addCase(fetchCategory.rejected, (state, action: PayloadAction<any>) => {
-        state.loading = false;
+        state.loading = "failed";
         state.data = [];
       });
   },
