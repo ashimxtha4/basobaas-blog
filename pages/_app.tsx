@@ -5,7 +5,7 @@ import "../styles/main.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { Provider } from "react-redux";
-import { store } from "../store";
+import { store } from "../state";
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap.bundle.min.js");
 }
