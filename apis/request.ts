@@ -9,4 +9,9 @@ let blogs = {
 let category = {
   getCategory: () => api.get("collections/category/records"),
 };
-export const request = { ...blogs, ...category };
+
+//Categories
+let videos = {
+  getVideos: () => api.get("collections/videos/records"),
+};
+export const request = { ...blogs, ...category, ...videos };

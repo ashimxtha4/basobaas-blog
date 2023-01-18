@@ -27,9 +27,9 @@ import FeaturedPropertyImage3 from "../public/Images/featuredPropertyImage3.svg"
 import FeaturedPropertyImage4 from "../public/Images/featuredPropertyImage4.svg";
 import LifestyleImages from "../public/Images/LifestyleImages.svg";
 import Head from "next/head";
-import { useAppSelector, useAppDispatch } from "../store";
+import { useAppSelector, useAppDispatch, store } from "../state";
 import { useEffect, useRef } from "react";
-import { getAllBlogs, getAllCategory } from "../apis/actions";
+import { fetchVideos, getAllBlogs, getAllCategory } from "../state/actions/actions";
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
@@ -43,6 +43,8 @@ const HomePage = () => {
       getAllBlogs(dispatch);
       //@ts-ignore
       getAllCategory(dispatch);
+
+      store.dispatch(fetchVideos())
     }
   }, [dispatch]);
 
@@ -218,28 +220,13 @@ const HomePage = () => {
       
       <div className="alignmentContainer">
         <div className="containerDiv">
-          {/* <div className="secNavBlend"></div> */}
+         
           <div className="footerBlend">
             <div className="lowerFooterBlend"></div>
           </div>
 
           <div className="contentDiv">
-            {/* <div className="aboveNavDiv">
-              <div className="newsDiv">
-                <div className="newsHeader">
-                  बसोबास <span className="newsSubHeading">समाचार र लेख</span>
-                </div>
-                <div className="newsTexts">
-                  हामी तपाईंलाई घर जग्गा बारे पूर्ण समाचार प्रदान गर्दछौं।
-                </div>
-              </div>
 
-              <div className="firstAdDiv"></div>
-            </div>
-
-            <div className="secNavDiv container-fluid">
-              <BlogNavbar />
-            </div> */}
 
             <div className="contentBody">
               <div className="blogPreviewDiv">

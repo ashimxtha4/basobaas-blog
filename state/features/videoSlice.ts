@@ -1,14 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
+import { fetchVideos } from '../actions/actions';
 
 export interface VideoState {
   value: number;
   data: any;
+  loading:boolean
 }
 
 const initialState: VideoState = {
   value: 0,
   data: [],
+  loading:true,
 };
 
 export const videoSlice = createSlice({
@@ -25,6 +28,20 @@ export const videoSlice = createSlice({
       state.data = action.payload;
     },
     allVideo: (state, action: PayloadAction<any>) => {},
+  },
+  extraReducers(builder) {
+      builder
+      .addCase(fetchVideos.pending, (state, action:PayloadAction<any>)=>{
+        state.loading = true
+      })
+      .addCase(fetchVideos.fulfilled, (state, action:PayloadAction<any>)=>{
+        state.loading = false
+        state.data = action.payload
+      })
+      .addCase(fetchVideos.rejected,(state,action:PayloadAction<any>)=>{
+        state.loading = false
+        state.data=[]
+      })
   },
 });
 
