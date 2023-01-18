@@ -3,16 +3,17 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export type blogQueryType = {
   page?: number;
   perPage?: number;
-  category?:string
+  category?: string;
 };
+
 //BLOGS
 export const fetchBlogs = createAsyncThunk<{}, blogQueryType>(
   "get/blogs",
   async (query: blogQueryType) => {
     const res = await request.getBlogs(query);
     return {
-      data:res.data,
-      whichCat:query.category
+      data: res.data,
+      whichCat: query.category,
     };
   }
 );
