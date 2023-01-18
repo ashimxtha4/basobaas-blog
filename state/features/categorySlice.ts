@@ -4,6 +4,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 export interface CategoryState {
   value: number;
   data: any;
+  
 }
 
 const initialState: CategoryState = {
@@ -26,6 +27,10 @@ export const categorySlice = createSlice({
     },
     allCategory: (state, action: PayloadAction<any>) => {},
   },
+  extraReducers(builder){
+    builder.
+    addCase
+  }
 });
 
 export const { increment, decrement, setCategory, allCategory } =

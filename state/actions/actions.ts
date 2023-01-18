@@ -17,17 +17,26 @@ export const getAllBlogs = (dispatch: typeof useAppDispatch) =>
     .finally(() => {});
 
 //CATEGORIES
-export const getAllCategory = async (dispatch: typeof useAppDispatch) => {
-  try {
-    const res = await request.getCategory();
-    if (res.data.items) {
-      //@ts-ignore
-      dispatch(setCategory(res.data.items));
-    }
-  } catch (e) {
-    console.log(e);
+// export const getAllCategory = async (dispatch: typeof useAppDispatch) => {
+//   try {
+//     const res = await request.getCategory();
+//     if (res.data.items) {
+//       //@ts-ignore
+//       dispatch(setCategory(res.data.items));
+//     }
+//   } catch (e) {
+//     console.log(e);
+//   }
+// };
+
+export const getAllCategory = createAsyncThunk<any>(
+  "get/categories",
+  async () => {
+    const response = await request.getCategory();
+    console.log("categories", response);
+    return response.data.items;
   }
-};
+);
 
 //VIDEOS
 // export const getAllVideo = async (dispatch: typeof useAppDispatch) => {
@@ -41,13 +50,16 @@ export const getAllCategory = async (dispatch: typeof useAppDispatch) => {
 //     console.log(error);
 //   }
 // };
-type VideoRespponseType={
-  _id:string,
-  thumbnail:string,
-  title:string
-}
-export const fetchVideos = createAsyncThunk<VideoRespponseType[]>("get/videos", async () => {
-  const response = await request.getVideos();
-  console.log(response);
-  return response.data.items;
-});
+type VideoRespponseType = {
+  _id: string;
+  thumbnail: string;
+  title: string;
+};
+export const fetchVideos = createAsyncThunk<VideoRespponseType[]>(
+  "get/videos",
+  async () => {
+    const response = await request.getVideos();
+    console.log(response);
+    return response.data.items;
+  }
+);
