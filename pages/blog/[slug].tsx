@@ -9,10 +9,28 @@ import blogDetailsImage from "../../public/Images/blogDetailsImage1.svg";
 import blogDetailsImage3 from "../../public/Images/blogDetailsImage3.svg";
 import LawAndPolicy from "../../components/ui/LawAndPolicy";
 import DetailProperty from "../../components/ui/detailProperty";
+import { useRouter } from "next/router";
+import { useAppDispatch } from "../../state";
+import { fetchBlogs } from "../../state/actions/actions";
+import { useEffect } from "react";
 export default function BlogPage() {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (router.isReady)
+      dispatch(
+        fetchBlogs({
+          page: 1,
+          perPage: 1,
+          slug: router.query.slug as string,
+        })
+      );
+  }, [dispatch, router.isReady, router.query.slug]);
+
   return (
     <>
-    <div className="navBlend">
+      <div className="navBlend">
         <Navbar />
       </div>
       <div className="secNavDivWrapper">
