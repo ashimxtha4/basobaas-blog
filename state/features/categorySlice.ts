@@ -38,10 +38,6 @@ export const categorySlice = createSlice({
         state.data = [];
       });
   },
-  // extraReducers(builder){
-  //   builder.
-  //   addCase
-  // }
 });
 
 export const { increment, decrement } = categorySlice.actions;

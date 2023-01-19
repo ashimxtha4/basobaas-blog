@@ -39,9 +39,9 @@ const HomePage = () => {
   const dispatch = useAppDispatch();
   const { data, loading } = useAppSelector((state) => state.blogData);
 
-  useEffect(()=>{
-    console.log("data",data)
-  },[data])
+  useEffect(() => {
+    console.log("data", data);
+  }, [data]);
 
   const firstRender = useRef(true);
   useEffect(() => {
@@ -50,42 +50,42 @@ const HomePage = () => {
       dispatch(
         fetchBlogs({
           page: 1,
-          perPage: 5
+          perPage: 5,
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 4,
-          category:'market_news'
+          category: "market_news",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'lifestyle'
+          category: "lifestyle",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'home_loan'
+          category: "home_loan",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'our_thoughts'
+          category: "our_thoughts",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'law_policy'
+          category: "law_and_policy",
         })
       );
       dispatch(fetchCategory());
