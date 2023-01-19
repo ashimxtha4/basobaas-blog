@@ -6,7 +6,7 @@ export interface BlogState {
   loading: string;
   data: any[];
   lifestyle: any[];
-  marketnews: any[];
+  market_news: any;
 }
 type fetchPostActionType = {
   data: any;
@@ -17,7 +17,7 @@ const initialState: BlogState = {
   loading: "",
   data: [],
   lifestyle: [],
-  marketnews: [],
+  market_news: {},
 };
 
 export const blogSlice = createSlice({

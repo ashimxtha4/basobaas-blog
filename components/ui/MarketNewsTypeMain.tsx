@@ -1,8 +1,24 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import { useEffect } from "react";
 import HomeBlogMainImage from "../../public/Images/MarketNewsImage.svg";
+import { useAppDispatch, useAppSelector } from "../../state";
+import { fetchBlogs } from "../../state/actions/actions";
 
-const MarketNewsTypeMain = () => {
+const MarketNewsTypeMain = (props:any) => {
+  const dispatch = useAppDispatch();
+  
+  const marketData=useAppSelector((state)=>state.blogData.market_news.items);
+  const categoryList = useAppSelector((state)=>state.categoryData.data.items);
+  useEffect(() => {
+    dispatch(
+      fetchBlogs({
+        page: 1,
+        perPage: 4,
+        category: "market_news",
+      })
+    );
+  },[dispatch]);
   return (
     <>
       <div className="marketNewsTypeMain">
@@ -16,16 +32,16 @@ const MarketNewsTypeMain = () => {
         </div>
         <div className="blogContents">
           <div className="blogCategoryTitle">
-            <p>निर्माण</p>
+            <p>
+              {categoryList?.find((obj:any)=>obj?.id==marketData[0]?.category)?.name_np}
+            </p>
           </div>
           <div className="blogHeader">
-            <p>सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।</p>
+            <p>{(marketData!=undefined)&&marketData[0]?.title_np}</p>
           </div>
           <div className="blogBody">
             <p>
-              घर भनेको एकल-इकाई आवासीय भवन हो। यो प्रारम्भिक झुपडीबाट काठ,
-              चिनाई, कंक्रीट वा अन्य सामग्रीको जटिल संरचना सम्मको जटिलतामा हुन
-              सक्छ, आउटफिट गरिएको बुद्धि...
+              {(marketData!=undefined)&&marketData[0]?.content}
             </p>
           </div>
           <div className="blogBy">

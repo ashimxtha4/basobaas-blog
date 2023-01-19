@@ -37,11 +37,12 @@ import {
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
+  const marketData = useAppSelector((state) => state?.blogData?.market_news?.items);
   const { data, loading } = useAppSelector((state) => state.blogData);
 
-  useEffect(()=>{
-    console.log("data",data)
-  },[data])
+  useEffect(() => {
+    console.log("data", data);
+  }, [data]);
 
   const firstRender = useRef(true);
   useEffect(() => {
@@ -50,42 +51,42 @@ const HomePage = () => {
       dispatch(
         fetchBlogs({
           page: 1,
-          perPage: 5
+          perPage: 5,
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 4,
-          category:'market_news'
+          category: "market_news",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'lifestyle'
+          category: "lifestyle",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'home_loan'
+          category: "home_loan",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'our_thoughts'
+          category: "our_thoughts",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category:'law_policy'
+          category: "law_policy",
         })
       );
       dispatch(fetchCategory());
@@ -275,10 +276,14 @@ const HomePage = () => {
                 <div className="bigComponent">
                   <HomeBlogTypeMain />
                 </div>
+
                 <div className="smallComponentDiv">
-                  {dummyRelatedBlogsData.map((data: any, index: number) => (
+                  {data?.slice(1).map((data: any, index: number) => (
                     <div className="smallComponent" key={index}>
-                      <HomeBlogTypeSmall data={data} />
+                      <HomeBlogTypeSmall
+                        data={data}
+                        image={dummyRelatedBlogsData[index]?.thumbnail}
+                      />
                     </div>
                   ))}
                 </div>
@@ -296,13 +301,14 @@ const HomePage = () => {
                     <MarketNewsTypeMain />
                   </div>
                   <div className="marketSmallComponentDiv">
-                    {dummyRelatedBlogsData
-                      .splice(0, 3)
-                      .map((data: any, index: number) => (
-                        <div className="marketSmallComponent" key={index}>
-                          <MarketNewsTypeSecondary data={data} />
-                        </div>
-                      ))}
+                    {marketData?.slice(1).map((data: any, index: number) => (
+                      <div className="marketSmallComponent" key={index}>
+                        <MarketNewsTypeSecondary
+                          data={data}
+                          image={dummyRelatedBlogsData[index]?.thumbnail}
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
