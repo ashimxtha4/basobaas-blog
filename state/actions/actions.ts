@@ -4,7 +4,7 @@ export type blogQueryType = {
   page?: number;
   perPage?: number;
   category?: string;
-  // sort?: string
+  slug?: string;
 };
 
 //BLOGS
@@ -14,7 +14,8 @@ export const fetchBlogs = createAsyncThunk<{}, blogQueryType>(
     const res = await request.getBlogs(query);
     return {
       data: res.data,
-      whichCat: query.category,
+      blogByCategory: query.category,
+      slug: query.slug,
     };
   }
 );

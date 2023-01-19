@@ -7,21 +7,25 @@ let blogs = {
     page?: string | number;
     perPage?: string | number;
     category?: string;
-    // sort?:string
+    slug?: string;
   }) => {
-      let restQuery = { ...query };
-      delete restQuery.category;
-      return api.get(
-        "collections/blogs/records/" + 
-          `${
-            query.category
-              ? `? ${
-                  Object.keys(restQuery).length && stringify(restQuery) + "&"
-                }filter=(category.cate_slug='${query.category}')&sort=-created`
-              : "?" + stringify(query)+"&sort=-created"
-          }`
-      );
-    
+    let otherQuery = { ...query };
+    delete otherQuery.category;
+    delete otherQuery.slug;
+    return api.get(
+      "collections/blogs/records/" +
+        `${
+          query.category
+            ? `? ${
+                Object.keys(otherQuery).length && stringify(otherQuery) + "&"
+              }filter=(category.cate_slug='${query.category}')&sort=-created`
+            : query.slug
+            ? `? ${
+                Object.keys(otherQuery).length && stringify(otherQuery) + "&"
+              }filter=(slug='${query.slug}')&sort=-created`
+            : "?" + stringify(query) + "&sort=-created"
+        }`
+    );
   },
 };
 

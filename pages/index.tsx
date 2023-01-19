@@ -37,7 +37,9 @@ import {
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
-  const marketData = useAppSelector((state) => state?.blogData?.market_news?.items);
+  const marketData = useAppSelector(
+    (state) => state?.blogData?.market_news?.items
+  );
   const { data, loading } = useAppSelector((state) => state.blogData);
 
   useEffect(() => {

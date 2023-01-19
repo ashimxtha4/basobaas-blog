@@ -24,10 +24,12 @@ export interface BlogState {
   home_loan: initialItemType;
   our_thoughts: initialItemType;
   law_and_policy: initialItemType;
+  blogBySlug: any;
 }
 type fetchPostActionType = {
   data: any;
-  whichCat?: string;
+  blogByCategory?: string;
+  slug?: any;
 };
 const initialState: BlogState = {
   value: 0,
@@ -38,6 +40,7 @@ const initialState: BlogState = {
   home_loan: { items: [] },
   our_thoughts: { items: [] },
   law_and_policy: { items: [] },
+  blogBySlug: {},
 };
 
 export const blogSlice = createSlice({
@@ -59,11 +62,13 @@ export const blogSlice = createSlice({
       .addCase(
         fetchBlogs.fulfilled,
         (state, { payload, type }: PayloadAction<any>) => {
-          const { data, whichCat } = payload as fetchPostActionType;
+          const { data, blogByCategory, slug } = payload as fetchPostActionType;
           state.loading = "success";
-          if (whichCat) {
+          if (blogByCategory) {
             //@ts-ignore
-            state[whichCat.replaceAll(" ", "").toLowerCase()] = data;
+            state[blogByCategory.replaceAll(" ", "").toLowerCase()] = data;
+          } else if (slug && !blogByCategory) {
+            state.blogBySlug = data;
           } else {
             state.data = data.items;
           }

@@ -8,14 +8,15 @@ import { useAppSelector } from "../../state";
 const HomeBlogTypeMain = () => {
   const router = useRouter();
   const { data, loading } = useAppSelector((state) => state.blogData);
-  const categoryList = useAppSelector((state)=>state.categoryData.data.items);
+  const categoryList = useAppSelector((state) => state.categoryData.data.items);
 
+  console.log("data", data);
   return (
     <>
       <div className="homeBlogTypeMain">
         <div
           className="thumbnail"
-          onClick={() => router.push(`blogDetails/${123}`)}
+          onClick={() => router.push(`blog/${data[0]?.slug}`)}
         >
           <Image
             className="blogCardBackground"
@@ -36,7 +37,10 @@ const HomeBlogTypeMain = () => {
             >
               <p>
                 {/* यात्रा */}
-                {categoryList?.find((obj:any)=>obj.id==data[0]?.category)?.name_np}
+                {
+                  categoryList?.find((obj: any) => obj.id == data[0]?.category)
+                    ?.name_np
+                }
               </p>
             </Link>
           </div>
