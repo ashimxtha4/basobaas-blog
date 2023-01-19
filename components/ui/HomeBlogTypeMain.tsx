@@ -20,6 +20,9 @@ const HomeBlogTypeMain = () => {
           <Image
             className="blogCardBackground"
             // src={`https://pocketbase.asterdio.xyz/${data[0]?.images[0]}`}
+            // src={`${process.env.NEXT_PUBLIC_APP_API_URL as string}${
+            //   data[0].images[0]
+            // }`}
             src={HomeBlogMainImage}
             alt="Basobaas Nepal"
             layout="fill"
