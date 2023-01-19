@@ -37,6 +37,7 @@ import {
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
+  const marketData = useAppSelector((state) => state?.blogData?.market_news?.items);
   const { data, loading } = useAppSelector((state) => state.blogData);
 
   useEffect(() => {
@@ -273,10 +274,14 @@ const HomePage = () => {
                 <div className="bigComponent">
                   <HomeBlogTypeMain />
                 </div>
+
                 <div className="smallComponentDiv">
-                  {dummyRelatedBlogsData.map((data: any, index: number) => (
+                  {data?.slice(1).map((data: any, index: number) => (
                     <div className="smallComponent" key={index}>
-                      <HomeBlogTypeSmall data={data} />
+                      <HomeBlogTypeSmall
+                        data={data}
+                        image={dummyRelatedBlogsData[index]?.thumbnail}
+                      />
                     </div>
                   ))}
                 </div>
@@ -294,13 +299,14 @@ const HomePage = () => {
                     <MarketNewsTypeMain />
                   </div>
                   <div className="marketSmallComponentDiv">
-                    {dummyRelatedBlogsData
-                      .splice(0, 3)
-                      .map((data: any, index: number) => (
-                        <div className="marketSmallComponent" key={index}>
-                          <MarketNewsTypeSecondary data={data} />
-                        </div>
-                      ))}
+                    {marketData?.slice(1).map((data: any, index: number) => (
+                      <div className="marketSmallComponent" key={index}>
+                        <MarketNewsTypeSecondary
+                          data={data}
+                          image={dummyRelatedBlogsData[index]?.thumbnail}
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
