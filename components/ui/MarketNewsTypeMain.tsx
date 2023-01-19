@@ -1,24 +1,13 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import { useEffect } from "react";
 import HomeBlogMainImage from "../../public/Images/MarketNewsImage.svg";
-import { useAppDispatch, useAppSelector } from "../../state";
-import { fetchBlogs } from "../../state/actions/actions";
+import { useAppSelector } from "../../state";
 
 const MarketNewsTypeMain = (props:any) => {
-  const dispatch = useAppDispatch();
   
   const marketData=useAppSelector((state)=>state.blogData.market_news.items);
   const categoryList = useAppSelector((state)=>state.categoryData.data.items);
-  useEffect(() => {
-    dispatch(
-      fetchBlogs({
-        page: 1,
-        perPage: 4,
-        category: "market_news",
-      })
-    );
-  },[dispatch]);
+
   return (
     <>
       <div className="marketNewsTypeMain">
@@ -37,11 +26,11 @@ const MarketNewsTypeMain = (props:any) => {
             </p>
           </div>
           <div className="blogHeader">
-            <p>{(marketData!=undefined)&&marketData[0]?.title_np}</p>
+            <p>{marketData[0]?.title_np}</p>
           </div>
           <div className="blogBody">
             <p>
-              {(marketData!=undefined)&&marketData[0]?.content}
+              {marketData[0]?.content}
             </p>
           </div>
           <div className="blogBy">

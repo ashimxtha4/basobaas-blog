@@ -85,8 +85,8 @@ const HomePage = () => {
       dispatch(
         fetchBlogs({
           page: 1,
-          perPage: 3,
-          category: "law_policy",
+          perPage: 4,
+          category: "law_and_policy",
         })
       );
       dispatch(fetchCategory());
@@ -226,8 +226,6 @@ const HomePage = () => {
       priceLabel: "Total Price",
     },
   ];
-
-  const { value } = useAppSelector((state) => state.blogData);
 
   return (
     <>
