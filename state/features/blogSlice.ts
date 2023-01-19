@@ -5,8 +5,11 @@ export interface BlogState {
   value: number;
   loading: string;
   data: any[];
+  market_news: any[];
   lifestyle: any[];
-  marketnews: any[];
+  home_loan: any[];
+  out_thoughts: any[];
+  law_and_policy: any[];
 }
 type fetchPostActionType = {
   data: any;
@@ -16,8 +19,11 @@ const initialState: BlogState = {
   value: 0,
   loading: "",
   data: [],
+  market_news: [],
   lifestyle: [],
-  marketnews: [],
+  home_loan: [],
+  our_thoughts: [],
+  law_and_policy: [],
 };
 
 export const blogSlice = createSlice({
