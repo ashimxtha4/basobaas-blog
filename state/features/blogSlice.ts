@@ -8,7 +8,7 @@ export interface BlogState {
   market_news: any[];
   lifestyle: any[];
   home_loan: any[];
-  out_thoughts: any[];
+  our_thoughts: any[];
   law_and_policy: any[];
 }
 type fetchPostActionType = {
