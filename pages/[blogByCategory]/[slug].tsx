@@ -11,10 +11,11 @@ import CategorySpecificImage2 from "../../public/Images/categorySpecificImage2.s
 import CategorySpecificImage3 from "../../public/Images/categorySpecificImage3.svg";
 import CategorySpecificImage4 from "../../public/Images/categorySpecificImage4.svg";
 import { Pagination } from "antd";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useAppDispatch } from "../../state";
+import { useAppDispatch, useAppSelector } from "../../state";
 import { fetchBlogs, fetchCategory } from "../../state/actions/actions";
+import { BlogByCategoryKeyType } from "../../state/features/blogSlice";
 
 const dummyBlogCategories = [
   {
@@ -75,21 +76,34 @@ const dummyBlogCategories = [
   },
 ];
 export default function BlogPage() {
-  const router = useRouter()
-  const dispatch = useAppDispatch()
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+  const [values,setValues]=useState<any>()
+  const data = useAppSelector((state) => state?.blogData);
 
   useEffect(() => {
-    if (router.isReady){
+    if (router.isReady) {
       dispatch(fetchCategory());
       dispatch(
         fetchBlogs({
           page: 1,
-          perPage: 20,
+          perPage: 10,
           cate_slug: router.query.slug as string,
         })
       );
-    }    
+    }
   }, [dispatch, router.isReady, router.query.slug]);
+
+  useEffect(() => {
+    if (!!Object.keys(data).length && router.query.slug) {
+      console.log("data", data);
+      const aasliMaal: {} =data[router.query.slug as BlogByCategoryKeyType]?.items;
+        setValues(aasliMaal)
+        console.log("ashimMaal",aasliMaal);
+    }
+  }, [router.isReady, router.query, data]);
+  console.log("values",values);
+
   return (
     <>
       <div className="navBlend">
@@ -151,12 +165,12 @@ export default function BlogPage() {
                     </div>
                   </div>
                   <div className="componentMapSection">
-                    {dummyBlogCategories?.map((blog, ix) => {
+                    {values?.slice(0,5)?.map((blog:any,index:number) => {
                       return (
                         <Link
                           style={{ transform: "none" }}
-                          href="/blogDetails/123"
-                          key={ix}
+                          href={"/blog/"+values.slug as string}
+                          key={index}
                         >
                           <CategorySpecificBlog blog={blog} />
                         </Link>
