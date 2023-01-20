@@ -19,7 +19,7 @@ const OurThoughts = () => {
       </div>
       <div className="ourThoughtsCardDiv">
         {ourThoughtsData.map((data: any, index: number) => (
-          <div className="ourThoughtsCard">
+          <div className="ourThoughtsCard" key={index}>
             <div className="ourThoughts">
               <div className="imageContainer">
                 <Image
@@ -51,67 +51,6 @@ const OurThoughts = () => {
             </div>
           </div>
         ))}
-
-        {/* <div className="ourThoughtsCard">
-          <div className="ourThoughts">
-            <div className="imageContainer">
-              <Image
-                className="ourThoughtsImage"
-                src={OurThoughtsImage2}
-                alt="basobaas Nepal"
-              />
-            </div>
-            <div className="blogContents">
-              <div className="blogHeader">
-                <p>
-                  पद्मा कोलोनीः उत्कृष्ट डिजाइनका घरमा आकर्षक फर्निचरको प्रयोग ।
-                </p>
-              </div>
-              <div className="blogBy">
-                <span className="author">कपिल कार्की</span>
-                <span className="separator">
-                  <Icon
-                    icon="ci:dot-05-xl"
-                    width="15"
-                    height="15"
-                    color="#969696"
-                  />
-                </span>
-                <span className="posted">२ हप्ता अघि</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="ourThoughtsCard">
-          <div className="ourThoughts">
-            <div className="imageContainer">
-              <Image
-                className="ourThoughtsImage"
-                src={OurThoughtsImage3}
-                alt="basobaas Nepal"
-              />
-            </div>
-            <div className="blogContents">
-              <div className="blogHeader">
-                <p>
-                  तुलसी विवाह किन र कसरी गर्ने ! यस्ता छन् जान्नैपर्ने कुराहरू।
-                </p>
-              </div>
-              <div className="blogBy">
-                <span className="author">कमल पण्डित</span>
-                <span className="separator">
-                  <Icon
-                    icon="ci:dot-05-xl"
-                    width="15"
-                    height="15"
-                    color="#969696"
-                  />
-                </span>
-                <span className="posted">२ महिना अघि</span>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </>
   );

@@ -7,22 +7,18 @@ import LawAndPolicyImage3 from "../../public/Images/lawAndPolicyImage3.svg";
 import LawAndPolicyImage4 from "../../public/Images/lawAndPolicyImage4.svg";
 import { useAppSelector } from "../../state/index";
 
-const LawAndPolicy = (props: any) => {
-  const data = useAppSelector(
-    (state) => state?.blogData?.law_and_policy?.items
-  );
-
+const LawAndPolicy = ({ data, title }: { data: any; title: string }) => {
   const categoryData = useAppSelector(
     (state) => state?.categoryData?.data?.items
   );
   return (
     <>
       <div className="lawPolicyTitleDiv">
-        <label className="lawPolicyTitle">{props.title}</label>
+        <label className="lawPolicyTitle">{title}</label>
         <span className="lawPolicyViewAllButton">सबै हेर्नुहोस्</span>
       </div>
       <div className="lawPolicyCardDiv">
-        {data?.map((data, index) => (
+        {data?.map((data: any, index: number) => (
           <div className="lawPolicyCard" key={index}>
             <div className="imageContainer">
               <Image

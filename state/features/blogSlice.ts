@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { blogQueryType, fetchBlogs } from "../actions/actions";
 
 type blogItemsResponseType = {
-  category: string;
+  categoryId: string;
+  cate_slug: string;
   content: string;
   created: string;
   images: string[];
