@@ -11,6 +11,10 @@ import CategorySpecificImage2 from "../../public/Images/categorySpecificImage2.s
 import CategorySpecificImage3 from "../../public/Images/categorySpecificImage3.svg";
 import CategorySpecificImage4 from "../../public/Images/categorySpecificImage4.svg";
 import { Pagination } from "antd";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useAppDispatch } from "../../state";
+import { fetchBlogs, fetchCategory } from "../../state/actions/actions";
 
 const dummyBlogCategories = [
   {
@@ -71,6 +75,21 @@ const dummyBlogCategories = [
   },
 ];
 export default function BlogPage() {
+  const router = useRouter()
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    if (router.isReady){
+      dispatch(fetchCategory());
+      dispatch(
+        fetchBlogs({
+          page: 1,
+          perPage: 20,
+          category: router.query.slug as string,
+        })
+      );
+    }    
+  }, [dispatch, router.isReady, router.query.slug]);
   return (
     <>
       <div className="navBlend">
