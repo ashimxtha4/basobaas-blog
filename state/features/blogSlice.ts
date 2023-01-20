@@ -13,6 +13,8 @@ type blogItemsResponseType = {
   total_views: string | number;
 };
 
+
+
 type initialItemType = {
   items: blogItemsResponseType[];
 };
@@ -27,6 +29,8 @@ export interface BlogState {
   law_and_policy: initialItemType;
   blogBySlug: any;
 }
+export type  BlogByCategoryKeyType= 'blogBySlug'|'market_news'|'lifestyle'|'home_loan'|"our_thoughts"|"law_and_policy"|"blogBySlug"
+
 type fetchPostActionType = {
   data: any;
   blogByCategory?: string;

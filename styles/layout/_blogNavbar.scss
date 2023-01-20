@@ -1,3 +1,218 @@
+// a:hover {
+//   transform: none;
+// }
+
+// .dropdown-toggle::after {
+//   content: none;
+// }
+
+// input:focus,
+// select:focus {
+//   outline: none;
+// }
+
+// .blogNavbar {
+//   position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   background: #001338;
+//   width: 100%;
+//   height: fit-content;
+//   margin: 0px;
+//   padding: 0;
+
+//   .navbarContainer {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 16px;
+//     height: fit-content;
+//     border-radius: 0px;
+//     justify-content: space-between;
+//     width: 100%;
+
+//     @media only screen and (min-width: 1024px) {
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: space-between;
+//       width: 100%;
+//     }
+
+//     .navbarTop {
+//       display: flex;
+//       flex-direction: row;
+//       width: 100%;
+//       @media only screen and (min-width: 1024px) {
+//         width: fit-content;
+//         min-width: calc(675 * 100% / 1440);
+//       }
+
+//       ul {
+//         width: 100%;
+//         justify-content: space-between;
+//         @media only screen and (min-width: 768px) {
+//           gap: 32px;
+//         }
+
+//         .invi-item {
+//           display: none;
+
+//           @media only screen and (min-width: 710px) {
+//             display: inline;
+//           }
+//         }
+
+//         li {
+//           a {
+//             font-family: "Ek Mukta";
+//             font-style: normal;
+//             font-weight: 400;
+//             font-size: 14px;
+//             line-height: 140%;
+//             text-align: center;
+//             color: #ffffff;
+//             flex: none;
+//             order: 1;
+//             flex-grow: 0;
+//             padding: 0px;
+//           }
+//           a:hover {
+//             text-decoration: underline;
+//           }
+
+//           ul {
+//             background-color: #001338;
+
+//             li {
+//               a {
+//                 background-color: #001338;
+//               }
+//             }
+//           }
+
+//           .dropdown-menu {
+//             left: auto;
+//             right: 0%;
+//           }
+//         }
+
+//         .moreDropDown {
+//           a {
+//             span {
+//               width: 58px;
+//               height: fit-content;
+//               display: flex;
+//               flex-direction: row;
+//               justify-content: space-between;
+//               align-items: center;
+//             }
+//           }
+//         }
+
+//         .expandedNavItems {
+//           display: flex;
+//         }
+//       }
+//     }
+
+//     .navbarBottom {
+//       padding: 0px;
+//       margin: 0px;
+//       width: 100%;
+//       @media only screen and (min-width: 1024px) {
+//         min-width: calc(448 * 100% / 1440);
+//         width: fit-content;
+//       }
+
+//       form {
+//         display: flex;
+//         flex-direction: row;
+//         gap: 16px;
+//         align-items: center;
+//         justify-content: space-between;
+//         position: relative;
+//         width: 100%;
+
+//         .searchSection {
+//           width: 100%;
+//           position: relative;
+
+//           .searchBox {
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: space-between;
+//             align-items: center;
+//             padding: 8px 16px;
+//             gap: 24px;
+//             min-width: 279px;
+//             width: 100%;
+//             height: 40px;
+//             background: #ffffff;
+//             border-radius: 5px;
+//             font-family: "Product Sans", sans-serif;
+//             font-style: normal;
+//             font-weight: 400;
+//             font-size: 14px;
+//             line-height: 140%;
+//             color: #545454;
+//           }
+
+//           .searchIcon {
+//             position: absolute;
+//             right: 16px;
+//             cursor: pointer;
+//           }
+//         }
+
+//         div {
+//           display: flex;
+//           flex-direction: row;
+//           align-items: center;
+//           position: relative;
+
+//           .languageSelect {
+//             font-family: "Product Sans", sans-serif;
+//             font-style: normal;
+//             font-weight: 400;
+//             font-size: 14px;
+//             line-height: 140%;
+//             text-align: start;
+//             color: #ffffff;
+//             width: 50px;
+//             height: 20px;
+//             appearance: none;
+//             border: none;
+//             background-color: transparent;
+//             z-index: 1;
+//           }
+
+//           .selectArrow {
+//             position: absolute;
+//             right: 0;
+//             color: white;
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   @media only screen and (min-width: 1024px) {
+//     .moreDropDown {
+//       display: none !important;
+//     }
+
+//     .navbarContainer {
+//       flex-direction: row !important;
+//     }
+
+//     .expandedNavItems {
+//       display: block !important;
+//     }
+//   }
+// }
+
 a:hover {
   transform: none;
 }
@@ -12,16 +227,15 @@ select:focus {
 }
 
 .blogNavbar {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #001338;
   width: 100%;
-  height: fit-content;
+  height: auto;
   margin: 0px;
-  padding: 0;
+  padding: 0px;
 
   .navbarContainer {
     display: flex;
@@ -30,41 +244,30 @@ select:focus {
     gap: 16px;
     height: fit-content;
     border-radius: 0px;
-    justify-content: space-between;
-    width: 100%;
-
+    justify-content: center;
     @media only screen and (min-width: 1024px) {
-      display: flex;
       flex-direction: row;
       justify-content: space-between;
-      width: 100%;
     }
+    width: 100%;
 
     .navbarTop {
-      display: flex;
-      flex-direction: row;
       width: 100%;
+      height: fit-content;
       @media only screen and (min-width: 1024px) {
         width: fit-content;
-        min-width: calc(675 * 100% / 1440);
       }
 
       ul {
-        width: 100%;
         justify-content: space-between;
-        @media only screen and (min-width: 768px) {
+        gap: 28px;
+        @media only screen and (min-width: 1024px) {
+          justify-content: flex-start;
           gap: 32px;
         }
-
-        .invi-item {
-          display: none;
-
-          @media only screen and (min-width: 710px) {
-            display: inline;
-          }
-        }
-
         li {
+          width: fit-content;
+
           a {
             font-family: "Ek Mukta";
             font-style: normal;
@@ -73,57 +276,64 @@ select:focus {
             line-height: 140%;
             text-align: center;
             color: #ffffff;
-            flex: none;
-            order: 1;
-            flex-grow: 0;
             padding: 0px;
           }
           a:hover {
             text-decoration: underline;
           }
+          span {
+            width: fit-content;
+            // height: 20px;
+            font-family: "Ek Mukta";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            text-align: center;
+            color: #ffffff;
+            padding: 0px;
+          }
+
+          .dropdown-menu {
+            width: 100px;
+          }
 
           ul {
             background-color: #001338;
+            min-width: max-content;
+            gap: 2px;
+            // border: solid 1px white;
 
             li {
+              position: relative;
+              // top: -10px;
+              width: 100%;
+              display: flex;
+              justify-content: flex-end;
+              padding-right: 10px;
               a {
                 background-color: #001338;
+                width: fit-content;
               }
             }
           }
-
           .dropdown-menu {
             left: auto;
             right: 0%;
           }
         }
-
-        .moreDropDown {
-          a {
-            span {
-              width: 58px;
-              height: fit-content;
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-              align-items: center;
-            }
-          }
-        }
-
+       
         .expandedNavItems {
-          display: flex;
+          display: none;
         }
       }
     }
-
     .navbarBottom {
       padding: 0px;
       margin: 0px;
       width: 100%;
       @media only screen and (min-width: 1024px) {
-        min-width: calc(448 * 100% / 1440);
-        width: fit-content;
+        max-width: 350px;
       }
 
       form {
@@ -134,11 +344,13 @@ select:focus {
         justify-content: space-between;
         position: relative;
         width: 100%;
+        @media only screen and (min-width: 1024px) {
+          max-width: 350px;
+        }
 
         .searchSection {
           width: 100%;
           position: relative;
-
           .searchBox {
             display: flex;
             flex-direction: row;
@@ -146,6 +358,7 @@ select:focus {
             align-items: center;
             padding: 8px 16px;
             gap: 24px;
+            // width: 279px;
             min-width: 279px;
             width: 100%;
             height: 40px;
@@ -158,7 +371,6 @@ select:focus {
             line-height: 140%;
             color: #545454;
           }
-
           .searchIcon {
             position: absolute;
             right: 16px;
@@ -188,23 +400,22 @@ select:focus {
             z-index: 1;
           }
 
+          // .languageSelect:focus {
+          //   outline: none;
+          // }
+
           .selectArrow {
             position: absolute;
             right: 0;
-            color: white;
           }
         }
       }
     }
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1440px) {
     .moreDropDown {
-      display: none !important;
-    }
-
-    .navbarContainer {
-      flex-direction: row !important;
+      display: none;
     }
 
     .expandedNavItems {
