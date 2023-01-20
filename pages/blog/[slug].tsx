@@ -79,7 +79,7 @@ export default function BlogPage() {
                                     inline={true}
                                   />{" "}
                                 </span>
-
+                                {/* PARENT CATEGORY MAP SECTION */}
                                 {/* <span className="catSubCatNames">
                             <Link href="#">सल्लाह</Link>
                           </span>
@@ -190,7 +190,7 @@ export default function BlogPage() {
                 </div>
                 <div className="blogDetailsFooterRelatedBlogs">
                   <div className="lawPolicyDiv">
-                    <LawAndPolicy title="सम्बन्धित ब्लगहरू"  data={data}/>
+                    <LawAndPolicy title="सम्बन्धित ब्लगहरू" data={data} />
                   </div>
                   <DetailProperty />
                 </div>

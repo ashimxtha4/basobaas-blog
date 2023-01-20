@@ -45,10 +45,6 @@ const HomePage = () => {
   );
   const { data, loading } = useAppSelector((state) => state.blogData);
 
-  useEffect(() => {
-    console.log("data", data);
-  }, [data]);
-
   const firstRender = useRef(true);
   useEffect(() => {
     if (firstRender.current) {
@@ -63,35 +59,35 @@ const HomePage = () => {
         fetchBlogs({
           page: 1,
           perPage: 4,
-          category: "market_news",
+          cate_slug: "market_news",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category: "lifestyle",
+          cate_slug: "lifestyle",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category: "home_loan",
+          cate_slug: "home_loan",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 3,
-          category: "our_thoughts",
+          cate_slug: "our_thoughts",
         })
       );
       dispatch(
         fetchBlogs({
           page: 1,
           perPage: 4,
-          category: "law_and_policy",
+          cate_slug: "law_and_policy",
         })
       );
       dispatch(fetchCategory());
@@ -378,7 +374,7 @@ const HomePage = () => {
 
               <div className="flexTwo">
                 <div className="lawPolicyDiv">
-                  <LawAndPolicy title="कानून र नीति" data={data}/>
+                  <LawAndPolicy title="कानून र नीति" data={data} />
                 </div>
 
                 <div className="lawPolicy2Div">

@@ -1,9 +1,10 @@
 import { request } from "../../apis/request";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 export type blogQueryType = {
+  cate_slug?: string;
+  categoryId?: string;
   page?: number;
   perPage?: number;
-  category?: string;
   slug?: string;
 };
 
@@ -14,7 +15,7 @@ export const fetchBlogs = createAsyncThunk<{}, blogQueryType>(
     const res = await request.getBlogs(query);
     return {
       data: res.data,
-      blogByCategory: query.category,
+      blogByCategory: query.cate_slug,
       slug: query.slug,
     };
   }
