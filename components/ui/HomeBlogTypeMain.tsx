@@ -9,8 +9,6 @@ const HomeBlogTypeMain = () => {
   const router = useRouter();
   const { data, loading } = useAppSelector((state) => state.blogData);
   const categoryList = useAppSelector((state) => state.categoryData.data.items);
-
-  console.log("data", data);
   return (
     <>
       <div className="homeBlogTypeMain">
