@@ -40,6 +40,9 @@ const HomePage = () => {
   const marketData = useAppSelector(
     (state) => state?.blogData?.market_news?.items
   );
+  const lawAndPolicyData = useAppSelector(
+    (state) => state?.blogData?.law_and_policy?.items
+  );
   const { data, loading } = useAppSelector((state) => state.blogData);
 
   useEffect(() => {
@@ -375,7 +378,7 @@ const HomePage = () => {
 
               <div className="flexTwo">
                 <div className="lawPolicyDiv">
-                  <LawAndPolicy title="कानून र नीति" />
+                  <LawAndPolicy title="कानून र नीति" data={data}/>
                 </div>
 
                 <div className="lawPolicy2Div">
