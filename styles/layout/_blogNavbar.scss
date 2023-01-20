@@ -300,14 +300,17 @@ select:focus {
 
           ul {
             background-color: #001338;
+            min-width: max-content;
+            gap: 2px;
             // border: solid 1px white;
-            div {
-              background-color: #001338;
-            }
+
             li {
               position: relative;
               // top: -10px;
-              width: fit-content;
+              width: 100%;
+              display: flex;
+              justify-content: flex-end;
+              padding-right: 10px;
               a {
                 background-color: #001338;
                 width: fit-content;
@@ -319,18 +322,7 @@ select:focus {
             right: 0%;
           }
         }
-        .moreDropDown {
-          a {
-            span {
-              width: 58px;
-              height: fit-content;
-              display: flex;
-              flex-direction: row;
-              justify-content: space-between;
-              align-items: center;
-            }
-          }
-        }
+       
         .expandedNavItems {
           display: none;
         }

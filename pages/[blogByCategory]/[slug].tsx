@@ -85,7 +85,7 @@ export default function BlogPage() {
         fetchBlogs({
           page: 1,
           perPage: 20,
-          category: router.query.slug as string,
+          cate_slug: router.query.slug as string,
         })
       );
     }    

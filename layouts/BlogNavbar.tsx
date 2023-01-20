@@ -82,7 +82,7 @@ const BlogNavbar = () => {
                       ?.slice(check())
                       .map((data: any, index: number) => (
                         <li className="nav-item">
-                          <Link className="nav-link" href="#">
+                          <Link className="nav-link" href={"/category/" + data?.cate_slug}>
                             {data?.name_np}
                           </Link>
                         </li>
