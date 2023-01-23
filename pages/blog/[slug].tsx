@@ -20,7 +20,7 @@ export default function BlogPage() {
   const router = useRouter();
   const dispatch = useAppDispatch();
 
-  const data = useAppSelector((state) =>state?.blogData?.blogBySlug?.items);
+  const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
 
   const relatedData = useAppSelector(
     (state) => state?.blogData?.blogByCategoryId?.items
@@ -28,6 +28,8 @@ export default function BlogPage() {
   const categoryList = useAppSelector(
     (state) => state?.categoryData?.data?.items
   );
+
+  const [getCategorySlug, setGetCategorySlug] = useState("");
 
   useEffect(() => {
     if (router.isReady) {
@@ -44,7 +46,6 @@ export default function BlogPage() {
       }
     }
   }, [dispatch, router.isReady, router.query.slug]);
-
   useEffect(() => {
     if (data?.length) {
       dispatch(
@@ -54,6 +55,15 @@ export default function BlogPage() {
       );
     }
   }, [dispatch, data]);
+
+  useEffect(() => {
+    if (categoryList?.length) {
+      const findCategory = categoryList?.find(
+        (obj: any) => obj?.id == relatedData[0]?.category
+      )?.cate_slug;
+      if (relatedData?.length) setGetCategorySlug(findCategory);
+    }
+  }, [categoryList, relatedData]);
 
   return (
     <>
@@ -199,13 +209,14 @@ export default function BlogPage() {
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
                     <div className="blogAdDiv">AD</div>
-                    <BlogBodyRightSidebar relatedBlogData={data?.category}/>
+                    <BlogBodyRightSidebar relatedBlogData={data?.category} />
                   </div>
                 </div>
                 <div className="blogDetailsFooterRelatedBlogs">
                   <div className="lawPolicyDiv">
                     <LawAndPolicy
                       title="सम्बन्धित ब्लगहरू"
+                      cate_slug={getCategorySlug}
                       data={relatedData
                         .filter((item: any, index: number) => {
                           return item?.id !== data?.id;

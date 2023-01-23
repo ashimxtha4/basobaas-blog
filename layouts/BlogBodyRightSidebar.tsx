@@ -74,7 +74,6 @@ const BlogBodyRightSidebar = ({relatedBlogData,}: {relatedBlogData: string}) => 
   const categoryList = useAppSelector(
     (state) => state?.categoryData?.data?.items
   );
-  console.log("list",categoryList)
 
   useEffect(() => {
     if (router.isReady) {

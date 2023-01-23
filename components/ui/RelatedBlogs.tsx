@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const RelatedBlogs = ({blog}:{blog:any}) => {
-  console.log("props",blog)
   return (
     <>
       <div className="relatedBlogs">

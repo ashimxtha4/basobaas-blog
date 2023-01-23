@@ -21,11 +21,9 @@ export default function BlogPage() {
   const categories = useAppSelector((state) => state.categoryData.data.items);
 
   const [currentPage, setcurrentPage] = useState<number>(1);
-  console.log("Current Page is", currentPage);
   useEffect(() => {
     if (router.isReady) {
       dispatch(fetchCategory());
-      console.log(currentPage, "page");
 
       dispatch(
         fetchBlogs({

@@ -11,7 +11,6 @@ let blogs = {
     categoryId?: string;
   }) => {
     let otherQuery = { ...query };
-    console.log(otherQuery, query);
     delete otherQuery.cate_slug;
     delete otherQuery.slug;
     return api.get(
