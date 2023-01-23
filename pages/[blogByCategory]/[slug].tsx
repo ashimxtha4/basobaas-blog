@@ -80,6 +80,7 @@ export default function BlogPage() {
   const dispatch = useAppDispatch();
   const [values,setValues]=useState<any>()
   const data = useAppSelector((state) => state?.blogData);
+  const categories =useAppSelector((state)=>state.categoryData.data.items)
 
   useEffect(() => {
     if (router.isReady) {
@@ -128,7 +129,7 @@ export default function BlogPage() {
                   <div className="leftHeaderSection">
                     <div className="categoryHeader">
                       <p className="categoryInfo">श्रेणी</p>
-                      <p className="categoryTitle">कानून र नीति</p>
+                      <p className="categoryTitle">{categories?.find((obj:any)=>obj?.cate_slug==router?.query?.slug).name_np}</p>
                     </div>
                     <div className="sortSection">
                       <span className="sortTitle">क्रमबद्ध गर्नुहोस्:</span>
@@ -169,7 +170,7 @@ export default function BlogPage() {
                       return (
                         <Link
                           style={{ transform: "none" }}
-                          href={"/blog/"+values.slug as string}
+                          href={"/blog/"+blog?.slug as string}
                           key={index}
                         >
                           <CategorySpecificBlog blog={blog} />

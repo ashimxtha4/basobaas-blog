@@ -45,17 +45,17 @@ const BlogNavbar = () => {
                   </li>
                 ))}
 
-              {categoryList?.length <= check() + 1 ? (
+              {categoryList?.length <= check()+1 ? (
                 categoryList?.length == check() + 1 ? (
                   <li className="nav-item">
                     <Link
                       className="nav-link"
                       href={
-                        "/blogByCategory/" +
-                        categoryList?.[categoryList?.length]?.cate_slug
+                        "/category/" +
+                        categoryList?.[categoryList?.length-1]?.cate_slug
                       }
                     >
-                      {categoryList[categoryList?.length]?.name_np}
+                      {categoryList[categoryList?.length-1]?.name_np}
                     </Link>
                   </li>
                 ) : null
