@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-const RelatedBlogs = ({blog}:{blog:any[]}) => {
+const RelatedBlogs = ({blog}:{blog:any}) => {
+  console.log("props",blog)
   return (
     <>
       <div className="relatedBlogs">
@@ -13,10 +14,10 @@ const RelatedBlogs = ({blog}:{blog:any[]}) => {
         </div>
         <div className="contentContainer">
           <div className="categoryTitle">
-            {/* <p>{blog?.categoryTag}</p> */}
+            <p>{blog?.tags}</p>
           </div>
           <div className="blogHeader">
-            {/* <p>{blog?.title_np}</p> */}
+            <p>{blog?.title_np}</p>
           </div>
         </div>
       </div>

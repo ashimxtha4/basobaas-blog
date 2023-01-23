@@ -2,9 +2,14 @@ import { Icon } from "@iconify/react";
 import Navbar from "../../layouts/Navbar";
 import BlogNavbar from "../../layouts/BlogNavbar";
 import CategorySpecificBlog from "../../components/ui/CategorySpecificBlog";
+import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
 import Footer from "../../layouts/Footer";
 import { Select } from "antd";
 import Link from "next/link";
+// import CategorySpecificImage1 from "../../public/Images/categorySpecificImage1.svg";
+// import CategorySpecificImage2 from "../../public/Images/categorySpecificImage2.svg";
+// import CategorySpecificImage3 from "../../public/Images/categorySpecificImage3.svg";
+// import CategorySpecificImage4 from "../../public/Images/categorySpecificImage4.svg";
 import { Pagination } from "antd";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -143,7 +148,8 @@ export default function BlogPage() {
                 {/* -------------------RIGHT SIDEBAR---------------------- */}
                 <div className="rightBodySection">
                   <div className="blogAdDiv">AD</div>
-                  {/* <BlogBodyRightSidebar /> */}
+                  {categories!=undefined}
+                  <BlogBodyRightSidebar relatedBlogData={categories?.find((obj:any)=>obj.cate_slug==router?.query?.cate_slug).id} />
                 </div>
               </div>
             </div>

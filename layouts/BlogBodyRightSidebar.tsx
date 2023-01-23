@@ -7,6 +7,11 @@ import RelatedBlogImage3 from "../public/Images/relatedBlogsImage3.svg";
 import FeaturedPropertyImage1 from "../public/Images/featuredPropertyImage1.svg";
 import FeaturedPropertyImage2 from "../public/Images/featuredPropertyImage2.svg";
 import FeaturedPropertyImage3 from "../public/Images/featuredPropertyImage3.svg";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../state";
+import { fetchBlogs } from "../state/actions/actions";
+import { useRouter } from "next/router";
+
 
 //DUMMY DATA FOR RELATED BLOG
 const dummyRelatedBlogsData = [
@@ -61,11 +66,25 @@ const dummyPropertyData = [
   },
 ];
 
-const BlogBodyRightSidebar = ({
-  relatedBlogData,
-}: {
-  relatedBlogData: any[];
-}) => {
+const BlogBodyRightSidebar = ({relatedBlogData,}: {relatedBlogData: string}) => {
+
+  const dispatch=useAppDispatch()
+  const router = useRouter()
+  const relatedBlogValues=useAppSelector((state)=>state.blogData.blogByCategoryId.items)
+  const categoryList = useAppSelector(
+    (state) => state?.categoryData?.data?.items
+  );
+  console.log("list",categoryList)
+
+  useEffect(() => {
+    if (router.isReady) {
+      dispatch(
+        fetchBlogs({
+          categoryId: relatedBlogData,
+        })
+      );
+    }
+  }, [dispatch, router.isReady, relatedBlogData]);
   return (
     <>
       <div className="rightSidebar">
@@ -74,21 +93,21 @@ const BlogBodyRightSidebar = ({
             <p>सम्बन्धित ब्लगहरू</p>
             <Link
               className="relatedBlogsView"
-              href="/कानूनरनिति/63a5c027fd935e139f0bab67"
+              href={"/category/"+categoryList?.find((obj:any)=>obj?.id==relatedBlogData)?.cate_slug}
             >
               <button>सबै हेर्नुहोस्</button>
             </Link>
           </div>
 
           <div className="relatedSectionContainer">
-            {relatedBlogData?.map((blog: any, index: number) => {
+            {relatedBlogValues?.slice(0,3)?.map((blog: any, index: number) => {
               return (
                 <Link
                   className="blogComponentLinks"
-                  href="/blogDetails/123"
+                  href={"/blog/"+blog.slug}
                   key={index}
                 >
-                  <RelatedBlogs blog={relatedBlogData} />
+                  <RelatedBlogs blog={blog} />
                 </Link>
               );
             })}
