@@ -27,6 +27,7 @@ import FeaturedPropertyImage3 from "../public/Images/featuredPropertyImage3.svg"
 import FeaturedPropertyImage4 from "../public/Images/featuredPropertyImage4.svg";
 import LifestyleImages from "../public/Images/LifestyleImages.svg";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useAppSelector, useAppDispatch, store } from "../state";
 import { useEffect, useRef } from "react";
 import {
@@ -36,13 +37,14 @@ import {
 } from "../state/actions/actions";
 
 const HomePage = () => {
+  const router = useRouter();
   const dispatch = useAppDispatch();
   const marketData = useAppSelector(
     (state) => state?.blogData?.market_news?.items
   );
-  const lawAndPolicyData = useAppSelector(
-    (state) => state?.blogData?.law_and_policy?.items
-  );
+  // const lawAndPolicyData = useAppSelector(
+  //   (state) => state?.blogData?.law_and_policy?.items
+  // );
   const { data, loading } = useAppSelector((state) => state.blogData);
 
   const firstRender = useRef(true);
@@ -293,10 +295,17 @@ const HomePage = () => {
               <div className="marketNewsDiv">
                 <div className="titleDiv">
                   <label className="title">बजार खबर</label>
-                  <span className="viewAllButton">सबै हेर्नुहोस्</span>
+                  <Link href={"/category/market_news"}>
+                    <span className="viewAllButton">सबै हेर्नुहोस्</span>
+                  </Link>
                 </div>
                 <div className="marketNewsContentDiv">
-                  <div className="marketBigComponent">
+                  <div
+                    className="marketBigComponent"
+                    onClick={() => {
+                      router.push(`/blog/${marketData[0]?.slug}`);
+                    }}
+                  >
                     <MarketNewsTypeMain />
                   </div>
                   <div className="marketSmallComponentDiv">

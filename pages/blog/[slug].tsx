@@ -19,9 +19,8 @@ export default function BlogPage() {
   const firstRender = useRef(true);
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const data = useAppSelector((state) => {
-    return state?.blogData?.blogBySlug?.items;
-  });
+
+  const data = useAppSelector((state) =>state?.blogData?.blogBySlug?.items);
 
   const relatedData = useAppSelector(
     (state) => state?.blogData?.blogByCategoryId?.items
@@ -200,7 +199,7 @@ export default function BlogPage() {
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
                     <div className="blogAdDiv">AD</div>
-                    <BlogBodyRightSidebar relatedBlogData={relatedData}/>
+                    <BlogBodyRightSidebar relatedBlogData={data?.category}/>
                   </div>
                 </div>
                 <div className="blogDetailsFooterRelatedBlogs">
@@ -209,7 +208,7 @@ export default function BlogPage() {
                       title="सम्बन्धित ब्लगहरू"
                       data={relatedData
                         .filter((item: any, index: number) => {
-                          return item.id !== data[0].id;
+                          return item?.id !== data?.id;
                         })
                         .slice(0, 4)}
                     />

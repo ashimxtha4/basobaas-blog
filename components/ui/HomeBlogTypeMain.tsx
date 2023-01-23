@@ -31,7 +31,7 @@ const HomeBlogTypeMain = () => {
           <div className="blogCategoryTag">
             <Link
               className="blogTagLinks"
-              href="/कानूनरनिति/63a5c027fd935e139f0bab67"
+              href="#"
             >
               <p>
                 {/* यात्रा */}

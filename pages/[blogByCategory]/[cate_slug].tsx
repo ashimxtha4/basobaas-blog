@@ -89,16 +89,16 @@ export default function BlogPage() {
         fetchBlogs({
           page: 1,
           perPage: 10,
-          cate_slug: router.query.slug as string,
+          cate_slug: router.query.cate_slug as string,
         })
       );
     }
-  }, [dispatch, router.isReady, router.query.slug]);
+  }, [dispatch, router.isReady, router.query.cate_slug]);
 
   useEffect(() => {
-    if (!!Object.keys(data).length && router.query.slug) {
+    if (!!Object.keys(data).length && router.query.cate_slug) {
       console.log("data", data);
-      const aasliMaal: {} =data[router.query.slug as BlogByCategoryKeyType]?.items;
+      const aasliMaal: {} =data[router.query.cate_slug as BlogByCategoryKeyType]?.items;
         setValues(aasliMaal)
         console.log("ashimMaal",aasliMaal);
     }
@@ -129,7 +129,7 @@ export default function BlogPage() {
                   <div className="leftHeaderSection">
                     <div className="categoryHeader">
                       <p className="categoryInfo">श्रेणी</p>
-                      <p className="categoryTitle">{categories?.find((obj:any)=>obj?.cate_slug==router?.query?.slug).name_np}</p>
+                      <p className="categoryTitle">{categories?.find((obj:any)=>obj?.cate_slug==router?.query?.cate_slug)?.name_np}</p>
                     </div>
                     <div className="sortSection">
                       <span className="sortTitle">क्रमबद्ध गर्नुहोस्:</span>
@@ -191,7 +191,8 @@ export default function BlogPage() {
                 {/* -------------------RIGHT SIDEBAR---------------------- */}
                 <div className="rightBodySection">
                   <div className="blogAdDiv">AD</div>
-                  <BlogBodyRightSidebar />
+                  {categories!=undefined}
+                  <BlogBodyRightSidebar relatedBlogData={categories?.find((obj:any)=>obj.cate_slug==router?.query?.cate_slug).id} />
                 </div>
               </div>
             </div>
