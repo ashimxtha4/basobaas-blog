@@ -383,7 +383,7 @@ const HomePage = () => {
 
               <div className="flexTwo">
                 <div className="lawPolicyDiv">
-                  <LawAndPolicy title="कानून र नीति" data={data} />
+                  <LawAndPolicy title="कानून र नीति" data={data} cate_slug="law_and_policy"/>
                 </div>
 
                 <div className="lawPolicy2Div">

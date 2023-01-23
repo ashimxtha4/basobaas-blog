@@ -1,25 +1,48 @@
 import { Icon } from "@iconify/react";
 import moment from "moment";
 import Image from "next/image";
+import { Router, useRouter } from "next/router";
 import LawAndPolicyImage1 from "../../public/Images/LawAndPolicyImage.svg";
 import LawAndPolicyImage2 from "../../public/Images/lawAndPolicyImage2.svg";
 import LawAndPolicyImage3 from "../../public/Images/lawAndPolicyImage3.svg";
 import LawAndPolicyImage4 from "../../public/Images/lawAndPolicyImage4.svg";
 import { useAppSelector } from "../../state/index";
 
-const LawAndPolicy = ({ data, title }: { data: any; title: string }) => {
+const LawAndPolicy = ({
+  data,
+  title,
+  cate_slug,
+}: {
+  data: any;
+  title: string;
+  cate_slug: string;
+}) => {
   const categoryData = useAppSelector(
     (state) => state?.categoryData?.data?.items
   );
+  const router = useRouter();
   return (
     <>
       <div className="lawPolicyTitleDiv">
         <label className="lawPolicyTitle">{title}</label>
-        <span className="lawPolicyViewAllButton">सबै हेर्नुहोस्</span>
+        <span
+          className="lawPolicyViewAllButton"
+          onClick={() => {
+            router.push(`/category/${cate_slug}`);
+          }}
+        >
+          सबै हेर्नुहोस्
+        </span>
       </div>
       <div className="lawPolicyCardDiv">
         {data?.map((data: any, index: number) => (
-          <div className="lawPolicyCard" key={index}>
+          <div
+            className="lawPolicyCard"
+            key={index}
+            onClick={() => {
+              router?.push(`/blog/${data?.slug}`);
+            }}
+          >
             <div className="imageContainer">
               <Image
                 className="image"
