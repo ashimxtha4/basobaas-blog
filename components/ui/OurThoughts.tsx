@@ -4,8 +4,11 @@ import OurThoughtsImage1 from "../../public/Images/homeLoanImage2.svg";
 import OurThoughtsImage2 from "../../public/Images/homeLoanImage3.svg";
 import OurThoughtsImage3 from "../../public/Images/homeLoanImage1.svg";
 import { useAppSelector } from "../../state";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const OurThoughts = () => {
+  const router = useRouter();
   const ourThoughtsData = useAppSelector(
     (state) => state.blogData.our_thoughts.items
   );
@@ -15,11 +18,19 @@ const OurThoughts = () => {
     <>
       <div className="ourThoughtsTitleDiv">
         <label className="ourThoughtsTitle">हाम्रा विचारहरू</label>
-        <span className="ourThoughtsViewAllButton">सबै हेर्नुहोस्</span>
+        <Link href={"/category/our_thoughts"}>
+          <span className="ourThoughtsViewAllButton">सबै हेर्नुहोस्</span>
+        </Link>
       </div>
       <div className="ourThoughtsCardDiv">
         {ourThoughtsData.map((data: any, index: number) => (
-          <div className="ourThoughtsCard" key={index}>
+          <div
+            className="ourThoughtsCard"
+            key={index}
+            onClick={() => {
+              router.push(`/blog/${data?.slug}`);
+            }}
+          >
             <div className="ourThoughts">
               <div className="imageContainer">
                 <Image
