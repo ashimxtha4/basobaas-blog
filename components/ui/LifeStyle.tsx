@@ -2,23 +2,35 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import moment from "moment";
 import { useAppSelector } from "../../state";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const LifeStyle = () => {
   const data = useAppSelector((state) => state?.blogData?.lifestyle?.items);
   const categoryData = useAppSelector(
     (state) => state?.categoryData?.data?.items
   );
+  const router = useRouter();
 
   return (
     <>
       <div className="lifeStyleTitleDiv">
         <label className="lifeStyleTitle">जीवनशैली</label>
-        <span className="lifeStyleViewAllButton">सबै हेर्नुहोस्</span>
+        <Link href={"/category/lifestyle"}>
+          <span className="lifeStyleViewAllButton">सबै हेर्नुहोस्</span>
+        </Link>
+        {/* <span className="lifeStyleViewAllButton">सबै हेर्नुहोस्</span> */}
       </div>
       <div className="lifeStyleCardDiv">
         {data?.map((data, index) => {
           return (
-            <div className="lifeStyleCard" key={index}>
+            <div
+              className="lifeStyleCard"
+              key={index}
+              onClick={() => {
+                router.push(`/blog/${data?.slug}`);
+              }}
+            >
               <div className="lifestyle">
                 <div className="thumbnail">
                   <img

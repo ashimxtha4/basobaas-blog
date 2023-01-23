@@ -310,7 +310,10 @@ const HomePage = () => {
                   </div>
                   <div className="marketSmallComponentDiv">
                     {marketData?.slice(1).map((data: any, index: number) => (
-                      <div className="marketSmallComponent" key={index}>
+                      <div className="marketSmallComponent" key={index} 
+                      onClick={() => {
+                        router.push(`/blog/${data?.slug}`);
+                      }}>
                         <MarketNewsTypeSecondary
                           data={data}
                           image={dummyRelatedBlogsData[index]?.thumbnail}
