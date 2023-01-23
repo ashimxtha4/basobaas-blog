@@ -15,7 +15,8 @@ export const fetchBlogs = createAsyncThunk<{}, blogQueryType>(
     const res = await request.getBlogs(query);
     return {
       data: res.data,
-      blogByCategory: query.cate_slug,
+      blogByCategorySlug: query.cate_slug,
+      blogByCategoryId: query.categoryId,
       slug: query.slug,
     };
   }

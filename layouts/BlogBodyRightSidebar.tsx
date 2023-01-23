@@ -61,7 +61,11 @@ const dummyPropertyData = [
   },
 ];
 
-const BlogBodyRightSidebar = () => {
+const BlogBodyRightSidebar = ({
+  relatedBlogData,
+}: {
+  relatedBlogData: any[];
+}) => {
   return (
     <>
       <div className="rightSidebar">
@@ -77,14 +81,14 @@ const BlogBodyRightSidebar = () => {
           </div>
 
           <div className="relatedSectionContainer">
-            {dummyRelatedBlogsData?.map((blog, index) => {
+            {relatedBlogData?.map((blog: any, index: number) => {
               return (
                 <Link
                   className="blogComponentLinks"
                   href="/blogDetails/123"
                   key={index}
                 >
-                  <RelatedBlogs blog={blog} />
+                  <RelatedBlogs blog={relatedBlogData} />
                 </Link>
               );
             })}

@@ -1,22 +1,22 @@
 import Image from "next/image";
 
-const RelatedBlogs = ({ blog }: { blog: any }) => {
+const RelatedBlogs = ({blog}:{blog:any[]}) => {
   return (
     <>
       <div className="relatedBlogs">
         <div className="imageContainer">
-          <Image
+          {/* <Image
             src={blog?.thumbnail}
             alt="Picture of the author"
             className="relatedBlogImages"
-          />
+          /> */}
         </div>
         <div className="contentContainer">
           <div className="categoryTitle">
-            <p>{blog?.categoryTag}</p>
+            {/* <p>{blog?.categoryTag}</p> */}
           </div>
           <div className="blogHeader">
-            <p>{blog?.title}</p>
+            {/* <p>{blog?.title_np}</p> */}
           </div>
         </div>
       </div>
