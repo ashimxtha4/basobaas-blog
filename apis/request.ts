@@ -11,21 +11,22 @@ let blogs = {
     categoryId?: string;
   }) => {
     let otherQuery = { ...query };
+    console.log(otherQuery, query);
     delete otherQuery.cate_slug;
     delete otherQuery.slug;
     return api.get(
       "collections/blogs/records/" +
         `${
           query.cate_slug
-            ? `? ${
+            ? `?${
                 Object.keys(otherQuery).length && stringify(otherQuery) + "&"
               }filter=(category.cate_slug='${query.cate_slug}')&sort=-created`
             : query.slug
-            ? `? ${
+            ? `?${
                 Object.keys(otherQuery).length && stringify(otherQuery) + "&"
               }filter=(slug='${query.slug}')&sort=-created`
             : query.categoryId
-            ? `? ${
+            ? `?${
                 Object.keys(otherQuery).length && stringify(otherQuery) + "&"
               }filter=(category='${query.categoryId}')&sort=-created`
             : "?" + stringify(query) + "&sort=-created"

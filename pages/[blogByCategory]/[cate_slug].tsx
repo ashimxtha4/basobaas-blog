@@ -19,22 +19,25 @@ export default function BlogPage() {
   const data = useAppSelector((state) => state?.blogData);
   const categories = useAppSelector((state) => state.categoryData.data.items);
 
+  const [currentPage, setcurrentPage] = useState<number>(1);
+  console.log("Current Page is", currentPage);
   useEffect(() => {
     if (router.isReady) {
       dispatch(fetchCategory());
+      console.log(currentPage, "page");
+
       dispatch(
         fetchBlogs({
-          page: 1,
-          perPage: 10,
+          page: currentPage,
+          perPage: 6,
           cate_slug: router.query.cate_slug as string,
         })
       );
     }
-  }, [dispatch, router.isReady, router.query.cate_slug]);
+  }, [dispatch, router.isReady, router.query.cate_slug, currentPage]);
 
   useEffect(() => {
     if (!!Object.keys(data).length && router.query.cate_slug) {
-      console.log("data", data);
       const blogData: {} =
         data[router.query.cate_slug as BlogByCategoryKeyType]?.items;
       setValues(blogData);
@@ -109,7 +112,7 @@ export default function BlogPage() {
                     </div>
                   </div>
                   <div className="componentMapSection">
-                    {values?.slice(0, 5)?.map((blog: any, index: number) => {
+                    {values?.slice(0, 6)?.map((blog: any, index: number) => {
                       return (
                         <Link
                           style={{ transform: "none" }}
@@ -124,10 +127,16 @@ export default function BlogPage() {
                   <div className="paginationSectionContainer">
                     <Pagination
                       className="paginationSection"
-                      defaultCurrent={5}
-                      pageSize={5}
-                      total={50}
+                      defaultCurrent={1}
+                      pageSize={6}
+                      total={Number(
+                        data[router.query.cate_slug as BlogByCategoryKeyType]
+                          ?.totalItems
+                      )}
                       hideOnSinglePage={true}
+                      onChange={(page) => {
+                        setcurrentPage(page);
+                      }}
                     />
                   </div>
                 </div>
