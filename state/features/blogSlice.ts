@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { blogQueryType, fetchBlogs } from "../actions/actions";
 
 type blogItemsResponseType = {
-  categoryId: string;
+  category: string;
   cate_slug: string;
   content: string;
   created: string;
@@ -28,13 +28,16 @@ export interface BlogState {
   our_thoughts: initialItemType;
   law_and_policy: initialItemType;
   blogBySlug: any;
+  blogByCategorySlug: any;
+  blogByCategoryId: any;
 }
 export type  BlogByCategoryKeyType= 'blogBySlug'|'market_news'|'lifestyle'|'home_loan'|"our_thoughts"|"law_and_policy"|"blogBySlug"
 
 type fetchPostActionType = {
   data: any;
-  blogByCategory?: string;
   slug?: any;
+  blogByCategorySlug?: string;
+  blogByCategoryId?: string;
 };
 const initialState: BlogState = {
   value: 0,
@@ -46,6 +49,8 @@ const initialState: BlogState = {
   our_thoughts: { items: [] },
   law_and_policy: { items: [] },
   blogBySlug: {},
+  blogByCategoryId: { items: [] },
+  blogByCategorySlug: { items: [] },
 };
 
 export const blogSlice = createSlice({
@@ -67,12 +72,16 @@ export const blogSlice = createSlice({
       .addCase(
         fetchBlogs.fulfilled,
         (state, { payload, type }: PayloadAction<any>) => {
-          const { data, blogByCategory, slug } = payload as fetchPostActionType;
+          const { data, blogByCategorySlug, blogByCategoryId, slug } =
+            payload as fetchPostActionType;
           state.loading = "success";
-          if (blogByCategory) {
-            //@ts-ignore
-            state[blogByCategory.replaceAll(" ", "").toLowerCase()] = data;
-          } else if (slug && !blogByCategory) {
+          if (blogByCategorySlug) {
+            // @ts-ignore
+            state[blogByCategorySlug.replaceAll(" ", "").toLowerCase()] = data;
+          } else if (blogByCategoryId) {
+            // @ts-ignore
+            state.blogByCategoryId = data;
+          } else if (slug && !blogByCategorySlug) {
             state.blogBySlug = data;
           } else {
             state.data = data.items;

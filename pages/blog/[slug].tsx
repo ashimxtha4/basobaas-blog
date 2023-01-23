@@ -12,7 +12,7 @@ import DetailProperty from "../../components/ui/detailProperty";
 import { useRouter } from "next/router";
 import { useAppDispatch, useAppSelector } from "../../state";
 import { fetchBlogs, fetchCategory } from "../../state/actions/actions";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import moment from "moment";
 export default function BlogPage() {
@@ -22,9 +22,14 @@ export default function BlogPage() {
   const data = useAppSelector((state) => {
     return state?.blogData?.blogBySlug?.items;
   });
+
+  const relatedData = useAppSelector(
+    (state) => state?.blogData?.blogByCategoryId?.items
+  );
   const categoryList = useAppSelector(
     (state) => state?.categoryData?.data?.items
   );
+
   useEffect(() => {
     if (router.isReady) {
       if (firstRender.current) {
@@ -40,6 +45,16 @@ export default function BlogPage() {
       }
     }
   }, [dispatch, router.isReady, router.query.slug]);
+
+  useEffect(() => {
+    if (data?.length) {
+      dispatch(
+        fetchBlogs({
+          categoryId: data[0].category,
+        })
+      );
+    }
+  }, [dispatch, data]);
 
   return (
     <>
@@ -185,12 +200,19 @@ export default function BlogPage() {
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
                     <div className="blogAdDiv">AD</div>
-                    <BlogBodyRightSidebar />
+                    <BlogBodyRightSidebar relatedBlogData={relatedData}/>
                   </div>
                 </div>
                 <div className="blogDetailsFooterRelatedBlogs">
                   <div className="lawPolicyDiv">
-                    <LawAndPolicy title="सम्बन्धित ब्लगहरू" data={data} />
+                    <LawAndPolicy
+                      title="सम्बन्धित ब्लगहरू"
+                      data={relatedData
+                        .filter((item: any, index: number) => {
+                          return item.id !== data[0].id;
+                        })
+                        .slice(0, 4)}
+                    />
                   </div>
                   <DetailProperty />
                 </div>
