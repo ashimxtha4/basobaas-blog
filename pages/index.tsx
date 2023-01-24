@@ -31,6 +31,10 @@ import { useRouter } from "next/router";
 import { useAppSelector, useAppDispatch, store } from "../state";
 import { useEffect, useRef } from "react";
 import {
+  fetchPremiumProperties,
+  fetchLatestProperties,
+} from "../state/actions/actions";
+import {
   fetchBlogs,
   fetchCategory,
   fetchVideos,
@@ -46,6 +50,12 @@ const HomePage = () => {
   //   (state) => state?.blogData?.law_and_policy?.items
   // );
   const { data, loading } = useAppSelector((state) => state.blogData);
+
+  const { data: premiumPropertyData, loading: premiumPropertyLoading } =
+    useAppSelector((state) => state.premiumPropertyData);
+
+  const { data: latestPropertyData, loading: latestPropertyLoading } =
+    useAppSelector((state) => state.latestPropertyData);
 
   const firstRender = useRef(true);
   useEffect(() => {
@@ -94,6 +104,8 @@ const HomePage = () => {
       );
       dispatch(fetchCategory());
       dispatch(fetchVideos());
+      dispatch(fetchPremiumProperties());
+      dispatch(fetchLatestProperties());
     }
   }, [dispatch]);
 
@@ -310,10 +322,13 @@ const HomePage = () => {
                   </div>
                   <div className="marketSmallComponentDiv">
                     {marketData?.slice(1).map((data: any, index: number) => (
-                      <div className="marketSmallComponent" key={index} 
-                      onClick={() => {
-                        router.push(`/blog/${data?.slug}`);
-                      }}>
+                      <div
+                        className="marketSmallComponent"
+                        key={index}
+                        onClick={() => {
+                          router.push(`/blog/${data?.slug}`);
+                        }}
+                      >
                         <MarketNewsTypeSecondary
                           data={data}
                           image={dummyRelatedBlogsData[index]?.thumbnail}
@@ -341,11 +356,13 @@ const HomePage = () => {
                   </span>
                 </div>
                 <div className="propertyCardDiv">
-                  {dummyPropertyData.map((data: any, index: number) => (
-                    <div className="propertyCard" key={index}>
-                      <MainProperty data={data} />
-                    </div>
-                  ))}
+                  {latestPropertyData?.data
+                    ?.slice(0, 10)
+                    .map((data: any, index: number) => (
+                      <div className="propertyCard" key={index}>
+                        <MainProperty data={data} />
+                      </div>
+                    ))}
                 </div>
               </div>
 
@@ -376,17 +393,23 @@ const HomePage = () => {
                   </span>
                 </div>
                 <div className="propertyCardDiv">
-                  {dummyPropertyData2.map((data: any, index: number) => (
-                    <div className="propertyCard" key={index}>
-                      <MainProperty data={data} />
-                    </div>
-                  ))}
+                  {premiumPropertyData?.data
+                    ?.slice(0, 10)
+                    .map((data: any, index: number) => (
+                      <div className="propertyCard" key={index}>
+                        <MainProperty data={data} />
+                      </div>
+                    ))}
                 </div>
               </div>
 
               <div className="flexTwo">
                 <div className="lawPolicyDiv">
-                  <LawAndPolicy title="कानून र नीति" data={data} cate_slug="law_and_policy"/>
+                  <LawAndPolicy
+                    title="कानून र नीति"
+                    data={data}
+                    cate_slug="law_and_policy"
+                  />
                 </div>
 
                 <div className="lawPolicy2Div">
