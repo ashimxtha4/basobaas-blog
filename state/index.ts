@@ -3,12 +3,16 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import blogSlice from "./features/blogSlice";
 import categorySlice from "./features/categorySlice";
 import videoSlice from "./features/videoSlice";
+import premiumPropertySlice from "./features/premiumPropertySlice";
+import latestPropertySlice from "./features/latestPropertySlice";
 
 export const store = configureStore({
   reducer: {
     blogData: blogSlice,
     categoryData: categorySlice,
     videoData: videoSlice,
+    premiumPropertyData: premiumPropertySlice,
+    latestPropertyData: latestPropertySlice,
   },
 });
 

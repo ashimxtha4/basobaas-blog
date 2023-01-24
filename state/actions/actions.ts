@@ -36,3 +36,21 @@ export const fetchVideos = createAsyncThunk<any[]>("get/videos", async () => {
   const response = await request.getVideos();
   return response.data.items;
 });
+
+//PREMIUM PROPERTIES
+export const fetchPremiumProperties = createAsyncThunk<any[]>(
+  "get/premiumProperties",
+  async () => {
+    const response = await request.getPremiumProperties();
+    return response.data;
+  }
+);
+
+//LATEST PROPERTIES
+export const fetchLatestProperties = createAsyncThunk<any[]>(
+  "get/latestProperties",
+  async () => {
+    const response = await request.getLatestProperties();
+    return response.data;
+  }
+);

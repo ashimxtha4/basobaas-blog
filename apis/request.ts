@@ -1,5 +1,5 @@
 import { stringify } from "querystring";
-import { api } from "./api";
+import { api, propertyApi } from "./api";
 
 //Blogs
 let blogs = {
@@ -39,8 +39,27 @@ let category = {
   getCategory: async () => await api.get("collections/category/records"),
 };
 
-//Categories
+//Videos
 let videos = {
   getVideos: async () => await api.get("collections/videos/records"),
 };
-export const request = { ...blogs, ...category, ...videos };
+
+//Premium Properties
+let premiumProperties = {
+  getPremiumProperties: async () =>
+    await propertyApi.get("/api/properties/premium?sort=random"),
+};
+
+//Latest Properties
+let latestProperties = {
+  getLatestProperties: async () =>
+    await propertyApi.get("/api/properties-latest"),
+};
+
+export const request = {
+  ...blogs,
+  ...category,
+  ...videos,
+  ...premiumProperties,
+  ...latestProperties,
+};
