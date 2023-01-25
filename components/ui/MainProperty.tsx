@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import { priceFormatter } from "../../utilities/helper";
 
 const MainProperty = ({ data }: { data: any }) => {
   const router = useRouter();
@@ -33,8 +33,10 @@ const MainProperty = ({ data }: { data: any }) => {
         <div className="contentContainer">
           <div className="propertyPrice">
             <div className="priceDiv">
-              <span className="price">NPR. {data?.price}</span>
-              <span className="unit">/{data?.price_postfix}</span>
+              <span className="price">NPR. {priceFormatter(data?.price)}</span>
+              <span className="unit">
+                {data?.price_postfix ? " " + data?.price_postfix : null}
+              </span>
             </div>
           </div>
           <div className="propertyTitle">
@@ -96,7 +98,6 @@ const MainProperty = ({ data }: { data: any }) => {
           </div>
         </div>
       </div>
-      {/* </Link> */}
     </>
   );
 };

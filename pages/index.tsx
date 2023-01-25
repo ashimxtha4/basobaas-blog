@@ -292,7 +292,13 @@ const HomePage = () => {
 
                 <div className="smallComponentDiv">
                   {data?.slice(1).map((data: any, index: number) => (
-                    <div className="smallComponent" key={index} onClick={()=>{router.push(`/blog/${data.slug}`)}}>
+                    <div
+                      className="smallComponent"
+                      key={index}
+                      onClick={() => {
+                        router.push(`/blog/${data.slug}`);
+                      }}
+                    >
                       <HomeBlogTypeSmall
                         data={data}
                       />

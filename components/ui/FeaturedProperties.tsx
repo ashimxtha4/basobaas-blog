@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import { priceFormatter } from "../../utilities/helper";
 
 const FeaturedProperties = ({ property }: { property: any }) => {
   return (
