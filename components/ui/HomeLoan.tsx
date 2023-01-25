@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
-// import { getBlogByCategory } from "../../pages";
 import Image from "next/image";
 import HomeLoanImage1 from "../../public/Images/homeLoanImage1.svg";
 import HomeLoanImage2 from "../../public/Images/homeLoanImage2.svg";

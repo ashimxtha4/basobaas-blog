@@ -46,9 +46,7 @@ const HomePage = () => {
   const marketData = useAppSelector(
     (state) => state?.blogData?.market_news?.items
   );
-  // const lawAndPolicyData = useAppSelector(
-  //   (state) => state?.blogData?.law_and_policy?.items
-  // );
+
   const { data, loading } = useAppSelector((state) => state.blogData);
 
   const { data: premiumPropertyData, loading: premiumPropertyLoading } =
@@ -109,138 +107,6 @@ const HomePage = () => {
     }
   }, [dispatch]);
 
-  //DUMMY DATA FOR RELATED BLOGS
-  const dummyRelatedBlogsData: any = [
-    {
-      thumbnail: RelatedBlogImage1,
-      categoryTag: "यात्रा",
-      title: "सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।",
-    },
-    {
-      thumbnail: RelatedBlogImage2,
-      categoryTag: "जीवनशैली",
-      title: "नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।",
-    },
-    {
-      thumbnail: RelatedBlogImage3,
-      categoryTag: "बजार खबर",
-      title:
-        "रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।",
-    },
-    {
-      thumbnail: FeaturedPropertyImage3,
-      categoryTag: "कानून र नीति",
-      title:
-        "नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।",
-    },
-  ];
-
-  //DUMMY DATA FOR FEATURED PROPERTY
-  const dummyPropertyData: any = [
-    {
-      photo: FeaturedPropertyImage3,
-      title: "Padma Colony",
-      address: "Sitapaila Rd 5, Nagarjun 44600",
-      beds: 4,
-      bath: 5,
-      sqft: 1790,
-      price: "5.75 Crore",
-      priceLabel: "Total Price",
-    },
-    {
-      photo: FeaturedPropertyImage4,
-      title: "Karyabinayak Homes",
-      address: "Karyabinayak, Lalitpur",
-      beds: 2,
-      bath: 1,
-      sqft: 1200,
-      price: "20 Thousand",
-      priceLabel: "sq.ft",
-    },
-    {
-      photo: FeaturedPropertyImage2,
-      title: "Civil Homes",
-      address: "Kalimati, Kathmandu",
-      beds: 3,
-      bath: 3,
-      sqft: 3200,
-      price: "3.55 Crore",
-      priceLabel: "Onwards",
-    },
-    {
-      photo: LifestyleImages,
-      title: "Ranjana Complex",
-      address: "New-Road, Kathmandu",
-      beds: 0,
-      bath: 0,
-      sqft: 3651,
-      price: "50 Lakhs",
-      priceLabel: "month",
-    },
-    {
-      photo: FeaturedPropertyImage1,
-      title: "Vinayak Colony",
-      address: "Bhaisipati, Lalitpur",
-      beds: 5,
-      bath: 4,
-      sqft: 4200,
-      price: "9.5 Crore",
-      priceLabel: "Total Price",
-    },
-  ];
-
-  const dummyPropertyData2: any = [
-    {
-      photo: FeaturedPropertyImage3,
-      title: "Padma Colony",
-      address: "Sitapaila Rd 5, Nagarjun 44600",
-      beds: 4,
-      bath: 5,
-      sqft: 1790,
-      price: "5.75 Crore",
-      priceLabel: "Total Price",
-    },
-    {
-      photo: FeaturedPropertyImage4,
-      title: "Karyabinayak Homes",
-      address: "Karyabinayak, Lalitpur",
-      beds: 2,
-      bath: 1,
-      sqft: 1200,
-      price: "20 Thousand",
-      priceLabel: "sq.ft",
-    },
-    {
-      photo: FeaturedPropertyImage2,
-      title: "Civil Homes",
-      address: "Kalimati, Kathmandu",
-      beds: 3,
-      bath: 3,
-      sqft: 3200,
-      price: "3.55 Crore",
-      priceLabel: "Onwards",
-    },
-    {
-      photo: FeaturedPropertyImage1,
-      title: "Ranjana Complex",
-      address: "New-Road, Kathmandu",
-      beds: 0,
-      bath: 0,
-      sqft: 3651,
-      price: "50 Lakhs",
-      priceLabel: "month",
-    },
-    {
-      photo: LifestyleImages,
-      title: "Vinayak Colony",
-      address: "Bhaisipati, Lalitpur",
-      beds: 5,
-      bath: 4,
-      sqft: 4200,
-      price: "9.5 Crore",
-      priceLabel: "Total Price",
-    },
-  ];
 
   return (
     <>

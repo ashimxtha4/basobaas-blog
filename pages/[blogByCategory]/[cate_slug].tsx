@@ -116,7 +116,7 @@ export default function BlogPage() {
                       return (
                         <Link
                           style={{ transform: "none" }}
-                          href={("/blog/" + blog?.cate_slug) as string}
+                          href={("/blog/"+blog?.slug) as string}
                           key={index}
                         >
                           <CategorySpecificBlog blog={blog} />

@@ -17,16 +17,12 @@ const HomeBlogTypeMain = () => {
           onClick={() => router.push(`blog/${data[0]?.slug}`)}
         >
           <Image
-            className="blogCardBackground"
-            // src={`https://pocketbase.asterdio.xyz/${data[0]?.images[0]}`}
-            // src={`${process.env.NEXT_PUBLIC_APP_API_URL as string}${
-            //   data[0].images[0]
-            // }`}
+            className="blogCardBackground"          
             src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
               data[0]?.id
             }/${data[0]?.images[0]}`}
             alt="Basobaas Nepal"
-            layout="fill"
+            fill
           />
         </div>
         <div className="cardContent">
