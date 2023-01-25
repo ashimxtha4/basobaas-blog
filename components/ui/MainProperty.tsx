@@ -33,9 +33,13 @@ const MainProperty = ({ data }: { data: any }) => {
         <div className="contentContainer">
           <div className="propertyPrice">
             <div className="priceDiv">
-              <span className="price">NPR. {priceFormatter(data?.price)}</span>
+              <span className="price">
+                NPR. {data?.price ? priceFormatter(data?.price) : "TBD"}
+              </span>
               <span className="unit">
-                {data?.price_postfix ? " " + data?.price_postfix : null}
+                {data?.price_postfix
+                  ? "/" + " " + `${data?.price_postfix}`?.replaceAll("/", "")
+                  : null}
               </span>
             </div>
           </div>
