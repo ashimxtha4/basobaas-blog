@@ -5,8 +5,6 @@ import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
 import BlogNavbar from "../../layouts/BlogNavbar";
 import Footer from "../../layouts/Footer";
 import Image from "next/image";
-import blogDetailsImage from "../../public/Images/blogDetailsImage1.svg";
-import blogDetailsImage3 from "../../public/Images/blogDetailsImage3.svg";
 import LawAndPolicy from "../../components/ui/LawAndPolicy";
 import DetailProperty from "../../components/ui/detailProperty";
 import { useRouter } from "next/router";
@@ -17,8 +15,8 @@ import {
   fetchPremiumProperties,
 } from "../../state/actions/actions";
 import { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
 import moment from "moment";
+import { dateFormatter } from "../../utilities/helper";
 export default function BlogPage() {
   const firstRender = useRef(true);
   const router = useRouter();
@@ -26,9 +24,7 @@ export default function BlogPage() {
 
   const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
 
-  const premiumProperty = useAppSelector(
-    (state) => state?.premiumPropertyData
-  );
+  const premiumProperty = useAppSelector((state) => state?.premiumPropertyData);
 
   const relatedData = useAppSelector(
     (state) => state?.blogData?.blogByCategoryId?.items
@@ -158,7 +154,9 @@ export default function BlogPage() {
                                     />
                                   </div>
                                   <div className="posted">
-                                    {moment(`${item?.created}`).fromNow()}
+                                    {dateFormatter(
+                                      moment(`${item?.created}`).fromNow()
+                                    )}
                                   </div>
                                 </div>
                                 <button className="shareButton">

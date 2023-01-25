@@ -1,14 +1,11 @@
 import MainProperty from "./MainProperty";
-import FeaturedPropertyImage1 from "../../public/Images/featuredPropertyImage1.svg";
-import FeaturedPropertyImage2 from "../../public/Images/featuredPropertyImage2.svg";
-import FeaturedPropertyImage3 from "../../public/Images/featuredPropertyImage3.svg";
-import FeaturedPropertyImage4 from "../../public/Images/featuredPropertyImage4.svg";
-import LifestyleImages from "../../public/Images/LifestyleImages.svg";
 import { useAppSelector } from "../../state";
 
 const DetailProperty = () => {
+  const data = useAppSelector(
+    (state) => state?.premiumPropertyData?.data?.data
+  );
 
-  const data =useAppSelector((state) => state?.premiumPropertyData?.data?.data);
   return (
     <div className="detailPropertyListDiv">
       <div className="propertyListTitleDiv">

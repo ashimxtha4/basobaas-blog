@@ -2,8 +2,9 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import HomeBlogMainImage from "../../public/Images/blogDetailsImage1.svg";
 import { useAppSelector } from "../../state";
+import { dateFormatter } from "../../utilities/helper";
+import moment from "moment";
 
 const HomeBlogTypeMain = () => {
   const router = useRouter();
@@ -29,7 +30,6 @@ const HomeBlogTypeMain = () => {
           <div className="blogCategoryTag">
             <Link className="blogTagLinks" href="#">
               <p>
-                {/* यात्रा */}
                 {
                   categoryList?.find((obj: any) => obj.id == data[0]?.category)
                     ?.name_np
@@ -50,7 +50,9 @@ const HomeBlogTypeMain = () => {
                 color="#FFFFFF"
               />
             </div>
-            <div className="posted">२ हप्ता अघि</div>
+            <div className="posted">
+              {dateFormatter(moment(`${data[0]?.created}`).fromNow())}
+            </div>
           </div>
         </div>
       </div>

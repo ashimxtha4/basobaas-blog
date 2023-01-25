@@ -74,7 +74,7 @@ const FeaturedProperties = ({ property }: { property: any }) => {
             </div>
           </div>
           <div className="propertyPrice">
-            <span className="price">{property?.price}{property?.price_postfix&&" /"}</span>
+            <span className="price">{priceFormatter(property?.price)}{property?.price_postfix&&" /"}</span>
             <span className="unit">{check(property?.price_postfix)}</span>
           </div>
         </div>

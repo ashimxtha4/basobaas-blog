@@ -46,7 +46,6 @@ const HomePage = () => {
   const marketData = useAppSelector(
     (state) => state?.blogData?.market_news?.items
   );
-
   const { data, loading } = useAppSelector((state) => state.blogData);
 
   const { data: premiumPropertyData, loading: premiumPropertyLoading } =
@@ -165,9 +164,7 @@ const HomePage = () => {
                         router.push(`/blog/${data.slug}`);
                       }}
                     >
-                      <HomeBlogTypeSmall
-                        data={data}
-                      />
+                      <HomeBlogTypeSmall data={data} />
                     </div>
                   ))}
                 </div>
@@ -200,8 +197,7 @@ const HomePage = () => {
                           router.push(`/blog/${data?.slug}`);
                         }}
                       >
-                        <MarketNewsTypeSecondary
-                          data={data}/>
+                        <MarketNewsTypeSecondary data={data} />
                       </div>
                     ))}
                   </div>
