@@ -35,9 +35,9 @@ const LifeStyle = () => {
                 <div className="thumbnail">
                   <img
                     className="image"
-                    src={`${process.env.NEXT_PUBLIC_APP_API_URL as string}${
-                      data.images[0]
-                    }`}
+                    src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+                      data.id
+                    }/${data.images[0]}`}
                     alt="basobaas nepal"
                   />
                 </div>
