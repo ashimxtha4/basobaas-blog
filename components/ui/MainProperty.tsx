@@ -2,20 +2,21 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 
 const MainProperty = (props: any) => {
+
   return (
     <>
       <div className="card">
         <div className="saleRentTag">
-          <p>For Sale</p>
+          <p>For {props.data.status}</p>
         </div>
         <div className="imageContainer">
-          <Image src={props.data?.photo as any} alt="noImage" className="img" />
+          <img src={props?.data?.thumbnail?.replaceAll("basobaasapi.asterdio.xyz","basobaas.com/api") as any} alt={props.data?.thumbnail_alt} className="img" />
         </div>
         <div className="contentContainer">
           <div className="propertyPrice">
             <div className="priceDiv">
               <span className="price">NPR. {props.data?.price}</span>
-              <span className="unit">/{props.data?.priceLabel}</span>
+              <span className="unit">/{props.data?.price_postfix}</span>
             </div>
           </div>
           <div className="propertyTitle">
@@ -44,7 +45,7 @@ const MainProperty = (props: any) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{props.data?.beds}</span>
+                <span className="overViewTags">{props.data?.bedroom_count}</span>
                 <span className="overViewTags">Beds</span>
               </div>
             </div>
@@ -57,7 +58,7 @@ const MainProperty = (props: any) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{props.data?.bath}</span>
+                <span className="overViewTags">{props.data?.bathroom_count}</span>
                 <span className="overViewTags">Bath</span>
               </div>
             </div>
@@ -70,8 +71,8 @@ const MainProperty = (props: any) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{props.data?.sqft}</span>
-                <span className="overViewTags">sq.ft</span>
+                <span className="overViewTags">{props?.data?.area_covered}</span>
+                <span className="overViewTags">{props?.data?.area_units}</span>
               </div>
             </div>
           </div>

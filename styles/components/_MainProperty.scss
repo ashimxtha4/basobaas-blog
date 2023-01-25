@@ -87,6 +87,10 @@
         color: #2c2c2c;
         margin: 0px;
         padding: 0px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
       }
     }
 
@@ -106,6 +110,10 @@
         color: #707580;
         margin: 0px;
         padding: 0px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
       }
     }
 
@@ -261,6 +269,7 @@
     height: fit-content;
     padding: 0px;
     gap: 8px;
+    max-width: 300px;
     border: none;
 
     .imageContainer {
