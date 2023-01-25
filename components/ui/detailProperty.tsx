@@ -5,7 +5,8 @@ import FeaturedPropertyImage3 from "../../public/Images/featuredPropertyImage3.s
 import FeaturedPropertyImage4 from "../../public/Images/featuredPropertyImage4.svg";
 import LifestyleImages from "../../public/Images/LifestyleImages.svg";
 
-const DetailProperty = () => {
+const DetailProperty = ({ data }: { data: any[] }) => {
+  console.log(data);
   const dummyPropertyData: any = [
     {
       photo: FeaturedPropertyImage3,
@@ -65,7 +66,7 @@ const DetailProperty = () => {
         <span className="propertyListViewAllButton">सबै हेर्नुहोस्</span>
       </div>
       <div className="propertyCardDiv">
-        {dummyPropertyData.map((data: any, index: number) => (
+        {data?.map((data: any, index: number) => (
           <div className="propertyCard" key={index}>
             <MainProperty data={data} />
           </div>

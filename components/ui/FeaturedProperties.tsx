@@ -6,11 +6,11 @@ const FeaturedProperties = ({ property }: { property: any }) => {
     <>
       <div className="featuredProperties">
         <div className="imageContainer">
-          <Image
+          {/* <Image
             className="image"
             src={property.thumbnail}
             alt="Featured Properties"
-          />
+          /> */}
         </div>
         <div className="contentContainer">
           <div className="propertyTitle">
