@@ -1,4 +1,5 @@
 .marketNewsTypeSecondary {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -11,6 +12,7 @@
   cursor: pointer;
 
   .imageContainer {
+    position: relative;
     width: 120px;
     height: 100%;
     background: #d9d9d9;

@@ -295,7 +295,6 @@ const HomePage = () => {
                     <div className="smallComponent" key={index} onClick={()=>{router.push(`/blog/${data.slug}`)}}>
                       <HomeBlogTypeSmall
                         data={data}
-                        image={dummyRelatedBlogsData[index]?.thumbnail}
                       />
                     </div>
                   ))}
@@ -330,9 +329,7 @@ const HomePage = () => {
                         }}
                       >
                         <MarketNewsTypeSecondary
-                          data={data}
-                          image={dummyRelatedBlogsData[index]?.thumbnail}
-                        />
+                          data={data}/>
                       </div>
                     ))}
                   </div>

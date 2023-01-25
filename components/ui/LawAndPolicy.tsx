@@ -46,7 +46,10 @@ const LawAndPolicy = ({
             <div className="imageContainer">
               <Image
                 className="image"
-                src={LawAndPolicyImage1}
+                src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+                  data.id
+                }/${data.images[0]}`}
+                fill
                 alt="basobaas Nepal"
               />
             </div>

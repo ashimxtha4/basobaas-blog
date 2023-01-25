@@ -9,6 +9,8 @@
   gap: calc(12 * 100% / 410);
 
   .imageContainer {
+    display: flex;
+    justify-content: flex-end;
     width: 120px;
     overflow: hidden;
     height: 102px;
@@ -19,8 +21,8 @@
     }
 
     .image {
-      width: 120px;
-      height: 102px;
+      width: auto;
+      height: 100%;
       border-radius: inherit;
       object-fit: contain;
       transition: 0.3s ease-in-out;
