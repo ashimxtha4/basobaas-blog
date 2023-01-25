@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
+    domains: ['basobaas.com'],
     remotePatterns: [
       {
         protocol: "https",
@@ -12,9 +13,15 @@ const nextConfig = {
         protocol: "http",
         hostname: "localhost",
       },
+      {
+        protocol: "https",
+        hostname:'basobaas.com',
+        port: '',
+      }
     ],
   },
   typescript: { ignoreBuildErrors: true },
 };
+
 
 module.exports = nextConfig;
