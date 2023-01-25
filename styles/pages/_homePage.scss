@@ -1996,14 +1996,6 @@
       position: relative;
       width: 100%;
 
-      .secNavBlend {
-        height: 72px;
-        width: 100%;
-        background-color: #001338;
-        position: absolute;
-        top: 138px;
-      }
-
       .footerBlend {
         position: absolute;
         width: 100%;
@@ -2014,7 +2006,7 @@
         .lowerFooterBlend {
           position: absolute;
           bottom: 0px;
-          height: 139.5px;
+          height: 140px;
           width: 100%;
           background-color: #1e1e1e;
         }

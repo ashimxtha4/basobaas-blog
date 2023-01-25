@@ -9,6 +9,7 @@
   gap: calc(12 * 100% / 410);
 
   .imageContainer {
+    position: relative;
     display: flex;
     justify-content: flex-end;
     width: 120px;
@@ -51,8 +52,12 @@
         font-size: 16px;
         line-height: 140%;
         color: #000000;
+        overflow:hidden ;
         margin: 0px;
         padding: 0px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
     }
 
