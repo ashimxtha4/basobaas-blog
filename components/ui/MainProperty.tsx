@@ -36,7 +36,7 @@ const MainProperty = ({ data }: { data: any }) => {
             <div className="priceDiv">
               <span className="price">NPR. {priceFormatter(data?.price)}</span>
               <span className="unit">
-                {data?.price_postfix ? "/" + " " + data?.price_postfix : null}
+                {data?.price_postfix ? " " + data?.price_postfix : null}
               </span>
             </div>
           </div>
