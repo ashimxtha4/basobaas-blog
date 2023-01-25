@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import { priceFormatter } from "../../utilities/helper";
 
 const FeaturedProperties = ({ property }: { property: any }) => {
   return (
@@ -61,7 +62,7 @@ const FeaturedProperties = ({ property }: { property: any }) => {
             </div>
           </div>
           <div className="propertyPrice">
-            <span className="price">{property.price}</span>
+            <span className="price">{priceFormatter(property?.price)}</span>
             <span className="unit">/ {property.priceLabel}</span>
           </div>
         </div>
