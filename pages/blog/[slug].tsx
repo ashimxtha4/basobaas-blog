@@ -176,10 +176,9 @@ export default function BlogPage() {
                           <div className="blogDetails">
                             <div className="blogDetailsThumbnail">
                               <Image
-                                src={`${
-                                  process.env.NEXT_PUBLIC_APP_IMG_URL as string
-                                }${item?.id}/${item?.images[0]}`}
-                                // fill
+                                src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+                                  item?.id
+                                }/${item?.images[0]}`}
                                 height={408}
                                 width={830}
                                 alt="blogDetails"

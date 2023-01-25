@@ -62,7 +62,6 @@ const BlogNavbar = () => {
                 <li className="nav-item dropdown moreDropDown">
                   <span
                     className="nav-link dropdown-toggle"
-                    // href="#"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"

@@ -10,6 +10,12 @@ const MainProperty = ({ data }: { data: any }) => {
       window.open(`https://basobaas.com/premium/${data.slug}`, "_blank");
     else window.open(`https://basobaas.com/property/${data.slug}`, "_blank");
   }
+  function check(word:string){
+    if(word?.length>0&&word[0]=="/")
+      return word.slice(1)
+    else 
+      return word
+  }
   return (
     <>
       {/* <Link href={data.premium?`https://basobaas.com/premium/${data.slug}`:`https://basobaas.com/property/${data.slug}`} target="_blank"> */}
@@ -33,13 +39,9 @@ const MainProperty = ({ data }: { data: any }) => {
         <div className="contentContainer">
           <div className="propertyPrice">
             <div className="priceDiv">
-              <span className="price">
-                NPR. {data?.price ? priceFormatter(data?.price) : "TBD"}
-              </span>
+              <span className="price">NPR. {priceFormatter(data?.price)}{data?.price_postfix&&" /"} </span>
               <span className="unit">
-                {data?.price_postfix
-                  ? "/" + " " + `${data?.price_postfix}`?.replaceAll("/", "")
-                  : null}
+                {check(data?.price_postfix)}
               </span>
             </div>
           </div>

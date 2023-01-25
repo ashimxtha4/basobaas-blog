@@ -10,7 +10,7 @@ import { Pagination } from "antd";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useAppDispatch, useAppSelector } from "../../state";
-import { fetchBlogs, fetchCategory } from "../../state/actions/actions";
+import { fetchBlogs, fetchCategory, fetchPremiumProperties } from "../../state/actions/actions";
 import { BlogByCategoryKeyType } from "../../state/features/blogSlice";
 
 export default function BlogPage() {
@@ -41,6 +41,7 @@ export default function BlogPage() {
         data[router.query.cate_slug as BlogByCategoryKeyType]?.items;
       setValues(blogData);
     }
+    dispatch(fetchPremiumProperties());
   }, [router.isReady, router.query, data]);
 
   return (
@@ -114,7 +115,7 @@ export default function BlogPage() {
                       return (
                         <Link
                           style={{ transform: "none" }}
-                          href={("/blog/" + blog?.cate_slug) as string}
+                          href={("/blog/"+blog?.slug) as string}
                           key={index}
                         >
                           <CategorySpecificBlog blog={blog} />

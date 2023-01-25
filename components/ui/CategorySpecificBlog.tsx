@@ -3,13 +3,16 @@ import { Icon } from "@iconify/react";
 import Chitra from "../../public/Images/homeLoanImage1.svg";
 
 const CategorySpecificBlog = ({ blog }: { blog: any }) => {
+  console.log("category page",blog)
   return (
     <>
       <div className="categorySpecificBlog">
         <div className="imageContainer">
           <Image
             className="blogListingImage"
-            src={Chitra}
+            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+              blog?.id
+            }/${blog?.images[0]}`}
             alt="Blog Picture"
             width={345}
             height={172}

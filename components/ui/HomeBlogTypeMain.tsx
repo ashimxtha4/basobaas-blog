@@ -18,12 +18,12 @@ const HomeBlogTypeMain = () => {
           onClick={() => router.push(`blog/${data[0]?.slug}`)}
         >
           <Image
-            className="blogCardBackground"
+            className="blogCardBackground"          
             src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
               data[0]?.id
             }/${data[0]?.images[0]}`}
             alt="Basobaas Nepal"
-            layout="fill"
+            fill
           />
         </div>
         <div className="cardContent">
