@@ -18,7 +18,9 @@ const MainProperty = ({ data }: { data: any }) => {
           <p>For {data.status}</p>
         </div>
         <div className="imageContainer">
-          <img
+          <Image
+          width={302}
+          height={200}
             src={
               data?.thumbnail?.replaceAll(
                 "basobaasapi.asterdio.xyz",
