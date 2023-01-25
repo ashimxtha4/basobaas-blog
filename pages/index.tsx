@@ -301,7 +301,6 @@ const HomePage = () => {
                     >
                       <HomeBlogTypeSmall
                         data={data}
-                        image={dummyRelatedBlogsData[index]?.thumbnail}
                       />
                     </div>
                   ))}
@@ -336,9 +335,7 @@ const HomePage = () => {
                         }}
                       >
                         <MarketNewsTypeSecondary
-                          data={data}
-                          image={dummyRelatedBlogsData[index]?.thumbnail}
-                        />
+                          data={data}/>
                       </div>
                     ))}
                   </div>

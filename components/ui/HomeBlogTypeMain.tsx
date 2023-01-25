@@ -22,17 +22,16 @@ const HomeBlogTypeMain = () => {
             // src={`${process.env.NEXT_PUBLIC_APP_API_URL as string}${
             //   data[0].images[0]
             // }`}
-            src={HomeBlogMainImage}
+            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+              data[0]?.id
+            }/${data[0]?.images[0]}`}
             alt="Basobaas Nepal"
             layout="fill"
           />
         </div>
         <div className="cardContent">
           <div className="blogCategoryTag">
-            <Link
-              className="blogTagLinks"
-              href="#"
-            >
+            <Link className="blogTagLinks" href="#">
               <p>
                 {/* यात्रा */}
                 {

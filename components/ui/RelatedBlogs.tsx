@@ -5,11 +5,14 @@ const RelatedBlogs = ({blog}:{blog:any}) => {
     <>
       <div className="relatedBlogs">
         <div className="imageContainer">
-          {/* <Image
-            src={blog?.thumbnail}
+          <Image
+            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+              blog?.id
+            }/${blog?.images[0]}`}
+            fill
             alt="Picture of the author"
             className="relatedBlogImages"
-          /> */}
+          />
         </div>
         <div className="contentContainer">
           <div className="categoryTitle">

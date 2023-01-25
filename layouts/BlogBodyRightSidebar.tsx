@@ -80,7 +80,7 @@ const BlogBodyRightSidebar = ({
   );
 
   const { data, loading } = useAppSelector(
-    (state) => state?.latestPropertyData
+    (state) => state?.premiumPropertyData
   );
   useEffect(() => {
     if (router.isReady) {
@@ -138,7 +138,12 @@ const BlogBodyRightSidebar = ({
             return (
               <Link
                 style={{ transform: "none" }}
-                href="https://basobaas.com/premium/house-for-sale-at-sitapaila-1565"
+                href={
+                  data.premium
+                    ? `https://basobaas.com/premium/${data.slug}`
+                    : `https://basobaas.com/property/${data.slug}`
+                }
+                target="_blank"
                 key={index}
               >
                 <FeaturedProperties property={property} />

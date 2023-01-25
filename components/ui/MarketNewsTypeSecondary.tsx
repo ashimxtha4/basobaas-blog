@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react";
 import MarketNewsTypeSecondaryImage from "../../public/Images/smallMarket.svg";
 import { useAppSelector } from "../../state";
 
-const MarketNewsTypeSecondary = (props: any) => {
+const MarketNewsTypeSecondary = ({data}:{data:any}) => {
   const categoryList = useAppSelector((state)=>state.categoryData.data.items);
 
   return (
@@ -12,17 +12,20 @@ const MarketNewsTypeSecondary = (props: any) => {
       <div className="marketNewsTypeSecondary">
         <div className="imageContainer">
           <Image
-            src={props.image}
+            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+              data.id
+            }/${data.images[0]}`}
+            fill
             alt="Basobaas Nepal"
             className="image"
           />
         </div>
         <div className="blogContents">
           <div className="blogCategoryTitle">
-            <p>{categoryList?.find((obj:any)=>obj.id==props?.data.category)?.name_np}</p>
+            <p>{categoryList?.find((obj:any)=>obj.id==data.category)?.name_np}</p>
           </div>
           <div className="blogHeader">
-            <p>{props.data?.title_np}</p>
+            <p>{data?.title_np}</p>
           </div>
           <div className="blogBy">
             <span className="author">राजन अधिकारी</span>

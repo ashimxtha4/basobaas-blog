@@ -26,7 +26,7 @@ export default function BlogPage() {
 
   const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
 
-  const { data: premiumPropertyData, loading } = useAppSelector(
+  const premiumProperty = useAppSelector(
     (state) => state?.premiumPropertyData
   );
 
@@ -178,7 +178,12 @@ export default function BlogPage() {
                           <div className="blogDetails">
                             <div className="blogDetailsThumbnail">
                               <Image
-                                src={blogDetailsImage3}
+                                src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+                                  item?.id
+                                }/${item?.images[0]}`}
+                                // fill
+                                height={408}
+                                width={830}
                                 alt="blogDetails"
                               />
                             </div>

@@ -6,7 +6,7 @@ import HomeBlogMainImage from "../../public/Images/blogDetailsImage1.svg";
 import Image from "next/image";
 import { useAppSelector } from "../../state";
 
-const HomeBlogTypeSmall = (props: any) => {
+const HomeBlogTypeSmall = ({data}:{data:any}) => {
   const categoryList = useAppSelector((state)=>state.categoryData.data.items);
 
   return (
@@ -15,16 +15,19 @@ const HomeBlogTypeSmall = (props: any) => {
         <div className="thumbnail">
           <Image
             className="blogCardBackground"
-            src={props.image}
-            alt="Basobaas Nepal"
+            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+              data.id
+            }/${data.images[0]}`}
+            fill
+            alt="Basobaas Nepal" 
           />
         </div>
         <div className="cardContent">
           <div className="blogCategoryTag">
-            <p>{categoryList?.find((obj:any)=>obj.id==props?.data.category)?.name_np}</p>
+            <p>{categoryList?.find((obj:any)=>obj.id==data.category)?.name_np}</p>
           </div>
           <div className="blogTitle">
-            <p>{props.data?.title_np}</p>
+            <p>{data?.title_np}</p>
           </div>
           <div className="blogBy">
             <div className="author">राजन अधिकारी</div>

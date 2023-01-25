@@ -10,6 +10,7 @@
   transition: 0.4s all;
 
   .imageContainer {
+    position: relative;
     margin: 0px;
     padding: 0px;
     overflow: hidden;
@@ -19,27 +20,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: solid 1px;
 
     .image {
-      height: 100%;
-      width: auto;
       border-radius: inherit;
       transition: 0.3s ease-in-out;
 
-      @media only screen and (min-width: 400px) {
-        height: auto;
-        width: 100%;
-      }
-
-      @media only screen and (min-width: 726px) {
-        height: 100%;
-        width: auto;
-      }
-
-      @media only screen and (min-width: 800px) {
-        height: auto;
-        width: 100%;
-      }
     }
   }
 

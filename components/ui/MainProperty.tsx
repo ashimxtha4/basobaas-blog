@@ -19,8 +19,7 @@ const MainProperty = ({ data }: { data: any }) => {
         </div>
         <div className="imageContainer">
           <Image
-            width={302}
-            height={200}
+            fill
             src={
               data?.thumbnail?.replaceAll(
                 "basobaasapi.asterdio.xyz",

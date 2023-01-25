@@ -13,10 +13,12 @@ const MarketNewsTypeMain = (props:any) => {
       <div className="marketNewsTypeMain">
         <div className="imageContainer">
           <Image
-            src={HomeBlogMainImage}
+            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+              marketData[0]?.id
+            }/${marketData[0]?.images[0]}`}
             alt="Basobaas Nepal"
+            fill
             className="image"
-            height={300}
           />
         </div>
         <div className="blogContents">
