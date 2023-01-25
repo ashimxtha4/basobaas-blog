@@ -55,7 +55,6 @@ export default function BlogPage() {
       </div>
       <div className="catAlignmentContainer">
         <div className="blogContainerDiv">
-          {/* <div className="blogSecNavBlend"></div> */}
           <div className="footerBlend">
             <div className="lowerFooterBlend"></div>
           </div>
@@ -142,8 +141,14 @@ export default function BlogPage() {
                 {/* -------------------RIGHT SIDEBAR---------------------- */}
                 <div className="rightBodySection">
                   <div className="blogAdDiv">AD</div>
-                  {categories!=undefined}
-                  <BlogBodyRightSidebar relatedBlogData={categories?.find((obj:any)=>obj.cate_slug==router?.query?.cate_slug).id} />
+                  {categories != undefined}
+                  <BlogBodyRightSidebar
+                    relatedBlogData={
+                      categories?.find(
+                        (obj: any) => obj.cate_slug == router?.query?.cate_slug
+                      ).id
+                    }
+                  />
                 </div>
               </div>
             </div>

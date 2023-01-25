@@ -6,6 +6,8 @@ import OurThoughtsImage3 from "../../public/Images/homeLoanImage1.svg";
 import { useAppSelector } from "../../state";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import moment from "moment";
+import { dateFormatter } from "../../utilities/helper";
 
 const OurThoughts = () => {
   const router = useRouter();
@@ -59,7 +61,9 @@ const OurThoughts = () => {
                       color="#969696"
                     />
                   </span>
-                  <span className="posted">२ हप्ता अघि</span>
+                  <span className="posted">
+                    {dateFormatter(moment(`${data?.created}`).fromNow())}
+                  </span>
                 </div>
               </div>
             </div>

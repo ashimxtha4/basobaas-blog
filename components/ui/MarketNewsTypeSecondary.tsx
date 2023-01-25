@@ -1,20 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
-import MarketNewsTypeSecondaryImage from "../../public/Images/smallMarket.svg";
 import { useAppSelector } from "../../state";
+import moment from "moment";
+import { dateFormatter } from "../../utilities/helper";
 
-const MarketNewsTypeSecondary = ({data}:{data:any}) => {
-  const categoryList = useAppSelector((state)=>state.categoryData.data.items);
+const MarketNewsTypeSecondary = ({ data }: { data: any }) => {
+  const categoryList = useAppSelector((state) => state.categoryData.data.items);
 
   return (
     <>
       <div className="marketNewsTypeSecondary">
         <div className="imageContainer">
           <Image
-            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
-              data.id
-            }/${data.images[0]}`}
+            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${data.id}/${
+              data.images[0]
+            }`}
             fill
             alt="Basobaas Nepal"
             className="image"
@@ -22,7 +23,12 @@ const MarketNewsTypeSecondary = ({data}:{data:any}) => {
         </div>
         <div className="blogContents">
           <div className="blogCategoryTitle">
-            <p>{categoryList?.find((obj:any)=>obj.id==data.category)?.name_np}</p>
+            <p>
+              {
+                categoryList?.find((obj: any) => obj.id == data.category)
+                  ?.name_np
+              }
+            </p>
           </div>
           <div className="blogHeader">
             <p>{data?.title_np}</p>
@@ -37,7 +43,9 @@ const MarketNewsTypeSecondary = ({data}:{data:any}) => {
                 color="#969696"
               />
             </span>
-            <span className="posted">२ हप्ता अघि</span>
+            <span className="posted">
+              {dateFormatter(moment(`${data?.created}`).fromNow())}
+            </span>
           </div>
         </div>
       </div>

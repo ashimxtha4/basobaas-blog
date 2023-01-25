@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
-// import { getBlogByCategory } from "../../pages";
 import Image from "next/image";
 import HomeLoanImage1 from "../../public/Images/homeLoanImage1.svg";
 import HomeLoanImage2 from "../../public/Images/homeLoanImage2.svg";
@@ -8,9 +6,11 @@ import HomeLoanImage3 from "../../public/Images/homeLoanImage3.svg";
 import { useAppSelector } from "../../state";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import moment from "moment";
+import { dateFormatter } from "../../utilities/helper";
 
 const HomeLoan = () => {
-  const router=useRouter()
+  const router = useRouter();
   const homeLoanData = useAppSelector(
     (state) => state.blogData.home_loan.items
   );
@@ -58,7 +58,9 @@ const HomeLoan = () => {
                       color="#969696"
                     />
                   </span>
-                  <span className="posted">२ हप्ता अघि</span>
+                  <span className="posted">
+                    {dateFormatter(moment(`${data?.created}`).fromNow())}
+                  </span>
                 </div>
               </div>
             </div>
