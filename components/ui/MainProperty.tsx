@@ -1,26 +1,43 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-const MainProperty = (props: any) => {
-
+const MainProperty = ({ data }: { data: any }) => {
+  const router = useRouter();
+  function redirect() {
+    if (data.premium)
+      window.open(`https://basobaas.com/premium/${data.slug}`, "_blank");
+    else window.open(`https://basobaas.com/property/${data.slug}`, "_blank");
+  }
   return (
     <>
-      <div className="card">
+      {/* <Link href={data.premium?`https://basobaas.com/premium/${data.slug}`:`https://basobaas.com/property/${data.slug}`} target="_blank"> */}
+      <div className="card" onClick={redirect}>
         <div className="saleRentTag">
-          <p>For {props.data.status}</p>
+          <p>For {data.status}</p>
         </div>
         <div className="imageContainer">
-          <img src={props?.data?.thumbnail?.replaceAll("basobaasapi.asterdio.xyz","basobaas.com/api") as any} alt={props.data?.thumbnail_alt} className="img" />
+          <img
+            src={
+              data?.thumbnail?.replaceAll(
+                "basobaasapi.asterdio.xyz",
+                "basobaas.com/api"
+              ) as any
+            }
+            alt={data?.thumbnail_alt}
+            className="img"
+          />
         </div>
         <div className="contentContainer">
           <div className="propertyPrice">
             <div className="priceDiv">
-              <span className="price">NPR. {props.data?.price}</span>
-              <span className="unit">/{props.data?.price_postfix}</span>
+              <span className="price">NPR. {data?.price}</span>
+              <span className="unit">/{data?.price_postfix}</span>
             </div>
           </div>
           <div className="propertyTitle">
-            <p>{props.data?.title as string}</p>
+            <p>{data?.title as string}</p>
           </div>
           <div className="propertyAddress">
             <p>
@@ -32,7 +49,7 @@ const MainProperty = (props: any) => {
                 inline={true}
                 style={{ marginRight: "8px" }}
               />
-              {props.data?.address as string}
+              {data?.address as string}
             </p>
           </div>
           <div className="propertyOverview">
@@ -45,7 +62,7 @@ const MainProperty = (props: any) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{props.data?.bedroom_count}</span>
+                <span className="overViewTags">{data?.bedroom_count}</span>
                 <span className="overViewTags">Beds</span>
               </div>
             </div>
@@ -58,7 +75,7 @@ const MainProperty = (props: any) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{props.data?.bathroom_count}</span>
+                <span className="overViewTags">{data?.bathroom_count}</span>
                 <span className="overViewTags">Bath</span>
               </div>
             </div>
@@ -71,13 +88,14 @@ const MainProperty = (props: any) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{props?.data?.area_covered}</span>
-                <span className="overViewTags">{props?.data?.area_units}</span>
+                <span className="overViewTags">{data?.area_covered}</span>
+                <span className="overViewTags">{data?.area_units}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* </Link> */}
     </>
   );
 };

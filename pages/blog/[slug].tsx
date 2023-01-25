@@ -11,7 +11,11 @@ import LawAndPolicy from "../../components/ui/LawAndPolicy";
 import DetailProperty from "../../components/ui/detailProperty";
 import { useRouter } from "next/router";
 import { useAppDispatch, useAppSelector } from "../../state";
-import { fetchBlogs, fetchCategory } from "../../state/actions/actions";
+import {
+  fetchBlogs,
+  fetchCategory,
+  fetchPremiumProperties,
+} from "../../state/actions/actions";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import moment from "moment";
@@ -21,6 +25,10 @@ export default function BlogPage() {
   const dispatch = useAppDispatch();
 
   const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
+
+  const { data: premiumPropertyData, loading } = useAppSelector(
+    (state) => state?.premiumPropertyData
+  );
 
   const relatedData = useAppSelector(
     (state) => state?.blogData?.blogByCategoryId?.items
@@ -53,6 +61,7 @@ export default function BlogPage() {
           categoryId: data[0].category,
         })
       );
+      dispatch(fetchPremiumProperties());
     }
   }, [dispatch, data]);
 
@@ -221,7 +230,7 @@ export default function BlogPage() {
                         .filter((item: any, index: number) => {
                           return item?.id !== data?.id;
                         })
-                        .slice(0, 4)}
+                        .slice(0, 10)}
                     />
                   </div>
                   <DetailProperty />
