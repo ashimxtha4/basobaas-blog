@@ -1,21 +1,39 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const MainProperty = ({ data }: { data: any }) => {
+  const router = useRouter();
+  function redirect() {
+    if (data.premium)
+      window.open(`https://basobaas.com/premium/${data.slug}`, "_blank");
+    else window.open(`https://basobaas.com/property/${data.slug}`, "_blank");
+  }
   return (
     <>
-      <div className="card">
+      {/* <Link href={data.premium?`https://basobaas.com/premium/${data.slug}`:`https://basobaas.com/property/${data.slug}`} target="_blank"> */}
+      <div className="card" onClick={redirect}>
         <div className="saleRentTag">
-          <p>For Sale</p>
+          <p>For {data.status}</p>
         </div>
         <div className="imageContainer">
-          <Image src={data?.photo as any} alt="noImage" className="img" />
+          <img
+            src={
+              data?.thumbnail?.replaceAll(
+                "basobaasapi.asterdio.xyz",
+                "basobaas.com/api"
+              ) as any
+            }
+            alt={data?.thumbnail_alt}
+            className="img"
+          />
         </div>
         <div className="contentContainer">
           <div className="propertyPrice">
             <div className="priceDiv">
               <span className="price">NPR. {data?.price}</span>
-              <span className="unit">/{data?.priceLabel}</span>
+              <span className="unit">/{data?.price_postfix}</span>
             </div>
           </div>
           <div className="propertyTitle">
@@ -44,7 +62,7 @@ const MainProperty = ({ data }: { data: any }) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{data?.beds}</span>
+                <span className="overViewTags">{data?.bedroom_count}</span>
                 <span className="overViewTags">Beds</span>
               </div>
             </div>
@@ -57,7 +75,7 @@ const MainProperty = ({ data }: { data: any }) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{data?.bath}</span>
+                <span className="overViewTags">{data?.bathroom_count}</span>
                 <span className="overViewTags">Bath</span>
               </div>
             </div>
@@ -70,13 +88,14 @@ const MainProperty = ({ data }: { data: any }) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{data?.sqft}</span>
-                <span className="overViewTags">sq.ft</span>
+                <span className="overViewTags">{data?.area_covered}</span>
+                <span className="overViewTags">{data?.area_units}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* </Link> */}
     </>
   );
 };

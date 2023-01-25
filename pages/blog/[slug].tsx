@@ -233,9 +233,7 @@ export default function BlogPage() {
                         .slice(0, 10)}
                     />
                   </div>
-                  <DetailProperty
-                    data={premiumPropertyData?.data?.slice(0, 10)}
-                  />
+                  <DetailProperty />
                 </div>
               </div>
             </div>

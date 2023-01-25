@@ -4,9 +4,11 @@ import FeaturedPropertyImage2 from "../../public/Images/featuredPropertyImage2.s
 import FeaturedPropertyImage3 from "../../public/Images/featuredPropertyImage3.svg";
 import FeaturedPropertyImage4 from "../../public/Images/featuredPropertyImage4.svg";
 import LifestyleImages from "../../public/Images/LifestyleImages.svg";
+import { useAppSelector } from "../../state";
 
-const DetailProperty = ({ data }: { data: any[] }) => {
-  console.log(data);
+const DetailProperty = () => {
+
+  const data =useAppSelector((state) => state?.premiumPropertyData?.data?.data);
   const dummyPropertyData: any = [
     {
       photo: FeaturedPropertyImage3,
