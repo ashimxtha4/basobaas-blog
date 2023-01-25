@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 
-const MainProperty = (props: any) => {
+const MainProperty = ({ data }: { data: any }) => {
   return (
     <>
       <div className="card">
@@ -9,17 +9,17 @@ const MainProperty = (props: any) => {
           <p>For Sale</p>
         </div>
         <div className="imageContainer">
-          <Image src={props.data?.photo as any} alt="noImage" className="img" />
+          <Image src={data?.photo as any} alt="noImage" className="img" />
         </div>
         <div className="contentContainer">
           <div className="propertyPrice">
             <div className="priceDiv">
-              <span className="price">NPR. {props.data?.price}</span>
-              <span className="unit">/{props.data?.priceLabel}</span>
+              <span className="price">NPR. {data?.price}</span>
+              <span className="unit">/{data?.priceLabel}</span>
             </div>
           </div>
           <div className="propertyTitle">
-            <p>{props.data?.title as string}</p>
+            <p>{data?.title as string}</p>
           </div>
           <div className="propertyAddress">
             <p>
@@ -31,7 +31,7 @@ const MainProperty = (props: any) => {
                 inline={true}
                 style={{ marginRight: "8px" }}
               />
-              {props.data?.address as string}
+              {data?.address as string}
             </p>
           </div>
           <div className="propertyOverview">
@@ -44,7 +44,7 @@ const MainProperty = (props: any) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{props.data?.beds}</span>
+                <span className="overViewTags">{data?.beds}</span>
                 <span className="overViewTags">Beds</span>
               </div>
             </div>
@@ -57,7 +57,7 @@ const MainProperty = (props: any) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{props.data?.bath}</span>
+                <span className="overViewTags">{data?.bath}</span>
                 <span className="overViewTags">Bath</span>
               </div>
             </div>
@@ -70,7 +70,7 @@ const MainProperty = (props: any) => {
                 />
               </span>
               <div className="overViewText">
-                <span className="overViewTags">{props.data?.sqft}</span>
+                <span className="overViewTags">{data?.sqft}</span>
                 <span className="overViewTags">sq.ft</span>
               </div>
             </div>

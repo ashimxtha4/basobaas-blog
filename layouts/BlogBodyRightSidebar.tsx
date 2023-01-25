@@ -9,9 +9,8 @@ import FeaturedPropertyImage2 from "../public/Images/featuredPropertyImage2.svg"
 import FeaturedPropertyImage3 from "../public/Images/featuredPropertyImage3.svg";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../state";
-import { fetchBlogs } from "../state/actions/actions";
+import { fetchBlogs, fetchLatestProperties } from "../state/actions/actions";
 import { useRouter } from "next/router";
-
 
 //DUMMY DATA FOR RELATED BLOG
 const dummyRelatedBlogsData = [
@@ -66,15 +65,23 @@ const dummyPropertyData = [
   },
 ];
 
-const BlogBodyRightSidebar = ({relatedBlogData,}: {relatedBlogData: string}) => {
-
-  const dispatch=useAppDispatch()
-  const router = useRouter()
-  const relatedBlogValues=useAppSelector((state)=>state.blogData.blogByCategoryId.items)
+const BlogBodyRightSidebar = ({
+  relatedBlogData,
+}: {
+  relatedBlogData: string;
+}) => {
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+  const relatedBlogValues = useAppSelector(
+    (state) => state.blogData.blogByCategoryId.items
+  );
   const categoryList = useAppSelector(
     (state) => state?.categoryData?.data?.items
   );
 
+  const { data, loading } = useAppSelector(
+    (state) => state?.latestPropertyData
+  );
   useEffect(() => {
     if (router.isReady) {
       dispatch(
@@ -82,6 +89,7 @@ const BlogBodyRightSidebar = ({relatedBlogData,}: {relatedBlogData: string}) => 
           categoryId: relatedBlogData,
         })
       );
+      dispatch(fetchLatestProperties());
     }
   }, [dispatch, router.isReady, relatedBlogData]);
   return (
@@ -92,18 +100,22 @@ const BlogBodyRightSidebar = ({relatedBlogData,}: {relatedBlogData: string}) => 
             <p>सम्बन्धित ब्लगहरू</p>
             <Link
               className="relatedBlogsView"
-              href={"/category/"+categoryList?.find((obj:any)=>obj?.id==relatedBlogData)?.cate_slug}
+              href={
+                "/category/" +
+                categoryList?.find((obj: any) => obj?.id == relatedBlogData)
+                  ?.cate_slug
+              }
             >
               <button>सबै हेर्नुहोस्</button>
             </Link>
           </div>
 
           <div className="relatedSectionContainer">
-            {relatedBlogValues?.slice(0,3)?.map((blog: any, index: number) => {
+            {relatedBlogValues?.slice(0, 3)?.map((blog: any, index: number) => {
               return (
                 <Link
                   className="blogComponentLinks"
-                  href={"/blog/"+blog.slug}
+                  href={"/blog/" + blog.slug}
                   key={index}
                 >
                   <RelatedBlogs blog={blog} />
@@ -122,7 +134,7 @@ const BlogBodyRightSidebar = ({relatedBlogData,}: {relatedBlogData: string}) => 
             </button>
           </div>
 
-          {dummyPropertyData?.map((property, index) => {
+          {data.data?.slice(0, 3).map((property: any, index: number) => {
             return (
               <Link
                 style={{ transform: "none" }}
