@@ -2,8 +2,9 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import HomeBlogMainImage from "../../public/Images/blogDetailsImage1.svg";
 import { useAppSelector } from "../../state";
+import { dateFormatter } from "../../utilities/helper";
+import moment from "moment";
 
 const HomeBlogTypeMain = () => {
   const router = useRouter();
@@ -18,10 +19,6 @@ const HomeBlogTypeMain = () => {
         >
           <Image
             className="blogCardBackground"
-            // src={`https://pocketbase.asterdio.xyz/${data[0]?.images[0]}`}
-            // src={`${process.env.NEXT_PUBLIC_APP_API_URL as string}${
-            //   data[0].images[0]
-            // }`}
             src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
               data[0]?.id
             }/${data[0]?.images[0]}`}
@@ -33,7 +30,6 @@ const HomeBlogTypeMain = () => {
           <div className="blogCategoryTag">
             <Link className="blogTagLinks" href="#">
               <p>
-                {/* यात्रा */}
                 {
                   categoryList?.find((obj: any) => obj.id == data[0]?.category)
                     ?.name_np
@@ -54,7 +50,9 @@ const HomeBlogTypeMain = () => {
                 color="#FFFFFF"
               />
             </div>
-            <div className="posted">२ हप्ता अघि</div>
+            <div className="posted">
+              {dateFormatter(moment(`${data[0]?.created}`).fromNow())}
+            </div>
           </div>
         </div>
       </div>

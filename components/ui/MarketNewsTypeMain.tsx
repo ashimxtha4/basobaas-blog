@@ -1,12 +1,14 @@
 import { Icon } from "@iconify/react";
+import moment from "moment";
 import Image from "next/image";
-import HomeBlogMainImage from "../../public/Images/MarketNewsImage.svg";
 import { useAppSelector } from "../../state";
+import { dateFormatter } from "../../utilities/helper";
 
-const MarketNewsTypeMain = (props:any) => {
-  
-  const marketData=useAppSelector((state)=>state.blogData.market_news.items);
-  const categoryList = useAppSelector((state)=>state.categoryData.data.items);
+const MarketNewsTypeMain = (props: any) => {
+  const marketData = useAppSelector(
+    (state) => state.blogData.market_news.items
+  );
+  const categoryList = useAppSelector((state) => state.categoryData.data.items);
 
   return (
     <>
@@ -24,16 +26,18 @@ const MarketNewsTypeMain = (props:any) => {
         <div className="blogContents">
           <div className="blogCategoryTitle">
             <p>
-              {categoryList?.find((obj:any)=>obj?.id==marketData[0]?.category)?.name_np}
+              {
+                categoryList?.find(
+                  (obj: any) => obj?.id == marketData[0]?.category
+                )?.name_np
+              }
             </p>
           </div>
           <div className="blogHeader">
             <p>{marketData[0]?.title_np}</p>
           </div>
           <div className="blogBody">
-            <p>
-              {marketData[0]?.content}
-            </p>
+            <p>{marketData[0]?.content}</p>
           </div>
           <div className="blogBy">
             <span className="author">राजन अधिकारी</span>
@@ -45,7 +49,9 @@ const MarketNewsTypeMain = (props:any) => {
                 color="#969696"
               />
             </span>
-            <span className="posted">२ हप्ता अघि</span>
+            <span className="posted">
+              {dateFormatter(moment(`${marketData[0]?.created}`).fromNow())}
+            </span>
           </div>
         </div>
       </div>

@@ -1,14 +1,14 @@
 import Image from "next/image";
 
-const RelatedBlogs = ({blog}:{blog:any}) => {
+const RelatedBlogs = ({ blog }: { blog: any }) => {
   return (
     <>
       <div className="relatedBlogs">
         <div className="imageContainer">
           <Image
-            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
-              blog?.id
-            }/${blog?.images[0]}`}
+            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${blog?.id}/${
+              blog?.images[0]
+            }`}
             fill
             alt="Picture of the author"
             className="relatedBlogImages"

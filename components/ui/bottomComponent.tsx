@@ -1,5 +1,7 @@
+import moment from "moment";
 import Image from "next/image";
 import play from "../../public/Images/play.svg";
+import { dateFormatter } from "../../utilities/helper";
 
 const BottomComponent = (props: any) => {
   const blog = {
@@ -18,7 +20,9 @@ const BottomComponent = (props: any) => {
       </div>
       <div className="desDiv">
         <div className="headingDiv">{props.title}</div>
-        <div className="timeDiv">२ हप्ता अघि</div>
+        <div className="timeDiv">
+          {dateFormatter(moment(`${props?.created}`).fromNow())}
+        </div>
       </div>
     </div>
   );

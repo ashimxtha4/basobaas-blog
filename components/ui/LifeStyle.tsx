@@ -1,9 +1,9 @@
 import { Icon } from "@iconify/react";
-import Image from "next/image";
 import moment from "moment";
 import { useAppSelector } from "../../state";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { dateFormatter } from "../../utilities/helper";
 
 const LifeStyle = () => {
   const data = useAppSelector((state) => state?.blogData?.lifestyle?.items);
@@ -65,7 +65,7 @@ const LifeStyle = () => {
                       />
                     </div>
                     <div className="posted">
-                      {moment(`${data?.created}`).fromNow()}
+                      {dateFormatter(moment(`${data?.created}`).fromNow())}
                     </div>
                   </div>
                 </div>

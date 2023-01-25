@@ -1,12 +1,9 @@
 import { Icon } from "@iconify/react";
 import moment from "moment";
 import Image from "next/image";
-import { Router, useRouter } from "next/router";
-import LawAndPolicyImage1 from "../../public/Images/LawAndPolicyImage.svg";
-import LawAndPolicyImage2 from "../../public/Images/lawAndPolicyImage2.svg";
-import LawAndPolicyImage3 from "../../public/Images/lawAndPolicyImage3.svg";
-import LawAndPolicyImage4 from "../../public/Images/lawAndPolicyImage4.svg";
+import { useRouter } from "next/router";
 import { useAppSelector } from "../../state/index";
+import { dateFormatter } from "../../utilities/helper";
 
 const LawAndPolicy = ({
   data,
@@ -76,7 +73,7 @@ const LawAndPolicy = ({
                   />
                 </span>
                 <span className="posted">
-                  {moment(`${data?.created}`).fromNow()}
+                  {dateFormatter(moment(`${data?.created}`).fromNow())}
                 </span>
               </div>
             </div>
