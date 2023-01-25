@@ -3,7 +3,6 @@ import { Icon } from "@iconify/react";
 import Chitra from "../../public/Images/homeLoanImage1.svg";
 
 const CategorySpecificBlog = ({ blog }: { blog: any }) => {
-  console.log("category page",blog)
   return (
     <>
       <div className="categorySpecificBlog">
