@@ -83,6 +83,7 @@ select:focus {
 
           .dropdown-menu {
             width: 100px;
+            left: auto;
           }
 
           ul {
@@ -97,16 +98,13 @@ select:focus {
               width: 100%;
               display: flex;
               justify-content: flex-start;
-              padding-left: 10px;
+              padding-left: 7px;
+              padding-right: 5px;
               a {
                 background-color: #001338;
                 width: fit-content;
               }
             }
-          }
-          .dropdown-menu {
-            left: auto;
-            right: 0%;
           }
         }
        

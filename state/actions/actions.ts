@@ -1,11 +1,17 @@
 import { request } from "../../apis/request";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { VideoByCategoryKeyType } from "../features/videoSlice";
 export type blogQueryType = {
   cate_slug?: string;
   categoryId?: string;
   page?: number;
   perPage?: number;
   slug?: string;
+};
+
+export type videoQueryType = {
+  cate_slug?: string;
+  data: any;
 };
 
 //BLOGS
@@ -31,11 +37,14 @@ export const fetchCategory = createAsyncThunk<any[]>(
   }
 );
 
-//VIDEOS
-export const fetchVideos = createAsyncThunk<any[]>("get/videos", async () => {
-  const response = await request.getVideos();
-  return response.data.items;
-});
+//VIDEOS  <any[],videoQueryType>
+export const fetchVideos = createAsyncThunk<{}, any>(
+  "get/videos",
+  async (cate_slug: string) => {
+    const response = await request.getVideos(cate_slug as string);
+    return { data: response.data, cate_slug: cate_slug };
+  }
+);
 
 //PREMIUM PROPERTIES
 export const fetchPremiumProperties = createAsyncThunk<any[]>(

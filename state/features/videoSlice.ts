@@ -4,13 +4,22 @@ import { fetchVideos } from "../actions/actions";
 
 export interface VideoState {
   value: number;
-  data: any;
   loading: string;
+  educational_videos: {items: []};
+  basobaas_roundup: {items: []};
+  property_videos: {items: []};
 }
+
+export type VideoByCategoryKeyType =
+  | "educational_videos"
+  | "basobaas_roundup"
+  | "property_videos";
 
 const initialState: VideoState = {
   value: 0,
-  data: [],
+  educational_videos: { items: [] },
+  basobaas_roundup: { items: [] },
+  property_videos: { items: [] },
   loading: "",
 };
 
@@ -31,12 +40,12 @@ export const videoSlice = createSlice({
         state.loading = "loading";
       })
       .addCase(fetchVideos.fulfilled, (state, action: PayloadAction<any>) => {
+        const { cate_slug, data } = action.payload as any;
         state.loading = "success";
-        state.data = action.payload;
+        state[cate_slug as VideoByCategoryKeyType] = data;
       })
       .addCase(fetchVideos.rejected, (state, action: PayloadAction<any>) => {
         state.loading = "failed";
-        state.data = [];
       });
   },
 });
