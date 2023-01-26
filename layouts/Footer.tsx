@@ -96,30 +96,40 @@ const Footer = () => {
             <div className="socialHeading">Socials</div>
             <div className="socialContent">
               <div className="socialList">
-                <span className="socialIcon">
-                  <Image className="image" src={instagram} alt="noImage" />
-                </span>
-                <span className="socialName">
-                  <Link
-                    style={{ transform: "none", color: "unset" }}
-                    href="https://www.instagram.com/basobaas/?hl=en"
-                  >
-                    Instagram
-                  </Link>
-                </span>
+                <Link
+                  style={{ transform: "none", color: "unset" }}
+                  href="https://www.instagram.com/basobaas/?hl=en"
+                  target="_blank"
+                >
+                  <span className="socialIcon">
+                    <Image className="image" src={instagram} alt="noImage" />
+                  </span>
+                </Link>
+                <Link
+                  style={{ transform: "none", color: "unset" }}
+                  href="https://www.instagram.com/basobaas/?hl=en"
+                  target="_blank"
+                >
+                  <span className="socialName">Instagram</span>
+                </Link>
               </div>
               <div className="socialList">
-                <span className="socialIcon">
-                  <Image className="image" src={facebook} alt="noImage" />
-                </span>
-                <span className="socialName">
-                  <Link
-                    style={{ transform: "none", color: "unset" }}
-                    href="https://www.facebook.com/basobaas/"
-                  >
-                    Facebook
-                  </Link>
-                </span>
+                <Link
+                  style={{ transform: "none", color: "unset" }}
+                  href="https://www.facebook.com/basobaas/"
+                  target="_blank"
+                >
+                  <span className="socialIcon">
+                    <Image className="image" src={facebook} alt="noImage" />
+                  </span>
+                </Link>
+                <Link
+                  style={{ transform: "none", color: "unset" }}
+                  href="https://www.facebook.com/basobaas/"
+                  target="_blank"
+                >
+                  <span className="socialName">Facebook</span>
+                </Link>
               </div>
             </div>
           </div>
