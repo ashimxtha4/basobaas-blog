@@ -4,7 +4,8 @@ import { useAppSelector } from "../state";
 import { useEffect, useState } from "react";
 
 const BlogNavbar = () => {
-  const categoryList = useAppSelector((state) => state.categoryData.data.items);
+  const categories = useAppSelector((state) => state.categoryData.data.items);
+  const categoryList = categories?.filter((obj: any) => obj.parent_cate == "");
   const [screenSize, setScreenSize] = useState<number>(375);
   useEffect(() => {
     setScreenSize(screen.width);
@@ -37,7 +38,12 @@ const BlogNavbar = () => {
                   <li className="nav-item" key={index}>
                     <Link
                       className="nav-link"
-                      href={"/category/" + data?.cate_slug}
+                      href={
+                        data?.cate_slug === "video"
+                          ? "https://www.youtube.com/@Basobaas/playlists"
+                          : "/category/" + data?.cate_slug
+                      }
+                      target={data?.cate_slug == "video" ? "_blank" : "_self"}
                     >
                       {data?.name_np}
                     </Link>
@@ -50,8 +56,17 @@ const BlogNavbar = () => {
                     <Link
                       className="nav-link"
                       href={
-                        "/category/" +
-                        categoryList?.[categoryList?.length - 1]?.cate_slug
+                        categoryList[categoryList?.length - 1]?.cate_slug ===
+                        "video"
+                          ? "https://www.youtube.com/@Basobaas/playlists"
+                          : "/category/" +
+                            categoryList[categoryList?.length - 1]?.cate_slug
+                      }
+                      target={
+                        categoryList[categoryList?.length - 1]?.cate_slug ==
+                        "video"
+                          ? "_blank"
+                          : "_self"
                       }
                     >
                       {categoryList[categoryList?.length - 1]?.name_np}
@@ -82,7 +97,14 @@ const BlogNavbar = () => {
                         <li className="nav-item" key={index}>
                           <Link
                             className="nav-link"
-                            href={"/category/" + data?.cate_slug}
+                            href={
+                              data?.cate_slug === "video"
+                                ? "https://www.youtube.com/@Basobaas/playlists"
+                                : "/category/" + data?.cate_slug
+                            }
+                            target={
+                              data?.cate_slug == "video" ? "_blank" : "_self"
+                            }
                           >
                             {data?.name_np}
                           </Link>

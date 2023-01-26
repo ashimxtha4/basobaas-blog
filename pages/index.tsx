@@ -18,14 +18,6 @@ import downImage2 from "../public/Images/downImage2.svg";
 import downImage3 from "../public/Images/downImage3.svg";
 import downImage4 from "../public/Images/downImage4.svg";
 import downImage5 from "../public/Images/downImage5.svg";
-import RelatedBlogImage1 from "../public/Images/relatedBlogsImage1.svg";
-import RelatedBlogImage2 from "../public/Images/relatedBlogsImage2.svg";
-import RelatedBlogImage3 from "../public/Images/relatedBlogsImage3.svg";
-import FeaturedPropertyImage1 from "../public/Images/featuredPropertyImage1.svg";
-import FeaturedPropertyImage2 from "../public/Images/featuredPropertyImage2.svg";
-import FeaturedPropertyImage3 from "../public/Images/featuredPropertyImage3.svg";
-import FeaturedPropertyImage4 from "../public/Images/featuredPropertyImage4.svg";
-import LifestyleImages from "../public/Images/LifestyleImages.svg";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useAppSelector, useAppDispatch, store } from "../state";
@@ -43,6 +35,16 @@ import {
 const HomePage = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const property_videos = useAppSelector(
+    (state) => state?.videoData?.property_videos?.items
+  );
+  const educational_videos = useAppSelector(
+    (state) => state?.videoData?.educational_videos?.items
+  );
+  const basobaas_roundup = useAppSelector(
+    (state) => state?.videoData?.basobaas_roundup?.items
+  );
+
   const marketData = useAppSelector(
     (state) => state?.blogData?.market_news?.items
   );
@@ -100,12 +102,14 @@ const HomePage = () => {
         })
       );
       dispatch(fetchCategory());
-      dispatch(fetchVideos());
+      dispatch(fetchVideos("educational_videos"));
+      dispatch(fetchVideos("basobaas_roundup"));
+      dispatch(fetchVideos("property_videos"));
+      dispatch(fetchVideos("educational_videos"));
       dispatch(fetchPremiumProperties());
       dispatch(fetchLatestProperties());
     }
   }, [dispatch]);
-
 
   return (
     <>
@@ -279,30 +283,22 @@ const HomePage = () => {
 
                 <div className="lawPolicy2Div">
                   <div className="lawPolicy2TitleDiv">
-                    <label className="lawPolicy2Title">बजार अद्यावधिकहरू</label>
+                    <label className="lawPolicy2Title">घर जग्गाको भिडियो</label>
                     <span className="lawPolicy2ViewAllButton">
-                      सबै हेर्नुहोस्
+                      <Link
+                        href={"https://www.youtube.com/@Basobaas/playlists"}
+                        target="_blank"
+                      >
+                        सबै हेर्नुहोस्
+                      </Link>
                     </span>
                   </div>
                   <div className="lawPolicy2CardDiv">
-                    <div className="lawPolicy2Card">
-                      <BottomComponent
-                        image={downImage}
-                        title="सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।"
-                      />
-                    </div>
-                    <div className="lawPolicy2Card">
-                      <BottomComponent
-                        image={downImage1}
-                        title="नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।"
-                      />
-                    </div>
-                    <div className="lawPolicy2Card">
-                      <BottomComponent
-                        image={downImage2}
-                        title="रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।"
-                      />
-                    </div>
+                    {property_videos.map((video: any, index: number) => (
+                      <div className="lawPolicy2Card" key={index}>
+                        <BottomComponent data={video} />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -311,31 +307,23 @@ const HomePage = () => {
                 <div className="flexThreeChild1Div">
                   <div className="flexThreeChild1TitleDiv">
                     <label className="flexThreeChild1Title">
-                      बजार अद्यावधिकहरू
+                      घर जग्गाको भिडियो
                     </label>
                     <span className="flexThreeChild1ViewAllButton">
-                      सबै हेर्नुहोस्
+                      <Link
+                        href={"https://www.youtube.com/@Basobaas/playlists"}
+                        target="_blank"
+                      >
+                        सबै हेर्नुहोस्
+                      </Link>
                     </span>
                   </div>
                   <div className="flexThreeChild1CardDiv">
-                    <div className="lawPolicy2Card">
-                      <BottomComponent
-                        image={downImage}
-                        title="सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।"
-                      />
-                    </div>
-                    <div className="lawPolicy2Card">
-                      <BottomComponent
-                        image={downImage1}
-                        title="नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।"
-                      />
-                    </div>
-                    <div className="lawPolicy2Card">
-                      <BottomComponent
-                        image={downImage2}
-                        title="रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।"
-                      />
-                    </div>
+                    {property_videos.map((video: any, index: number) => (
+                      <div className="lawPolicy2Card" key={index}>
+                        <BottomComponent data={video} />
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -345,28 +333,20 @@ const HomePage = () => {
                       बासोबास राउन्डअप
                     </label>
                     <span className="flexThreeChildViewAllButton">
-                      सबै हेर्नुहोस्
+                      <Link
+                        href={"https://www.youtube.com/@Basobaas/playlists"}
+                        target="_blank"
+                      >
+                        सबै हेर्नुहोस्
+                      </Link>
                     </span>
                   </div>
                   <div className="flexThreeChildCardDiv">
-                    <div className="flexThreeChildCard">
-                      <BottomComponent
-                        image={downImage3}
-                        title="रेस्टुरेन्ट निर्माणमा धेरै कुराहरू छन् - आकर्षक लगानीकर्ताहरूदेखि लिएर रेस्टुरेन्ट ठेकेदारहरू खोज्ने र काममा राख्नेसम्म- र रेस्टुरेन्टहरूको।"
-                      />
-                    </div>
-                    <div className="flexThreeChildCard">
-                      <BottomComponent
-                        image={downImage4}
-                        title="नागढुंगा नौबिसे सुरुङमार्गकाे काम तीव्र,  ७३ प्रतिशत भौतिक प्रगति।"
-                      />
-                    </div>
-                    <div className="flexThreeChildCard">
-                      <BottomComponent
-                        image={downImage5}
-                        title="नबिल बैंकले गोठाटारमा भएको घरजग्गा बिक्री गर्ने।"
-                      />
-                    </div>
+                    {basobaas_roundup.map((video: any, index: number) => (
+                      <div className="flexThreeChildCard" key={index}>
+                        <BottomComponent data={video} />
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -376,28 +356,20 @@ const HomePage = () => {
                       शैक्षिक भिडियो
                     </label>
                     <span className="flexThreeChildViewAllButton">
-                      सबै हेर्नुहोस्
+                      <Link
+                        href={"https://www.youtube.com/@Basobaas/playlists"}
+                        target="_blank"
+                      >
+                        सबै हेर्नुहोस्
+                      </Link>
                     </span>
                   </div>
                   <div className="flexThreeChildCardDiv">
-                    <div className="flexThreeChildCard">
-                      <BottomComponent
-                        image={downImage2}
-                        title="डिजाइन गर्ने रणनीतिहरू समावेश गर्दै।"
-                      />
-                    </div>
-                    <div className="flexThreeChildCard">
-                      <BottomComponent
-                        image={downImage5}
-                        title="विशेषज्ञहरू जसले सबै योगदान गर्नेछन्।त्यहाँ विचार गर्न समयरेखाहरू छन्, धेरै सरोकारवालाहरू, र रेस्टुरेन्ट निर्माणको लागि उत्तम अभ्यासहरू।"
-                      />
-                    </div>
-                    <div className="flexThreeChildCard">
-                      <BottomComponent
-                        image={downImage1}
-                        title="जब यो एउटा यादगार रेस्टुरेन्ट अवधारणा निर्माण र डिजाइन गर्ने कुरा आउँछ, त्यहाँ धेरै छन्।"
-                      />
-                    </div>
+                    {educational_videos.map((video: any, index: number) => (
+                      <div className="flexThreeChildCard" key={index}>
+                        <BottomComponent data={video} />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
