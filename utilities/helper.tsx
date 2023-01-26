@@ -22,8 +22,8 @@ export const toFixed = (price: number, scale: number = 3) => {
 //FUNCTION FOR PRICE FORMATTER
 export const priceFormatter = (labelValue: string | number) => {
   // Six Zeroes for Corer
-  return Number(labelValue) >= 1.0e6
-    ? toFixed(Number(labelValue) / 1.0e6) + " Crore"
+  return Number(labelValue) >= 1.0e7
+    ? toFixed(Number(labelValue) / 1.0e7) + " Crore"
     : Number(labelValue) >= 1.0e5
     ? // Five Zeroes for Lakh
       toFixed(Number(labelValue) / 1.0e5) + " Lakh"
