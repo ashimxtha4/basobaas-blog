@@ -1,30 +1,37 @@
 import moment from "moment";
 import Image from "next/image";
+import Link from "next/link";
 import play from "../../public/Images/play.svg";
 import { dateFormatter } from "../../utilities/helper";
 
-const BottomComponent = (props: any) => {
-  const blog = {
-    image: "https://place-hold.it/32x23",
-    title: "सबैभन्दा महँगो घर भएको नेपालको सबैभन्दा महँगो क्षेत्र।",
-  };
+const BottomComponent = ({ data }: { data: any }) => {
+  console.log("video data", data);
   return (
-    <div className="bottomComponent">
-      <div className="imageDiv">
-        <div className="hover">
-          <span className="playButton">
-            <Image src={play} className="img" alt="no Image" />
-          </span>
+    <Link href={data.link} target="_blank">
+      <div className="bottomComponent">
+        <div className="imageDiv">
+          <div className="hover">
+            <span className="playButton">
+              <Image src={play} className="img" alt="no Image" />
+            </span>
+          </div>
+          <Image
+            className="image"
+            src={`${process.env.NEXT_PUBLIC_APP_VIDEOS_URL as string}${
+              data?.id
+            }/${data?.thumbnail}`}
+            fill
+            alt="no Image"
+          />
         </div>
-        <Image className="image" src={props.image} alt="no Image" />
-      </div>
-      <div className="desDiv">
-        <div className="headingDiv">{props.title}</div>
-        <div className="timeDiv">
-          {dateFormatter(moment(`${props?.created}`).fromNow())}
+        <div className="desDiv">
+          <div className="headingDiv">{data.title}</div>
+          <div className="timeDiv">
+            {dateFormatter(moment(`${data.updated}`).fromNow())}
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

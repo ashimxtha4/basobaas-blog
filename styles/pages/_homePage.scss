@@ -158,8 +158,6 @@
       background-color: #ffffff;
       position: relative;
 
- 
-
       .contentBody {
         height: fit-content;
         padding: 16px 0px 40px 15px;
@@ -1838,7 +1836,7 @@
                 .flexThreeChildCard {
                   display: flex;
                   flex-direction: row;
-                  justify-content: center;
+                  justify-content: flex-start;
                   align-items: flex-start;
                   padding: 0px;
                   gap: 16px;
@@ -1982,7 +1980,7 @@
 
   .alignmentContainer {
     height: 100%;
-    position:relative;
+    position: relative;
     padding: 0px;
     width: 100%;
     background: #ffffff;
@@ -2845,6 +2843,7 @@
               }
 
               .flexThreeChild1CardDiv {
+                position: relative;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -2858,12 +2857,11 @@
                 flex-grow: 0;
 
                 .flexThreeChild1Card {
+                  position: relative;
                   width: 100%;
                   height: 90px;
-                  flex: none;
-                  order: 0;
                   align-self: stretch;
-                  flex-grow: 0;
+                  cursor: pointer;
                 }
               }
             }

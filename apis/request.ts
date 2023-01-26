@@ -1,4 +1,5 @@
 import { stringify } from "querystring";
+import { VideoByCategoryKeyType } from "../state/features/videoSlice";
 import { api, propertyApi } from "./api";
 
 //Blogs
@@ -41,7 +42,10 @@ let category = {
 
 //Videos
 let videos = {
-  getVideos: async () => await api.get("collections/videos/records"),
+  getVideos: async (cate_slug: string) =>
+    await api.get(
+      `collections/videos/records?filter=(category.cate_slug='${cate_slug}')&sort=-created&perPage=3`
+    ),
 };
 
 //Premium Properties
