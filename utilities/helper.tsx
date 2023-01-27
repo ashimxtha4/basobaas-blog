@@ -1,5 +1,4 @@
 import { IMG_URL } from "../baseConstants";
-import slugify from "react-slugify";
 
 //FUNCTION TO CHANGE OR ADD IMAGE URL
 export function imageUrlCheck(imgUrl: string) {
@@ -50,9 +49,6 @@ export const dateFormatter = (timeAgo: string) => {
     .replace("day", "दिन")
     .replace("hour", "घण्टा")
     .replace("week", "हप्ता")
-    .replace("ago", "अघि");
-};
-
-export const keywordSlug = (keyword: string) => {
-  return slugify(keyword);
+    .replace("ago", "अघि")
+    .replace("a", "१");
 };
