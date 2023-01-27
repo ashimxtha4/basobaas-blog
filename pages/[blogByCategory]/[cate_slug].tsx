@@ -25,6 +25,7 @@ export default function BlogPage() {
   const categories = useAppSelector((state) => state.categoryData.data.items);
 
   const [currentPage, setcurrentPage] = useState<number>(1);
+  const [sortBy, setSortBy] = useState<string>("");
   useEffect(() => {
     if (router.isReady) {
       dispatch(fetchCategory());
@@ -34,7 +35,7 @@ export default function BlogPage() {
             page: currentPage,
             perPage: 6,
             cate_slug: router.query.cate_slug as string,
-            // sort:"created"
+            sort:sortBy
           })
         );
       // } else if (router.query.blogByCategory == "search") {
@@ -47,7 +48,7 @@ export default function BlogPage() {
         // );
       // }
     }
-  }, [dispatch, router.isReady, router.query.cate_slug, currentPage]);
+  }, [dispatch, router.isReady, router.query.cate_slug, currentPage, sortBy]);
 
   useEffect(() => {
     if (!!Object.keys(data).length && router.query.cate_slug) {
@@ -56,7 +57,11 @@ export default function BlogPage() {
       setValues(blogData);
     }
     dispatch(fetchPremiumProperties());
-  }, [router.isReady, router.query, data]);
+  }, [dispatch, router.isReady, router.query, data]);
+
+  const handleSortChange = (e: any) => {
+    setSortBy(e);
+  };
 
   return (
     <>
@@ -103,23 +108,22 @@ export default function BlogPage() {
                               className="selectArrow"
                             />
                           }
-                          defaultValue="घर जग्गा व्यवसाय"
+                          defaultValue="नयाँ पहिले देखाउनुहोस्"
                           className="subCategorySelect"
                           bordered={false}
                           options={[
                             {
-                              value: "realStateBusiness",
-                              label: "घर जग्गा व्यवसाय",
+                              value: "-created",
+                              label: "नयाँ पहिले देखाउनुहोस्",
                             },
                             {
-                              value: "agriculture",
-                              label: "कृषि",
-                            },
-                            {
-                              value: "construction",
-                              label: "निर्माण सेवा",
+                              value: "created",
+                              label: "पुरानो पहिले देखाउनुहोस्",
                             },
                           ]}
+                          onChange={(e) => {
+                            handleSortChange(e);
+                          }}
                         />
                       </span>
                     </div>

@@ -28,6 +28,7 @@ export const fetchBlogs = createAsyncThunk<{}, blogQueryType>(
       blogByCategorySlug: query.cate_slug,
       blogByCategoryId: query.categoryId,
       slug: query.slug,
+      sort: query.sort,
     };
   }
 );
