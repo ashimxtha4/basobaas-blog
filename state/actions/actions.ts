@@ -1,12 +1,16 @@
 import { request } from "../../apis/request";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { VideoByCategoryKeyType } from "../features/videoSlice";
+import { createDecipheriv } from "crypto";
+
 export type blogQueryType = {
   cate_slug?: string;
   categoryId?: string;
   page?: number;
   perPage?: number;
   slug?: string;
+  tag?:string;
+  sort?:string
 };
 
 export type videoQueryType = {

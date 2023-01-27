@@ -2,8 +2,10 @@ import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useAppSelector } from "../state";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const BlogNavbar = () => {
+  const router = useRouter();
   const categories = useAppSelector((state) => state.categoryData.data.items);
   const categoryList = categories?.filter((obj: any) => obj.parent_cate == "");
   const [screenSize, setScreenSize] = useState<number>(375);
@@ -116,21 +118,32 @@ const BlogNavbar = () => {
             </ul>
           </div>
           <div className="navbarBottom">
-            <form className="m-0 p-0" role="search">
+            <form
+              className="m-0 p-0"
+              role="search"
+              onSubmit={(e: any) => {
+                e.preventDefault();
+                router.push("/search/market_news");
+                console.log(router.query);
+              }}
+            >
               <div className="searchSection">
                 <input
                   className="form-control searchBox"
                   type="search"
                   placeholder="Search blogs, articles & news"
                   aria-label="Search"
+                  name="search"
                 />
-                <Icon
-                  className="searchIcon"
-                  icon="ph:magnifying-glass-bold"
-                  width="18"
-                  height="18"
-                  color="#545454"
-                />
+                <button type="submit" className="searchIconButton">
+                  <Icon
+                    className="searchIcon"
+                    icon="ph:magnifying-glass-bold"
+                    width="18"
+                    height="18"
+                    color="#545454"
+                  />
+                </button>
               </div>
             </form>
           </div>

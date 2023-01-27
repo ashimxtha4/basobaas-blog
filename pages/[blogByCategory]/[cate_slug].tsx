@@ -10,7 +10,11 @@ import { Pagination } from "antd";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useAppDispatch, useAppSelector } from "../../state";
-import { fetchBlogs, fetchCategory, fetchPremiumProperties } from "../../state/actions/actions";
+import {
+  fetchBlogs,
+  fetchCategory,
+  fetchPremiumProperties,
+} from "../../state/actions/actions";
 import { BlogByCategoryKeyType } from "../../state/features/blogSlice";
 
 export default function BlogPage() {
@@ -24,14 +28,24 @@ export default function BlogPage() {
   useEffect(() => {
     if (router.isReady) {
       dispatch(fetchCategory());
-
-      dispatch(
-        fetchBlogs({
-          page: currentPage,
-          perPage: 6,
-          cate_slug: router.query.cate_slug as string,
-        })
-      );
+      // if (router.query.blogByCategory == "category") {
+        dispatch(
+          fetchBlogs({
+            page: currentPage,
+            perPage: 6,
+            cate_slug: router.query.cate_slug as string,
+            // sort:"created"
+          })
+        );
+      // } else if (router.query.blogByCategory == "search") {
+        // dispatch(
+        //   fetchBlogs({
+        //     page: currentPage,
+        //     perPage: 6,
+        //     tag: router.query.cate_slug as string,
+        //   })
+        // );
+      // }
     }
   }, [dispatch, router.isReady, router.query.cate_slug, currentPage]);
 
@@ -115,7 +129,7 @@ export default function BlogPage() {
                       return (
                         <Link
                           style={{ transform: "none" }}
-                          href={("/blog/"+blog?.slug) as string}
+                          href={("/blog/" + blog?.slug) as string}
                           key={index}
                         >
                           <CategorySpecificBlog blog={blog} />

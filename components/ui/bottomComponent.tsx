@@ -5,7 +5,6 @@ import play from "../../public/Images/play.svg";
 import { dateFormatter } from "../../utilities/helper";
 
 const BottomComponent = ({ data }: { data: any }) => {
-  console.log("video data", data);
   return (
     <Link href={data.link} target="_blank">
       <div className="bottomComponent">

@@ -49,5 +49,6 @@ export const dateFormatter = (timeAgo: string) => {
     .replace("day", "दिन")
     .replace("hour", "घण्टा")
     .replace("week", "हप्ता")
-    .replace("ago", "अघि");
+    .replace("ago", "अघि")
+    .replace("a", "१");
 };
