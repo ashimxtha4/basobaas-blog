@@ -10,7 +10,11 @@ import { Pagination } from "antd";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useAppDispatch, useAppSelector } from "../../state";
-import { fetchBlogs, fetchCategory, fetchPremiumProperties } from "../../state/actions/actions";
+import {
+  fetchBlogs,
+  fetchCategory,
+  fetchPremiumProperties,
+} from "../../state/actions/actions";
 import { BlogByCategoryKeyType } from "../../state/features/blogSlice";
 
 export default function BlogPage() {
@@ -21,6 +25,7 @@ export default function BlogPage() {
   const categories = useAppSelector((state) => state.categoryData.data.items);
 
   const [currentPage, setcurrentPage] = useState<number>(1);
+  const [sortBy, setSortBy] = useState<string>("");
   useEffect(() => {
     if (router.isReady) {
       dispatch(fetchCategory());
@@ -30,10 +35,11 @@ export default function BlogPage() {
           page: currentPage,
           perPage: 6,
           cate_slug: router.query.cate_slug as string,
+          sort: sortBy,
         })
       );
     }
-  }, [dispatch, router.isReady, router.query.cate_slug, currentPage]);
+  }, [dispatch, router.isReady, router.query.cate_slug, currentPage, sortBy]);
 
   useEffect(() => {
     if (!!Object.keys(data).length && router.query.cate_slug) {
@@ -42,7 +48,11 @@ export default function BlogPage() {
       setValues(blogData);
     }
     dispatch(fetchPremiumProperties());
-  }, [router.isReady, router.query, data]);
+  }, [dispatch, router.isReady, router.query, data]);
+
+  const handleSortChange = (e: any) => {
+    setSortBy(e);
+  };
 
   return (
     <>
@@ -89,23 +99,22 @@ export default function BlogPage() {
                               className="selectArrow"
                             />
                           }
-                          defaultValue="घर जग्गा व्यवसाय"
+                          defaultValue="नयाँ पहिले देखाउनुहोस्"
                           className="subCategorySelect"
                           bordered={false}
                           options={[
                             {
-                              value: "realStateBusiness",
-                              label: "घर जग्गा व्यवसाय",
+                              value: "-created",
+                              label: "नयाँ पहिले देखाउनुहोस्",
                             },
                             {
-                              value: "agriculture",
-                              label: "कृषि",
-                            },
-                            {
-                              value: "construction",
-                              label: "निर्माण सेवा",
+                              value: "created",
+                              label: "पुरानो पहिले देखाउनुहोस्",
                             },
                           ]}
+                          onChange={(e) => {
+                            handleSortChange(e);
+                          }}
                         />
                       </span>
                     </div>
@@ -115,7 +124,7 @@ export default function BlogPage() {
                       return (
                         <Link
                           style={{ transform: "none" }}
-                          href={("/blog/"+blog?.slug) as string}
+                          href={("/blog/" + blog?.slug) as string}
                           key={index}
                         >
                           <CategorySpecificBlog blog={blog} />
