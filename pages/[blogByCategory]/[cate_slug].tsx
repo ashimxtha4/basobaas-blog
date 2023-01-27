@@ -22,6 +22,7 @@ export default function BlogPage() {
   const dispatch = useAppDispatch();
   const [values, setValues] = useState<any>();
   const data = useAppSelector((state) => state?.blogData);
+  const loading = useAppSelector((state) => state?.blogData?.loading);
   const categories = useAppSelector((state) => state.categoryData.data.items);
 
   const [currentPage, setcurrentPage] = useState<number>(1);
@@ -132,21 +133,25 @@ export default function BlogPage() {
                       );
                     })}
                   </div>
-                  <div className="paginationSectionContainer">
-                    <Pagination
-                      className="paginationSection"
-                      defaultCurrent={1}
-                      pageSize={6}
-                      total={Number(
-                        data[router.query.cate_slug as BlogByCategoryKeyType]
-                          ?.totalItems
-                      )}
-                      hideOnSinglePage={true}
-                      onChange={(page) => {
-                        setcurrentPage(page);
-                      }}
-                    />
-                  </div>
+                  {loading == "success" &&
+                  data[router.query.cate_slug as BlogByCategoryKeyType]?.items
+                    ?.length > 0 ? (
+                    <div className="paginationSectionContainer">
+                      <Pagination
+                        className="paginationSection"
+                        defaultCurrent={1}
+                        pageSize={6}
+                        total={Number(
+                          data[router.query.cate_slug as BlogByCategoryKeyType]
+                            ?.totalItems
+                        )}
+                        hideOnSinglePage={true}
+                        onChange={(page) => {
+                          setcurrentPage(page);
+                        }}
+                      />
+                    </div>
+                  ) : null}
                 </div>
                 {/* -------------------RIGHT SIDEBAR---------------------- */}
                 <div className="rightBodySection">
