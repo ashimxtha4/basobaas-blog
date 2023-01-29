@@ -69,17 +69,25 @@ let latestProperties = {
 
 let keyWords = {
   postKeywords: async (payload: any) => {
-    try{
-      const response=await api.get(`collections/keywords/records`)
-      console.log(response)
-      // await api.put("collections/category/count", payload);
-
-    }catch(e){
-      console.log("request",e)
-      // await api.post("collections/category/records", payload);
+    try {
+      const response = await api.get(
+        `collections/keywords/records?filter=(keyword='${payload}')`
+      );
+      console.log("success response:", response?.data);
+      let countChanged = response?.data?.items[0]?.count + 1;
+      console.log("count", countChanged);
+      await api.patch(
+        `collections/keywords/records/${response?.data?.items[0]?.id}`,
+        { keyword: payload, count: countChanged }
+      );
+    } catch (e) {
+      const res = await api.post("collections/keywords/records", {
+        keyword: payload,
+        count: 1,
+      });
+      console.log("request", res);
     }
   },
-  // getKeyword:async ()=>await api.get("collections/category/records"),
 };
 
 export const request = {
