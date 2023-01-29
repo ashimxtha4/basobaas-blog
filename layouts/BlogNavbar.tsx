@@ -116,13 +116,21 @@ const BlogNavbar = () => {
             </ul>
           </div>
           <div className="navbarBottom">
-            <form className="m-0 p-0" role="search">
+            <form
+              className="m-0 p-0"
+              role="search"
+              onSubmit={(e) => {
+                e.preventDefault();
+                console.log("hello", e);
+              }}
+            >
               <div className="searchSection">
                 <input
                   className="form-control searchBox"
                   type="search"
                   placeholder="Search blogs, articles & news"
                   aria-label="Search"
+                  name="search"
                 />
                 <Icon
                   className="searchIcon"
