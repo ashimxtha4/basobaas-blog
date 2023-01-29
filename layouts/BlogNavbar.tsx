@@ -1,8 +1,9 @@
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useAppSelector } from "../state";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
+import { request } from "../apis/request";
 
 const BlogNavbar = () => {
   const router = useRouter();
@@ -22,6 +23,7 @@ const BlogNavbar = () => {
     else if (screenSize >= 1200 && screenSize < 1300) return 4;
     else return 5;
   };
+  const searchFeild = useRef();
 
   return (
     <>
@@ -123,8 +125,13 @@ const BlogNavbar = () => {
               role="search"
               onSubmit={(e: any) => {
                 e.preventDefault();
-                router.push("/search/market_news");
-                console.log(router.query);
+                if (document?.getElementById("search")?.value) {
+                  router.push(
+                    `/search/${document?.getElementById("search")?.value}`
+                  );
+                  request.postKeywords(document?.getElementById("search")?.value)
+                  console.log(router.query);
+                }
               }}
             >
               <div className="searchSection">
@@ -134,6 +141,8 @@ const BlogNavbar = () => {
                   placeholder="Search blogs, articles & news"
                   aria-label="Search"
                   name="search"
+                  id="search"
+                  // ref={searchFeild}
                 />
                 <button type="submit" className="searchIconButton">
                   <Icon

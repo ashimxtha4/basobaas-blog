@@ -30,7 +30,7 @@ export default function BlogPage() {
   useEffect(() => {
     if (router.isReady) {
       dispatch(fetchCategory());
-      // if (router.query.blogByCategory == "category") {
+      if (router.query.blogByCategory == "category") {
         dispatch(
           fetchBlogs({
             page: currentPage,
@@ -39,26 +39,27 @@ export default function BlogPage() {
             sort:sortBy
           })
         );
-      // } else if (router.query.blogByCategory == "search") {
-        // dispatch(
-        //   fetchBlogs({
-        //     page: currentPage,
-        //     perPage: 6,
-        //     tag: router.query.cate_slug as string,
-        //   })
-        // );
-      // }
+      } else if (router.query.blogByCategory == "search") {
+        dispatch(
+          fetchBlogs({
+            page: currentPage,
+            perPage: 6,
+            keyword: router.query.cate_slug as string,
+          })
+        );
+      }
     }
   }, [dispatch, router.isReady, router.query.cate_slug, currentPage, sortBy]);
 
   useEffect(() => {
     if (!!Object.keys(data).length && router.query.cate_slug) {
-      const blogData: {} =
-        data[router.query.cate_slug as BlogByCategoryKeyType]?.items;
+      const blogData: any =(router?.query?.blogByCategory=="search")?data["search"].items:
+        data[router?.query?.cate_slug as BlogByCategoryKeyType]?.items;
       setValues(blogData);
     }
     dispatch(fetchPremiumProperties());
   }, [dispatch, router.isReady, router.query, data]);
+  console.log("values",values)
 
   const handleSortChange = (e: any) => {
     setSortBy(e);
@@ -89,10 +90,12 @@ export default function BlogPage() {
                       <p className="categoryInfo">श्रेणी</p>
                       <p className="categoryTitle">
                         {
+                          (router?.query?.blogByCategory)?
                           categories?.find(
                             (obj: any) =>
                               obj?.cate_slug == router?.query?.cate_slug
-                          ).name_np
+                          )?.name_np
+                          :router?.query?.cate_slug
                         }
                       </p>
                     </div>
@@ -170,7 +173,7 @@ export default function BlogPage() {
                     relatedBlogData={
                       categories?.find(
                         (obj: any) => obj.cate_slug == router?.query?.cate_slug
-                      ).id
+                      )?.id
                     }
                   />
                 </div>

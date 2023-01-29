@@ -10,13 +10,13 @@ let blogs = {
     cate_slug?: string;
     slug?: string;
     categoryId?: string;
-    keywords?: string;
+    keyword?: string;
   }) => {
     let otherQuery = { ...query };
     delete otherQuery.cate_slug;
     delete otherQuery.slug;
     delete otherQuery.categoryId;
-    delete otherQuery.keywords;
+    delete otherQuery.keyword;
     return api.get(
       "collections/blogs/records/" +
         `${
@@ -32,10 +32,10 @@ let blogs = {
             ? `?${
                 Object.keys(otherQuery).length && stringify(otherQuery) + "&"
               }filter=(category='${query.categoryId}')&sort=-created`
-            : query.keywords
+            : query.keyword
             ? `?${
                 Object.keys(otherQuery).length && stringify(otherQuery) + "&"
-              }filter=(category~'${query.keywords}')`
+              }filter=(tags~'${query.keyword}')&sort=-created`
             : "?" + stringify(query) + "&sort=-created"
         }`
     );
@@ -69,8 +69,17 @@ let latestProperties = {
 
 let keyWords = {
   postKeywords: async (payload: any) => {
-    await api.post("collections/category/records", payload);
+    try{
+      const response=await api.get(`collections/keywords/records`)
+      console.log(response)
+      // await api.put("collections/category/count", payload);
+
+    }catch(e){
+      console.log("request",e)
+      // await api.post("collections/category/records", payload);
+    }
   },
+  // getKeyword:async ()=>await api.get("collections/category/records"),
 };
 
 export const request = {
