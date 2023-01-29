@@ -1,13 +1,16 @@
 import { request } from "../../apis/request";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { VideoByCategoryKeyType } from "../features/videoSlice";
+import { createDecipheriv } from "crypto";
+
 export type blogQueryType = {
   cate_slug?: string;
   categoryId?: string;
   page?: number;
   perPage?: number;
   slug?: string;
-  sort?: string;
+  keyword?:string;
+  sort?:string
 };
 
 export type videoQueryType = {
@@ -26,6 +29,7 @@ export const fetchBlogs = createAsyncThunk<{}, blogQueryType>(
       blogByCategoryId: query.categoryId,
       slug: query.slug,
       sort: query.sort,
+      keyword:query.keyword
     };
   }
 );

@@ -10,13 +10,13 @@ let blogs = {
     cate_slug?: string;
     slug?: string;
     categoryId?: string;
-    keywords?: string;
+    keyword?: string;
   }) => {
     let otherQuery = { ...query };
     delete otherQuery.cate_slug;
     delete otherQuery.slug;
     delete otherQuery.categoryId;
-    delete otherQuery.keywords;
+    delete otherQuery.keyword;
     return api.get(
       "collections/blogs/records/" +
         `${
@@ -32,10 +32,10 @@ let blogs = {
             ? `?${
                 Object.keys(otherQuery).length && stringify(otherQuery) + "&"
               }filter=(category='${query.categoryId}')&sort=-created`
-            : query.keywords
+            : query.keyword
             ? `?${
                 Object.keys(otherQuery).length && stringify(otherQuery) + "&"
-              }filter=(category~'${query.keywords}')`
+              }filter=(tags~'${query.keyword}')&sort=-created`
             : "?" + stringify(query) + "&sort=-created"
         }`
     );
@@ -69,7 +69,24 @@ let latestProperties = {
 
 let keyWords = {
   postKeywords: async (payload: any) => {
-    await api.post("collections/category/records", payload);
+    try {
+      const response = await api.get(
+        `collections/keywords/records?filter=(keyword='${payload}')`
+      );
+      console.log("success response:", response?.data);
+      let countChanged = response?.data?.items[0]?.count + 1;
+      console.log("count", countChanged);
+      await api.patch(
+        `collections/keywords/records/${response?.data?.items[0]?.id}`,
+        { keyword: payload, count: countChanged }
+      );
+    } catch (e) {
+      const res = await api.post("collections/keywords/records", {
+        keyword: payload,
+        count: 1,
+      });
+      console.log("request", res);
+    }
   },
 };
 

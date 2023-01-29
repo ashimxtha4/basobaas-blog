@@ -1,9 +1,12 @@
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useAppSelector } from "../state";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useRouter } from "next/router";
+import { request } from "../apis/request";
 
 const BlogNavbar = () => {
+  const router = useRouter();
   const categories = useAppSelector((state) => state.categoryData.data.items);
   const categoryList = categories?.filter((obj: any) => obj.parent_cate == "");
   const [screenSize, setScreenSize] = useState<number>(375);
@@ -20,6 +23,7 @@ const BlogNavbar = () => {
     else if (screenSize >= 1200 && screenSize < 1300) return 4;
     else return 5;
   };
+  const searchFeild = useRef();
 
   return (
     <>
@@ -119,9 +123,15 @@ const BlogNavbar = () => {
             <form
               className="m-0 p-0"
               role="search"
-              onSubmit={(e) => {
+              onSubmit={(e: any) => {
                 e.preventDefault();
-                console.log("hello", e);
+                if (document?.getElementById("search")?.value) {
+                  router.push(
+                    `/search/${document?.getElementById("search")?.value}`
+                  );
+                  request.postKeywords(document?.getElementById("search")?.value)
+                  console.log(router.query);
+                }
               }}
             >
               <div className="searchSection">
@@ -131,14 +141,18 @@ const BlogNavbar = () => {
                   placeholder="Search blogs, articles & news"
                   aria-label="Search"
                   name="search"
+                  id="search"
+                  // ref={searchFeild}
                 />
-                <Icon
-                  className="searchIcon"
-                  icon="ph:magnifying-glass-bold"
-                  width="18"
-                  height="18"
-                  color="#545454"
-                />
+                <button type="submit" className="searchIconButton">
+                  <Icon
+                    className="searchIcon"
+                    icon="ph:magnifying-glass-bold"
+                    width="18"
+                    height="18"
+                    color="#545454"
+                  />
+                </button>
               </div>
             </form>
           </div>

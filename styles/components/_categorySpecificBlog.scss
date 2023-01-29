@@ -9,6 +9,7 @@
   transition: 0.4s all;
 
   .imageContainer {
+    position: relative;
     margin: 0px;
     padding: 0px;
     overflow: hidden;
@@ -157,11 +158,3 @@
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  .categorySpecificBlog {
-    .imageContainer {
-      max-height: 422px;
-      overflow: hidden;
-    }
-  }
-}

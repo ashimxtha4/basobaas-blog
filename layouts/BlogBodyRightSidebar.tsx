@@ -42,35 +42,40 @@ const BlogBodyRightSidebar = ({
   return (
     <>
       <div className="rightSidebar">
-        <div className="relatedSection">
-          <div className="relatedSectionTitle">
-            <p>सम्बन्धित ब्लगहरू</p>
-            <Link
-              className="relatedBlogsView"
-              href={
-                "/category/" +
-                categoryList?.find((obj: any) => obj?.id == relatedBlogData)
-                  ?.cate_slug
-              }
-            >
-              <button>सबै हेर्नुहोस्</button>
-            </Link>
-          </div>
+        {relatedBlogData && (
+          <div className="relatedSection">
+            <div className="relatedSectionTitle">
+              <p>सम्बन्धित ब्लगहरू</p>
+              <Link
+                className="relatedBlogsView"
+                href={
+                  "/category/" +
+                  categoryList?.find((obj: any) => obj?.id == relatedBlogData)
+                    ?.cate_slug
+                }
+              >
+                <button>सबै हेर्नुहोस्</button>
+              </Link>
+            </div>
 
-          <div className="relatedSectionContainer">
-            {relatedBlogValues?.slice(0, 3)?.map((blog: any, index: number) => {
-              return (
-                <Link
-                  className="blogComponentLinks"
-                  href={"/blog/" + blog.slug}
-                  key={index}
-                >
-                  <RelatedBlogs blog={blog} />
-                </Link>
-              );
-            })}
+            <div className="relatedSectionContainer">
+              {relatedBlogValues
+                ?.slice(0, 3)
+                ?.map((blog: any, index: number) => {
+                  return (
+                    <Link
+                      className="blogComponentLinks"
+                      href={"/blog/" + blog.slug}
+                      key={index}
+                    >
+                      <RelatedBlogs blog={blog} />
+                    </Link>
+                  );
+                })}
+            </div>
           </div>
-        </div>
+        )}
+
         <div className="featuredSection">
           <div className="featuredSectionTitle">
             <p>विशेष घर जग्गाहरु</p>

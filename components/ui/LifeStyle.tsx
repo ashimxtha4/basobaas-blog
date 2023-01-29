@@ -4,6 +4,7 @@ import { useAppSelector } from "../../state";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { dateFormatter } from "../../utilities/helper";
+import Image from "next/image";
 
 const LifeStyle = () => {
   const data = useAppSelector((state) => state?.blogData?.lifestyle?.items);
@@ -33,7 +34,9 @@ const LifeStyle = () => {
             >
               <div className="lifestyle">
                 <div className="thumbnail">
-                  <img
+                  <Image
+                    width={300}
+                    height={200}
                     className="image"
                     src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
                       data.id

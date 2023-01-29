@@ -20,12 +20,14 @@ type initialItemType = {
 export interface BlogState {
   value: number;
   loading: string;
+  search_loading: string;
   data: any[];
   market_news: any;
   lifestyle: initialItemType;
   home_loan: initialItemType;
   our_thoughts: initialItemType;
   law_and_policy: initialItemType;
+  search: initialItemType;
   blogBySlug: any;
   blogByCategorySlug: any;
   blogByCategoryId: any;
@@ -37,18 +39,22 @@ export type BlogByCategoryKeyType =
   | "home_loan"
   | "our_thoughts"
   | "law_and_policy"
-  | "blogBySlug";
+  | "blogBySlug"
+  | "search";
 
 type fetchPostActionType = {
   data: any;
   slug?: any;
   blogByCategorySlug?: string;
   blogByCategoryId?: string;
+  keyword?: string;
 };
 const initialState: BlogState = {
   value: 0,
   loading: "",
+  search_loading: "",
   data: [],
+  search: { items: [] },
   market_news: { items: [] },
   lifestyle: { items: [] },
   home_loan: { items: [] },
@@ -78,7 +84,7 @@ export const blogSlice = createSlice({
       .addCase(
         fetchBlogs.fulfilled,
         (state, { payload, type }: PayloadAction<any>) => {
-          const { data, blogByCategorySlug, blogByCategoryId, slug } =
+          const { data, blogByCategorySlug, blogByCategoryId, slug, keyword } =
             payload as fetchPostActionType;
           state.loading = "success";
           if (blogByCategorySlug) {
@@ -89,6 +95,8 @@ export const blogSlice = createSlice({
             state.blogByCategoryId = data;
           } else if (slug && !blogByCategorySlug) {
             state.blogBySlug = data;
+          } else if (keyword) {
+            state.search = data;
           } else {
             state.data = data.items;
           }

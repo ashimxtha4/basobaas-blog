@@ -12,12 +12,6 @@ import LawAndPolicy from "../components/ui/LawAndPolicy";
 import MainProperty from "../components/ui/MainProperty";
 import BottomComponent from "../components/ui/bottomComponent";
 import Footer from "../layouts/Footer";
-import downImage from "../public/Images/downImage.svg";
-import downImage1 from "../public/Images/downImage1.svg";
-import downImage2 from "../public/Images/downImage2.svg";
-import downImage3 from "../public/Images/downImage3.svg";
-import downImage4 from "../public/Images/downImage4.svg";
-import downImage5 from "../public/Images/downImage5.svg";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useAppSelector, useAppDispatch, store } from "../state";
@@ -219,6 +213,7 @@ const HomePage = () => {
                     <Link
                       className="propertyViewLink"
                       href="https://basobaas.com/properties/all-properties"
+                      target="_blank"
                     >
                       सबै हेर्नुहोस्
                     </Link>
@@ -256,6 +251,7 @@ const HomePage = () => {
                     <Link
                       className="propertyViewLink"
                       href="https://basobaas.com/properties/premium-properties"
+                      target="_blank"
                     >
                       सबै हेर्नुहोस्
                     </Link>
