@@ -10,10 +10,13 @@ let blogs = {
     cate_slug?: string;
     slug?: string;
     categoryId?: string;
+    keywords?: string;
   }) => {
     let otherQuery = { ...query };
     delete otherQuery.cate_slug;
     delete otherQuery.slug;
+    delete otherQuery.categoryId;
+    delete otherQuery.keywords;
     return api.get(
       "collections/blogs/records/" +
         `${
@@ -29,6 +32,10 @@ let blogs = {
             ? `?${
                 Object.keys(otherQuery).length && stringify(otherQuery) + "&"
               }filter=(category='${query.categoryId}')&sort=-created`
+            : query.keywords
+            ? `?${
+                Object.keys(otherQuery).length && stringify(otherQuery) + "&"
+              }filter=(category~'${query.keywords}')`
             : "?" + stringify(query) + "&sort=-created"
         }`
     );
@@ -60,7 +67,11 @@ let latestProperties = {
     await propertyApi.get("/api/properties-latest"),
 };
 
-//set Keyword Count
+let keyWords = {
+  postKeywords: async (payload: any) => {
+    await api.post("collections/category/records", payload);
+  },
+};
 
 export const request = {
   ...blogs,
@@ -68,4 +79,5 @@ export const request = {
   ...videos,
   ...premiumProperties,
   ...latestProperties,
+  ...keyWords,
 };
