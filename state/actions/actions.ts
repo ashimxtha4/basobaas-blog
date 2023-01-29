@@ -9,7 +9,7 @@ export type blogQueryType = {
   page?: number;
   perPage?: number;
   slug?: string;
-  tag?:string;
+  keyword?:string;
   sort?:string
 };
 
@@ -29,6 +29,7 @@ export const fetchBlogs = createAsyncThunk<{}, blogQueryType>(
       blogByCategoryId: query.categoryId,
       slug: query.slug,
       sort: query.sort,
+      keyword:query.keyword
     };
   }
 );

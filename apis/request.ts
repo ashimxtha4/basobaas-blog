@@ -61,15 +61,6 @@ let latestProperties = {
 };
 
 //set Keyword Count
-let keyword ={
-  setKeyword:async function(keyword:string){
-    try{
-      const response:any=api.get(`collection/keywords?filter=(keyword_slug='${keyword}')`)
-    }catch(e){
-      
-    }
-  }
-}
 
 export const request = {
   ...blogs,

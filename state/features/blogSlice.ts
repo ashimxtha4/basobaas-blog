@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { blogQueryType, fetchBlogs } from "../actions/actions";
+import { blogQueryType, fetchBlogs} from "../actions/actions";
 
 type blogItemsResponseType = {
   id: string;
@@ -20,6 +20,7 @@ type initialItemType = {
 export interface BlogState {
   value: number;
   loading: string;
+  search_loading: string;
   data: any[];
   market_news: any;
   lifestyle: initialItemType;
@@ -48,6 +49,7 @@ type fetchPostActionType = {
 const initialState: BlogState = {
   value: 0,
   loading: "",
+  search_loading: "",
   data: [],
   market_news: { items: [] },
   lifestyle: { items: [] },
