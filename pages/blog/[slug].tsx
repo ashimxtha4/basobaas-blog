@@ -17,10 +17,9 @@ import {
 import { useEffect, useRef, useState } from "react";
 import moment from "moment";
 import { dateFormatter } from "../../utilities/helper";
-import {FacebookShareButton} from "react-share"
+import SocialMedia from "../../components/ui/socialMedia";
 
 export default function BlogPage() {
-
   const firstRender = useRef(true);
   const router = useRouter();
   const dispatch = useAppDispatch();
@@ -162,16 +161,15 @@ export default function BlogPage() {
                                     )}
                                   </div>
                                 </div>
-                                <button className="shareButton">
-                                  <Icon
-                                    icon="ri:share-forward-fill"
-                                    color="white"
-                                    width="20"
-                                    height="20"
-                                  />
-                                  Share
-                                </button>
-                                <FacebookShareButton quote="quote" hashtag="milyo" url="https://basobaasblog.asterdio.xyz" children="facebook" />
+                                  <button className="shareButton">
+                                    <Icon
+                                      icon="ri:share-forward-fill"
+                                      color="white"
+                                      width="20"
+                                      height="20"
+                                    />
+                                    Share
+                                  </button>
                               </div>
                             </div>
                           </div>
@@ -180,9 +178,9 @@ export default function BlogPage() {
                           <div className="blogDetails">
                             <div className="blogDetailsThumbnail">
                               <Image
-                                src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
-                                  item?.id
-                                }/${item?.images[0]}`}
+                                src={`${
+                                  process.env.NEXT_PUBLIC_APP_IMG_URL as string
+                                }${item?.id}/${item?.images[0]}`}
                                 height={408}
                                 width={830}
                                 alt="blogDetails"
