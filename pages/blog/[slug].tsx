@@ -18,12 +18,18 @@ import { useEffect, useRef, useState } from "react";
 import moment from "moment";
 import { dateFormatter } from "../../utilities/helper";
 import { Button, Modal } from "antd";
-import { FacebookShareButton } from "react-share";
+import SocialMedia from "../../components/ui/socialMedia";
+
 
 export default function BlogPage() {
   const firstRender = useRef(true);
   const router = useRouter();
   const dispatch = useAppDispatch();
+  // const [screenSize, setScreenSize] = useState<number>(375);
+  // useEffect(() => {
+  //   setScreenSize(screen.width);
+  //   window.onresize = () => setScreenSize(screen.width);
+  // },[screen.width]);
 
   const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
 
@@ -194,16 +200,15 @@ export default function BlogPage() {
                                   Share
                                 </Button>
                                 <Modal
-                                  title="Modal 1000px width"
+                                  title="Share your favrout blog"
                                   centered
                                   open={open}
                                   onOk={() => setOpen(false)}
                                   onCancel={() => setOpen(false)}
-                                  width={200}
+                                  width={"fit-content"}
+                                  className="popUp"
                                 >
-                                  <p>some contents...</p>
-                                  <p>some contents...</p>
-                                  <p>some contents...</p>
+                                  <SocialMedia methode={setOpen}/>
                                 </Modal>
                               </div>
                             </div>
