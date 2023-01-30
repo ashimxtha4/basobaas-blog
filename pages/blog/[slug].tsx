@@ -17,6 +17,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import moment from "moment";
 import { dateFormatter } from "../../utilities/helper";
+import { Button, Modal } from "antd";
 import { FacebookShareButton } from "react-share";
 
 export default function BlogPage() {
@@ -36,6 +37,8 @@ export default function BlogPage() {
   );
 
   const [getCategorySlug, setGetCategorySlug] = useState("");
+
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (router.isReady) {
@@ -161,7 +164,7 @@ export default function BlogPage() {
                                     )}
                                   </div>
                                 </div>
-                                <button className="shareButton">
+                                {/* <button className="shareButton">
                                   <Icon
                                     icon="ri:share-forward-fill"
                                     color="white"
@@ -169,14 +172,39 @@ export default function BlogPage() {
                                     height="20"
                                   />
                                   Share
-                                </button>
-                                <FacebookShareButton
+                                </button> */}
+                                {/* <FacebookShareButton
                                   quote="quote"
                                   hashtag=""
                                   url="https://basobaasblog.asterdio.xyz"
                                 >
                                   facebook
-                                </FacebookShareButton>
+                                </FacebookShareButton> */}
+                                <Button
+                                  type="primary"
+                                  className="shareButton"
+                                  onClick={() => setOpen(true)}
+                                >
+                                  <Icon
+                                    icon="ri:share-forward-fill"
+                                    color="white"
+                                    width="20"
+                                    height="20"
+                                  />
+                                  Share
+                                </Button>
+                                <Modal
+                                  title="Modal 1000px width"
+                                  centered
+                                  open={open}
+                                  onOk={() => setOpen(false)}
+                                  onCancel={() => setOpen(false)}
+                                  width={200}
+                                >
+                                  <p>some contents...</p>
+                                  <p>some contents...</p>
+                                  <p>some contents...</p>
+                                </Modal>
                               </div>
                             </div>
                           </div>
