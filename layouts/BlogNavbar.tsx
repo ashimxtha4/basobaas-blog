@@ -23,7 +23,7 @@ const BlogNavbar = () => {
     else if (screenSize >= 1200 && screenSize < 1300) return 4;
     else return 5;
   };
-  const searchFeild = useRef();
+  // const searchField = useRef();
 
   return (
     <>
@@ -123,13 +123,17 @@ const BlogNavbar = () => {
             <form
               className="m-0 p-0"
               role="search"
+              autoComplete="off"
               onSubmit={(e: any) => {
                 e.preventDefault();
+                //@ts-ignore
                 if (document?.getElementById("search")?.value) {
                   router.push(
+                    //@ts-ignore
                     `/search/${document?.getElementById("search")?.value}`
                   );
                   request.postKeywords(
+                    //@ts-ignore
                     document?.getElementById("search")?.value
                   );
                 }
@@ -143,7 +147,7 @@ const BlogNavbar = () => {
                   aria-label="Search"
                   name="search"
                   id="search"
-                  // ref={searchFeild}
+                  // ref={searchField}
                 />
                 <button type="submit" className="searchIconButton">
                   <Icon
