@@ -49,7 +49,7 @@ export default function BlogPage() {
         );
       }
     }
-  }, [dispatch, router.isReady, router.query.cate_slug, currentPage, sortBy]);
+  }, [dispatch, router.isReady, router.query.cate_slug, router.query.blogByCategory, currentPage, sortBy]);
 
   useEffect(() => {
     if (!!Object.keys(data).length && router.query.cate_slug) {
