@@ -132,7 +132,6 @@ const BlogNavbar = () => {
                   request.postKeywords(
                     document?.getElementById("search")?.value
                   );
-                  console.log(router.query);
                 }
               }}
             >

@@ -68,7 +68,6 @@ export default function BlogPage() {
     }
     dispatch(fetchPremiumProperties());
   }, [dispatch, router.isReady, router.query, data]);
-  console.log("values", values);
 
   const handleSortChange = (e: any) => {
     setSortBy(e);
