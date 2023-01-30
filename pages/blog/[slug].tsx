@@ -17,7 +17,10 @@ import {
 import { useEffect, useRef, useState } from "react";
 import moment from "moment";
 import { dateFormatter } from "../../utilities/helper";
+import {FacebookShareButton} from "react-share"
+
 export default function BlogPage() {
+
   const firstRender = useRef(true);
   const router = useRouter();
   const dispatch = useAppDispatch();
@@ -168,6 +171,7 @@ export default function BlogPage() {
                                   />
                                   Share
                                 </button>
+                                <FacebookShareButton quote="quote" hashtag="milyo" url="https://basobaasblog.asterdio.xyz" children="facebook" />
                               </div>
                             </div>
                           </div>
