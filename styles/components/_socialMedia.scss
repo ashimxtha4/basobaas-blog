@@ -3,14 +3,17 @@
   padding-top: 5%;
   gap: 20%;
   padding-left: 5%;
+  justify-self: unset;
   @media only screen and (min-width: 420px) {
     gap: 13.8%;
     padding: 0px;
+    padding-top: 5%;
   }
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
+  border: solid 1px;
 
   .socialComponent {
     margin-bottom: 10%;

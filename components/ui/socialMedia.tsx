@@ -45,16 +45,6 @@ const SocialMedia = ({ methode }: { methode: any }) => {
     },
     {
       component: (
-        <TelegramShareButton
-          url={"https://basobaasblog.asterdio.xyz/blog/" + router?.query?.slug}
-        >
-          <Icon icon="logos:telegram" width="40" height="40" />
-        </TelegramShareButton>
-      ),
-      name: "Telegram",
-    },
-    {
-      component: (
         <TwitterShareButton
           url={"https://basobaasblog.asterdio.xyz/blog/" + router?.query?.slug}
         >
@@ -88,6 +78,16 @@ const SocialMedia = ({ methode }: { methode: any }) => {
       ),
       name: "WhatsApp",
     },
+    {
+        component: (
+          <TelegramShareButton
+            url={"https://basobaasblog.asterdio.xyz/blog/" + router?.query?.slug}
+          >
+            <Icon icon="logos:telegram" width="40" height="40" />
+          </TelegramShareButton>
+        ),
+        name: "Telegram",
+      },
   ];
   return (
     <div className="socialContainerDiv">
