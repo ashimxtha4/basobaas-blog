@@ -36,7 +36,7 @@ export default function BlogPage() {
             page: currentPage,
             perPage: 6,
             cate_slug: router.query.cate_slug as string,
-            sort:sortBy
+            sort: sortBy,
           })
         );
       } else if (router.query.blogByCategory == "search") {
@@ -49,17 +49,25 @@ export default function BlogPage() {
         );
       }
     }
-  }, [dispatch, router.isReady, router.query.cate_slug, currentPage, sortBy]);
+  }, [
+    dispatch,
+    router.isReady,
+    router.query.cate_slug,
+    router.query.blogByCategory,
+    currentPage,
+    sortBy,
+  ]);
 
   useEffect(() => {
     if (!!Object.keys(data).length && router.query.cate_slug) {
-      const blogData: any =(router?.query?.blogByCategory=="search")?data["search"].items:
-        data[router?.query?.cate_slug as BlogByCategoryKeyType]?.items;
+      const blogData: any =
+        router?.query?.blogByCategory == "search"
+          ? data["search"].items
+          : data[router?.query?.cate_slug as BlogByCategoryKeyType]?.items;
       setValues(blogData);
     }
     dispatch(fetchPremiumProperties());
   }, [dispatch, router.isReady, router.query, data]);
-  console.log("values",values)
 
   const handleSortChange = (e: any) => {
     setSortBy(e);
@@ -89,14 +97,12 @@ export default function BlogPage() {
                     <div className="categoryHeader">
                       <p className="categoryInfo">श्रेणी</p>
                       <p className="categoryTitle">
-                        {
-                          (router?.query?.blogByCategory)?
-                          categories?.find(
-                            (obj: any) =>
-                              obj?.cate_slug == router?.query?.cate_slug
-                          )?.name_np
-                          :router?.query?.cate_slug
-                        }
+                        {router?.query?.blogByCategory
+                          ? categories?.find(
+                              (obj: any) =>
+                                obj?.cate_slug == router?.query?.cate_slug
+                            )?.name_np
+                          : router?.query?.cate_slug}
                       </p>
                     </div>
                     <div className="sortSection">

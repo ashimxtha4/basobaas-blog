@@ -17,12 +17,19 @@ import {
 import { useEffect, useRef, useState } from "react";
 import moment from "moment";
 import { dateFormatter } from "../../utilities/helper";
+import { Button, Modal } from "antd";
 import SocialMedia from "../../components/ui/socialMedia";
+
 
 export default function BlogPage() {
   const firstRender = useRef(true);
   const router = useRouter();
   const dispatch = useAppDispatch();
+  // const [screenSize, setScreenSize] = useState<number>(375);
+  // useEffect(() => {
+  //   setScreenSize(screen.width);
+  //   window.onresize = () => setScreenSize(screen.width);
+  // },[screen.width]);
 
   const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
 
@@ -36,6 +43,8 @@ export default function BlogPage() {
   );
 
   const [getCategorySlug, setGetCategorySlug] = useState("");
+
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (router.isReady) {
@@ -161,15 +170,46 @@ export default function BlogPage() {
                                     )}
                                   </div>
                                 </div>
-                                  <button className="shareButton">
-                                    <Icon
-                                      icon="ri:share-forward-fill"
-                                      color="white"
-                                      width="20"
-                                      height="20"
-                                    />
-                                    Share
-                                  </button>
+                                {/* <button className="shareButton">
+                                  <Icon
+                                    icon="ri:share-forward-fill"
+                                    color="white"
+                                    width="20"
+                                    height="20"
+                                  />
+                                  Share
+                                </button> */}
+                                {/* <FacebookShareButton
+                                  quote="quote"
+                                  hashtag=""
+                                  url="https://basobaasblog.asterdio.xyz"
+                                >
+                                  facebook
+                                </FacebookShareButton> */}
+                                <Button
+                                  type="primary"
+                                  className="shareButton"
+                                  onClick={() => setOpen(true)}
+                                >
+                                  <Icon
+                                    icon="ri:share-forward-fill"
+                                    color="white"
+                                    width="20"
+                                    height="20"
+                                  />
+                                  Share
+                                </Button>
+                                <Modal
+                                  title="Share your favrout blog"
+                                  centered
+                                  open={open}
+                                  onOk={() => setOpen(false)}
+                                  onCancel={() => setOpen(false)}
+                                  width={"fit-content"}
+                                  className="popUp"
+                                >
+                                  <SocialMedia methode={setOpen}/>
+                                </Modal>
                               </div>
                             </div>
                           </div>

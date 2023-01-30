@@ -73,9 +73,7 @@ let keyWords = {
       const response = await api.get(
         `collections/keywords/records?filter=(keyword='${payload}')`
       );
-      console.log("success response:", response?.data);
       let countChanged = response?.data?.items[0]?.count + 1;
-      console.log("count", countChanged);
       await api.patch(
         `collections/keywords/records/${response?.data?.items[0]?.id}`,
         { keyword: payload, count: countChanged }
@@ -85,7 +83,6 @@ let keyWords = {
         keyword: payload,
         count: 1,
       });
-      console.log("request", res);
     }
   },
 };

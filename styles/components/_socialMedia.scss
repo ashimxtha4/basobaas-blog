@@ -1,0 +1,29 @@
+.socialContainerDiv {
+  position: relative;
+  padding-top: 5%;
+  gap: 17%;
+  @media only screen and (min-width: 500px) {
+    gap: 14%;
+  }
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .socialComponent {
+    margin-bottom: 10%;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .socialName {
+      font-family: "Product Sans";
+    }
+  }
+}
+
+.ant-modal-footer{
+    display: none;
+}

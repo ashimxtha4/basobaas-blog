@@ -129,8 +129,9 @@ const BlogNavbar = () => {
                   router.push(
                     `/search/${document?.getElementById("search")?.value}`
                   );
-                  request.postKeywords(document?.getElementById("search")?.value)
-                  console.log(router.query);
+                  request.postKeywords(
+                    document?.getElementById("search")?.value
+                  );
                 }
               }}
             >
