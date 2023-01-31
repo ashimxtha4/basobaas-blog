@@ -158,6 +158,7 @@ export default function BlogPage() {
                       <Pagination
                         className="paginationSection"
                         defaultCurrent={1}
+                        current={currentPage}
                         pageSize={6}
                         total={Number(
                           data[router.query.cate_slug as BlogByCategoryKeyType]
