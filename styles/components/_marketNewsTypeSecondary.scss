@@ -58,7 +58,7 @@
       align-items: center;
       height: fit-content;
       p {
-        height:24px;
+        height: 24px;
         margin: 0px;
         padding-top: 2px;
         font-family: "Ek Mukta";
@@ -78,19 +78,19 @@
 
     .blogBy {
       display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
       font-size: 13px;
       .author,
-        .posted {
-          font-family: "Ek Mukta";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 13px;
-          line-height: 140%;
-          color: #4f4f4f;
-        }
+      .posted {
+        font-family: "Ek Mukta";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 140%;
+        color: #4f4f4f;
+      }
     }
   }
 }

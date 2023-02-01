@@ -1,8 +1,5 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import HomeLoanImage1 from "../../public/Images/homeLoanImage1.svg";
-import HomeLoanImage2 from "../../public/Images/homeLoanImage2.svg";
-import HomeLoanImage3 from "../../public/Images/homeLoanImage3.svg";
 import { useAppSelector } from "../../state";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -14,7 +11,6 @@ const HomeLoan = () => {
   const homeLoanData = useAppSelector(
     (state) => state.blogData.home_loan.items
   );
-  const images = [HomeLoanImage1, HomeLoanImage2, HomeLoanImage3];
 
   return (
     <>

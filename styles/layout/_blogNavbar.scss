@@ -39,6 +39,33 @@ select:focus {
     .navbarTop {
       width: 100%;
       height: fit-content;
+
+      .navbarListing {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        }
+
+        .moreDropDown {
+          display: flex;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          cursor: pointer;
+          list-style: none;
+          position: relative;
+        }
+      }
+
       @media only screen and (min-width: 1024px) {
         width: fit-content;
       }
@@ -68,7 +95,6 @@ select:focus {
           }
           span {
             width: fit-content;
-            // height: 20px;
             font-family: "Ek Mukta";
             font-style: normal;
             font-weight: 400;
@@ -88,11 +114,9 @@ select:focus {
             background-color: #001338;
             min-width: max-content;
             gap: 2px;
-            // border: solid 1px white;
 
             li {
               position: relative;
-              // top: -10px;
               width: 100%;
               display: flex;
               justify-content: flex-start;
@@ -127,10 +151,11 @@ select:focus {
         justify-content: space-between;
         position: relative;
         width: 100%;
+        margin: 0px;
+        padding: 0px;
         @media only screen and (min-width: 1024px) {
           max-width: 350px;
         }
-
         .searchSection {
           width: 100%;
           position: relative;
@@ -210,5 +235,21 @@ select:focus {
     .expandedNavItems {
       display: block !important;
     }
+  }
+}
+
+//FOR ANT DESIGN DROPDOWN
+.ant-dropdown-menu {
+  background-color: #001338 !important;
+
+  li {
+    color: #ffffff !important;
+    list-style: none !important;
+  }
+}
+
+.ant-dropdown-menu-title-content {
+  &:hover {
+    text-decoration: underline !important;
   }
 }

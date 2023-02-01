@@ -1,12 +1,6 @@
 import Link from "next/link";
 import RelatedBlogs from "../components/ui/RelatedBlogs";
 import FeaturedProperties from "../components/ui/FeaturedProperties";
-import RelatedBlogImage1 from "../public/Images/relatedBlogsImage1.svg";
-import RelatedBlogImage2 from "../public/Images/relatedBlogsImage2.svg";
-import RelatedBlogImage3 from "../public/Images/relatedBlogsImage3.svg";
-import FeaturedPropertyImage1 from "../public/Images/featuredPropertyImage1.svg";
-import FeaturedPropertyImage2 from "../public/Images/featuredPropertyImage2.svg";
-import FeaturedPropertyImage3 from "../public/Images/featuredPropertyImage3.svg";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../state";
 import { fetchBlogs, fetchLatestProperties } from "../state/actions/actions";
