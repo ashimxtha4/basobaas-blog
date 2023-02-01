@@ -1,14 +1,8 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import { priceFormatter } from "../../utilities/helper";
+import { check, priceFormatter } from "../../utilities/helper";
 
 const FeaturedProperties = ({ property }: { property: any }) => {
-  function check(word:string){
-    if(word?.length>0&&word[0]=="/")
-      return word.slice(1)
-    else 
-      return word
-  }
   return (
     <>
       <div className="featuredProperties">
@@ -74,7 +68,10 @@ const FeaturedProperties = ({ property }: { property: any }) => {
             </div>
           </div>
           <div className="propertyPrice">
-            <span className="price">{priceFormatter(property?.price)}{property?.price_postfix&&" /"}</span>
+            <span className="price">
+              {priceFormatter(property?.price)}
+              {property?.price_postfix && " /"}
+            </span>
             <span className="unit">{check(property?.price_postfix)}</span>
           </div>
         </div>

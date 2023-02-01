@@ -4,7 +4,6 @@ import { useAppSelector } from "../state";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { request } from "../apis/request";
-import { DownOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
 
@@ -45,7 +44,6 @@ const BlogNavbar = () => {
   ];
 
   const onClick: MenuProps["onClick"] = ({ key }) => {
-    console.log(key);
     if (key === "video") {
       const newWindow = window.open(
         "https://www.youtube.com/@Basobaas/playlists",
@@ -62,7 +60,7 @@ const BlogNavbar = () => {
           <div className="navbarTop">
             <ul className="navbarListing">
               <li>
-                <Link className="listItems" aria-current="page" href="/">
+                <Link className="listItems" href="/">
                   होम पेज
                 </Link>
               </li>
@@ -152,7 +150,7 @@ const BlogNavbar = () => {
             >
               <div className="searchSection">
                 <input
-                  className="form-control searchBox"
+                  className="searchBox"
                   type="search"
                   placeholder="Search blogs, articles & news"
                   aria-label="Search"

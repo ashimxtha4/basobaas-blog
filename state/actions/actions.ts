@@ -9,8 +9,8 @@ export type blogQueryType = {
   page?: number;
   perPage?: number;
   slug?: string;
-  keyword?:string;
-  sort?:string
+  keyword?: string;
+  sort?: string;
 };
 
 export type videoQueryType = {
@@ -29,7 +29,7 @@ export const fetchBlogs = createAsyncThunk<{}, blogQueryType>(
       blogByCategoryId: query.categoryId,
       slug: query.slug,
       sort: query.sort,
-      keyword:query.keyword
+      keyword: query.keyword,
     };
   }
 );

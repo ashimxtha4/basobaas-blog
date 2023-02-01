@@ -1,8 +1,5 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import OurThoughtsImage1 from "../../public/Images/homeLoanImage2.svg";
-import OurThoughtsImage2 from "../../public/Images/homeLoanImage3.svg";
-import OurThoughtsImage3 from "../../public/Images/homeLoanImage1.svg";
 import { useAppSelector } from "../../state";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -14,7 +11,6 @@ const OurThoughts = () => {
   const ourThoughtsData = useAppSelector(
     (state) => state.blogData.our_thoughts.items
   );
-  const images = [OurThoughtsImage1, OurThoughtsImage2, OurThoughtsImage3];
 
   return (
     <>

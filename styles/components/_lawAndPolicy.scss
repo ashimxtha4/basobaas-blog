@@ -215,14 +215,14 @@
       justify-content: center;
       align-items: flex-start;
       width: calc(302 * 100% / 1277);
-      height:fit-content;
+      height: fit-content;
       border-radius: 6px;
       min-height: none;
 
       .imageContainer {
         width: 100%;
         height: 182px;
-        .imgage{
+        .imgage {
           height: 100%;
           width: auto;
         }
@@ -246,7 +246,6 @@
             font-size: 16px;
             line-height: 150%;
             height: fit-content;
-
           }
         }
 
