@@ -27,7 +27,7 @@ const BlogNavbar = () => {
     else return 5;
   };
 
-  const otherCategoryNavListing = categories
+  const otherCategoryNavListing = categoryList
     ?.slice(check())
     ?.map((item: any, index: any) => {
       return {
@@ -38,18 +38,22 @@ const BlogNavbar = () => {
 
   const items: MenuProps["items"] = [
     {
-      key: "1",
+      key: "",
       type: "group",
-      label: "Group title",
       children: otherCategoryNavListing,
     },
   ];
 
   const onClick: MenuProps["onClick"] = ({ key }) => {
+    console.log(key);
     if (key === "video") {
-      router.push("https://www.youtube.com/@Basobaas/playlists");
-    }
-    router.push("/category/" + key);
+      const newWindow = window.open(
+        "https://www.youtube.com/@Basobaas/playlists",
+        "_blank",
+        "noopener,noreferrer"
+      );
+      if (newWindow) newWindow.opener = null;
+    } else router.push("/category/" + key);
   };
   return (
     <>
@@ -105,11 +109,14 @@ const BlogNavbar = () => {
                 ) : null
               ) : (
                 <li className="moreDropDown">
-                  <Dropdown menu={{ items, onClick }}>
+                  <Dropdown
+                    className="antDropDownList"
+                    menu={{ items, onClick }}
+                  >
                     <a onClick={(e) => e.preventDefault()}>
                       <Space>
                         अन्य
-                        <DownOutlined />
+                        {/* <DownOutlined /> */}
                       </Space>
                     </a>
                   </Dropdown>
