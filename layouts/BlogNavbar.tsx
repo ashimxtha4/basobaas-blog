@@ -114,9 +114,15 @@ const BlogNavbar = () => {
                     menu={{ items, onClick }}
                   >
                     <a onClick={(e) => e.preventDefault()}>
-                      <Space>
-                        अन्य
-                        {/* <DownOutlined /> */}
+                      <Space className="otherMenuItems">
+                        अन्य श्रेणीहरू
+                        <Icon
+                          icon="material-symbols:keyboard-arrow-down-rounded"
+                          color="white"
+                          width="15"
+                          height="15"
+                          inline={true}
+                        />
                       </Space>
                     </a>
                   </Dropdown>
