@@ -39,6 +39,15 @@ select:focus {
     .navbarTop {
       width: 100%;
       height: fit-content;
+
+      .navbarListing {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+
       @media only screen and (min-width: 1024px) {
         width: fit-content;
       }
@@ -127,10 +136,11 @@ select:focus {
         justify-content: space-between;
         position: relative;
         width: 100%;
+        margin: 0px;
+        padding: 0px;
         @media only screen and (min-width: 1024px) {
           max-width: 350px;
         }
-
         .searchSection {
           width: 100%;
           position: relative;

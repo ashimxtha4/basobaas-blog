@@ -1,9 +1,12 @@
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useAppSelector } from "../state";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { request } from "../apis/request";
+import { DownOutlined } from "@ant-design/icons";
+import type { MenuProps } from "antd";
+import { Dropdown, Space } from "antd";
 
 const BlogNavbar = () => {
   const router = useRouter();
@@ -23,23 +26,46 @@ const BlogNavbar = () => {
     else if (screenSize >= 1200 && screenSize < 1300) return 4;
     else return 5;
   };
-  // const searchField = useRef();
 
+  const otherCategoryNavListing = categories
+    ?.slice(check())
+    ?.map((item: any, index: any) => {
+      return {
+        key: item?.cate_slug,
+        label: item?.name_np,
+      };
+    });
+
+  const items: MenuProps["items"] = [
+    {
+      key: "1",
+      type: "group",
+      label: "Group title",
+      children: otherCategoryNavListing,
+    },
+  ];
+
+  const onClick: MenuProps["onClick"] = ({ key }) => {
+    if (key === "video") {
+      router.push("https://www.youtube.com/@Basobaas/playlists");
+    }
+    router.push("/category/" + key);
+  };
   return (
     <>
-      <nav className="navbar navbar-expand blogNavbar">
+      <nav className="blogNavbar">
         <div className="navbarContainer">
           <div className="navbarTop">
-            <ul className="navbar-nav d-flex flex-row">
+            <ul className="navbarListing">
               <li>
-                <Link className="nav-link active" aria-current="page" href="/">
+                <Link className="listItems" aria-current="page" href="/">
                   होम पेज
                 </Link>
               </li>
               {categoryList
                 ?.slice(0, check())
                 .map((data: any, index: number) => (
-                  <li className="nav-item" key={index}>
+                  <li className="listItems" key={index}>
                     <Link
                       className="nav-link"
                       href={
@@ -56,7 +82,7 @@ const BlogNavbar = () => {
 
               {categoryList?.length <= check() + 1 ? (
                 categoryList?.length == check() + 1 ? (
-                  <li className="nav-item">
+                  <li className="listItems">
                     <Link
                       className="nav-link"
                       href={
@@ -78,50 +104,22 @@ const BlogNavbar = () => {
                   </li>
                 ) : null
               ) : (
-                <li className="nav-item dropdown moreDropDown">
-                  <span
-                    className="nav-link dropdown-toggle"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <span>
-                      अन्य
-                      <Icon
-                        icon="ri:arrow-drop-down-line"
-                        width="18"
-                        height="18"
-                      />
-                    </span>
-                  </span>
-                  <ul className="dropdown-menu">
-                    {categoryList
-                      ?.slice(check())
-                      .map((data: any, index: number) => (
-                        <li className="nav-item" key={index}>
-                          <Link
-                            className="nav-link"
-                            href={
-                              data?.cate_slug === "video"
-                                ? "https://www.youtube.com/@Basobaas/playlists"
-                                : "/category/" + data?.cate_slug
-                            }
-                            target={
-                              data?.cate_slug == "video" ? "_blank" : "_self"
-                            }
-                          >
-                            {data?.name_np}
-                          </Link>
-                        </li>
-                      ))}
-                  </ul>
+                <li className="moreDropDown">
+                  <Dropdown menu={{ items, onClick }}>
+                    <a onClick={(e) => e.preventDefault()}>
+                      <Space>
+                        अन्य
+                        <DownOutlined />
+                      </Space>
+                    </a>
+                  </Dropdown>
                 </li>
               )}
             </ul>
           </div>
           <div className="navbarBottom">
             <form
-              className="m-0 p-0"
+              className="searchForm"
               role="search"
               autoComplete="off"
               onSubmit={(e: any) => {
@@ -147,7 +145,6 @@ const BlogNavbar = () => {
                   aria-label="Search"
                   name="search"
                   id="search"
-                  // ref={searchField}
                 />
                 <button type="submit" className="searchIconButton">
                   <Icon
