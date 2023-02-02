@@ -16,9 +16,12 @@ const MarketNewsTypeSecondary = ({ data }: { data: any }) => {
             src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${data.id}/${
               data.images[0]
             }`}
-            fill
+            // fill
+            width={180}
+            height={130}
             alt="Basobaas Nepal"
             className="image"
+            loading={"eager"}
           />
         </div>
         <div className="blogContents">
@@ -35,13 +38,15 @@ const MarketNewsTypeSecondary = ({ data }: { data: any }) => {
           </div>
           <div className="blogBy">
             <span className="author">राजन अधिकारी</span>
-            <span className="separator">
-              <Icon
-                icon="ci:dot-05-xl"
-                width="15"
-                height="15"
-                color="#969696"
-              />
+            <span
+              className="separator"
+              style={{
+                width: "6px",
+                height: "6px",
+                borderRadius: "50%",
+                background: "#969696",
+              }}
+            >
             </span>
             <span className="posted">
               {dateFormatter(moment(`${data?.created}`).fromNow())}

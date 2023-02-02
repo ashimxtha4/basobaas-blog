@@ -59,14 +59,15 @@ const LifeStyle = () => {
                   </div>
                   <div className="blogBy">
                     <div className="author">राजन अधिकारी</div>
-                    <div className="separator">
-                      <Icon
-                        icon="ci:dot-05-xl"
-                        width="15"
-                        height="15"
-                        color="#FFFFFF"
-                      />
-                    </div>
+                    <span
+                      className="separator"
+                      style={{
+                        width: "6px",
+                        height: "6px",
+                        borderRadius: "50%",
+                        background: "#FFF",
+                      }}
+                    ></span>
                     <div className="posted">
                       {dateFormatter(moment(`${data?.created}`).fromNow())}
                     </div>

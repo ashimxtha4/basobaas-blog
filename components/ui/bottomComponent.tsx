@@ -19,7 +19,9 @@ const BottomComponent = ({ data }: { data: any }) => {
             src={`${process.env.NEXT_PUBLIC_APP_VIDEOS_URL as string}${
               data?.id
             }/${data?.thumbnail}`}
-            fill
+            // fill
+            width={120}
+            height={90}
             alt="no Image"
           />
         </div>

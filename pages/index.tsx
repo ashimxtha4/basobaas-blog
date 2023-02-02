@@ -25,6 +25,7 @@ import {
   fetchCategory,
   fetchVideos,
 } from "../state/actions/actions";
+import { Skeleton } from "antd";
 
 const HomePage = () => {
   const router = useRouter();
@@ -153,19 +154,8 @@ const HomePage = () => {
                   <HomeBlogTypeMain />
                 </div>
 
-                <div className="smallComponentDiv">
-                  {data?.slice(1).map((data: any, index: number) => (
-                    <div
-                      className="smallComponent"
-                      key={index}
-                      onClick={() => {
-                        router.push(`/blog/${data.slug}`);
-                      }}
-                    >
-                      <HomeBlogTypeSmall data={data} />
-                    </div>
-                  ))}
-                </div>
+                <HomeBlogTypeSmall data={data} loading={loading} />
+
               </div>
 
               <div className="adDivs">Ad Div</div>

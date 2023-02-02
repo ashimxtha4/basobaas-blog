@@ -20,10 +20,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 1px;
 
     .image {
       border-radius: inherit;
+      object-fit: cover;
       transition: 0.3s ease-in-out;
     }
   }

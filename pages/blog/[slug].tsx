@@ -26,6 +26,7 @@ export default function BlogPage() {
   const dispatch = useAppDispatch();
 
   const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
+  // console.log("data",data)
 
   const relatedData = useAppSelector(
     (state) => state?.blogData?.blogByCategoryId?.items
@@ -254,7 +255,7 @@ export default function BlogPage() {
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
                     <div className="blogAdDiv">AD</div>
-                    <BlogBodyRightSidebar relatedBlogData={data?.category} />
+                    <BlogBodyRightSidebar relatedBlogData={data&&data[0]?.category} />
                   </div>
                 </div>
                 <div className="blogDetailsFooterRelatedBlogs">
