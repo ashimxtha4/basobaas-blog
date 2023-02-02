@@ -19,8 +19,41 @@ import moment from "moment";
 import { dateFormatter } from "../../utilities/helper";
 import { Button, Modal } from "antd";
 import SocialMedia from "../../components/ui/socialMedia";
+import { PageAndTitleDesc } from "../../utilities/PageAndTitleDesc";
+import { GetServerSideProps } from "next";
+import { setBlogBySlug } from "../../state/features/blogSlice";
 
-export default function BlogPage() {
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  let { slug } = query;
+  const getDataFromServerSide = await (
+    await fetch(
+      (process.env.NEXT_PUBLIC_APP_API_URL as string) +
+        `collections/blogs/records?filter=(slug='${slug}')`
+    )
+  ).json();
+
+  const dataItem = getDataFromServerSide?.items[0];
+  return {
+    props: {
+      data: getDataFromServerSide || null,
+      title: dataItem?.title_en,
+      des: dataItem?.content.slice(0, 100),
+      categoryId: dataItem?.category,
+    },
+  };
+};
+type pageProps = {
+  data: any[] | [];
+  title: string;
+  desc: string;
+  categoryId: string;
+};
+export default function BlogPage({
+  data: serverSideData,
+  title,
+  desc,
+  categoryId,
+}: pageProps) {
   const firstRender = useRef(true);
   const router = useRouter();
   const dispatch = useAppDispatch();
@@ -39,20 +72,12 @@ export default function BlogPage() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (router.isReady) {
-      if (firstRender.current) {
-        firstRender.current = false;
-        dispatch(
-          fetchBlogs({
-            page: 1,
-            perPage: 1,
-            slug: router.query.slug as string,
-          })
-        );
-        dispatch(fetchCategory());
-      }
+    if (firstRender.current) {
+      firstRender.current = false;
+      dispatch(setBlogBySlug(serverSideData));
+      dispatch(fetchCategory());
     }
-  }, [dispatch, router.isReady, router.query.slug]);
+  }, [dispatch]);
   useEffect(() => {
     if (data?.length) {
       dispatch(
@@ -73,8 +98,11 @@ export default function BlogPage() {
     }
   }, [categoryList, relatedData]);
 
+  console.log(data, data?.category);
+
   return (
     <>
+      <PageAndTitleDesc title={title} desc={desc} />
       <div className="navBlend">
         <Navbar />
       </div>
@@ -254,7 +282,7 @@ export default function BlogPage() {
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
                     <div className="blogAdDiv">AD</div>
-                    <BlogBodyRightSidebar relatedBlogData={data?.category} />
+                    <BlogBodyRightSidebar relatedBlogData={categoryId} />
                   </div>
                 </div>
                 <div className="blogDetailsFooterRelatedBlogs">

@@ -75,6 +75,9 @@ export const blogSlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
+    setBlogBySlug: (state, action: PayloadAction<any>) => {
+      state.blogBySlug = action.payload;
+    },
   },
   extraReducers(builder) {
     builder
@@ -110,6 +113,6 @@ export const blogSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement } = blogSlice.actions;
+export const { increment, decrement, setBlogBySlug } = blogSlice.actions;
 
 export default blogSlice.reducer;
