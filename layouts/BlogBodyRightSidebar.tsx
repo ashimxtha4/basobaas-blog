@@ -12,6 +12,7 @@ const BlogBodyRightSidebar = ({
   relatedBlogData: string;
 }) => {
   const dispatch = useAppDispatch();
+  console.log(relatedBlogData);
   const router = useRouter();
   const relatedBlogValues = useAppSelector(
     (state) => state.blogData.blogByCategoryId.items
@@ -24,7 +25,7 @@ const BlogBodyRightSidebar = ({
     (state) => state?.premiumPropertyData
   );
   useEffect(() => {
-    if (router.isReady) {
+    if (relatedBlogData) {
       dispatch(
         fetchBlogs({
           categoryId: relatedBlogData,
@@ -32,7 +33,7 @@ const BlogBodyRightSidebar = ({
       );
       dispatch(fetchLatestProperties());
     }
-  }, [dispatch, router.isReady, relatedBlogData]);
+  }, [dispatch, relatedBlogData]);
   return (
     <>
       <div className="rightSidebar">
