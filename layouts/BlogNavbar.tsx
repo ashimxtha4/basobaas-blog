@@ -10,9 +10,15 @@ const BlogNavbar = () => {
   const categories = useAppSelector((state) => state.categoryData.data.items);
   const categoryList = categories?.filter((obj: any) => obj.parent_cate == "");
   const [screenSize, setScreenSize] = useState<number>(375);
+  const firstRender=useRef(true)
   useEffect(() => {
-    setScreenSize(screen.width);
-    window.onresize = () => setScreenSize(screen.width);
+    if(firstRender){
+      firstRender.current=false
+      setScreenSize(window.innerWidth);
+      window.onresize = () => setScreenSize(window.innerWidth);
+      console.log ("screenSize",screenSize)
+    }
+    
   });
 
   const check = () => {
@@ -23,7 +29,6 @@ const BlogNavbar = () => {
     else if (screenSize >= 1200 && screenSize < 1300) return 4;
     else return 5;
   };
-  const searchFeild = useRef();
 
   return (
     <>
