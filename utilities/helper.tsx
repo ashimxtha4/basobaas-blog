@@ -52,3 +52,9 @@ export const dateFormatter = (timeAgo: string) => {
     .replace("ago", "अघि")
     .replace("a", "१");
 };
+
+//FUNCTION TO REMOVE DOUBLE // IF IT ARISES
+export function check(word: string) {
+  if (word?.length > 0 && word[0] == "/") return word.slice(1);
+  else return word;
+}

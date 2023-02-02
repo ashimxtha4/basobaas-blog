@@ -13,8 +13,7 @@ This repository will be used as a template to initialize any new projects in the
 You can remove the above section and add these following into the readme
 
  - Project Name: Basobaas-blog
- - Languages or Frameworks Used: MERN
- - How to deploy?
+ - Languages or Frameworks Used: Next JS and Pocketbase 
 
 ***
 

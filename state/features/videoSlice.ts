@@ -5,9 +5,9 @@ import { fetchVideos } from "../actions/actions";
 export interface VideoState {
   value: number;
   loading: string;
-  educational_videos: {items: []};
-  basobaas_roundup: {items: []};
-  property_videos: {items: []};
+  educational_videos: { items: [] };
+  basobaas_roundup: { items: [] };
+  property_videos: { items: [] };
 }
 
 export type VideoByCategoryKeyType =

@@ -20,20 +20,12 @@ import { dateFormatter } from "../../utilities/helper";
 import { Button, Modal } from "antd";
 import SocialMedia from "../../components/ui/socialMedia";
 
-
 export default function BlogPage() {
   const firstRender = useRef(true);
   const router = useRouter();
   const dispatch = useAppDispatch();
-  // const [screenSize, setScreenSize] = useState<number>(375);
-  // useEffect(() => {
-  //   setScreenSize(screen.width);
-  //   window.onresize = () => setScreenSize(screen.width);
-  // },[screen.width]);
 
   const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
-
-  const premiumProperty = useAppSelector((state) => state?.premiumPropertyData);
 
   const relatedData = useAppSelector(
     (state) => state?.blogData?.blogByCategoryId?.items
@@ -208,7 +200,7 @@ export default function BlogPage() {
                                   width={"fit-content"}
                                   className="popUp"
                                 >
-                                  <SocialMedia methode={setOpen}/>
+                                  <SocialMedia methode={setOpen} />
                                 </Modal>
                               </div>
                             </div>
