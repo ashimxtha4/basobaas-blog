@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useAppSelector } from "../state";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import { useRouter } from "next/router";
 import { request } from "../apis/request";
 import type { MenuProps } from "antd";
@@ -12,9 +12,15 @@ const BlogNavbar = () => {
   const categories = useAppSelector((state) => state.categoryData.data.items);
   const categoryList = categories?.filter((obj: any) => obj.parent_cate == "");
   const [screenSize, setScreenSize] = useState<number>(375);
+  const firstRender=useRef(true)
   useEffect(() => {
-    setScreenSize(screen.width);
-    window.onresize = () => setScreenSize(screen.width);
+    if(firstRender){
+      firstRender.current=false
+      setScreenSize(window.innerWidth);
+      window.onresize = () => setScreenSize(window.innerWidth);
+      console.log ("screenSize",screenSize)
+    }
+    
   });
 
   const check = () => {
