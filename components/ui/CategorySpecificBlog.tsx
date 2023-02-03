@@ -12,8 +12,8 @@ const CategorySpecificBlog = ({ blog }: { blog: any }) => {
               blog?.images[0]
             }`}
             alt="Blog Picture"
-            width={345}
-            height={172}
+            width={730}
+            height={410}
           />
         </div>
         <div className="blogContents">

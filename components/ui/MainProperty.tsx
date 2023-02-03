@@ -5,6 +5,9 @@ import { priceFormatter } from "../../utilities/helper";
 import bed from "../../public/Images/bed.svg"
 import area from "../../public/Images/area.svg"
 import shower from "../../public/Images/shower.svg"
+import Skeleton from "./skeleton";
+import {SkeletonLine} from "./skeleton";
+
 
 
 const MainProperty = ({ data }: { data: any }) => {

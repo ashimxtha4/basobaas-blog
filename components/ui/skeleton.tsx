@@ -1,19 +1,30 @@
-import React from 'react'
+import React from "react";
 
-const Skeleton = (props:any) => {
-  return (
-    <div className='skeleton'></div>
-  )
+const Skeleton = (props: any) => {
+  return <div className="skeleton"></div>;
+};
+
+function makeArray(length: number) {
+  let dummy = [];
+  for (var i = 0; i < length; i++) {
+    dummy.push(i);
+  }
+  return dummy;
 }
 
-export const SkeletonLine = () => {
+export const SkeletonLine = (props: any) => {
+  const dummy = makeArray(props.count);
   return (
-    <div className='skeletonLine'></div>
-  )
-}
+    <>
+      {dummy.map((data: any) => (
+        <div
+          key={data}
+          className="skeletonLine"
+          style={{ height: `${props.height}` }}
+        ></div>
+      ))}
+    </>
+  );
+};
 
-
-export default Skeleton
-
-
-// style={{height:`${props.height}`}}
+export default Skeleton;

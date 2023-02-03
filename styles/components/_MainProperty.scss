@@ -9,9 +9,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 8px 8px 21px 8px;
+  padding: 8px 8px 15px 8px;
   gap: 8px;
   width: 280px;
+  max-height: 100%;
   height: fit-content;
   background: #ffffff;
   border: 1px solid #d8d8d8;
@@ -274,10 +275,12 @@
     width: 100%;
     min-height: 334px;
     height: fit-content;
+    max-height: 100%;
     padding: 0px;
     gap: 8px;
     max-width: 300px;
     border: none;
+    margin: 0px;
 
     .imageContainer {
       width: 100%;
