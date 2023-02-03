@@ -24,6 +24,12 @@ const nextConfig = {
     ],
   },
   typescript: { ignoreBuildErrors: true },
+  i18n: {
+    locales: ["default", "ne", "en"],
+    defaultLocale: "default",
+    localeDetection: false,
+  },
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;

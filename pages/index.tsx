@@ -27,6 +27,7 @@ import {
 } from "../state/actions/actions";
 import Skeleton from "../components/ui/skeleton";
 import { SkeletonLine } from "../components/ui/skeleton";
+import { PageAndTitleDesc } from "../utilities/PageAndTitleDesc";
 
 const HomePage = () => {
   const router = useRouter();
@@ -110,16 +111,13 @@ const HomePage = () => {
 
   return (
     <>
-      <Head>
-        <title>
-          Basobaas News - Real Estate News, Reports & Lifestyle In Nepal
-        </title>
-        <meta
-          property="og:title"
-          content="Basobaas News - Real Estate News, Reports & Lifestyle In Nepal"
-          key="title"
-        />
-      </Head>
+      <PageAndTitleDesc
+        title={"Basobaas News - Real Estate News, Reports & Lifestyle In Nepal"}
+        desc={
+          "Basobaas Insights is your go-to place for real estate investment trends, property market analysis, lifestyle, home decor tips, tourism, and much more in Nepal."
+        }
+      />
+
       <div className="navBlend">
         <Navbar />
       </div>

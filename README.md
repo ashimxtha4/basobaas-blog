@@ -1,15 +1,5 @@
 
 
-![logo](https://asterdio.com/wp-content/uploads/2022/06/asterdio-light.png)
-
-  
-
-This repository will be used as a template to initialize any new projects in the organization.    The template contains:
-
-* CI/CD pipeline template
-
-* Pull_Request template
-
 You can remove the above section and add these following into the readme
 
  - Project Name: Basobaas-blog
