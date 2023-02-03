@@ -16,6 +16,7 @@ import {
   fetchPremiumProperties,
 } from "../../state/actions/actions";
 import { BlogByCategoryKeyType } from "../../state/features/blogSlice";
+import { PageAndTitleDesc } from "../../utilities/PageAndTitleDesc";
 
 export default function BlogPage() {
   const router = useRouter();
@@ -31,6 +32,11 @@ export default function BlogPage() {
     if (router.isReady) {
       dispatch(fetchCategory());
       if (router.query.blogByCategory == "category") {
+        let titleTag = router.query.cate_slug as string;
+        titleTag =
+          titleTag.charAt(0).toUpperCase() +
+          titleTag.slice(1).replaceAll("_", " ");
+        document.title = `Basobaas News - ${titleTag}`;
         dispatch(
           fetchBlogs({
             page: currentPage,
@@ -40,6 +46,8 @@ export default function BlogPage() {
           })
         );
       } else if (router.query.blogByCategory == "search") {
+        document.title = `Basobaas News - ${router.query.cate_slug}`;
+
         dispatch(
           fetchBlogs({
             page: currentPage,
@@ -75,6 +83,11 @@ export default function BlogPage() {
 
   return (
     <>
+      <PageAndTitleDesc
+        desc={
+          "Basobaas Insights is your go-to place for real estate investment trends, property market analysis, lifestyle, home decor tips, tourism, and much more in Nepal."
+        }
+      />
       <div className="navBlend">
         <Navbar />
       </div>
