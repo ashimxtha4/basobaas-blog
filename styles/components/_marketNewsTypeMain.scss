@@ -20,10 +20,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 1px;
 
     .image {
       border-radius: inherit;
+      object-fit:cover;
       transition: 0.3s ease-in-out;
     }
   }
@@ -34,12 +34,14 @@
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
+    width: 100%;
 
     .blogCategoryTitle {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      width: 100%;
 
       p {
         margin: 0px;
@@ -59,6 +61,7 @@
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      width: 100%;
 
       p {
         margin: 0px;
@@ -80,9 +83,10 @@
 
     .blogBody {
       display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
 
       p {
         margin: 0px;
@@ -107,6 +111,7 @@
       flex-direction: row;
       align-items: center;
       gap: 8px;
+      min-width: 120px;
 
       .author,
       .posted {

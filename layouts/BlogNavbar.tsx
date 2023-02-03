@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { request } from "../apis/request";
 import type { MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
+import Skeleton from "../components/ui/skeleton";
 
 const BlogNavbar = () => {
   const router = useRouter();
@@ -85,7 +86,7 @@ const BlogNavbar = () => {
                     >
                       {data?.name_np}
                     </Link>
-                  </li>
+                  </li> 
                 ))}
 
               {categoryList?.length <= check() + 1 ? (
@@ -163,7 +164,7 @@ const BlogNavbar = () => {
                   name="search"
                   id="search"
                 />
-                <button type="submit" className="searchIconButton">
+                <button type="submit" className="searchIconButton" name="searchButton">
                   <Icon
                     className="searchIcon"
                     icon="ph:magnifying-glass-bold"

@@ -59,6 +59,7 @@ export default function BlogPage({
   const dispatch = useAppDispatch();
 
   const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
+  // console.log("data",data)
 
   const relatedData = useAppSelector(
     (state) => state?.blogData?.blogByCategoryId?.items

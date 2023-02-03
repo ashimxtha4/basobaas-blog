@@ -49,14 +49,15 @@ const OurThoughts = () => {
                 </div>
                 <div className="blogBy">
                   <span className="author">राजन मगर</span>
-                  <span className="separator">
-                    <Icon
-                      icon="ci:dot-05-xl"
-                      width="15"
-                      height="15"
-                      color="#969696"
-                    />
-                  </span>
+                  <span
+                    className="separator"
+                    style={{
+                      width: "6px",
+                      height: "6px",
+                      borderRadius: "50%",
+                      background: "#969696",
+                    }}
+                  ></span>
                   <span className="posted">
                     {dateFormatter(moment(`${data?.created}`).fromNow())}
                   </span>

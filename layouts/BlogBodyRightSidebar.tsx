@@ -11,6 +11,7 @@ const BlogBodyRightSidebar = ({
 }: {
   relatedBlogData: string;
 }) => {
+  console.log(relatedBlogData)
   const dispatch = useAppDispatch();
   console.log(relatedBlogData);
   const router = useRouter();

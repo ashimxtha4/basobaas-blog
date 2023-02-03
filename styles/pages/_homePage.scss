@@ -394,8 +394,7 @@
             padding: 0px;
             gap: 10px;
             width: 100%;
-            min-height: 295px;
-            height: fit-content;
+            height: 295px;
             overflow-x: scroll;
             overflow-y: hidden;
             flex: none;
@@ -1293,8 +1292,7 @@
               padding: 0px;
               gap: 10px;
               width: 100%;
-              min-height: 294px;
-              height: fit-content;
+              height: 280px;
               overflow-x: scroll;
               overflow-y: hidden;
               flex: none;
@@ -1307,6 +1305,7 @@
                 width: 280px;
                 min-height: 294px;
                 height: fit-content;
+                margin: 0px;
               }
             }
           }
@@ -2247,8 +2246,7 @@
               padding: 0px;
               gap: calc(24 * 100% / 1280);
               width: 100%;
-              min-height: 334px;
-              height: fit-content;
+              height: 335px;
               overflow-x: scroll;
               overflow-y: hidden;
               flex: none;

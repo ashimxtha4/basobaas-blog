@@ -131,9 +131,11 @@
           color: #4f4f4f;
         }
 
-        .separator {
-          display: flex;
-          align-items: center;
+        .seperator {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #969696;
         }
       }
     }

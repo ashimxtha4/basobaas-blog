@@ -2,6 +2,13 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { priceFormatter } from "../../utilities/helper";
+import bed from "../../public/Images/bed.svg"
+import area from "../../public/Images/area.svg"
+import shower from "../../public/Images/shower.svg"
+import Skeleton from "./skeleton";
+import {SkeletonLine} from "./skeleton";
+
+
 
 const MainProperty = ({ data }: { data: any }) => {
   const router = useRouter();
@@ -23,7 +30,9 @@ const MainProperty = ({ data }: { data: any }) => {
         </div>
         <div className="imageContainer">
           <Image
-            fill
+            // fill
+            width={300}
+            height={198}
             src={
               data?.thumbnail?.replaceAll(
                 "basobaasapi.asterdio.xyz",
@@ -63,11 +72,7 @@ const MainProperty = ({ data }: { data: any }) => {
           <div className="propertyOverview">
             <div className="overviewDatas">
               <span className="iconContainer">
-                <Icon
-                  icon="icon-park-solid:single-bed"
-                  color="#707580"
-                  className="overviewIcons"
-                />
+                <Image src={bed} alt="bed"/>
               </span>
               <div className="overViewText">
                 <span className="overViewTags">{data?.bedroom_count}</span>
@@ -76,11 +81,8 @@ const MainProperty = ({ data }: { data: any }) => {
             </div>
             <div className="overviewDatas">
               <span className="iconContainer">
-                <Icon
-                  icon="majesticons:bath-shower-line"
-                  color="#707580"
-                  className="overviewIcons"
-                />
+              <Image src={shower} alt="shower"/>
+
               </span>
               <div className="overViewText">
                 <span className="overViewTags">{data?.bathroom_count}</span>
@@ -89,11 +91,8 @@ const MainProperty = ({ data }: { data: any }) => {
             </div>
             <div className="overviewDatas">
               <span className="iconContainer">
-                <Icon
-                  icon="bxs:area"
-                  color="#707580"
-                  className="overviewIcons"
-                />
+              <Image src={area} alt="area"/>
+
               </span>
               <div className="overViewText">
                 <span className="overViewTags">{data?.area_covered}</span>

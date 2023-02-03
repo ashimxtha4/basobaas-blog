@@ -25,6 +25,8 @@ import {
   fetchCategory,
   fetchVideos,
 } from "../state/actions/actions";
+import Skeleton from "../components/ui/skeleton";
+import { SkeletonLine } from "../components/ui/skeleton";
 import { PageAndTitleDesc } from "../utilities/PageAndTitleDesc";
 
 const HomePage = () => {
@@ -44,6 +46,7 @@ const HomePage = () => {
     (state) => state?.blogData?.market_news?.items
   );
   const { data, loading } = useAppSelector((state) => state.blogData);
+  const blogLoading = useAppSelector((state) => state.blogData.loading);
 
   const { data: premiumPropertyData, loading: premiumPropertyLoading } =
     useAppSelector((state) => state.premiumPropertyData);
@@ -151,19 +154,7 @@ const HomePage = () => {
                   <HomeBlogTypeMain />
                 </div>
 
-                <div className="smallComponentDiv">
-                  {data?.slice(1).map((data: any, index: number) => (
-                    <div
-                      className="smallComponent"
-                      key={index}
-                      onClick={() => {
-                        router.push(`/blog/${data.slug}`);
-                      }}
-                    >
-                      <HomeBlogTypeSmall data={data} />
-                    </div>
-                  ))}
-                </div>
+                <HomeBlogTypeSmall data={data} loading={loading} />
               </div>
 
               <div className="adDivs">Ad Div</div>
@@ -185,17 +176,21 @@ const HomePage = () => {
                     <MarketNewsTypeMain />
                   </div>
                   <div className="marketSmallComponentDiv">
-                    {marketData?.slice(1).map((data: any, index: number) => (
-                      <div
-                        className="marketSmallComponent"
-                        key={index}
-                        onClick={() => {
-                          router.push(`/blog/${data?.slug}`);
-                        }}
-                      >
-                        <MarketNewsTypeSecondary data={data} />
-                      </div>
-                    ))}
+                    {loading == "loading" ? (
+                      <SkeletonLine height="130px" count={3} />
+                    ) : (
+                      marketData?.slice(1).map((data: any, index: number) => (
+                        <div
+                          className="marketSmallComponent"
+                          key={index}
+                          onClick={() => {
+                            router.push(`/blog/${data?.slug}`);
+                          }}
+                        >
+                          <MarketNewsTypeSecondary data={data} />
+                        </div>
+                      ))
+                    )}
                   </div>
                 </div>
               </div>
@@ -218,155 +213,171 @@ const HomePage = () => {
                   </span>
                 </div>
                 <div className="propertyCardDiv">
-                  {latestPropertyData?.data
-                    ?.slice(0, 10)
-                    .map((data: any, index: number) => (
-                      <div className="propertyCard" key={index}>
-                        <MainProperty data={data} />
-                      </div>
-                    ))}
+                  {loading != "loading" ? (
+                    latestPropertyData?.data
+                      ?.slice(0, 10)
+                      .map((data: any, index: number) => (
+                        <div className="propertyCard" key={index}>
+                          <MainProperty data={data} />
+                        </div>
+                      ))
+                  ) : (
+                    <>
+                      <Skeleton />
+                      <Skeleton />
+                      {window.innerWidth > 700 && <Skeleton />}
+                      {window.innerWidth > 1024 && <Skeleton />}
+                    </>
+                  )}
                 </div>
               </div>
+              {loading != "loading" ? (
+                <>
+                  <div className="lifeStyleDiv">
+                    <LifeStyle />
+                  </div>
 
-              <div className="lifeStyleDiv">
-                <LifeStyle />
-              </div>
+                  <div className="flexTwo">
+                    <div className="homeLoanDiv">
+                      <HomeLoan />
+                    </div>
 
-              <div className="flexTwo">
-                <div className="homeLoanDiv">
-                  <HomeLoan />
-                </div>
+                    <div className="ourThoughtsDiv">
+                      <OurThoughts />
+                    </div>
+                  </div>
 
-                <div className="ourThoughtsDiv">
-                  <OurThoughts />
-                </div>
-              </div>
+                  <div className="propertyListDiv">
+                    <div className="propertyListTitleDiv">
+                      <label className="propertyListTitle">
+                        विशेष घर जग्गाहरु
+                      </label>
+                      <span className="propertyListViewAllButton">
+                        <Link
+                          className="propertyViewLink"
+                          href="https://basobaas.com/properties/premium-properties"
+                          target="_blank"
+                        >
+                          सबै हेर्नुहोस्
+                        </Link>
+                      </span>
+                    </div>
+                    <div className="propertyCardDiv">
+                      {premiumPropertyData?.data
+                        ?.slice(0, 10)
+                        .map((data: any, index: number) => (
+                          <div className="propertyCard" key={index}>
+                            <MainProperty data={data} />
+                          </div>
+                        ))}
+                    </div>
+                  </div>
 
-              <div className="propertyListDiv">
-                <div className="propertyListTitleDiv">
-                  <label className="propertyListTitle">विशेष घर जग्गाहरु</label>
-                  <span className="propertyListViewAllButton">
-                    <Link
-                      className="propertyViewLink"
-                      href="https://basobaas.com/properties/premium-properties"
-                      target="_blank"
-                    >
-                      सबै हेर्नुहोस्
-                    </Link>
-                  </span>
-                </div>
-                <div className="propertyCardDiv">
-                  {premiumPropertyData?.data
-                    ?.slice(0, 10)
-                    .map((data: any, index: number) => (
-                      <div className="propertyCard" key={index}>
-                        <MainProperty data={data} />
+                  <div className="flexTwo">
+                    <div className="lawPolicyDiv">
+                      <LawAndPolicy
+                        title="कानून र नीति"
+                        data={data}
+                        cate_slug="law_and_policy"
+                      />
+                    </div>
+
+                    <div className="lawPolicy2Div">
+                      <div className="lawPolicy2TitleDiv">
+                        <label className="lawPolicy2Title">
+                          घर जग्गाको भिडियो
+                        </label>
+                        <span className="lawPolicy2ViewAllButton">
+                          <Link
+                            href={"https://www.youtube.com/@Basobaas/playlists"}
+                            target="_blank"
+                          >
+                            सबै हेर्नुहोस्
+                          </Link>
+                        </span>
                       </div>
-                    ))}
-                </div>
-              </div>
-
-              <div className="flexTwo">
-                <div className="lawPolicyDiv">
-                  <LawAndPolicy
-                    title="कानून र नीति"
-                    data={data}
-                    cate_slug="law_and_policy"
-                  />
-                </div>
-
-                <div className="lawPolicy2Div">
-                  <div className="lawPolicy2TitleDiv">
-                    <label className="lawPolicy2Title">घर जग्गाको भिडियो</label>
-                    <span className="lawPolicy2ViewAllButton">
-                      <Link
-                        href={"https://www.youtube.com/@Basobaas/playlists"}
-                        target="_blank"
-                      >
-                        सबै हेर्नुहोस्
-                      </Link>
-                    </span>
-                  </div>
-                  <div className="lawPolicy2CardDiv">
-                    {property_videos.map((video: any, index: number) => (
-                      <div className="lawPolicy2Card" key={index}>
-                        <BottomComponent data={video} />
+                      <div className="lawPolicy2CardDiv">
+                        {property_videos.map((video: any, index: number) => (
+                          <div className="lawPolicy2Card" key={index}>
+                            <BottomComponent data={video} />
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
                   </div>
-                </div>
-              </div>
 
-              <div className="flexThree">
-                <div className="flexThreeChild1Div">
-                  <div className="flexThreeChild1TitleDiv">
-                    <label className="flexThreeChild1Title">
-                      घर जग्गाको भिडियो
-                    </label>
-                    <span className="flexThreeChild1ViewAllButton">
-                      <Link
-                        href={"https://www.youtube.com/@Basobaas/playlists"}
-                        target="_blank"
-                      >
-                        सबै हेर्नुहोस्
-                      </Link>
-                    </span>
-                  </div>
-                  <div className="flexThreeChild1CardDiv">
-                    {property_videos.map((video: any, index: number) => (
-                      <div className="lawPolicy2Card" key={index}>
-                        <BottomComponent data={video} />
+                  <div className="flexThree">
+                    <div className="flexThreeChild1Div">
+                      <div className="flexThreeChild1TitleDiv">
+                        <label className="flexThreeChild1Title">
+                          घर जग्गाको भिडियो
+                        </label>
+                        <span className="flexThreeChild1ViewAllButton">
+                          <Link
+                            href={"https://www.youtube.com/@Basobaas/playlists"}
+                            target="_blank"
+                          >
+                            सबै हेर्नुहोस्
+                          </Link>
+                        </span>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                      <div className="flexThreeChild1CardDiv">
+                        {property_videos.map((video: any, index: number) => (
+                          <div className="lawPolicy2Card" key={index}>
+                            <BottomComponent data={video} />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
 
-                <div className="flexThreeChildDiv">
-                  <div className="flexThreeChildTitleDiv">
-                    <label className="flexThreeChildTitle">
-                      बासोबास राउन्डअप
-                    </label>
-                    <span className="flexThreeChildViewAllButton">
-                      <Link
-                        href={"https://www.youtube.com/@Basobaas/playlists"}
-                        target="_blank"
-                      >
-                        सबै हेर्नुहोस्
-                      </Link>
-                    </span>
-                  </div>
-                  <div className="flexThreeChildCardDiv">
-                    {basobaas_roundup.map((video: any, index: number) => (
-                      <div className="flexThreeChildCard" key={index}>
-                        <BottomComponent data={video} />
+                    <div className="flexThreeChildDiv">
+                      <div className="flexThreeChildTitleDiv">
+                        <label className="flexThreeChildTitle">
+                          बासोबास राउन्डअप
+                        </label>
+                        <span className="flexThreeChildViewAllButton">
+                          <Link
+                            href={"https://www.youtube.com/@Basobaas/playlists"}
+                            target="_blank"
+                          >
+                            सबै हेर्नुहोस्
+                          </Link>
+                        </span>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                      <div className="flexThreeChildCardDiv">
+                        {basobaas_roundup.map((video: any, index: number) => (
+                          <div className="flexThreeChildCard" key={index}>
+                            <BottomComponent data={video} />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
 
-                <div className="flexThreeChildDiv">
-                  <div className="flexThreeChildTitleDiv">
-                    <label className="flexThreeChildTitle">
-                      शैक्षिक भिडियो
-                    </label>
-                    <span className="flexThreeChildViewAllButton">
-                      <Link
-                        href={"https://www.youtube.com/@Basobaas/playlists"}
-                        target="_blank"
-                      >
-                        सबै हेर्नुहोस्
-                      </Link>
-                    </span>
-                  </div>
-                  <div className="flexThreeChildCardDiv">
-                    {educational_videos.map((video: any, index: number) => (
-                      <div className="flexThreeChildCard" key={index}>
-                        <BottomComponent data={video} />
+                    <div className="flexThreeChildDiv">
+                      <div className="flexThreeChildTitleDiv">
+                        <label className="flexThreeChildTitle">
+                          शैक्षिक भिडियो
+                        </label>
+                        <span className="flexThreeChildViewAllButton">
+                          <Link
+                            href={"https://www.youtube.com/@Basobaas/playlists"}
+                            target="_blank"
+                          >
+                            सबै हेर्नुहोस्
+                          </Link>
+                        </span>
                       </div>
-                    ))}
+                      <div className="flexThreeChildCardDiv">
+                        {educational_videos.map((video: any, index: number) => (
+                          <div className="flexThreeChildCard" key={index}>
+                            <BottomComponent data={video} />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </>
+              ) : null}
             </div>
 
             <div className="contentFooter">
