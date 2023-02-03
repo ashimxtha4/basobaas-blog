@@ -77,7 +77,7 @@ export default function BlogPage({
       dispatch(setBlogBySlug(serverSideData));
       dispatch(fetchCategory());
     }
-  }, [dispatch]);
+  }, [dispatch, serverSideData]);
   useEffect(() => {
     if (data?.length) {
       dispatch(
