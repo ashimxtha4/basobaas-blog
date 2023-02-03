@@ -17,6 +17,7 @@ import {
 } from "../../state/actions/actions";
 import { BlogByCategoryKeyType } from "../../state/features/blogSlice";
 import { PageAndTitleDesc } from "../../utilities/PageAndTitleDesc";
+import Skeleton from "../../components/ui/skeleton";
 
 export default function BlogPage() {
   const router = useRouter();
@@ -157,17 +158,24 @@ export default function BlogPage() {
                     </div>
                   </div>
                   <div className="componentMapSection">
-                    {values?.slice(0, 6)?.map((blog: any, index: number) => {
-                      return (
-                        <Link
-                          style={{ transform: "none" }}
-                          href={("/blog/" + blog?.slug) as string}
-                          key={index}
-                        >
-                          <CategorySpecificBlog blog={blog} />
-                        </Link>
-                      );
-                    })}
+                    {loading == "loading" ? (
+                      <>
+                        <CategorySpecificBlog blog={undefined} />
+                        <CategorySpecificBlog blog={undefined} />
+                      </>
+                    ) : (
+                      values?.slice(0, 6)?.map((blog: any, index: number) => {
+                        return (
+                          <Link
+                            style={{ transform: "none" }}
+                            href={("/blog/" + blog?.slug) as string}
+                            key={index}
+                          >
+                            <CategorySpecificBlog blog={blog} />
+                          </Link>
+                        );
+                      })
+                    )}
                   </div>
                   {loading == "success" &&
                   data[router.query.cate_slug as BlogByCategoryKeyType]?.items

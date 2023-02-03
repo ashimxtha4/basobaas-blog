@@ -9,7 +9,6 @@ const FeaturedProperties = ({ property }: { property: any }) => {
         <div className="imageContainer">
           <Image
             className="image"
-            fill
             src={
               property?.thumbnail?.replaceAll(
                 "basobaasapi.asterdio.xyz",
@@ -17,6 +16,8 @@ const FeaturedProperties = ({ property }: { property: any }) => {
               ) as any
             }
             alt={property?.thumbnail_alt}
+            width={120}
+            height={105}
           />
         </div>
         <div className="contentContainer">

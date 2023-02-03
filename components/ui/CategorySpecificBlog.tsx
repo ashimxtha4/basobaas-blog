@@ -1,44 +1,77 @@
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import { useAppSelector } from "../../state";
+import Skeleton from "./skeleton";
+import { SkeletonLine } from "./skeleton";
+import { dateFormatter } from "../../utilities/helper";
+import moment from "moment";
 
 const CategorySpecificBlog = ({ blog }: { blog: any }) => {
+  const loading = useAppSelector((state) => state.blogData.loading);
+
   return (
     <>
       <div className="categorySpecificBlog">
         <div className="imageContainer">
-          <Image
-            className="blogListingImage"
-            src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${blog?.id}/${
-              blog?.images[0]
-            }`}
-            alt="Blog Picture"
-            width={730}
-            height={410}
-          />
+          {loading == "loading" && blog == undefined ? (
+            <Skeleton />
+          ) : (
+            <Image
+              className="blogListingImage"
+              src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
+                blog?.id
+              }/${blog?.images[0]}`}
+              alt="Blog Picture"
+              width={500}
+              height={300}
+              loading={"eager"}
+            />
+          )}
         </div>
         <div className="blogContents">
           <div className="blogHeaderSectionContainer">
             <div className="blogCategoryTitle">
-              <p>{blog.tags}</p>
+              {loading == "loading" && blog == undefined ? (
+                <SkeletonLine height="14px" count={1} />
+              ) : (
+                <p>{blog.tags}</p>
+              )}
             </div>
             <div className="blogHeader">
-              <p>{blog.title_np}</p>
+              {loading == "loading" && blog == undefined ? (
+                <SkeletonLine height="24px" count={1} />
+              ) : (
+                // <SkeletonLine height="28px" count={1} />
+                <p>{blog.title_np}</p>
+              )}
             </div>
           </div>
           <div className="blogBody">
-            <p>{blog.content}</p>
+            {loading == "loading" && blog == undefined ? (
+              <SkeletonLine height="20" count={3} />
+            ) : (
+              <p>{blog.content}</p>
+            )}
           </div>
           <div className="blogBy">
-            <span className="author">राजन अधिकारी</span>
-            <span className="separator">
-              <Icon
-                icon="ci:dot-05-xl"
-                width="15"
-                height="15"
-                color="#969696"
-              />
-            </span>
-            <span className="posted">{blog.postedOn}</span>
+            {loading == "loading" && blog == undefined ? (
+              <SkeletonLine height="20" count={3} />
+            ) : (
+              <>
+                <span className="author">राजन अधिकारी</span>
+                <span className="separator">
+                  <Icon
+                    icon="ci:dot-05-xl"
+                    width="15"
+                    height="15"
+                    color="#969696"
+                  />
+                </span>
+                <span className="posted">
+                  {dateFormatter(moment(`${blog?.created}`).fromNow())}
+                </span>
+              </>
+            )}
           </div>
         </div>
       </div>

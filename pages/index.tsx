@@ -46,7 +46,6 @@ const HomePage = () => {
     (state) => state?.blogData?.market_news?.items
   );
   const { data, loading } = useAppSelector((state) => state.blogData);
-  const blogLoading = useAppSelector((state) => state.blogData.loading);
 
   const { data: premiumPropertyData, loading: premiumPropertyLoading } =
     useAppSelector((state) => state.premiumPropertyData);
