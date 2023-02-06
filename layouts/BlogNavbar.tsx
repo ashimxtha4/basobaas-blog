@@ -4,9 +4,7 @@ import { useAppSelector } from "../state";
 import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { request } from "../apis/request";
-import type { MenuProps } from "antd";
-import { Dropdown, Space } from "antd";
-import Skeleton from "../components/ui/skeleton";
+import { MenuProps, Dropdown, Space } from "antd";
 
 const BlogNavbar = () => {
   const router = useRouter();

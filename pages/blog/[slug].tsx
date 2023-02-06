@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const dataItem = getDataFromServerSide?.items[0];
   return {
     props: {
-      data: getDataFromServerSide || null,
+      data: getDataFromServerSide || undefined,
       title: dataItem?.title_en,
       des: dataItem?.content.slice(0, 100),
       categoryId: dataItem?.category,
@@ -99,9 +99,6 @@ export default function BlogPage({
       if (relatedData?.length) setGetCategorySlug(findCategory);
     }
   }, [categoryList, relatedData]);
-
-  console.log(data, data?.category);
-
   return (
     <>
       <PageAndTitleDesc title={title} desc={desc} />
