@@ -191,22 +191,6 @@ export default function BlogPage({
                                     )}
                                   </div>
                                 </div>
-                                {/* <button className="shareButton">
-                                  <Icon
-                                    icon="ri:share-forward-fill"
-                                    color="white"
-                                    width="20"
-                                    height="20"
-                                  />
-                                  Share
-                                </button> */}
-                                {/* <FacebookShareButton
-                                  quote="quote"
-                                  hashtag=""
-                                  url="https://basobaasblog.asterdio.xyz"
-                                >
-                                  facebook
-                                </FacebookShareButton> */}
                                 <Button
                                   type="primary"
                                   className="shareButton"

@@ -25,6 +25,7 @@ const CategorySpecificBlog = ({ blog }: { blog: any }) => {
               width={500}
               height={300}
               loading={"eager"}
+              priority
             />
           )}
         </div>
