@@ -15,14 +15,21 @@
     overflow: hidden;
     border-radius: 6px;
     width: 100%;
-    height: fit-content;
-    max-height: 422px;
+    height: 210px;
+    @media only screen and (min-width: 500px) {
+      height: 320px;
+    }
+    @media only screen and (min-width: 700px) {
+      height: 400px;
+    }
+    @media only screen and (min-width: 1024px) {
+      height: 422px;
+    }
     overflow: hidden;
 
     .blogListingImage {
       transition: 0.3s ease-in-out;
       border-radius: 6px;
-      max-height: 422px;
       object-fit: cover;
       overflow: hidden;
     }
@@ -34,6 +41,7 @@
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
+    width: 100%;
 
     .blogHeaderSectionContainer {
       display: flex;
@@ -41,12 +49,15 @@
       justify-content: center;
       align-items: flex-start;
       gap: 6px;
+      width: 100%;
 
       .blogCategoryTitle {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        // min-height: 20px;
+        width: 40px;
         p {
           margin: 0px;
           padding: 0px;
@@ -64,6 +75,8 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        // height: 25px;
+        width: 100%;
         p {
           margin: 0px;
           padding: 0px;
@@ -88,6 +101,7 @@
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      width: 100%;
 
       p {
         margin: 0px;
@@ -116,6 +130,7 @@
       flex-direction: row;
       align-items: center;
       gap: 8px;
+      width: 40%;
 
       .author,
       .posted {

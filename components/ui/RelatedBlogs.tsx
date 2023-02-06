@@ -9,7 +9,9 @@ const RelatedBlogs = ({ blog }: { blog: any }) => {
             src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${blog?.id}/${
               blog?.images[0]
             }`}
-            fill
+            
+            width={120}
+            height={90}
             alt="Picture of the author"
             className="relatedBlogImages"
           />
