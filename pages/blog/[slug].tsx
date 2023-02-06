@@ -22,6 +22,7 @@ import SocialMedia from "../../components/ui/socialMedia";
 import { PageAndTitleDesc } from "../../utilities/PageAndTitleDesc";
 import { GetServerSideProps } from "next";
 import { setBlogBySlug } from "../../state/features/blogSlice";
+import Skeleton, { SkeletonLine } from "../../components/ui/skeleton";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let { slug } = query;
@@ -59,6 +60,7 @@ export default function BlogPage({
   const dispatch = useAppDispatch();
 
   const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
+  const loading = useAppSelector((state) => state?.blogData?.loading);
 
   const relatedData = useAppSelector(
     (state) => state?.blogData?.blogByCategoryId?.items
@@ -117,27 +119,75 @@ export default function BlogPage({
             <div className="bodyContainer">
               <div className="categoryBlogBody">
                 <div className="blogDetailsMainSection">
-                  {data?.map((item: any, index: number) => {
-                    return (
-                      <div className="blogDetailsLeftBodySection" key={index}>
-                        <div className="leftHeaderSection">
-                          <div className="blogDetailsCategoryHeader">
-                            <div className="categoryInfo">
-                              <div className="catAndSubCat">
-                                <span className="catSubCatNames">
-                                  <Link href="/">होम</Link>
-                                </span>
-                                <span>
-                                  <Icon
-                                    icon="material-symbols:chevron-right"
-                                    color="#969696"
-                                    width="20"
-                                    height="20"
-                                    inline={true}
-                                  />{" "}
-                                </span>
-                                {/* PARENT CATEGORY MAP SECTION */}
-                                {/* <span className="catSubCatNames">
+                  {loading == "loading" ? (
+                    <div className="blogDetailsLeftBodySection">
+                      <div className="leftHeaderSection">
+                        <div className="blogDetailsCategoryHeader">
+                          <div className="categoryInfo">
+                            <div
+                              className="catAndSubCat"
+                              style={{ width: "100px" }}
+                            >
+                              <SkeletonLine height={"18px"} count={1} />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="blogDetailsTitle">
+                          <div
+                            className="blogSubCategoryTitle"
+                            style={{ width: "600px" }}
+                          >
+                            <SkeletonLine height={"20px"} count={1} />
+                          </div>
+                          <div className="blogTitleAndAuthor">
+                            <div className="blogTitle">
+                              <SkeletonLine height={"32px"} count={1} />
+                            </div>
+                            <div className="blogByAndShare">
+                              <div
+                                className="blogBy"
+                                style={{ width: "300px" }}
+                              >
+                                <SkeletonLine height={"20px"} count={1} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="blogDetailsComponentSection">
+                        <div className="blogDetails">
+                          <div className="blogDetailsThumbnail">
+                            <SkeletonLine height={"466px"} count={1} />
+                          </div>
+                          <div className="blogDetailsFromBackend">
+                            <SkeletonLine height={"20px"} count={9} />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    data?.map((item: any, index: number) => {
+                      return (
+                        <div className="blogDetailsLeftBodySection" key={index}>
+                          <div className="leftHeaderSection">
+                            <div className="blogDetailsCategoryHeader">
+                              <div className="categoryInfo">
+                                <div className="catAndSubCat">
+                                  <span className="catSubCatNames">
+                                    <Link href="/">होम</Link>
+                                  </span>
+                                  <span>
+                                    <Icon
+                                      icon="material-symbols:chevron-right"
+                                      color="#969696"
+                                      width="20"
+                                      height="20"
+                                      inline={true}
+                                    />{" "}
+                                  </span>
+                                  {/* PARENT CATEGORY MAP SECTION */}
+                                  {/* <span className="catSubCatNames">
                             <Link href="#">सल्लाह</Link>
                           </span>
                           <span>
@@ -149,117 +199,129 @@ export default function BlogPage({
                               inline={true}
                             />{" "}
                           </span> */}
-                                <span className="catSubCatNames">
-                                  <Link href="#">
-                                    {
-                                      categoryList?.find(
-                                        (obj: any) => obj.id == item?.category
-                                      )?.name_np
-                                    }
-                                  </Link>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="blogDetailsTitle">
-                            <div className="blogSubCategoryTitle">
-                              {categoryList?.find(
-                                (obj: any) => obj.id == item?.category?.name_np
-                              )}
-                            </div>
-                            <div className="blogTitleAndAuthor">
-                              <div className="blogTitle">{item?.title_np}</div>
-                              <div className="blogByAndShare">
-                                <div className="blogBy">
-                                  <div className="author">राजन अधिकारी</div>
-                                  <div className="separator">
-                                    <Icon
-                                      icon="ci:dot-05-xl"
-                                      width="15"
-                                      height="15"
-                                      color="#333333"
-                                    />
-                                  </div>
-                                  <div className="posted">
-                                    {dateFormatter(
-                                      moment(`${item?.created}`).fromNow()
-                                    )}
-                                  </div>
+                                  <span className="catSubCatNames">
+                                    <Link href="#">
+                                      {
+                                        categoryList?.find(
+                                          (obj: any) => obj.id == item?.category
+                                        )?.name_np
+                                      }
+                                    </Link>
+                                  </span>
                                 </div>
-                                <Button
-                                  type="primary"
-                                  className="shareButton"
-                                  onClick={() => setOpen(true)}
-                                >
-                                  <Icon
-                                    icon="ri:share-forward-fill"
-                                    color="white"
-                                    width="20"
-                                    height="20"
-                                  />
-                                  Share
-                                </Button>
-                                <Modal
-                                  title="Share your favrout blog"
-                                  centered
-                                  open={open}
-                                  onOk={() => setOpen(false)}
-                                  onCancel={() => setOpen(false)}
-                                  width={"fit-content"}
-                                  className="popUp"
-                                >
-                                  <SocialMedia methode={setOpen} />
-                                </Modal>
+                              </div>
+                            </div>
+
+                            <div className="blogDetailsTitle">
+                              <div className="blogSubCategoryTitle">
+                                {categoryList?.find(
+                                  (obj: any) =>
+                                    obj.id == item?.category?.name_np
+                                )}
+                              </div>
+                              <div className="blogTitleAndAuthor">
+                                <div className="blogTitle">
+                                  {item?.title_np}
+                                </div>
+                                <div className="blogByAndShare">
+                                  <div className="blogBy">
+                                    <div className="author">राजन अधिकारी</div>
+                                    <div className="separator">
+                                      <Icon
+                                        icon="ci:dot-05-xl"
+                                        width="15"
+                                        height="15"
+                                        color="#333333"
+                                      />
+                                    </div>
+                                    <div className="posted">
+                                      {dateFormatter(
+                                        moment(`${item?.created}`).fromNow()
+                                      )}
+                                    </div>
+                                  </div>
+                                  <Button
+                                    type="primary"
+                                    className="shareButton"
+                                    onClick={() => setOpen(true)}
+                                  >
+                                    <Icon
+                                      icon="ri:share-forward-fill"
+                                      color="white"
+                                      width="20"
+                                      height="20"
+                                    />
+                                    Share
+                                  </Button>
+                                  <Modal
+                                    title="Share your favrout blog"
+                                    centered
+                                    open={open}
+                                    onOk={() => setOpen(false)}
+                                    onCancel={() => setOpen(false)}
+                                    width={"fit-content"}
+                                    className="popUp"
+                                  >
+                                    <SocialMedia methode={setOpen} />
+                                  </Modal>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="blogDetailsComponentSection">
-                          <div className="blogDetails">
-                            <div className="blogDetailsThumbnail">
-                              <Image
-                                src={`${
-                                  process.env.NEXT_PUBLIC_APP_IMG_URL as string
-                                }${item?.id}/${item?.images[0]}`}
-                                height={408}
-                                width={830}
-                                alt="blogDetails"
-                              />
-                            </div>
-                            <div className="blogDetailsFromBackend">
-                              {item?.content}
+                          <div className="blogDetailsComponentSection">
+                            <div className="blogDetails">
+                              <div className="blogDetailsThumbnail">
+                                {loading == "loading" ? (
+                                  <Skeleton />
+                                ) : (
+                                  <Image
+                                    src={`${
+                                      process.env
+                                        .NEXT_PUBLIC_APP_IMG_URL as string
+                                    }${item?.id}/${item?.images[0]}`}
+                                    height={408}
+                                    width={830}
+                                    alt="blogDetails"
+                                    priority
+                                    loading={"eager"}
+                                    quality={75}
+                                  />
+                                )}
+                              </div>
+                              <div className="blogDetailsFromBackend">
+                                {item?.content}
+                              </div>
                             </div>
                           </div>
+                          <div className="topSearch">
+                            <p className="topSearchHeader">Top Searches</p>
+                            <ul>
+                              <li>
+                                <Link className="listedItems" href="#">
+                                  expensive houses in lalitpur
+                                </Link>
+                              </li>
+                              <li>
+                                <Link className="listedItems" href="#">
+                                  Cheap houses in kathmandu
+                                </Link>
+                              </li>
+                              <li>
+                                <Link className="listedItems" href="#">
+                                  Home loan
+                                </Link>
+                              </li>
+                              <li>
+                                <Link className="listedItems" href="#">
+                                  market updates
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
-                        <div className="topSearch">
-                          <p className="topSearchHeader">Top Searches</p>
-                          <ul>
-                            <li>
-                              <Link className="listedItems" href="#">
-                                expensive houses in lalitpur
-                              </Link>
-                            </li>
-                            <li>
-                              <Link className="listedItems" href="#">
-                                Cheap houses in kathmandu
-                              </Link>
-                            </li>
-                            <li>
-                              <Link className="listedItems" href="#">
-                                Home loan
-                              </Link>
-                            </li>
-                            <li>
-                              <Link className="listedItems" href="#">
-                                market updates
-                              </Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })
+                  )}
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
                     <div className="blogAdDiv">AD</div>
