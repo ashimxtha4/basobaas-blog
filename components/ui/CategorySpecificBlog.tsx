@@ -22,8 +22,8 @@ const CategorySpecificBlog = ({ blog }: { blog: any }) => {
                 blog?.id
               }/${blog?.images[0]}`}
               alt="Blog Picture"
-              width={500}
-              height={300}
+              width={400}
+              height={250}
               loading={"eager"}
               priority
             />

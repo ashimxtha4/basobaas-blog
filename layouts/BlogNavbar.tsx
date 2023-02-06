@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useAppSelector } from "../state";
-import { useEffect, useState,useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { request } from "../apis/request";
 import type { MenuProps } from "antd";
@@ -13,15 +13,13 @@ const BlogNavbar = () => {
   const categories = useAppSelector((state) => state.categoryData.data.items);
   const categoryList = categories?.filter((obj: any) => obj.parent_cate == "");
   const [screenSize, setScreenSize] = useState<number>(375);
-  const firstRender=useRef(true)
+  const firstRender = useRef(true);
   useEffect(() => {
-    if(firstRender){
-      firstRender.current=false
+    if (firstRender) {
+      firstRender.current = false;
       setScreenSize(window.innerWidth);
       window.onresize = () => setScreenSize(window.innerWidth);
-      console.log ("screenSize",screenSize)
     }
-    
   });
 
   const check = () => {
@@ -86,7 +84,7 @@ const BlogNavbar = () => {
                     >
                       {data?.name_np}
                     </Link>
-                  </li> 
+                  </li>
                 ))}
 
               {categoryList?.length <= check() + 1 ? (
@@ -164,7 +162,11 @@ const BlogNavbar = () => {
                   name="search"
                   id="search"
                 />
-                <button type="submit" className="searchIconButton" name="searchButton">
+                <button
+                  type="submit"
+                  className="searchIconButton"
+                  name="searchButton"
+                >
                   <Icon
                     className="searchIcon"
                     icon="ph:magnifying-glass-bold"

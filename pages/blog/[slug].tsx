@@ -22,6 +22,7 @@ import SocialMedia from "../../components/ui/socialMedia";
 import { PageAndTitleDesc } from "../../utilities/PageAndTitleDesc";
 import { GetServerSideProps } from "next";
 import { setBlogBySlug } from "../../state/features/blogSlice";
+import Skeleton from "../../components/ui/skeleton";
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   let { slug } = query;
@@ -59,7 +60,7 @@ export default function BlogPage({
   const dispatch = useAppDispatch();
 
   const data = useAppSelector((state) => state?.blogData?.blogBySlug?.items);
-  // console.log("data",data)
+  const loading = useAppSelector((state) => state?.blogData?.loading);
 
   const relatedData = useAppSelector(
     (state) => state?.blogData?.blogByCategoryId?.items
@@ -121,7 +122,11 @@ export default function BlogPage({
             <div className="bodyContainer">
               <div className="categoryBlogBody">
                 <div className="blogDetailsMainSection">
-                  {data?.map((item: any, index: number) => {
+                  {
+                    loading == "loading" ? (
+                      <Skeleton />
+                    ) : (
+                  data?.map((item: any, index: number) => {
                     return (
                       <div className="blogDetailsLeftBodySection" key={index}>
                         <div className="leftHeaderSection">
@@ -222,14 +227,22 @@ export default function BlogPage({
                         <div className="blogDetailsComponentSection">
                           <div className="blogDetails">
                             <div className="blogDetailsThumbnail">
-                              <Image
-                                src={`${
-                                  process.env.NEXT_PUBLIC_APP_IMG_URL as string
-                                }${item?.id}/${item?.images[0]}`}
-                                height={408}
-                                width={830}
-                                alt="blogDetails"
-                              />
+                              {loading == "loading" ? (
+                                <Skeleton />
+                              ) : (
+                                <Image
+                                  src={`${
+                                    process.env
+                                      .NEXT_PUBLIC_APP_IMG_URL as string
+                                  }${item?.id}/${item?.images[0]}`}
+                                  height={408}
+                                  width={830}
+                                  alt="blogDetails"
+                                  priority
+                                  loading={"eager"}
+                                  quality={75}
+                                />
+                              )}
                             </div>
                             <div className="blogDetailsFromBackend">
                               {item?.content}
@@ -263,7 +276,7 @@ export default function BlogPage({
                         </div>
                       </div>
                     );
-                  })}
+                  }))}
                   {/* -------------------RIGHT SIDEBAR---------------------- */}
                   <div className="rightBodySection">
                     <div className="blogAdDiv">AD</div>
