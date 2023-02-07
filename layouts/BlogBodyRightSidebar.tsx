@@ -65,15 +65,18 @@ const BlogBodyRightSidebar = ({
                         className="blogComponentLinks"
                         href={"/blog/" + blog.slug}
                         key={index}
-                        onClick={()=>{
-                          console.log(blog,'blog');
-                          
-             dispatch(setBlogBySlug({
-              page:1,perPage:30,totalPages:1,
-              totalItems:1,
-              items:[blog]
-             }));
+                        onClick={() => {
+                          console.log(blog, "blog");
 
+                          dispatch(
+                            setBlogBySlug({
+                              page: 1,
+                              perPage: 30,
+                              totalPages: 1,
+                              totalItems: 1,
+                              items: [blog],
+                            })
+                          );
                         }}
                       >
                         <RelatedBlogs blog={blog} />

@@ -46,7 +46,8 @@ const LawAndPolicy = ({
                 src={`${process.env.NEXT_PUBLIC_APP_IMG_URL as string}${
                   data.id
                 }/${data.images[0]}`}
-                fill
+                width={303}
+                height={182}
                 alt="basobaas Nepal"
               />
             </div>

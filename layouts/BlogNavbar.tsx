@@ -114,7 +114,7 @@ const BlogNavbar = () => {
                     className="antDropDownList"
                     menu={{ items, onClick }}
                   >
-                    <a onClick={(e) => e.preventDefault()}>
+                    <span onClick={(e) => e.preventDefault()}>
                       <Space className="otherMenuItems">
                         अन्य श्रेणीहरू
                         <Icon
@@ -125,7 +125,7 @@ const BlogNavbar = () => {
                           inline={true}
                         />
                       </Space>
-                    </a>
+                    </span>
                   </Dropdown>
                 </li>
               )}
