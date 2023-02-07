@@ -123,6 +123,7 @@
         margin: 0px;
         padding: 0px;
         height: 44px;
+        transition: ease-in-out 0.3s;
       }
     }
     .blogBy {
@@ -163,7 +164,6 @@
 .homeBlogTypeSmall:hover .blogTitle p {
   text-decoration: underline;
 }
-
 .homeBlogTypeSmall:hover .blogCardBackground {
   transform: scale(1.1);
 }

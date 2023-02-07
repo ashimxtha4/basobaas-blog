@@ -90,8 +90,17 @@ select:focus {
             color: #ffffff;
             padding: 0px;
           }
-          a:hover {
-            text-decoration: underline;
+          a::after {
+            display: block;
+            content: "";
+            color: white;
+            border-bottom: solid 0px;
+            width: 0px;
+            transition: ease-in-out 0.3s;
+          }
+          a:hover::after {
+            width: 100%;
+            border-bottom: solid 1px;
           }
           span {
             width: fit-content;
@@ -245,11 +254,22 @@ select:focus {
   li {
     color: #ffffff !important;
     list-style: none !important;
+    width: fit-content !important;
   }
 }
 
 .ant-dropdown-menu-title-content {
-  &:hover {
-    text-decoration: underline !important;
+  width: fit-content;
+  &::after {
+    display: block;
+    content: "";
+    color: white;
+    border-bottom: solid 1px;
+    width: 0px;
+    transition:ease-in-out 0.3s;
+  }
+  &:hover::after {
+    width: 100%;
+    border-bottom: solid 1px;
   }
 }
