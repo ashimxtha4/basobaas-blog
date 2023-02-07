@@ -125,9 +125,11 @@ export default function BlogPage() {
                     </p>
                   </div>
                   <div className="errorMessageSectionBottom">
+                    <p className="errorInfo">होम जान यहाँ क्लिक गर्नुहोस् |</p>
+
                     <Link href="/" className="errorLink">
                       <Button type="primary" className="errorRouteButton" block>
-                        primary
+                        होम
                       </Button>
                     </Link>
                   </div>
