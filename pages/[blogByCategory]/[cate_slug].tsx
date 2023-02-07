@@ -108,12 +108,29 @@ export default function BlogPage() {
             <div className="lowerFooterBlend"></div>
           </div>
           <div className="contentDiv">
-            {values?.length ? (
+            {router.query.blogByCategory == "search" &&
+            loading == "success" &&
+            values?.length <= 0 ? (
+              <div className="errorMessageContainer">
+                <div className="errorMessageSection">
+                  <Icon
+                    icon="mdi:warning-circle-outline"
+                    color="#ffffff"
+                    width="100"
+                    height="100"
+                  />
+                  <p className="errorMessage">
+                    Oops! Looks like there are no such blogs that match this
+                    request.
+                  </p>
+                </div>
+              </div>
+            ) : (
               <div className="bodyContainer">
                 {/* LOADING SPINNER TO BE ADDED */}
                 <div className="categoryBlogBody">
                   <div className="leftBodySection">
-                    {router?.query?.blogByCategory == "search" ? null : (
+                    {router.query.blogByCategory == "search" ? null : (
                       <div className="leftHeaderSection">
                         <div className="categoryHeader">
                           <p className="categoryInfo">श्रेणी</p>
@@ -215,21 +232,6 @@ export default function BlogPage() {
                       }
                     />
                   </div>
-                </div>
-              </div>
-            ) : (
-              <div className="errorMessageContainer">
-                <div className="errorMessageSection">
-                  <Icon
-                    icon="mdi:warning-circle-outline"
-                    color="#ffffff"
-                    width="100"
-                    height="100"
-                  />
-                  <p className="errorMessage">
-                    Oops! Looks like there are no such blogs that match this
-                    request.
-                  </p>
                 </div>
               </div>
             )}
