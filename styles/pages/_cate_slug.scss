@@ -324,6 +324,34 @@
         }
       }
 
+      .errorMessageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+
+        .errorMessageSection {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          height: 150px;
+          background-color: #001338;
+          padding: 0 20px;
+          border-radius: 20px;
+          .errorMessage {
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            font-family: "Product Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 140%;
+          }
+        }
+      }
+
       .footer {
         width: 100%;
         min-height: none;
