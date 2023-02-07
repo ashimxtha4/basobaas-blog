@@ -125,6 +125,8 @@ export default function BlogPage() {
                     </p>
                   </div>
                   <div className="errorMessageSectionBottom">
+                    <p className="errorInfo">होम जान यहाँ क्लिक गर्नुहोस् |</p>
+
                     <Link href="/" className="errorLink">
                       <Button aria-label="homeButton" type="primary" className="errorRouteButton" block>
                         primary
