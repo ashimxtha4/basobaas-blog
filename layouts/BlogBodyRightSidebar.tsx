@@ -66,8 +66,6 @@ const BlogBodyRightSidebar = ({
                         href={"/blog/" + blog.slug}
                         key={index}
                         onClick={() => {
-                          console.log(blog, "blog");
-
                           dispatch(
                             setBlogBySlug({
                               page: 1,
