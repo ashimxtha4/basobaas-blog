@@ -126,7 +126,7 @@ export default function BlogPage() {
                   </div>
                   <div className="errorMessageSectionBottom">
                     <Link href="/" className="errorLink">
-                      <Button type="primary" className="errorRouteButton" block>
+                      <Button aria-label="homeButton" type="primary" className="errorRouteButton" block>
                         primary
                       </Button>
                     </Link>
@@ -154,7 +154,7 @@ export default function BlogPage() {
                         <div className="sortSection">
                           <span className="sortTitle">क्रमबद्ध गर्नुहोस्:</span>
                           <span className="sortButton">
-                            <Select
+                            <Select 
                               suffixIcon={
                                 <Icon
                                   icon="ph:caret-down-bold"
