@@ -4,7 +4,7 @@ import BlogNavbar from "../../layouts/BlogNavbar";
 import CategorySpecificBlog from "../../components/ui/CategorySpecificBlog";
 import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
 import Footer from "../../layouts/Footer";
-import { Select } from "antd";
+import { Button, Select } from "antd";
 import Link from "next/link";
 import { Pagination } from "antd";
 import { useEffect, useState } from "react";
@@ -113,16 +113,24 @@ export default function BlogPage() {
             values?.length <= 0 ? (
               <div className="errorMessageContainer">
                 <div className="errorMessageSection">
-                  <Icon
-                    icon="mdi:warning-circle-outline"
-                    color="#ffffff"
-                    width="100"
-                    height="100"
-                  />
-                  <p className="errorMessage">
-                    Oops! Looks like there are no such blogs that match this
-                    request.
-                  </p>
+                  <div className="errorMessageSectionTop">
+                    <Icon
+                      icon="mdi:warning-circle-outline"
+                      color="#ffffff"
+                      width="100"
+                      height="100"
+                    />
+                    <p className="errorMessage">
+                      माफ गर्नुहोस् तर त्यस्तो कुनै ब्लग फेला पर्न सकेन |
+                    </p>
+                  </div>
+                  <div className="errorMessageSectionBottom">
+                    <Link href="/" className="errorLink">
+                      <Button type="primary" className="errorRouteButton" block>
+                        primary
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ) : (
