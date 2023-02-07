@@ -4,7 +4,7 @@ import BlogNavbar from "../../layouts/BlogNavbar";
 import CategorySpecificBlog from "../../components/ui/CategorySpecificBlog";
 import BlogBodyRightSidebar from "../../layouts/BlogBodyRightSidebar";
 import Footer from "../../layouts/Footer";
-import { Select } from "antd";
+import { Button, Select } from "antd";
 import Link from "next/link";
 import { Pagination } from "antd";
 import { useEffect, useState } from "react";
@@ -17,7 +17,6 @@ import {
 } from "../../state/actions/actions";
 import { BlogByCategoryKeyType } from "../../state/features/blogSlice";
 import { PageAndTitleDesc } from "../../utilities/PageAndTitleDesc";
-import Skeleton from "../../components/ui/skeleton";
 
 export default function BlogPage() {
   const router = useRouter();
@@ -86,6 +85,7 @@ export default function BlogPage() {
     let titlePrepare = `Basobaas News - ${router.query.cate_slug}`;
     title = titlePrepare;
   }
+
   return (
     <>
       <PageAndTitleDesc
@@ -108,110 +108,141 @@ export default function BlogPage() {
             <div className="lowerFooterBlend"></div>
           </div>
           <div className="contentDiv">
-            <div className="bodyContainer">
-              {/* LOADING SPINNER TO BE ADDED */}
-              <div className="categoryBlogBody">
-                <div className="leftBodySection">
-                  <div className="leftHeaderSection">
-                    <div className="categoryHeader">
-                      <p className="categoryInfo">श्रेणी</p>
-                      <p className="categoryTitle">
-                        {router?.query?.blogByCategory
-                          ? categories?.find(
-                              (obj: any) =>
-                                obj?.cate_slug == router?.query?.cate_slug
-                            )?.name_np
-                          : router?.query?.cate_slug}
-                      </p>
-                    </div>
-                    <div className="sortSection">
-                      <span className="sortTitle">क्रमबद्ध गर्नुहोस्:</span>
-                      <span className="sortButton">
-                        <Select
-                          suffixIcon={
-                            <Icon
-                              icon="ph:caret-down-bold"
-                              color="#4f4f4f"
-                              width="20"
-                              height="20"
-                              className="selectArrow"
-                            />
-                          }
-                          defaultValue="नयाँ पहिले देखाउनुहोस्"
-                          className="subCategorySelect"
-                          bordered={false}
-                          options={[
-                            {
-                              value: "-created",
-                              label: "नयाँ पहिले देखाउनुहोस्",
-                            },
-                            {
-                              value: "created",
-                              label: "पुरानो पहिले देखाउनुहोस्",
-                            },
-                          ]}
-                          onChange={(e) => {
-                            handleSortChange(e);
-                          }}
-                        />
-                      </span>
-                    </div>
+            {router.query.blogByCategory == "search" &&
+            loading == "success" &&
+            values?.length <= 0 ? (
+              <div className="errorMessageContainer">
+                <div className="errorMessageSection">
+                  <div className="errorMessageSectionTop">
+                    <Icon
+                      icon="mdi:warning-circle-outline"
+                      color="#ffffff"
+                      width="100"
+                      height="100"
+                    />
+                    <p className="errorMessage">
+                      माफ गर्नुहोस् तर त्यस्तो कुनै ब्लग फेला पर्न सकेन |
+                    </p>
                   </div>
-                  <div className="componentMapSection">
-                    {loading == "loading" ? (
-                      <>
-                        <CategorySpecificBlog blog={undefined} />
-                        <CategorySpecificBlog blog={undefined} />
-                      </>
-                    ) : (
-                      values?.slice(0, 6)?.map((blog: any, index: number) => {
-                        return (
-                          <Link
-                            style={{ transform: "none" }}
-                            href={("/blog/" + blog?.slug) as string}
-                            key={index}
-                          >
-                            <CategorySpecificBlog blog={blog} />
-                          </Link>
-                        );
-                      })
-                    )}
+                  <div className="errorMessageSectionBottom">
+                    <Link href="/" className="errorLink">
+                      <Button type="primary" className="errorRouteButton" block>
+                        primary
+                      </Button>
+                    </Link>
                   </div>
-                  {loading == "success" &&
-                  data[router.query.cate_slug as BlogByCategoryKeyType]?.items
-                    ?.length > 0 ? (
-                    <div className="paginationSectionContainer">
-                      <Pagination
-                        className="paginationSection"
-                        defaultCurrent={1}
-                        current={currentPage}
-                        pageSize={6}
-                        total={Number(
-                          data[router.query.cate_slug as BlogByCategoryKeyType]
-                            ?.totalItems
-                        )}
-                        hideOnSinglePage={true}
-                        onChange={(page) => {
-                          setcurrentPage(page);
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                </div>
-                {/* -------------------RIGHT SIDEBAR---------------------- */}
-                <div className="rightBodySection">
-                  <div className="blogAdDiv">AD</div>
-                  {categories != undefined}
-                  <BlogBodyRightSidebar
-                    relatedBlogData={
-                      categories?.find(
-                        (obj: any) => obj.cate_slug == router?.query?.cate_slug
-                      )?.id
-                    }
-                  />
                 </div>
               </div>
-            </div>
+            ) : (
+              <div className="bodyContainer">
+                {/* LOADING SPINNER TO BE ADDED */}
+                <div className="categoryBlogBody">
+                  <div className="leftBodySection">
+                    {router.query.blogByCategory == "search" ? null : (
+                      <div className="leftHeaderSection">
+                        <div className="categoryHeader">
+                          <p className="categoryInfo">श्रेणी</p>
+                          <p className="categoryTitle">
+                            {router?.query?.blogByCategory
+                              ? categories?.find(
+                                  (obj: any) =>
+                                    obj?.cate_slug == router?.query?.cate_slug
+                                )?.name_np
+                              : router?.query?.cate_slug}
+                          </p>
+                        </div>
+                        <div className="sortSection">
+                          <span className="sortTitle">क्रमबद्ध गर्नुहोस्:</span>
+                          <span className="sortButton">
+                            <Select
+                              suffixIcon={
+                                <Icon
+                                  icon="ph:caret-down-bold"
+                                  color="#4f4f4f"
+                                  width="20"
+                                  height="20"
+                                  className="selectArrow"
+                                />
+                              }
+                              defaultValue="नयाँ पहिले देखाउनुहोस्"
+                              className="subCategorySelect"
+                              bordered={false}
+                              options={[
+                                {
+                                  value: "-created",
+                                  label: "नयाँ पहिले देखाउनुहोस्",
+                                },
+                                {
+                                  value: "created",
+                                  label: "पुरानो पहिले देखाउनुहोस्",
+                                },
+                              ]}
+                              onChange={(e) => {
+                                handleSortChange(e);
+                              }}
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                    <div className="componentMapSection">
+                      {loading == "loading" ? (
+                        <>
+                          <CategorySpecificBlog blog={undefined} />
+                          <CategorySpecificBlog blog={undefined} />
+                        </>
+                      ) : (
+                        values?.slice(0, 6)?.map((blog: any, index: number) => {
+                          return (
+                            <Link
+                              style={{ transform: "none" }}
+                              href={("/blog/" + blog?.slug) as string}
+                              key={index}
+                            >
+                              <CategorySpecificBlog blog={blog} />
+                            </Link>
+                          );
+                        })
+                      )}
+                    </div>
+                    {loading == "success" &&
+                    data[router.query.cate_slug as BlogByCategoryKeyType]?.items
+                      ?.length > 0 ? (
+                      <div className="paginationSectionContainer">
+                        <Pagination
+                          className="paginationSection"
+                          defaultCurrent={1}
+                          current={currentPage}
+                          pageSize={6}
+                          total={Number(
+                            data[
+                              router.query.cate_slug as BlogByCategoryKeyType
+                            ]?.totalItems
+                          )}
+                          hideOnSinglePage={true}
+                          onChange={(page) => {
+                            setcurrentPage(page);
+                          }}
+                        />
+                      </div>
+                    ) : null}
+                  </div>
+                  {/* -------------------RIGHT SIDEBAR---------------------- */}
+                  <div className="rightBodySection">
+                    <div className="blogAdDiv">AD</div>
+                    {categories != undefined}
+                    <BlogBodyRightSidebar
+                      relatedBlogData={
+                        categories?.find(
+                          (obj: any) =>
+                            obj.cate_slug == router?.query?.cate_slug
+                        )?.id
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
             <div className="footer">
               <Footer />
             </div>

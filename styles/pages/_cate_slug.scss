@@ -324,6 +324,48 @@
         }
       }
 
+      .errorMessageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+
+        .errorMessageSection {
+          background-color: #001338;
+          padding: 0 20px;
+          border-radius: 20px;
+          padding: 10px 20px;
+          .errorMessageSectionTop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            height: fit-content;
+            .errorMessage {
+              margin: 0;
+              padding: 0;
+              color: #ffffff;
+              font-family: "Product Sans";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 30px;
+              line-height: 140%;
+            }
+          }
+          .errorMessageSectionBottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .errorLink {
+              .errorRouteButton {
+                width: fit-content;
+                min-width: 100px;
+              }
+            }
+          }
+        }
+      }
+
       .footer {
         width: 100%;
         min-height: none;
