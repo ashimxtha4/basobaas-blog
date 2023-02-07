@@ -2,7 +2,8 @@ import { Icon } from "@iconify/react";
 import moment from "moment";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useAppSelector } from "../../state/index";
+import { setBlogBySlug } from "../../state/features/blogSlice";
+import { useAppSelector, useAppDispatch } from "../../state/index";
 import { dateFormatter } from "../../utilities/helper";
 
 const LawAndPolicy = ({
@@ -18,6 +19,7 @@ const LawAndPolicy = ({
     (state) => state?.categoryData?.data?.items
   );
   const router = useRouter();
+  const dispatch = useAppDispatch();
   return (
     <>
       <div className="lawPolicyTitleDiv">
@@ -37,6 +39,15 @@ const LawAndPolicy = ({
             className="lawPolicyCard"
             key={index}
             onClick={() => {
+              dispatch(
+                setBlogBySlug({
+                  page: 1,
+                  perPage: 30,
+                  totalPages: 1,
+                  totalItems: 1,
+                  items: [data],
+                })
+              );
               router?.push(`/blog/${data?.slug}`);
             }}
           >
