@@ -164,6 +164,7 @@ const BlogNavbar = () => {
                   type="submit"
                   className="searchIconButton"
                   name="searchButton"
+                  aria-label="searchButton"
                 >
                   <Icon
                     className="searchIcon"
