@@ -114,6 +114,19 @@ select:focus {
             padding: 0px;
           }
 
+          span::after {
+            display: block;
+            content: "";
+            color: white;
+            border-bottom: solid 0px;
+            width: 0px;
+            transition: ease-in-out 0.3s;
+          }
+          span:hover::after {
+            width: 100%;
+            border-bottom: solid 1px;
+          }
+
           .dropdown-menu {
             width: 100px;
             left: auto;

@@ -30,7 +30,6 @@ const HomeBlogTypeMain = () => {
                 alt="Basobaas Nepal"
                 height={638}
                 width={400}
-                //  fill
                 priority
                 loading={"eager"}
                 quality={75}

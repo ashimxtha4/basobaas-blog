@@ -148,8 +148,7 @@
       height: 300px;
 
       .image {
-        height: 100%;
-        width: auto;
+        object-fit: cover;
 
         @media only screen and (min-width: 1349px) {
           height: auto;

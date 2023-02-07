@@ -25,9 +25,8 @@ const MarketNewsTypeMain = (props: any) => {
                 marketData[0]?.id
               }/${marketData[0]?.images[0]}`}
               alt="Basobaas Nepal"
-              // height={627}
-              // width={268}
-              fill
+              height={627}
+              width={268}
               quality={60}
               className="image"
             />
