@@ -491,6 +491,7 @@
   }
   .secNavDivWrapper {
     position: sticky;
+    height: 70px;
 
     .secNavDiv {
       height: fit-content;
@@ -520,7 +521,7 @@
       .footerBlend {
         position: absolute;
         width: 100%;
-        height: 435.5px;
+        height: 439px;
         background: #4f4f4f;
         bottom: 0px;
 

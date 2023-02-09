@@ -27,9 +27,9 @@ const Navbar: NextPage = () => {
           <div className="hamburger">
             <Image src={hamburger} alt="no image" />
           </div>
-          <div className="logo">
+          <h1 className="logo">
             <Image src={BasobasLogo} alt="no image" />
-          </div>
+          </h1>
           <div className="linkDiv">
             {links.map((data: any) => (
               <Link key={data} href="#">

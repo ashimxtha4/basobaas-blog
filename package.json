@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@iconify/react": "^4.0.1",
+    "@plaiceholder/next": "^2.5.0",
     "@reduxjs/toolkit": "^1.9.1",
     "@types/node": "18.11.10",
     "@types/react": "18.0.25",
@@ -18,6 +19,7 @@
     "axios": "^1.2.1",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.6",
+    "lqip-modern": "^2.0.0",
     "moment": "^2.29.4",
     "next": "13.0.6",
     "pocketbase": "^0.10.0",
@@ -27,6 +29,7 @@
     "react-responsive": "^9.0.2",
     "react-share": "^4.4.1",
     "sass": "^1.56.2",
+    "sharp": "^0.31.3",
     "typescript": "4.9.3"
   }
 }

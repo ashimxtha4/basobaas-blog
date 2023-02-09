@@ -5,10 +5,23 @@ import Skeleton from "./skeleton";
 import { SkeletonLine } from "./skeleton";
 import { dateFormatter } from "../../utilities/helper";
 import moment from "moment";
+// import lqip from 'lqip-modern';
+import { useRef, useEffect } from "react";
+import image from "../../public/Favicon.png";
+
+async function changeImage() {
+  // return result;
+}
 
 const CategorySpecificBlog = ({ blog }: { blog: any }) => {
   const loading = useAppSelector((state) => state.blogData.loading);
-
+  const firstRender = useRef(true);
+  useEffect(() => {
+    if (firstRender) {
+      firstRender.current = false;
+      // console.log("changed Image",changeImage())
+    }
+  });
   return (
     <>
       <div className="categorySpecificBlog">
